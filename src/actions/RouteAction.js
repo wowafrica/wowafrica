@@ -6,7 +6,7 @@ import RouteConstants from '../constants/RouteConstants';
 class RouteActions {
 
   updatePath(pathName) {
-    AppDispatcher.dispatcher({
+    AppDispatcher.dispatch({
       actionType: RouteConstants.ROUTE_UPDATE_PATH,
       pathName
     });

@@ -6,6 +6,12 @@ import IndexPage  from './pages/IndexPage';
 
 export default React.createClass({
 
+  getInitialState() {
+    return {
+      currentRoute: RouteStore.getCurrentRoute()
+    };
+  },
+
   componentDidMount() {
     RouteStore.addChangeListener(this._onChange);
   },
@@ -15,12 +21,16 @@ export default React.createClass({
   },
 
   render() {
+    var {currentRoute} = this.state;
+    var CurrentPage = currentRoute.config['page'];
     return (
-      <IndexPage/>
+      <CurrentPage/>
     );
   },
 
   _onChange() {
-
+    this.setState({
+      currentRoute: RouteStore.getCurrentRoute()
+    });
   }
 });
