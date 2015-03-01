@@ -25,3 +25,6 @@ indent_size = 2
 
 [*.ls]
 indent_size = 2
+
+[*.jade]
+indent_size = 2
