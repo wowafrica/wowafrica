@@ -3,6 +3,10 @@ require! <[express connect-livereload path]>
 require! <[vinyl-source-stream vinyl-buffer]>
 require! <[browserify babelify]>
 
+require! {
+  child_process: {exec}
+}
+
 app        = express!
 build_path = '_public'
 
@@ -48,10 +52,11 @@ gulp.task 'browserify', ->
     .pipe livereload!
 
 gulp.task 'server', ->
-  app.use connect-livereload!
-  app.use express.static path.resolve "#{build_path}"
-  app.listen 3000
-  gutil.log 'listening on port 3000'
+  exec 'npm run server', (err, stdout, stderr) ->
+    if stdout != null
+      gutil.log stdout
+    else
+      gutil.log stdout
 
 gulp.task 'watch', ->
   livereload.listen start: true
