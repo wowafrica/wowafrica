@@ -8,17 +8,17 @@ export default React.createClass({
 
   componentDidMount() {
     RouteStore.addChangeListener(this._onChange);
-  }
+  },
 
   componentWillUnmount() {
     RouteStore.removeChangeListener(this._onChange);
-  }
+  },
 
   render() {
     return (
       <IndexPage/>
     );
-  }
+  },
 
   _onChange() {
 
