@@ -59,7 +59,7 @@ gulp.task 'server', ->
       gutil.log stdout
 
 gulp.task 'watch', ->
-  livereload.listen start: true
+  livereload.listen!
   gulp.watch './client/index.jade', <[jade]>
   gulp.watch './client/data/*', <[data]>
   gulp.watch './client/styles/*.css', <[css]>

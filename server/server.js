@@ -9,9 +9,9 @@ import livereload  from 'connect-livereload';
 
 let app = express();
 
-app.use(express.static(path.resolve('_public')));
-
 app.use(livereload());
+
+app.use(express.static(path.resolve('_public')));
 
 app.all('*', (req, res) => {
   RouteAction.updatePath(req.url);
