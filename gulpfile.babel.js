@@ -15,10 +15,11 @@ import path        from 'path';
 import source      from 'vinyl-source-stream';
 import buffer      from 'vinyl-buffer';
 import browserify  from 'browserify';
+import gbabel       from 'gulp-babel';
 import babelify    from 'babelify';
 
-import App         from './src/App';
-import RouteAction from './src/actions/RouteAction';
+import App         from './lib/App';
+import RouteAction from './lib/actions/RouteAction';
 import React       from 'react';
 
 let app        = express();
@@ -55,6 +56,12 @@ gulp.task('css', () => {
     .pipe(livereload());
 });
 
+gulp.task('transpile', () => {
+  return gulp.src('./src/**/*')
+    .pipe(gbabel({experimental: true}))
+    .pipe(gulp.dest('./lib/'));
+});
+
 gulp.task('browserify', () => {
   return browserify('./client/scripts/index.js')
     .transform(babelify)
@@ -67,8 +74,8 @@ gulp.task('browserify', () => {
 });
 
 gulp.task('server', (done) => {
-  app.use(express.static(path.resolve(build_path)));
   app.use(liveConnect());
+  app.use(express.static(path.resolve(build_path)));
   app.all('*', (req, res) => {
     RouteAction.updatePath(req.url);
     let html = React.renderToString(<App/>);
@@ -94,14 +101,15 @@ gulp.task('server', (done) => {
 });
 
 gulp.task('watch', (done) => {
-  livereload.listen();
+  livereload.listen({start: true});
   gulp.watch('./client/*.jade', 'jade');
   gulp.watch('./client/styles/*.css', 'css');
   gulp.watch('./client/scripts/**/*', 'browserify');
-  gulp.watch('./src/**/*', 'browserify');
+  gulp.watch('./src/**/*', gulp.series('transpile', 'browserify'));
   done();
 });
 
-gulp.task('build', gulp.parallel('jade', 'browserify', 'css'));
-gulp.task('dev', gulp.series('build', 'watch', 'server'));
+gulp.task('bundle', gulp.series('transpile', 'browserify'));
+gulp.task('build', gulp.parallel('jade', 'css', 'bundle'));
+gulp.task('dev', gulp.series('build', 'server','watch'));
 gulp.task('default', gulp.parallel('build'));

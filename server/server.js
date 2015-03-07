@@ -3,13 +3,10 @@
 import express     from 'express';
 import path        from 'path';
 import React       from 'react';
-import App         from '../src/App';
-import RouteAction from '../src/actions/RouteAction';
-import livereload  from 'connect-livereload';
+import App         from '../lib/App';
+import RouteAction from '../lib/actions/RouteAction';
 
 let app = express();
-
-app.use(livereload());
 
 app.use(express.static(path.resolve('_public')));
 

@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "start": "gulp dev",
+    "prestart": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
     "server": "babel-node ./server/server.js"
   },
   "engines": {
@@ -30,7 +31,8 @@
     "browserify": "^9.0.3",
     "connect-livereload": "^0.5.0",
     "express": "^4.3.1",
-    "gulp": "^3.8.11",
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-babel": "^4.0.0",
     "gulp-if": "^1.2.5",
     "gulp-jade": "^1.0.0",
     "gulp-livereload": "^3.7.0",
