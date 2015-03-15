@@ -1,6 +1,8 @@
 "use strict";
 
 import React from 'react/addons';
+import IndexMenu from '../components/IndexMenu';
+import RouteStore from '../stores/RouteStore';
 
 export default React.createClass({
 
@@ -8,7 +10,7 @@ export default React.createClass({
 
     return (
       <div>
-        "Hello world!"
+        <IndexMenu />
       </div>
     );
   }
