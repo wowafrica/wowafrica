@@ -23,7 +23,7 @@ export default {
     subPage: []
   },
   view_africa_nations_post: {
-    path: 'view_africa/nations/posts/:post',
+    path: '/view_africa/nations/posts/:post',
     method: 'get',
     page: require('../pages/IndexPage'),
     subPage: []
@@ -36,9 +36,15 @@ export default {
     subPage: []
   },
   view_africa_people_post: {
-    path: 'view_africa/people/posts/:post',
+    path: '/view_africa/people/posts/:post',
     method: 'get',
     page: require('../pages/IndexPage'),
+    subPage: []
+  },
+  view_authors: {
+    path: '/about_authors',
+    method: 'get',
+    page: require('../pages/AboutAuthorsPage'),
     subPage: []
   }
 };
