@@ -23,6 +23,10 @@ class RouteStore extends EventEmitter {
     this.currentRoute = this.routeHandler.getRoute('/');
   }
 
+  getAll() {
+    return this.routeConfig;
+  }
+
   getSubPageById(RouteId) {
     return this.routeConfig[RouteId].subPage;
   }
