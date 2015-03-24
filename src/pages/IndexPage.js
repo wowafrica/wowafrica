@@ -2,7 +2,7 @@
 
 import React from 'react/addons';
 import IndexMenu from '../components/IndexMenu';
-import RouteStore from '../stores/RouteStore';
+import RouteConstants from '../constants/RouteConstants';
 
 export default React.createClass({
 
@@ -10,7 +10,9 @@ export default React.createClass({
 
     return (
       <div>
-        <IndexMenu />
+        <div className="container">
+          <IndexMenu />
+        </div>
       </div>
     );
   }

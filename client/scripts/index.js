@@ -1,4 +1,5 @@
 "use strict";
+
 import $ from 'jquery';
 global.$ = global.jQuery = $;
 import 'semantic-ui/dist/semantic.js';

@@ -1,14 +1,16 @@
 "use strict";
 
-import AppDispatcher  from '../dispatcher/AppDispatcher';
 import {EventEmitter} from 'events';
-import RouteConstants from '../constants/RouteConstants';
 import RouteHandler   from 'routr';
+import AppDispatcher  from '../dispatcher/AppDispatcher';
+import RouteConstants from '../constants/RouteConstants';
 import RouteConfig    from './RouteConfig';
+import MenuStore      from './MenuStore';
 
 class RouteStore extends EventEmitter {
 
   constructor(routeConfig) {
+    super();
     this.routeConfig = routeConfig;
     this.routeHandler = new RouteHandler(routeConfig);
     // this will get root page for default
@@ -23,10 +25,6 @@ class RouteStore extends EventEmitter {
     this.currentRoute = this.routeHandler.getRoute('/');
   }
 
-  getAll() {
-    return this.routeConfig;
-  }
-
   getSubPageById(RouteId) {
     return this.routeConfig[RouteId].subPage;
   }
@@ -39,9 +37,14 @@ class RouteStore extends EventEmitter {
     return this.currentRoute;
   }
 
+  getAll() {
+    return this.routeConfig;
+  }
+
   onReceviceUpdatePath(pathName) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
-    this.emitChange()
+    MenuStore.onReceviceUpdatePath(this.currentRoute.name);
+    this.emitChange();
   }
 
   emitChange() {
