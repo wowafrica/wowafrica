@@ -31,7 +31,7 @@ if (gutil.env.env === 'production') {
 }
 
 gulp.task('jade', () => {
-  return gulp.src('./client/index.jade')
+  return gulp.src('./client/views/*.jade')
     .pipe(plumber())
     .pipe(jade())
     .pipe(gulp.dest(build_path))
@@ -104,9 +104,9 @@ gulp.task('server', (done) => {
 
 gulp.task('watch', (done) => {
   livereload.listen({start: true});
-  gulp.watch('./client/*.jade', 'jade');
-  gulp.watch('./client/styles/*.css', 'css');
-  gulp.watch('./client/scripts/**/*', 'browserify');
+  gulp.watch('./client/views/*.jade', gulp.series('jade'));
+  gulp.watch('./client/styles/*.css', gulp.series('css'));
+  gulp.watch('./client/scripts/**/*', gulp.series('browserify'));
   gulp.watch('./src/**/*', gulp.series('transpile', 'browserify'));
   done();
 });
