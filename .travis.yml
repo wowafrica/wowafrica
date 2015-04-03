@@ -19,6 +19,6 @@ branches:
 env:
   global:
     - REPO="git@github.com:jessy1092/explore-africa"
-    - secure: e+2mcfXJ/1tLdU1Jgtxyz84ty72m6jv6mdKrjKBk+3fduqJb3CIor8ZUkIqG22H4KVUbIGZiSdBlQpmGB+D+FBfEx8FkPnbihZAFlGrjUALEriZ+wlqwF+5TBwS9ebyU6OPq+haJdo+EFjJuZkEi/waLp2V4um+uAtb/NQcYZSg=
+    - secure: lc8T8P/QMTMdEUVF8+XUta5YiSRcAdATo75iiV83Y6vcRsQPu+IWbXlpm+nxmZgA1QWOqS2XZtaOHjmWZsshXoXd9m5d5pgdZuiT3mxxqyvTrryvopcmfrogUtnTpXU6pqOKO8AfJN5bzLEcLFTyTW0bEFgtB1YROES5wH3fsAA=
 
 after_success: ".travis/after_success.sh"
