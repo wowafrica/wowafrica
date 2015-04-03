@@ -6,3 +6,8 @@ _public/
 # transpile file
 lib/
 gulpfile.js
+
+# build file
+src/
+server/
+client/
