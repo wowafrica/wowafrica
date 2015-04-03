@@ -24,7 +24,7 @@ EOF
 ## add the result line to .travis.yml
 ## see also http://about.travis-ci.org/docs/user/encryption-keys/ or
 ## http://docs.travis-ci.com/user/encrypting-files/
-openssl aes-256-cbc -k "$secret" -in .travis/deploy-key.enc -d -a -out ~/.ssh/id_rsa
+openssl aes-256-cbc -k "$super_secret_password" -in .travis/deploy-key.enc -d -out ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa # this key should have push access
 echo -e ">>> Current Repo:$REPO --- Travis Branch:$TRAVIS_BRANCH"
 ./deploy
