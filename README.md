@@ -26,13 +26,17 @@ and then open `http://localhost:3000/`
 ## Contribute
 
 1. Fork it.
-2. Switch to the `website` branch `git checkout website`
+2. Switch to the `develop` branch `git checkout develop`
 3. Create your feature-branch `git checkout -b your-new-feature-branch`
 4. Commit your change `git commit -am 'Add new feature'`
 5. Push to the branch `git push origin your-new-feature-branch`
-6. Create new Pull Request with `website` branch
+6. Create new Pull Request with `develop` branch
 
 ## Change Log
+
+#### 2015/04/04 v0.1.0
+- Add deploy process with travis-ci.
+- Add CNAME `exploreafrica`
 
 #### 2015/02/27 v0.0.1
 - init
