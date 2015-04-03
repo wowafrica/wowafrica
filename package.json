@@ -10,9 +10,11 @@
   ],
   "scripts": {
     "start": "gulp dev",
-    "prestart": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
+    "prestart": "npm run build",
+    "prepublish": "npm run build",
     "build": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
-    "server": "babel-node ./server/server.js"
+    "server": "babel-node ./server/server.js",
+    "test": "npm run build"
   },
   "engines": {
     "node": "0.10.x"
