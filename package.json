@@ -11,6 +11,7 @@
   "scripts": {
     "start": "gulp dev",
     "prestart": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
+    "build": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
     "server": "babel-node ./server/server.js"
   },
   "engines": {
