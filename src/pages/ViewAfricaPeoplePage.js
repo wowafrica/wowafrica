@@ -10,6 +10,7 @@ export default React.createClass({
       <div>
         <div className="container">
           <IndexMenu/>
+          <p>Views Africa People</p>
         </div>
       </div>
     );

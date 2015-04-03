@@ -11,6 +11,7 @@ export default React.createClass({
       <div>
         <div className="container">
           <IndexMenu/>
+          <p>About Authors</p>
         </div>
       </div>
     );

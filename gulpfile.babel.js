@@ -18,8 +18,7 @@ import browserify  from 'browserify';
 import gbabel       from 'gulp-babel';
 import babelify    from 'babelify';
 
-import App         from './lib/App';
-import RouteAction from './lib/actions/RouteAction';
+import RouteStore from './lib/stores/RouteStore';
 import React       from 'react';
 
 let app        = express();
@@ -77,8 +76,12 @@ gulp.task('server', (done) => {
   app.use(liveConnect());
   app.use(express.static(path.resolve(build_path)));
   app.all('*', (req, res) => {
-    RouteAction.updatePath(req.url);
-    let html = React.renderToString(<App/>);
+    gutil.log('URL: ', gutil.colors.yellow(req.url));
+
+    RouteStore.onReceviceUpdatePath(req.url);
+    let {config} = RouteStore.getCurrentRoute();
+    let CurrentPage = config['page'];
+    let html = React.renderToString(<CurrentPage/>);
     res.write(`
 <!DOCTYPE html>
 <html>

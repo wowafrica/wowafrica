@@ -1,8 +1,9 @@
 "use strict";
 
-import React      from 'react/addons';
-import Semantify  from 'react-semantify';
-import MenuStore from '../stores/MenuStore';
+import React        from 'react/addons';
+import Semantify    from 'react-semantify';
+import MenuStore    from '../stores/MenuStore';
+import RouteActions from '../actions/RouteAction.js';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -24,7 +25,7 @@ export default React.createClass({
   },
 
   renderDropdown() {
-    var {currentMenu} = this.state;
+    let {currentMenu} = this.state;
     return (
       currentMenu.map((section) => {
         let showName = section.showName;
@@ -51,12 +52,20 @@ export default React.createClass({
       subPage.map((page, index) => {
         return (
         <Item type="link"
+              active={page.status}
               href={page.url}
-              active={page.status}>
+              onClick={this._onClick}>
           {page.showName}
         </Item>
         );
       })
     );
+  },
+
+  _onClick(e) {
+    let {pathname} = e.currentTarget;
+    history.pushState({}, '', pathname);
+    RouteActions.updatePath(pathname);
+    e.preventDefault();
   }
 })
