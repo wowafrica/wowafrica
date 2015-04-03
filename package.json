@@ -1,7 +1,7 @@
 {
   "name": "explore-africa",
   "description": "Expolre Africa website",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "contributor": [
     {
       "name": "Lee",
@@ -14,7 +14,7 @@
     "prepublish": "npm run build",
     "build": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
     "server": "babel-node ./server/server.js",
-    "test": "npm run build"
+    "test": "gulp build"
   },
   "engines": {
     "node": "0.10.x"
