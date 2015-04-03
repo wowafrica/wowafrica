@@ -15,9 +15,10 @@ before_script:
 branches:
   except:
     - gh-pages
+
 env:
   global:
     - REPO="git@github.com:jessy1092/explore-africa"
-    - secure: "O6PXSFN2gVNf33AGnMAafn7w2H9Ih/EpLorSiz1uAAOV4P8dNO8yCifs3H/mgYme666/t2Qyitw42znXkmBACCYAdZWulGoaT7c8WirP1kDwBakvo7BctCZA9os2Y7Kzd7jvbpnYA64v9OEuGWFf2gFjs6Ow64rF9TxcCjpzRt0="
+    - secure: e+2mcfXJ/1tLdU1Jgtxyz84ty72m6jv6mdKrjKBk+3fduqJb3CIor8ZUkIqG22H4KVUbIGZiSdBlQpmGB+D+FBfEx8FkPnbihZAFlGrjUALEriZ+wlqwF+5TBwS9ebyU6OPq+haJdo+EFjJuZkEi/waLp2V4um+uAtb/NQcYZSg=
 
 after_success: ".travis/after_success.sh"
