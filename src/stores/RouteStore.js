@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
@@ -60,11 +60,11 @@ class RouteStore extends EventEmitter {
   }
 }
 
-var routeStore = new RouteStore(RouteConfig);
+let routeStore = new RouteStore(RouteConfig);
 
 AppDispatcher.register((action) => {
 
-  switch(action.actionType) {
+  switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
       routeStore.onReceviceUpdatePath(action.pathName);
       break;

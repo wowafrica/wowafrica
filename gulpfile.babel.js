@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import gulp        from 'gulp';
 import gutil       from 'gulp-util';
@@ -22,7 +22,7 @@ import RouteStore from './lib/stores/RouteStore';
 import React       from 'react';
 
 let app        = express();
-let build_path = './_public';
+let BUILD_PATH = './_public';
 let production = false;
 
 if (gutil.env.env === 'production') {
@@ -33,25 +33,25 @@ gulp.task('jade', () => {
   return gulp.src('./client/views/*.jade')
     .pipe(plumber())
     .pipe(jade())
-    .pipe(gulp.dest(build_path))
+    .pipe(gulp.dest(BUILD_PATH))
     .pipe(livereload());
 });
 
 gulp.task('images', () => {
   return gulp.src('./client/images/*')
-    .pipe(gulp.dest(`${build_path}/images/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/images/`))
     .pipe(livereload());
 });
 
 gulp.task('data', () => {
   return gulp.src('./client/data/*')
-    .pipe(gulp.dest(`${build_path}/data/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/data/`))
     .pipe(livereload());
 });
 
 gulp.task('css', () => {
   return gulp.src('./client/styles/*.css')
-    .pipe(gulp.dest(`${build_path}/styles/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/`))
     .pipe(livereload());
 });
 
@@ -68,13 +68,13 @@ gulp.task('browserify', () => {
     .pipe(source('bundle.js'))
     .pipe(gulpif(production, buffer()))
     .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${build_path}/scripts/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`))
     .pipe(livereload());
 });
 
 gulp.task('server', (done) => {
   app.use(liveConnect());
-  app.use(express.static(path.resolve(build_path)));
+  app.use(express.static(path.resolve(BUILD_PATH)));
   app.all('*', (req, res) => {
     gutil.log('URL: ', gutil.colors.yellow(req.url));
 
@@ -116,5 +116,5 @@ gulp.task('watch', (done) => {
 
 gulp.task('bundle', gulp.series('transpile', 'browserify'));
 gulp.task('build', gulp.parallel('jade', 'css', 'bundle'));
-gulp.task('dev', gulp.series('build', 'server','watch'));
+gulp.task('dev', gulp.series('build', 'server', 'watch'));
 gulp.task('default', gulp.parallel('build'));

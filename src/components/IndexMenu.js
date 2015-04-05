@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
@@ -49,7 +49,7 @@ export default React.createClass({
 
   renderItem(subPage) {
     return (
-      subPage.map((page, index) => {
+      subPage.map((page) => {
         return (
         <Item type="link"
               active={page.status}

@@ -14,7 +14,8 @@
     "prepublish": "npm run build",
     "build": "babel gulpfile.babel.js --out-file gulpfile.js && babel src --out-dir lib",
     "server": "babel-node ./server/server.js",
-    "test": "gulp build"
+    "test": "gulp build && npm run lint",
+    "lint": "eslint ./src && eslint ./server && eslint ./client"
   },
   "engines": {
     "node": "0.10.x"
@@ -31,8 +32,10 @@
   },
   "devDependencies": {
     "babelify": "^5.0.3",
-    "browserify": "^9.0.3",
+    "babel-eslint": "^2.0.2",
+    "browserify": "^9.0.7",
     "connect-livereload": "^0.5.0",
+    "eslint": "^0.18.0",
     "express": "^4.3.1",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-babel": "^4.0.0",

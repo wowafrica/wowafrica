@@ -1,11 +1,10 @@
-"use strict";
+'use strict';
 
 import MenuConfig from './MenuConfig';
 
 class MenuStore {
 
   constructor(menuConfig) {
-    super();
     this.menuConfig = menuConfig;
   }
 
@@ -14,7 +13,7 @@ class MenuStore {
   }
 
   onReceviceUpdatePath(menuName) {
-    this.updatePath(menuName)
+    this.updatePath(menuName);
   }
 
   updatePath(menuName) {
@@ -33,6 +32,6 @@ class MenuStore {
   }
 }
 
-var menuStore = new MenuStore(MenuConfig);
+let menuStore = new MenuStore(MenuConfig);
 
 export default menuStore;

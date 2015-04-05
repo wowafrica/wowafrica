@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import React      from 'react/addons';
 import IndexMenu  from '../components/IndexMenu';

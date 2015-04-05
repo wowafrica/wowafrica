@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-import React from 'react/addons';
-import IndexMenu from '../components/IndexMenu';
+import React          from 'react/addons';
+import IndexMenu      from '../components/IndexMenu';
 import RouteConstants from '../constants/RouteConstants';
 
 export default React.createClass({
