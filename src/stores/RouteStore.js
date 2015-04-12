@@ -6,6 +6,7 @@ import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import RouteConfig    from './RouteConfig';
 import MenuStore      from './MenuStore';
+import AuthorsStore   from './AuthorsStore';
 
 class RouteStore extends EventEmitter {
 
@@ -67,6 +68,9 @@ AppDispatcher.register((action) => {
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
       routeStore.onReceviceUpdatePath(action.pathName);
+      if (action.pathName === '/about_authors') {
+        AuthorsStore.onReceviceUpdateAuthors();
+      }
       break;
     default:
       break;

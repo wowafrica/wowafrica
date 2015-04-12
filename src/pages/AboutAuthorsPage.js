@@ -1,19 +1,27 @@
 'use strict';
 
-import React      from 'react/addons';
-import IndexMenu  from '../components/IndexMenu';
-import Semantify  from 'react-semantify';
+import React        from 'react/addons';
+import Semantify    from 'react-semantify';
+import IndexMenu    from '../components/IndexMenu';
+import AuthorsStore from '../stores/AuthorsStore';
 
 let {Cards, Card, Image} = Semantify;
 
 let AuthorsBox = React.createClass({
-  getInitialState: function() {
-    return ({posts: []});
+
+  getInitialState() {
+    return ({posts: AuthorsStore.getAll()});
   },
-  componentDidMount: function() {
-    this.loadAuthorData();
+
+  componentDidMount() {
+    AuthorsStore.addChangeListener(this._onChange);
   },
-  render: function() {
+
+  componentWillUnmount() {
+    AuthorsStore.removeChangeListener(this._onChange);
+  },
+
+  render() {
     let authors = this.state.posts.map(function(post) {
       let contents = post.caption.split('\n\n');
       return (
@@ -39,17 +47,10 @@ let AuthorsBox = React.createClass({
       </div>
     );
   },
-  loadAuthorData: function() {
-    let thisComponent = this;
 
-    let tumblr = require('tumblr.js');
-    let client = tumblr.createClient({consumer_key: 'M5o8MnMmq8jAwmmj82HhkyPNkiI6mq9VccTZzYZZLZPgfl08Hi'});
-
-    client.posts('exploreafrica-tw.tumblr.com', {tag: 'exploreafrica-tw-author', filter: 'text'}, function(err, data) {
-      if (err) {
-        console.log(err.stack);
-      }
-      thisComponent.setState({posts: data.posts});
+  _onChange() {
+    this.setState({
+      posts: AuthorsStore.getAll()
     });
   }
 });
