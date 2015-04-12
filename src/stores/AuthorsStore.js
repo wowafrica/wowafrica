@@ -23,8 +23,6 @@ class AuthorsStore extends EventEmitter {
   }
 
   loadAuthorData() {
-    let thisStor = this;
-
     this.client.posts('exploreafrica-tw.tumblr.com', {tag: 'exploreafrica-tw-author', filter: 'text'}, (err, data) => {
       if (err) {
         console.log(err.stack);

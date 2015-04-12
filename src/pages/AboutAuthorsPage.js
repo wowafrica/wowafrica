@@ -25,7 +25,7 @@ let AuthorsBox = React.createClass({
     let authors = this.state.posts.map(function(post) {
       let contents = post.caption.split('\n\n');
       return (
-        <div className="center aligned card" key={post.id}>
+        <div className="card" key={post.id}>
           <Image src={post.photos[0].original_size.url}></Image>
           <div className="content">
             <div className="header">
@@ -42,7 +42,7 @@ let AuthorsBox = React.createClass({
       );
     });
     return (
-      <div className="ui center aligned cards">
+      <div className="ui cards" style={{justifyContent: 'center'}}>
         {authors}
       </div>
     );
