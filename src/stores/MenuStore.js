@@ -20,7 +20,7 @@ class MenuStore {
     this.menuConfig.forEach((section) => {
       let currentPage = '';
       section.subPage.forEach((page) => {
-        if (typeof page.url !== 'undefined' && page.url === `/${menuName}`) {
+        if (typeof page.url !== 'undefined' && page.url === menuName) {
           page.status = true;
           currentPage = page.showName;
         } else {
