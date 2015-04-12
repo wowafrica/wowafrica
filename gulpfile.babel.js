@@ -61,7 +61,7 @@ gulp.task('transpile', () => {
     .pipe(gulp.dest('./lib/'));
 });
 
-gulp.task('browserify', () => {
+gulp.task('browserify', ['transpile'], () => {
   return browserify('./client/scripts/index.js')
     .transform(babelify)
     .bundle()
@@ -89,7 +89,7 @@ gulp.task('server', (done) => {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Explore Africa</title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.6.0/semantic.min.css" type="text/css" rel="stylesheet"></link>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.6/semantic.min.css" type="text/css" rel="stylesheet"></link>
     <link href="styles/index.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
@@ -107,14 +107,14 @@ gulp.task('server', (done) => {
 
 gulp.task('watch', (done) => {
   livereload.listen({start: true});
-  gulp.watch('./client/views/*.jade', gulp.series('jade'));
-  gulp.watch('./client/styles/*.css', gulp.series('css'));
-  gulp.watch('./client/scripts/**/*', gulp.series('browserify'));
-  gulp.watch('./src/**/*', gulp.series('transpile', 'browserify'));
+  gulp.watch('./client/views/*.jade', ['jade']);
+  gulp.watch('./client/styles/*.css', ['css']);
+  gulp.watch('./client/scripts/**/*', ['browserify']);
+  gulp.watch('./src/**/*', ['browserify']);
   done();
 });
 
-gulp.task('bundle', gulp.series('transpile', 'browserify'));
-gulp.task('build', gulp.parallel('jade', 'css', 'bundle'));
-gulp.task('dev', gulp.series('build', 'server', 'watch'));
-gulp.task('default', gulp.parallel('build'));
+gulp.task('bundle', ['browserify']);
+gulp.task('build', ['jade', 'css', 'bundle']);
+gulp.task('dev', ['build', 'server', 'watch']);
+gulp.task('default', ['build']);
