@@ -64,7 +64,7 @@ export default React.createClass({
 
   _onClick(e) {
     let {pathname} = e.currentTarget;
-    history.pushState({}, '', pathname);
+    history.pushState({pathName: pathname}, '', pathname);
     RouteActions.updatePath(pathname);
     e.preventDefault();
   }

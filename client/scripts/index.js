@@ -14,3 +14,9 @@ console.log(pathName);
 React.render(<App />, document.body);
 
 RouteActions.updatePath(pathName);
+
+window.onpopstate = (e) => {
+  let {pathName} = e.state || {pathName: '/'};
+  console.log(pathName);
+  RouteActions.updatePath(pathName);
+};
