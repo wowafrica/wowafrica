@@ -68,4 +68,4 @@ export default React.createClass({
     RouteActions.updatePath(pathname);
     e.preventDefault();
   }
-})
+});
