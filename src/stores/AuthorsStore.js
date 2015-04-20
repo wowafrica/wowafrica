@@ -8,14 +8,14 @@ class AuthorsStore extends EventEmitter {
 
   constructor() {
     super();
-    this.posts = [];
+    this.authors = [];
     this.client = Tumblr.createClient({
       consumer_key: 'M5o8MnMmq8jAwmmj82HhkyPNkiI6mq9VccTZzYZZLZPgfl08Hi' // eslint-disable-line
     });
   }
 
   getAll() {
-    return this.posts;
+    return this.authors;
   }
 
   onReceviceUpdateAuthors() {
@@ -27,7 +27,29 @@ class AuthorsStore extends EventEmitter {
       if (err) {
         console.log(err.stack);
       }
-      this.posts = data.posts;
+
+      let tmpAuthors = [];
+      data.posts.map(function(post) {
+        let contents = post.caption.split('\n\n');
+        let targetUrl = '';
+        for ( let i = 0; i < post.photos[0].alt_sizes.length; i++ ) {
+          if ( post.photos[0].alt_sizes[i].width < 512 ) {
+            targetUrl = post.photos[0].alt_sizes[i].url;
+            break;
+          }
+        }
+
+        let newAuthor = {
+          id: post.id,
+          name: contents[0],
+          from: contents[1],
+          description: contents[2],
+          photoUrl: targetUrl
+        };
+
+        tmpAuthors[tmpAuthors.length] = newAuthor;
+      });
+      this.authors = tmpAuthors;
       this.emitChange();
     });
   }

@@ -10,7 +10,7 @@ let {Cards, Card, Image} = Semantify;
 let AuthorsBox = React.createClass({
 
   getInitialState() {
-    return ({posts: AuthorsStore.getAll()});
+    return ({authors: AuthorsStore.getAll()});
   },
 
   componentDidMount() {
@@ -22,35 +22,34 @@ let AuthorsBox = React.createClass({
   },
 
   render() {
-    let authors = this.state.posts.map(function(post) {
-      let contents = post.caption.split('\n\n');
+    let authorsDiv = this.state.authors.map(function(author) {
       return (
-        <div className="card" key={post.id}>
-          <Image src={post.photos[0].original_size.url}></Image>
-          <div className="content">
-            <div className="header">
-              {contents[0]}
-            </div>
-            <div className="meta">
-              {contents[1]}
-            </div>
-            <div className="description">
-              {contents[2]}
+          <div className="card" key={author.id}>
+            <Image src={author.photoUrl}></Image>
+            <div className="content">
+              <div className="header">
+                {author.name}
+              </div>
+              <div className="meta">
+                {author.from}
+              </div>
+              <div className="description">
+                {author.description}
+              </div>
             </div>
           </div>
-        </div>
-      );
+        );
     });
     return (
       <div className="ui cards" style={{justifyContent: 'center'}}>
-        {authors}
+        {authorsDiv}
       </div>
     );
   },
 
   _onChange() {
     this.setState({
-      posts: AuthorsStore.getAll()
+      authors: AuthorsStore.getAll()
     });
   }
 });
