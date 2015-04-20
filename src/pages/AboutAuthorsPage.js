@@ -60,12 +60,14 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="container">
+        <div className="container-header">
           <IndexMenu/>
         </div>
-        <div className="ui page grid">
-          <div className="wide centered column">
-            <AuthorsBox/>
+        <div className="container-content">
+          <div className="ui page grid">
+            <div className="wide centered column">
+              <AuthorsBox/>
+            </div>
           </div>
         </div>
       </div>

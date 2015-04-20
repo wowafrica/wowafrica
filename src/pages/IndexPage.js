@@ -10,8 +10,10 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="container">
+        <div className="container-header">
           <IndexMenu />
+        </div>
+        <div className="container-content">
         </div>
       </div>
     );
