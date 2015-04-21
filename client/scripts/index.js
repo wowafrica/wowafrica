@@ -3,6 +3,7 @@
 import $ from 'jquery';
 global.$ = global.jQuery = $;
 require('semantic-ui/dist/semantic.js');
+require("babel/polyfill");
 
 import React        from 'react/addons';
 import RouteActions from '../../lib/actions/RouteAction.js';

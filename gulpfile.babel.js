@@ -20,6 +20,7 @@ import babelify    from 'babelify';
 
 import RouteStore from './lib/stores/RouteStore';
 import React       from 'react';
+require("babel/polyfill");
 
 let app        = express();
 let BUILD_PATH = './_public';
