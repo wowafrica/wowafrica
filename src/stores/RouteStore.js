@@ -7,6 +7,7 @@ import RouteConstants from '../constants/RouteConstants';
 import RouteConfig    from './RouteConfig';
 import MenuStore      from './MenuStore';
 import AuthorsStore   from './AuthorsStore';
+import MapStore       from './MapStore';
 
 class RouteStore extends EventEmitter {
 
@@ -70,6 +71,8 @@ AppDispatcher.register((action) => {
       routeStore.onReceviceUpdatePath(action.pathName);
       if (action.pathName === '/about_authors') {
         AuthorsStore.onReceviceUpdateAuthors();
+      } else if (action.pathName === '/view_africa_nations') {
+        MapStore.onReceviceUpdateMaps();
       }
       break;
     default:
