@@ -40,6 +40,12 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2015/04/23 v0.2.0
+- Add AuthorPage
+- Add ESLint
+- Update Semantic-UI to v1.11.8
+- Change the menu style
+
 #### 2015/04/04 v0.1.0
 - Add deploy process with travis-ci.
 - Add CNAME `exploreafrica`
