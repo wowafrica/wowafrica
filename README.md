@@ -1,6 +1,6 @@
 Explore Africa Website
 =============
-
+[![Travis branch][travis-ci-img]][travis-ci-url] [![Dependency Status][david-dm-image]][david-dm-url]
 
 ## Structure
 
@@ -16,12 +16,18 @@ Explore Africa Website
   + stores
 
 ## Development
+[![devDependency Status][david-dm-dev-image]][david-dm-dev-url]
 
 `npm i`
 
 `npm start`
 
 and then open `http://localhost:3000/`
+
+## Run Test and Lint
+
+- `npm i`
+- `npm test`
 
 ## Contribute
 
@@ -33,6 +39,12 @@ and then open `http://localhost:3000/`
 6. Create new Pull Request with `develop` branch
 
 ## Change Log
+
+#### 2015/04/23 v0.2.0
+- Add AuthorPage
+- Add ESLint
+- Update Semantic-UI to v1.11.8
+- Change the menu style
 
 #### 2015/04/04 v0.1.0
 - Add deploy process with travis-ci.
@@ -64,3 +76,11 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+[travis-ci-img]: https://img.shields.io/travis/jessy1092/explore-africa/develop.svg?style=flat-square
+[travis-ci-url]: https://travis-ci.org/jessy1092/explore-africa
+
+[david-dm-image]: https://img.shields.io/david/jessy1092/explore-africa.svg?style=flat-square
+[david-dm-url]: https://david-dm.org/jessy1092/explore-africa
+[david-dm-dev-image]: https://img.shields.io/david/dev/jessy1092/explore-africa.svg?style=flat-square
+[david-dm-dev-url]: https://david-dm.org/jessy1092/explore-africa#info=devDependencies

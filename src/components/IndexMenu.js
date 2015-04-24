@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
@@ -17,10 +17,12 @@ export default React.createClass({
 
   render() {
     return (
-      <Menu>
-        <Item type="link" href="/">{"Explore Africa 探索非洲"}</Item>
-        {this.renderDropdown()}
-      </Menu>
+      <div className="container-menu">
+        <Menu className="secondary pointing">
+          <Item type="link" href="/">{"Explore Africa 探索非洲"}</Item>
+          {this.renderDropdown()}
+        </Menu>
+      </div>
     );
   },
 
@@ -29,19 +31,28 @@ export default React.createClass({
     return (
       currentMenu.map((section) => {
         let showName = section.showName;
+        let dropdownSelect = false;
 
         if (section.currentPage !== '') {
           showName = section.currentPage;
         }
 
+        for (let page of section.subPage) {
+          if (page.status) {
+            dropdownSelect = true;
+          }
+        }
+
         return (
-          <Dropdown className="item" init={true}>
-            <Text>{showName}</Text>
-            <Icon className="dropdown"/>
-            <Menu>
-              {this.renderItem(section.subPage)}
-            </Menu>
-          </Dropdown>
+          <Item active={dropdownSelect}>
+            <Dropdown init={true}>
+              <Text>{showName}</Text>
+              <Icon className="dropdown"/>
+              <Menu>
+                {this.renderItem(section.subPage)}
+              </Menu>
+            </Dropdown>
+          </Item>
         );
       })
     );
@@ -49,7 +60,7 @@ export default React.createClass({
 
   renderItem(subPage) {
     return (
-      subPage.map((page, index) => {
+      subPage.map((page) => {
         return (
         <Item type="link"
               active={page.status}
@@ -64,8 +75,8 @@ export default React.createClass({
 
   _onClick(e) {
     let {pathname} = e.currentTarget;
-    history.pushState({}, '', pathname);
+    history.pushState({pathname: pathname}, '', pathname);
     RouteActions.updatePath(pathname);
     e.preventDefault();
   }
-})
+});

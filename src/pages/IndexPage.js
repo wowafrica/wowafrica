@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
-import React from 'react/addons';
-import IndexMenu from '../components/IndexMenu';
+import React          from 'react/addons';
+import IndexMenu      from '../components/IndexMenu';
 import RouteConstants from '../constants/RouteConstants';
 
 export default React.createClass({
@@ -10,8 +10,10 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="container">
+        <div className="container-header">
           <IndexMenu />
+        </div>
+        <div className="container-content">
         </div>
       </div>
     );

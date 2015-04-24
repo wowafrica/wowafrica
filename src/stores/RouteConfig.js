@@ -1,34 +1,34 @@
-"use strict";
+'use strict';
 
 export default {
   index: {
     path: '/',
     method: 'get',
-    page: require('../pages/IndexPage'),
+    page: require('../pages/IndexPage')
   },
-  view_africa_nations: {
+  viewAfricaNations: {
     path: '/view_africa_nations',
     method: 'get',
-    page: require('../pages/ViewAfricaNationsPage'),
+    page: require('../pages/ViewAfricaNationsPage')
   },
-  view_africa_nations_post: {
+  viewAfricaNationsPost: {
     path: '/view_africa_nations/posts/:post',
     method: 'get',
-    page: require('../pages/IndexPage'),
+    page: require('../pages/IndexPage')
   },
-  view_africa_people: {
+  viewAfricaPeople: {
     path: '/view_africa_people',
     method: 'get',
-    page: require('../pages/ViewAfricaPeoplePage'),
+    page: require('../pages/ViewAfricaPeoplePage')
   },
-  view_africa_people_post: {
+  viewAfricaPeoplePost: {
     path: '/view_africa_people/posts/:post',
     method: 'get',
-    page: require('../pages/IndexPage'),
+    page: require('../pages/IndexPage')
   },
-  about_authors: {
+  aboutAuthors: {
     path: '/about_authors',
     method: 'get',
-    page: require('../pages/AboutAuthorsPage'),
+    page: require('../pages/AboutAuthorsPage')
   }
 };

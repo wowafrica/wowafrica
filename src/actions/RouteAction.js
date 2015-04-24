@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
@@ -11,6 +11,6 @@ class RouteActions {
       pathName
     });
   }
-};
+}
 
 export default new RouteActions();

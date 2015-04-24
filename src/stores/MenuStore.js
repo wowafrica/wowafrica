@@ -1,11 +1,10 @@
-"use strict";
+'use strict';
 
 import MenuConfig from './MenuConfig';
 
 class MenuStore {
 
   constructor(menuConfig) {
-    super();
     this.menuConfig = menuConfig;
   }
 
@@ -14,14 +13,14 @@ class MenuStore {
   }
 
   onReceviceUpdatePath(menuName) {
-    this.updatePath(menuName)
+    this.updatePath(menuName);
   }
 
   updatePath(menuName) {
     this.menuConfig.forEach((section) => {
       let currentPage = '';
       section.subPage.forEach((page) => {
-        if (typeof page.url !== 'undefined' && page.url === `/${menuName}`) {
+        if (typeof page.url !== 'undefined' && page.url === menuName) {
           page.status = true;
           currentPage = page.showName;
         } else {
@@ -33,6 +32,6 @@ class MenuStore {
   }
 }
 
-var menuStore = new MenuStore(MenuConfig);
+let menuStore = new MenuStore(MenuConfig);
 
 export default menuStore;

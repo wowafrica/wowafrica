@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import React      from 'react/addons';
 import RouteStore from './stores/RouteStore';
@@ -21,8 +21,8 @@ export default React.createClass({
   },
 
   render() {
-    var {currentRoute} = this.state;
-    var CurrentPage = currentRoute.config['page'];
+    let {currentRoute} = this.state;
+    let CurrentPage = currentRoute.config['page'];
     return (
       <CurrentPage/>
     );

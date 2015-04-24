@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import gulp        from 'gulp';
 import gutil       from 'gulp-util';
@@ -20,9 +20,10 @@ import babelify    from 'babelify';
 
 import RouteStore from './lib/stores/RouteStore';
 import React       from 'react';
+require("babel/polyfill");
 
 let app        = express();
-let build_path = './_public';
+let BUILD_PATH = './_public';
 let production = false;
 
 if (gutil.env.env === 'production') {
@@ -33,48 +34,48 @@ gulp.task('jade', () => {
   return gulp.src('./client/views/*.jade')
     .pipe(plumber())
     .pipe(jade())
-    .pipe(gulp.dest(build_path))
+    .pipe(gulp.dest(BUILD_PATH))
     .pipe(livereload());
 });
 
 gulp.task('images', () => {
   return gulp.src('./client/images/*')
-    .pipe(gulp.dest(`${build_path}/images/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/images/`))
     .pipe(livereload());
 });
 
 gulp.task('data', () => {
   return gulp.src('./client/data/*')
-    .pipe(gulp.dest(`${build_path}/data/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/data/`))
     .pipe(livereload());
 });
 
 gulp.task('css', () => {
   return gulp.src('./client/styles/*.css')
-    .pipe(gulp.dest(`${build_path}/styles/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/`))
     .pipe(livereload());
 });
 
 gulp.task('transpile', () => {
   return gulp.src('./src/**/*')
-    .pipe(gbabel({experimental: true}))
+    .pipe(gbabel({stage: 0}))
     .pipe(gulp.dest('./lib/'));
 });
 
-gulp.task('browserify', () => {
+gulp.task('browserify', ['transpile'], () => {
   return browserify('./client/scripts/index.js')
     .transform(babelify)
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulpif(production, buffer()))
     .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${build_path}/scripts/`))
+    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`))
     .pipe(livereload());
 });
 
 gulp.task('server', (done) => {
   app.use(liveConnect());
-  app.use(express.static(path.resolve(build_path)));
+  app.use(express.static(path.resolve(BUILD_PATH)));
   app.all('*', (req, res) => {
     gutil.log('URL: ', gutil.colors.yellow(req.url));
 
@@ -89,7 +90,7 @@ gulp.task('server', (done) => {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Explore Africa</title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.6.0/semantic.min.css" type="text/css" rel="stylesheet"></link>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.6/semantic.min.css" type="text/css" rel="stylesheet"></link>
     <link href="styles/index.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
@@ -107,14 +108,14 @@ gulp.task('server', (done) => {
 
 gulp.task('watch', (done) => {
   livereload.listen({start: true});
-  gulp.watch('./client/views/*.jade', gulp.series('jade'));
-  gulp.watch('./client/styles/*.css', gulp.series('css'));
-  gulp.watch('./client/scripts/**/*', gulp.series('browserify'));
-  gulp.watch('./src/**/*', gulp.series('transpile', 'browserify'));
+  gulp.watch('./client/views/*.jade', ['jade']);
+  gulp.watch('./client/styles/*.css', ['css']);
+  gulp.watch('./client/scripts/**/*', ['browserify']);
+  gulp.watch('./src/**/*', ['browserify']);
   done();
 });
 
-gulp.task('bundle', gulp.series('transpile', 'browserify'));
-gulp.task('build', gulp.parallel('jade', 'css', 'bundle'));
-gulp.task('dev', gulp.series('build', 'server','watch'));
-gulp.task('default', gulp.parallel('build'));
+gulp.task('bundle', ['browserify']);
+gulp.task('build', ['jade', 'css', 'bundle']);
+gulp.task('dev', ['build', 'server', 'watch']);
+gulp.task('default', ['build']);
