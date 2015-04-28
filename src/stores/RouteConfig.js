@@ -26,6 +26,11 @@ export default {
     method: 'get',
     page: require('../pages/IndexPage')
   },
+  viewPostList: {
+    path: '/view_post_list',
+    method: 'get',
+    page: require('../pages/PostListPage')
+  },
   aboutAuthors: {
     path: '/about_authors',
     method: 'get',
