@@ -2,6 +2,7 @@
 
 import {EventEmitter} from 'events';
 import Tumblr         from 'tumblr.js';
+import TumblrConfig   from './TumblrConfig';
 import RouteConstants from '../constants/RouteConstants';
 
 class AuthorsStore extends EventEmitter {
@@ -10,7 +11,7 @@ class AuthorsStore extends EventEmitter {
     super();
     this.authors = [];
     this.client = Tumblr.createClient({
-      consumer_key: 'M5o8MnMmq8jAwmmj82HhkyPNkiI6mq9VccTZzYZZLZPgfl08Hi' // eslint-disable-line
+      consumer_key: TumblrConfig.consumerKey // eslint-disable-line
     });
   }
 
@@ -23,7 +24,7 @@ class AuthorsStore extends EventEmitter {
   }
 
   loadAuthorData() {
-    this.client.posts('exploreafrica-tw.tumblr.com', {tag: 'exploreafrica-tw-author', filter: 'text'}, (err, data) => {
+    this.client.posts(TumblrConfig.blogName, {tag: TumblrConfig.tagAuthor, filter: 'text'}, (err, data) => {
       if (err) {
         console.log(err.stack);
       }
@@ -33,7 +34,7 @@ class AuthorsStore extends EventEmitter {
         let contents = post.caption.split('\n\n');
         let targetUrl = '';
         for ( let i = 0; i < post.photos[0].alt_sizes.length; i++ ) {
-          if ( post.photos[0].alt_sizes[i].width < 512 ) {
+          if ( post.photos[0].alt_sizes[i].width < TumblrConfig.picWidthAuthor ) {
             targetUrl = post.photos[0].alt_sizes[i].url;
             break;
           }
@@ -47,7 +48,7 @@ class AuthorsStore extends EventEmitter {
           photoUrl: targetUrl
         };
 
-        tmpAuthors[tmpAuthors.length] = newAuthor;
+        tmpAuthors.push(newAuthor);
       });
       this.authors = tmpAuthors;
       this.emitChange();
