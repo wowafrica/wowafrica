@@ -25,13 +25,14 @@ body {
   margin-top: 10px;
 }
 
-.graticule {
-  fill: none;
-  stroke: #777;
-  stroke-width: .5px;
-  stroke-opacity: .5;
+.container-map {
+  width: 765px;
+  margin: 0px auto;
 }
 
 .land {
-  fill: #222;
+  fill: #593030;
+  stroke: white;
+  stroke-width: .7px;
+  stroke-opacity: .7;
 }
