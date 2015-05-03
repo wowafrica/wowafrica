@@ -46,6 +46,8 @@ class RouteStore extends EventEmitter {
   onReceviceUpdatePath(pathName) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
     MenuStore.onReceviceUpdatePath(pathName);
+    console.log('currentRoute');
+    console.log(this.currentRoute.params);
     this.emitChange();
   }
 

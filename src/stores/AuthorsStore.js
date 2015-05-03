@@ -24,17 +24,19 @@ class AuthorsStore extends EventEmitter {
   }
 
   loadAuthorData() {
-    this.client.posts(TumblrConfig.blogName, {tag: TumblrConfig.tagAuthor, filter: 'text'}, (err, data) => {
+    let {tag, picWidth} = TumblrConfig.author;
+
+    this.client.posts(TumblrConfig.blogName, {tag: tag, filter: 'text'}, (err, data) => {
       if (err) {
         console.log(err.stack);
       }
 
       let tmpAuthors = [];
-      data.posts.map(function(post) {
+      data.posts.map((post) => {
         let contents = post.caption.split('\n\n');
         let targetUrl = '';
         for ( let i = 0; i < post.photos[0].alt_sizes.length; i++ ) {
-          if ( post.photos[0].alt_sizes[i].width < TumblrConfig.picWidthAuthor ) {
+          if ( post.photos[0].alt_sizes[i].width < picWidth ) {
             targetUrl = post.photos[0].alt_sizes[i].url;
             break;
           }
