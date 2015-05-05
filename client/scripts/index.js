@@ -8,11 +8,13 @@ require('babel/polyfill');
 import React        from 'react/addons';
 import RouteActions from '../../lib/actions/RouteAction.js';
 import App          from '../../lib/App';
+import NationModal  from '../../lib/components/NationModal';
 
 let pathName = location.pathname;
 console.log(pathName);
 
-React.render(<App />, document.body);
+React.render(<App />, document.getElementById('content'));
+React.render(<NationModal />, document.getElementById('nation_modal'));
 
 RouteActions.updatePath(pathName);
 

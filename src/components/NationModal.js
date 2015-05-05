@@ -1,5 +1,6 @@
 'use strict';
 
+import $            from 'jquery';
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import NationsStore from '../stores/NationsStore';
@@ -10,18 +11,33 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      currentNation: NationsStore.getCurrentNation()
+      nation: NationsStore.getCurrentNation()
     };
   },
 
+  componentDidMount() {
+    NationsStore.addShowListener(this._onShow);
+  },
+
+  componentWillUnmount() {
+    NationsStore.removeShowListener(this._onShow);
+  },
+
+  _onShow() {
+    this.setState({
+      nation: NationsStore.getCurrentNation()
+    });
+    $(React.findDOMNode(this.refs.modal)).modal('show');
+  },
+
   render() {
-    let {currentNation} = this.state;
-    console.log(currentNation);
+    let {nation} = this.state;
+    console.log('Modal Show: ' + nation);
     return (
-      <Modal init={true}>
+      <Modal ref="modal" init={true}>
         <Icon className="close"/>
-        <Header>Test</Header>
+        <Header>{nation}</Header>
       </Modal>
-    )
+    );
   }
 });

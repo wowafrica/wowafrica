@@ -1,9 +1,12 @@
 'use strict';
 
-import React      from 'react/addons';
-import IndexMenu  from '../components/IndexMenu';
-import MapStore   from '../stores/MapStore';
-import d3         from 'd3';
+import React        from 'react/addons';
+import IndexMenu    from '../components/IndexMenu';
+import MapStore     from '../stores/MapStore';
+import NationAction from '../actions/NationAction.js';
+import d3           from 'd3';
+import $            from 'jquery';
+import Semantify    from 'react-semantify';
 
 export default React.createClass({
 
@@ -20,6 +23,8 @@ export default React.createClass({
   },
 
   render() {
+    let {Modal, Content, Icon} = Semantify;
+    let {features} = this.state.map;
     return (
       <div>
         <div className="container-header">
@@ -27,6 +32,7 @@ export default React.createClass({
         </div>
         <div className="container-content">
           <div className="container-map" id="africa-map">
+            {this._drawMap(features)}
           </div>
         </div>
       </div>
@@ -37,12 +43,17 @@ export default React.createClass({
     this.setState({
       map: MapStore.getAll()
     });
-    this._drawMap(MapStore.getAll());
   },
 
-  _drawMap(mapGeoJson) {
-    console.log('DrwaMap');
-    console.log(mapGeoJson);
+  _onClick(e) {
+    let {currentTarget} = e;
+    console.log($(currentTarget).attr('data-nation'));
+    NationAction.updateNation($(currentTarget).attr('data-nation'));
+  },
+
+  _drawMap(data) {
+    console.log(data);
+
     let width = 700;
     let height = 600;
 
@@ -54,15 +65,20 @@ export default React.createClass({
     let path = d3.geo.path()
       .projection(projection);
 
-    let svg = d3.select('#africa-map').append('svg')
-      .attr('width', width)
-      .attr('height', height);
-
-    svg.selectAll('path')
-      .data(mapGeoJson.features)
-      .enter()
-      .append('path')
-      .attr('class', 'land')
-      .attr('d', path);
+    return (
+      <svg ref="svg" width={width} height={height}>
+      {
+        data.map((d) => {
+          return (
+            <path className="land"
+                  d={path(d)}
+                  data-nation={d.properties.ISO_A3}
+                  onClick={this._onClick}>
+            </path>
+          );
+        })
+      }
+      </svg>
+    );
   }
 });

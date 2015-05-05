@@ -3,13 +3,15 @@
 import {EventEmitter} from 'events';
 import Tumblr         from 'tumblr.js';
 import TumblrConfig   from './TumblrConfig';
+import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 
-class AuthorsStore extends EventEmitter {
+class NationsStore extends EventEmitter {
 
   constructor() {
     super();
     this.nations = [];
+    this.currentNation = {};
     this.client = Tumblr.createClient({
       consumer_key: TumblrConfig.consumerKey // eslint-disable-line
     });
@@ -24,37 +26,50 @@ class AuthorsStore extends EventEmitter {
   }
 
   getCurrentNation() {
-    return this.nations[0];
+    return this.currentNation;
   }
 
-  onReceviceUpdateNations() {
-    this.loadNationData();
+  onReceviceUpdateNations(nationName) {
+    this.currentNation = nationName;
+    this.emitShow();
   }
 
-  loadNationData() {
+  onReceviceLoadNationData() {
     let {tag} = TumblrConfig.nation;
     this.client.posts(TumblrConfig.blogName, {tag: tag, filter: 'text'}, (err, data) => {
       if (err) {
         console.log(err.stack);
       }
       this.nations = data.posts;
-      this.emitChange();
     });
   }
 
-  emitChange() {
-    this.emit(RouteConstants.NATIONS_EVENT);
+  emitShow() {
+    this.emit(RouteConstants.NATIONS_SHOW_EVENT);
   }
 
-  addChangeListener(listener) {
-    this.on(RouteConstants.NATIONS_EVENT, listener);
+  addShowListener(listener) {
+    this.on(RouteConstants.NATIONS_SHOW_EVENT, listener);
   }
 
-  removeChangeListener(listener) {
-    this.removeListener(RouteConstants.NATIONS_EVENT, listener);
+  removeShowListener(listener) {
+    this.removeListener(RouteConstants.NATIONS_SHOW_EVENT, listener);
   }
 }
 
-let authorsStore = new AuthorsStore();
+let nationsStore = new NationsStore();
 
-export default authorsStore;
+AppDispatcher.register((action) => {
+
+  switch (action.actionType) {
+    case RouteConstants.NATION_UPDATE:
+      nationsStore.onReceviceUpdateNations(action.nationName);
+      break;
+    case RouteConstants.NATION_LOAD_DATA:
+      nationsStore.onReceviceLoadNationData();
+    default:
+      break;
+  }
+});
+
+export default nationsStore;

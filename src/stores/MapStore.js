@@ -8,7 +8,7 @@ class MapStore extends EventEmitter {
 
   constructor() {
     super();
-    this.geoJson = {};
+    this.geoJson = {features: []};
   }
 
   getAll() {

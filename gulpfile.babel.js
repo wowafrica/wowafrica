@@ -94,7 +94,8 @@ gulp.task('server', (done) => {
     <link href="/styles/index.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
-    ${html}
+    <div id="content">${html}</div>
+    <div id="nation_modal" class="ui dimmer modals page"></div>
     <script type="text/javascript" src="/scripts/bundle.js"></script>
   </body>
 </html>`);
