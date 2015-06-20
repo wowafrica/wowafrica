@@ -45,7 +45,6 @@ class RouteStore extends EventEmitter {
 
   onReceviceUpdatePath(pathName) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
-    MenuStore.onReceviceUpdatePath(pathName);
     console.log('currentRoute');
     console.log(this.currentRoute.params);
     this.emitChange();
@@ -71,11 +70,7 @@ AppDispatcher.register((action) => {
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
       routeStore.onReceviceUpdatePath(action.pathName);
-      if (action.pathName === '/about_authors') {
-        AuthorsStore.onReceviceUpdateAuthors();
-      } else if (action.pathName === '/view_africa_nations') {
-        MapStore.onReceviceUpdateMaps();
-      }
+      MenuStore.onReceviceUpdatePath(action.pathName);
       break;
     default:
       break;

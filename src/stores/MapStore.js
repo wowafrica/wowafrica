@@ -3,6 +3,8 @@
 import {EventEmitter} from 'events';
 import request        from 'superagent';
 import MapConstants   from '../constants/MapConstants';
+import RouteConstants  from '../constants/RouteConstants';
+import AppDispatcher   from '../dispatcher/AppDispatcher';
 
 class MapStore extends EventEmitter {
 
@@ -26,7 +28,6 @@ class MapStore extends EventEmitter {
       } else {
         console.log('Get!!!');
         this.geoJson = res.body;
-
       }
       this.emitChange();
     });
@@ -46,5 +47,17 @@ class MapStore extends EventEmitter {
 }
 
 let mapStore = new MapStore();
+
+AppDispatcher.register((action) => {
+
+  switch (action.actionType) {
+    case RouteConstants.ROUTE_MAP_PAGE:
+      mapStore.onReceviceUpdateMaps();
+      break;
+    default:
+      break;
+  }
+});
+
 
 export default mapStore;

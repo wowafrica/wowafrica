@@ -4,6 +4,8 @@ import {EventEmitter}  from 'events';
 import Tumblr          from 'tumblr.js';
 import TumblrConfig    from '../configures/TumblrConfig';
 import AuthorConstants from '../constants/AuthorConstants';
+import RouteConstants  from '../constants/RouteConstants';
+import AppDispatcher   from '../dispatcher/AppDispatcher';
 
 class AuthorsStore extends EventEmitter {
 
@@ -71,5 +73,16 @@ class AuthorsStore extends EventEmitter {
 }
 
 let authorsStore = new AuthorsStore();
+
+AppDispatcher.register((action) => {
+
+  switch (action.actionType) {
+    case RouteConstants.ROUTE_AUTH_PAGE:
+      authorsStore.onReceviceUpdateAuthors();
+      break;
+    default:
+      break;
+  }
+});
 
 export default authorsStore;

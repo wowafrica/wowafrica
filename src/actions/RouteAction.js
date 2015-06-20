@@ -10,6 +10,21 @@ class RouteActions {
       actionType: RouteConstants.ROUTE_UPDATE_PATH,
       pathName
     });
+
+    switch (pathName) {
+      case '/about_authors':
+        AppDispatcher.dispatch({
+          actionType: RouteConstants.ROUTE_AUTH_PAGE
+        });
+        break;
+      case '/view_africa_nations':
+        AppDispatcher.dispatch({
+          actionType: RouteConstants.ROUTE_MAP_PAGE
+        });
+        break;
+      default:
+        break;
+    }
   }
 }
 
