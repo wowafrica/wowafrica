@@ -1,20 +1,20 @@
 'use strict';
 
-import AppDispatcher  from '../dispatcher/AppDispatcher';
-import RouteConstants from '../constants/RouteConstants';
+import AppDispatcher   from '../dispatcher/AppDispatcher';
+import NationConstants from '../constants/NationConstants';
 
 class NationActions {
 
   updateNation(nationName) {
     AppDispatcher.dispatch({
-      actionType: RouteConstants.NATION_UPDATE,
+      actionType: NationConstants.NATION_UPDATE,
       nationName
     });
   }
 
   loadNationData() {
     AppDispatcher.dispatch({
-      actionType: RouteConstants.NATION_LOAD_DATA
+      actionType: NationConstants.NATION_LOAD_DATA
     });
   }
 }

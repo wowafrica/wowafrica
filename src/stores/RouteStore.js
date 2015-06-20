@@ -4,7 +4,7 @@ import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
-import RouteConfig    from './RouteConfig';
+import RouteConfig    from '../configures/RouteConfig';
 import MenuStore      from './MenuStore';
 import AuthorsStore   from './AuthorsStore';
 import MapStore       from './MapStore';

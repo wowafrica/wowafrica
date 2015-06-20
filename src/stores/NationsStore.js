@@ -1,10 +1,10 @@
 'use strict';
 
-import {EventEmitter} from 'events';
-import Tumblr         from 'tumblr.js';
-import TumblrConfig   from './TumblrConfig';
-import AppDispatcher  from '../dispatcher/AppDispatcher';
-import RouteConstants from '../constants/RouteConstants';
+import {EventEmitter}  from 'events';
+import Tumblr          from 'tumblr.js';
+import TumblrConfig    from '../configures/TumblrConfig';
+import AppDispatcher   from '../dispatcher/AppDispatcher';
+import NationConstants from '../constants/NationConstants';
 
 class NationsStore extends EventEmitter {
 
@@ -45,15 +45,15 @@ class NationsStore extends EventEmitter {
   }
 
   emitShow() {
-    this.emit(RouteConstants.NATIONS_SHOW_EVENT);
+    this.emit(NationConstants.NATIONS_SHOW_EVENT);
   }
 
   addShowListener(listener) {
-    this.on(RouteConstants.NATIONS_SHOW_EVENT, listener);
+    this.on(NationConstants.NATIONS_SHOW_EVENT, listener);
   }
 
   removeShowListener(listener) {
-    this.removeListener(RouteConstants.NATIONS_SHOW_EVENT, listener);
+    this.removeListener(NationConstants.NATIONS_SHOW_EVENT, listener);
   }
 }
 
@@ -62,11 +62,12 @@ let nationsStore = new NationsStore();
 AppDispatcher.register((action) => {
 
   switch (action.actionType) {
-    case RouteConstants.NATION_UPDATE:
+    case NationConstants.NATION_UPDATE:
       nationsStore.onReceviceUpdateNations(action.nationName);
       break;
-    case RouteConstants.NATION_LOAD_DATA:
+    case NationConstants.NATION_LOAD_DATA:
       nationsStore.onReceviceLoadNationData();
+      break;
     default:
       break;
   }

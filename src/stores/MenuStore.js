@@ -1,6 +1,6 @@
 'use strict';
 
-import MenuConfig from './MenuConfig';
+import MenuConfig from '../configures/MenuConfig';
 
 class MenuStore {
 

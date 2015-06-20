@@ -1,9 +1,9 @@
 'use strict';
 
-import {EventEmitter} from 'events';
-import Tumblr         from 'tumblr.js';
-import TumblrConfig   from './TumblrConfig';
-import RouteConstants from '../constants/RouteConstants';
+import {EventEmitter}  from 'events';
+import Tumblr          from 'tumblr.js';
+import TumblrConfig    from '../configures/TumblrConfig';
+import AuthorConstants from '../constants/AuthorConstants';
 
 class AuthorsStore extends EventEmitter {
 
@@ -58,15 +58,15 @@ class AuthorsStore extends EventEmitter {
   }
 
   emitChange() {
-    this.emit(RouteConstants.AUTHORS_EVENT);
+    this.emit(AuthorConstants.AUTHORS_EVENT);
   }
 
   addChangeListener(listener) {
-    this.on(RouteConstants.AUTHORS_EVENT, listener);
+    this.on(AuthorConstants.AUTHORS_EVENT, listener);
   }
 
   removeChangeListener(listener) {
-    this.removeListener(RouteConstants.AUTHORS_EVENT, listener);
+    this.removeListener(AuthorConstants.AUTHORS_EVENT, listener);
   }
 }
 

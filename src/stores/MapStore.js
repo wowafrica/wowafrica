@@ -2,7 +2,7 @@
 
 import {EventEmitter} from 'events';
 import request        from 'superagent';
-import RouteConstants from '../constants/RouteConstants';
+import MapConstants   from '../constants/MapConstants';
 
 class MapStore extends EventEmitter {
 
@@ -20,7 +20,7 @@ class MapStore extends EventEmitter {
   }
 
   loadMapData() {
-    request.get('/data/africa.geo.json').end((err, res) => {
+    request.get(MapConstants.MAP_URL).end((err, res) => {
       if (err) {
         console.log('Cannot get Africa geoJson');
       } else {
@@ -33,15 +33,15 @@ class MapStore extends EventEmitter {
   }
 
   emitChange() {
-    this.emit(RouteConstants.AUTHORS_EVENT);
+    this.emit(MapConstants.MAP_EVENT);
   }
 
   addChangeListener(listener) {
-    this.on(RouteConstants.AUTHORS_EVENT, listener);
+    this.on(MapConstants.MAP_EVENT, listener);
   }
 
   removeChangeListener(listener) {
-    this.removeListener(RouteConstants.AUTHORS_EVENT, listener);
+    this.removeListener(MapConstants.MAP_EVENT, listener);
   }
 }
 
