@@ -2,8 +2,9 @@
 
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
+import NationAction    from './NationAction';
 
-class RouteActions {
+class RouteAction {
 
   updatePath(pathName) {
     AppDispatcher.dispatch({
@@ -21,6 +22,7 @@ class RouteActions {
         AppDispatcher.dispatch({
           actionType: RouteConstants.ROUTE_MAP_PAGE
         });
+        NationAction.loadNationData();
         break;
       default:
         break;
@@ -28,4 +30,4 @@ class RouteActions {
   }
 }
 
-export default new RouteActions();
+export default new RouteAction();

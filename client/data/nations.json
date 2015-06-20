@@ -1,0 +1,37 @@
+[{
+  "iso": "KEN",
+  "country": "肯亞",
+  "introduction": "東非和中非經濟領頭羊，觀光業和手機通訊業近年快速發展，首都奈洛比更是東非的金融中心。",
+  "symbol": "Telecommunications(手機通訊)",
+  "language": "英語、Swahili",
+  "flag": "Kenya_flag",
+  "emblem": "Kenya_svg",
+  "headOfState": "Uhuru Kenyataa",
+  "politics": "總統制",
+  "atmosphere": "從東邊肯亞山附近較涼爽乾燥氣候，到西南邊境，維多利亞大湖區的炎熱、潮濕氣候。",
+  "geography": "平坦高原上的維多利亞湖盆區+中部大裂谷及其高原區域+大裂谷南部+海岸平原區(從西到東)",
+  "capital": "Nairobi 奈洛比",
+  "population": 45,
+  "faith": [{
+      "religion": "天主/基督新教",
+      "percentage": 83
+    }, {
+      "religion": "伊斯蘭教",
+      "percentage": 11.2
+    }, {
+      "religion": "印度教",
+      "percentage": 1.7
+    }
+  ],
+  "economy": [{
+      "industry": "一級產業-茶",
+      "percentage": 24.2
+    }, {
+      "industry": "二級產業-消費產品製造",
+      "percentage": 14.8
+    }, {
+      "industry": "三級產業-觀光、金融",
+      "percentage": 61.0
+    }
+  ]
+}]

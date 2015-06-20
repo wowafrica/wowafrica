@@ -2,6 +2,7 @@
 
 import {EventEmitter}  from 'events';
 import Tumblr          from 'tumblr.js';
+import request         from 'superagent';
 import TumblrConfig    from '../configures/TumblrConfig';
 import AppDispatcher   from '../dispatcher/AppDispatcher';
 import NationConstants from '../constants/NationConstants';
@@ -30,30 +31,43 @@ class NationsStore extends EventEmitter {
   }
 
   onReceviceUpdateNations(nationName) {
-    this.currentNation = nationName;
+    this.currentNation = {iso: nationName};
+    this.nations.forEach((nation) => {
+      if (nation.iso === nationName) {
+        this.currentNation = nation;
+      }
+    });
     this.emitShow();
   }
 
   onReceviceLoadNationData() {
-    let {tag} = TumblrConfig.nation;
-    this.client.posts(TumblrConfig.blogName, {tag: tag, filter: 'text'}, (err, data) => {
+    // let {tag} = TumblrConfig.nation;
+    // this.client.posts(TumblrConfig.blogName, {tag: tag, filter: 'text'}, (err, data) => {
+    //   if (err) {
+    //     console.log(err.stack);
+    //   }
+    //   this.nations = data.posts;
+    // });
+    request.get(NationConstants.NATION_URL).end((err, res) => {
       if (err) {
-        console.log(err.stack);
+        console.log('Cannot get Nation json');
+      } else {
+        console.log('Get!!!');
+        this.nations = res.body;
       }
-      this.nations = data.posts;
     });
   }
 
   emitShow() {
-    this.emit(NationConstants.NATIONS_SHOW_EVENT);
+    this.emit(NationConstants.NATION_SHOW_EVENT);
   }
 
   addShowListener(listener) {
-    this.on(NationConstants.NATIONS_SHOW_EVENT, listener);
+    this.on(NationConstants.NATION_SHOW_EVENT, listener);
   }
 
   removeShowListener(listener) {
-    this.removeListener(NationConstants.NATIONS_SHOW_EVENT, listener);
+    this.removeListener(NationConstants.NATION_SHOW_EVENT, listener);
   }
 }
 

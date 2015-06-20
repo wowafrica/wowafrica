@@ -6,8 +6,6 @@ import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import RouteConfig    from '../configures/RouteConfig';
 import MenuStore      from './MenuStore';
-import AuthorsStore   from './AuthorsStore';
-import MapStore       from './MapStore';
 
 class RouteStore extends EventEmitter {
 

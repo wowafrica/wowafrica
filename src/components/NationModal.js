@@ -32,11 +32,11 @@ export default React.createClass({
 
   render() {
     let {nation} = this.state;
-    console.log('Modal Show: ' + nation);
+    console.log('Modal Show: ' + JSON.stringify(nation));
     return (
       <Modal ref="modal" init={true}>
         <Icon className="close"/>
-        <Header>{nation}</Header>
+        <Header>{nation.iso}</Header>
       </Modal>
     );
   }

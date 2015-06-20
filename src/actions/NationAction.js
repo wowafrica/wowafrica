@@ -3,7 +3,7 @@
 import AppDispatcher   from '../dispatcher/AppDispatcher';
 import NationConstants from '../constants/NationConstants';
 
-class NationActions {
+class NationAction {
 
   updateNation(nationName) {
     AppDispatcher.dispatch({
@@ -19,4 +19,4 @@ class NationActions {
   }
 }
 
-export default new NationActions();
+export default new NationAction();
