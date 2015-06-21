@@ -3,6 +3,7 @@
   "country": "肯亞",
   "introduction": "東非和中非經濟領頭羊，觀光業和手機通訊業近年快速發展，首都奈洛比更是東非的金融中心。",
   "symbol": "Telecommunications(手機通訊)",
+  "currency": "肯亞先令",
   "language": "英語、Swahili",
   "flag": "Kenya_flag",
   "emblem": "Kenya_svg",
@@ -13,24 +14,27 @@
   "capital": "Nairobi 奈洛比",
   "population": 45,
   "faith": [{
-      "religion": "天主/基督新教",
+      "name": "天主/基督新教",
       "percentage": 83
     }, {
-      "religion": "伊斯蘭教",
+      "name": "伊斯蘭教",
       "percentage": 11.2
     }, {
-      "religion": "印度教",
+      "name": "印度教",
       "percentage": 1.7
+    }, {
+      "name": "其他",
+      "percentage": 4.1
     }
   ],
   "economy": [{
-      "industry": "一級產業-茶",
+      "name": "一級產業-茶",
       "percentage": 24.2
     }, {
-      "industry": "二級產業-消費產品製造",
+      "name": "二級產業-消費產品製造",
       "percentage": 14.8
     }, {
-      "industry": "三級產業-觀光、金融",
+      "name": "三級產業-觀光、金融",
       "percentage": 61.0
     }
   ]

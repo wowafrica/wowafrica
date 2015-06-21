@@ -17,6 +17,16 @@ class MapStore extends EventEmitter {
     return this.geoJson;
   }
 
+  getNationMapByISO(nationISO) {
+    let nationMap = {};
+    this.geoJson.features.forEach((nation) => {
+      if (nation.properties.ISO_A3 === nationISO) {
+        nationMap = nation;
+      }
+    });
+    return nationMap;
+  }
+
   onReceviceUpdateMaps() {
     this.loadMapData();
   }

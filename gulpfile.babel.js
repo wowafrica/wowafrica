@@ -117,6 +117,6 @@ gulp.task('watch', (done) => {
 });
 
 gulp.task('bundle', ['browserify']);
-gulp.task('build', ['jade', 'data', 'css', 'bundle']);
+gulp.task('build', ['jade', 'data', 'images', 'css', 'bundle']);
 gulp.task('dev', ['build', 'server', 'watch']);
 gulp.task('default', ['build']);

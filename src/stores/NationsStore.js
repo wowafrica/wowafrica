@@ -12,10 +12,25 @@ class NationsStore extends EventEmitter {
   constructor() {
     super();
     this.nations = [];
-    this.currentNation = {};
-    this.client = Tumblr.createClient({
-      consumer_key: TumblrConfig.consumerKey // eslint-disable-line
-    });
+    this.defaultNation = {
+      'iso': '',
+      'country': '',
+      'introduction': '',
+      'symbol': '',
+      'currency': '',
+      'language': '',
+      'flag': '',
+      'emblem': '',
+      'headOfState': '',
+      'politics': '',
+      'atmosphere': '',
+      'geography': '',
+      'capital': '',
+      'population': 0,
+      'faith': [],
+      'economy': []
+    };
+    this.currentNation = this.defaultNation;
   }
 
   getAll() {
@@ -31,23 +46,21 @@ class NationsStore extends EventEmitter {
   }
 
   onReceviceUpdateNations(nationName) {
-    this.currentNation = {iso: nationName};
+    this.currentNation = null;
     this.nations.forEach((nation) => {
       if (nation.iso === nationName) {
         this.currentNation = nation;
       }
     });
+    if (this.currentNation === null) {
+      this.currentNation = this.defaultNation;
+      this.currentNation.iso = nationName;
+      this.currentNation.country = nationName;
+    }
     this.emitShow();
   }
 
   onReceviceLoadNationData() {
-    // let {tag} = TumblrConfig.nation;
-    // this.client.posts(TumblrConfig.blogName, {tag: tag, filter: 'text'}, (err, data) => {
-    //   if (err) {
-    //     console.log(err.stack);
-    //   }
-    //   this.nations = data.posts;
-    // });
     request.get(NationConstants.NATION_URL).end((err, res) => {
       if (err) {
         console.log('Cannot get Nation json');
