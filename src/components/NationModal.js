@@ -109,17 +109,13 @@ let VisualSection = React.createClass({
     return (
       <div className="visualSection">
         <div className="ui pointing secondary menu">
-          <a className="active item" data-tab="first">人口</a>
-          <a className="item" data-tab="second">經濟</a>
-          <a className="item" data-tab="third">信仰</a>
+          <a className="active item" data-tab="first">經濟</a>
+          <a className="item" data-tab="second">信仰</a>
         </div>
         <div className="ui active tab segment" data-tab="first">
-          First
-        </div>
-        <div className="ui tab segment" data-tab="second">
           <PieChar width="500" height="500" piedata={nation.economy}/>
         </div>
-        <div className="ui tab segment" data-tab="third">
+        <div className="ui tab segment" data-tab="second">
           <PieChar width="500" height="500" piedata={nation.faith}/>
         </div>
       </div>
@@ -181,6 +177,7 @@ export default React.createClass({
             <NormalSection name="政治">{nation.politics}</NormalSection>
             <NormalSection name="氣候">{nation.atmosphere}</NormalSection>
             <NormalSection name="自然地理">{nation.geography}</NormalSection>
+            <NormalSection name="人口">{nation.population}</NormalSection>
             <Divider/>
             <VisualSection nation={nation}/>
           </div>

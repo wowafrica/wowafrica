@@ -111,6 +111,7 @@ gulp.task('watch', (done) => {
   livereload.listen({start: true});
   gulp.watch('./client/views/*.jade', ['jade']);
   gulp.watch('./client/styles/*.css', ['css']);
+  gulp.watch('./client/data/**/*', ['data']);
   gulp.watch('./client/scripts/**/*', ['browserify']);
   gulp.watch('./src/**/*', ['browserify']);
   done();
