@@ -26,7 +26,7 @@ class NationsStore extends EventEmitter {
       'atmosphere': '',
       'geography': '',
       'capital': '',
-      'population': 0,
+      'population': '',
       'faith': [],
       'economy': []
     };

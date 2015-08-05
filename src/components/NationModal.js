@@ -96,6 +96,17 @@ let PieChar = React.createClass({
   }
 });
 
+let VisualComponent = React.createClass({
+  render() {
+    let {visualData} = this.props;
+    if (typeof visualData === 'string') {
+      return (<div>${visualData}</div>);
+    } else {
+      return (<PieChar width="500" height="500" piedata={visualData}/>);
+    }
+  }
+});
+
 let VisualSection = React.createClass({
 
   componentDidMount() {
@@ -113,10 +124,10 @@ let VisualSection = React.createClass({
           <a className="item" data-tab="second">信仰</a>
         </div>
         <div className="ui active tab segment" data-tab="first">
-          <PieChar width="500" height="500" piedata={nation.economy}/>
+          <VisualComponent visualData={nation.economy}/>
         </div>
         <div className="ui tab segment" data-tab="second">
-          <PieChar width="500" height="500" piedata={nation.faith}/>
+          <VisualComponent visualData={nation.faith}/>
         </div>
       </div>
     );
