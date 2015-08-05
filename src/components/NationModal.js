@@ -172,7 +172,6 @@ export default React.createClass({
           <img src="/images/kenya_svg.png" />
           <div className="content">
             {nation.country}
-            <Header className="sub">{nation.introduction}</Header>
           </div>
         </Header>
         <div className="content">
@@ -181,6 +180,7 @@ export default React.createClass({
             <NormalSection name="特殊象徵品">{nation.symbol}</NormalSection>
           </div>
           <div className="description">
+            <NormalSection name="簡介">{nation.introduction}</NormalSection>
             <NormalSection name="首都">{nation.capital}</NormalSection>
             <NormalSection name="國家元首">{nation.headOfState}</NormalSection>
             <NormalSection name="幣制">{nation.currency}</NormalSection>
