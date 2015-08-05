@@ -6,9 +6,9 @@ require('semantic-ui/dist/semantic.js');
 require('babel/polyfill');
 
 import React        from 'react/addons';
-import RouteActions from '../../lib/actions/RouteAction.js';
-import App          from '../../lib/App';
-import NationModal  from '../../lib/components/NationModal';
+import RouteActions from '../../src/actions/RouteAction.js';
+import App          from '../../src/App';
+import NationModal  from '../../src/components/NationModal';
 
 let pathName = location.pathname;
 console.log(pathName);

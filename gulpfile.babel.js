@@ -15,10 +15,9 @@ import path        from 'path';
 import source      from 'vinyl-source-stream';
 import buffer      from 'vinyl-buffer';
 import browserify  from 'browserify';
-import gbabel       from 'gulp-babel';
 import babelify    from 'babelify';
 
-import RouteStore from './lib/stores/RouteStore';
+import RouteStore from './src/stores/RouteStore';
 import React       from 'react';
 require("babel/polyfill");
 
@@ -56,15 +55,9 @@ gulp.task('css', () => {
     .pipe(livereload());
 });
 
-gulp.task('transpile', () => {
-  return gulp.src('./src/**/*')
-    .pipe(gbabel({stage: 0}))
-    .pipe(gulp.dest('./lib/'));
-});
-
-gulp.task('browserify', ['transpile'], () => {
+gulp.task('browserify', () => {
   return browserify('./client/scripts/index.js')
-    .transform(babelify)
+    .transform(babelify.configure({stage: 0}))
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulpif(production, buffer()))
