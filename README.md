@@ -40,6 +40,11 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2015/04/23 v0.3.0
+- Add PostListPage
+- Update CNAME to wowafrica
+- Update Semantic-UI to v1.12.3
+
 #### 2015/04/23 v0.2.0
 - Add AuthorPage
 - Add ESLint
