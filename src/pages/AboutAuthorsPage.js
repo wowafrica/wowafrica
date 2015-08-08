@@ -1,5 +1,3 @@
-'use strict';
-
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';

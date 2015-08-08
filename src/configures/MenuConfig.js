@@ -1,5 +1,3 @@
-'use strict';
-
 export default [
   {
     showName: '關於我們',

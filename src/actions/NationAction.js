@@ -1,5 +1,3 @@
-'use strict';
-
 import AppDispatcher   from '../dispatcher/AppDispatcher';
 import NationConstants from '../constants/NationConstants';
 

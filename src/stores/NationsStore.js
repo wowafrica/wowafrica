@@ -1,5 +1,3 @@
-'use strict';
-
 import {EventEmitter}  from 'events';
 import Tumblr          from 'tumblr.js';
 import request         from 'superagent';

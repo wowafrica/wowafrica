@@ -1,5 +1,3 @@
-'use strict';
-
 import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';

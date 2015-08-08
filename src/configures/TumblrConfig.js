@@ -1,5 +1,3 @@
-'use strict';
-
 export default {
 
   blogName: 'exploreafrica-tw.tumblr.com',

@@ -1,5 +1,3 @@
-'use strict';
-
 export default {
   NATION_UPDATE: 10,
   NATION_LOAD_DATA: 11,

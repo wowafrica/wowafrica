@@ -1,5 +1,3 @@
-'use strict';
-
 import $            from 'jquery';
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
