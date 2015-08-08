@@ -1,5 +1,3 @@
-'use strict';
-
 import gulp        from 'gulp';
 import gutil       from 'gulp-util';
 import livereload  from 'gulp-livereload';
