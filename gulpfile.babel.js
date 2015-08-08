@@ -15,10 +15,9 @@ import path        from 'path';
 import source      from 'vinyl-source-stream';
 import buffer      from 'vinyl-buffer';
 import browserify  from 'browserify';
-import gbabel       from 'gulp-babel';
 import babelify    from 'babelify';
 
-import RouteStore from './lib/stores/RouteStore';
+import RouteStore from './src/stores/RouteStore';
 import React       from 'react';
 require("babel/polyfill");
 
@@ -56,15 +55,9 @@ gulp.task('css', () => {
     .pipe(livereload());
 });
 
-gulp.task('transpile', () => {
-  return gulp.src('./src/**/*')
-    .pipe(gbabel({stage: 0}))
-    .pipe(gulp.dest('./lib/'));
-});
-
-gulp.task('browserify', ['transpile'], () => {
+gulp.task('browserify', () => {
   return browserify('./client/scripts/index.js')
-    .transform(babelify)
+    .transform(babelify.configure({stage: 0}))
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulpif(production, buffer()))
@@ -91,11 +84,12 @@ gulp.task('server', (done) => {
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Explore Africa</title>
     <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.6/semantic.min.css" type="text/css" rel="stylesheet"></link>
-    <link href="styles/index.css" type="text/css" rel="stylesheet"></link>
+    <link href="/styles/index.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
-    ${html}
-    <script type="text/javascript" src="scripts/bundle.js"></script>
+    <div id="content">${html}</div>
+    <div id="nation_modal" class="ui dimmer modals page"></div>
+    <script type="text/javascript" src="/scripts/bundle.js"></script>
   </body>
 </html>`);
     res.end();
@@ -110,12 +104,13 @@ gulp.task('watch', (done) => {
   livereload.listen({start: true});
   gulp.watch('./client/views/*.jade', ['jade']);
   gulp.watch('./client/styles/*.css', ['css']);
+  gulp.watch('./client/data/**/*', ['data']);
   gulp.watch('./client/scripts/**/*', ['browserify']);
   gulp.watch('./src/**/*', ['browserify']);
   done();
 });
 
 gulp.task('bundle', ['browserify']);
-gulp.task('build', ['jade', 'css', 'bundle']);
+gulp.task('build', ['jade', 'data', 'images', 'css', 'bundle']);
 gulp.task('dev', ['build', 'server', 'watch']);
 gulp.task('default', ['build']);

@@ -14,7 +14,7 @@ export default {
   viewAfricaNationsPost: {
     path: '/view_africa_nations/posts/:post',
     method: 'get',
-    page: require('../pages/IndexPage')
+    page: require('../pages/ViewAfricaNationsPage')
   },
   viewAfricaPeople: {
     path: '/view_africa_people',

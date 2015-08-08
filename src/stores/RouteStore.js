@@ -4,9 +4,8 @@ import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
-import RouteConfig    from './RouteConfig';
+import RouteConfig    from '../configures/RouteConfig';
 import MenuStore      from './MenuStore';
-import AuthorsStore   from './AuthorsStore';
 
 class RouteStore extends EventEmitter {
 
@@ -44,7 +43,8 @@ class RouteStore extends EventEmitter {
 
   onReceviceUpdatePath(pathName) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
-    MenuStore.onReceviceUpdatePath(pathName);
+    console.log('currentRoute');
+    console.log(this.currentRoute.params);
     this.emitChange();
   }
 
@@ -68,9 +68,7 @@ AppDispatcher.register((action) => {
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
       routeStore.onReceviceUpdatePath(action.pathName);
-      if (action.pathName === '/about_authors') {
-        AuthorsStore.onReceviceUpdateAuthors();
-      }
+      MenuStore.onReceviceUpdatePath(action.pathName);
       break;
     default:
       break;

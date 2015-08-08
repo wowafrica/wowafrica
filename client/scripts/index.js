@@ -3,16 +3,18 @@
 import $ from 'jquery';
 global.$ = global.jQuery = $;
 require('semantic-ui/dist/semantic.js');
-require("babel/polyfill");
+require('babel/polyfill');
 
 import React        from 'react/addons';
-import RouteActions from '../../lib/actions/RouteAction.js';
-import App          from '../../lib/App';
+import RouteActions from '../../src/actions/RouteAction.js';
+import App          from '../../src/App';
+import NationModal  from '../../src/components/NationModal';
 
 let pathName = location.pathname;
 console.log(pathName);
 
-React.render(<App />, document.body);
+React.render(<App />, document.getElementById('content'));
+React.render(<NationModal />, document.getElementById('nation_modal'));
 
 RouteActions.updatePath(pathName);
 

@@ -6,6 +6,7 @@ body {
   font-family:'微軟正黑體';
   padding:0; margin:0; overflow-x:hidden;
   background-color: #CEC5C5;
+  overflow-y: scroll;
 }
 
 .container-header {
@@ -22,4 +23,16 @@ body {
 
 .container-content {
   margin-top: 10px;
+}
+
+.container-map {
+  width: 765px;
+  margin: 0px auto;
+}
+
+.land {
+  fill: #593030;
+  stroke: white;
+  stroke-width: .7px;
+  stroke-opacity: .7;
 }
