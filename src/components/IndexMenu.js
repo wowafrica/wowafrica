@@ -3,7 +3,7 @@
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import MenuStore    from '../stores/MenuStore';
-import RouteActions from '../actions/RouteAction.js';
+import RouteActions from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 

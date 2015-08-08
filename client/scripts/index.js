@@ -6,7 +6,7 @@ require('semantic-ui/dist/semantic.js');
 require('babel/polyfill');
 
 import React        from 'react/addons';
-import RouteActions from '../../src/actions/RouteAction.js';
+import RouteActions from '../../src/actions/RouteAction';
 import App          from '../../src/App';
 import NationModal  from '../../src/components/NationModal';
 
