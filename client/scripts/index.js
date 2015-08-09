@@ -2,6 +2,7 @@ import $ from 'jquery';
 global.$ = global.jQuery = $;
 require('semantic-ui/dist/semantic.js');
 require('babel/polyfill');
+require('fullpage.js/jquery.fullPage');
 
 import React        from 'react/addons';
 import RouteActions from '../../src/actions/RouteAction';

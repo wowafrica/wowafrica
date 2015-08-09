@@ -15,12 +15,14 @@ export default React.createClass({
 
   render() {
     return (
-      <div className="container-menu">
-        <Menu className="secondary pointing">
-          <Item type="link" href="/">{"Explore Africa 探索非洲"}</Item>
+        <Menu className="secondary">
+          <Item id="menu-logo">
+            <a href="/">
+              <img src="/images/a-02.jpg" />
+            </a>
+          </Item>
           {this.renderDropdown()}
         </Menu>
-      </div>
     );
   },
 
