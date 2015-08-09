@@ -8,7 +8,7 @@ let app = express();
 app.use(express.static(path.resolve('_public')));
 
 app.all('*', (req, res) => {
-  RouteStore.onReceviceUpdatePath(req.url);
+  RouteStore.onReceiveUpdatePath(req.url);
   let {config} = RouteStore.getCurrentRoute();
   let CurrentPage = config['page'];
   let html = React.renderToString(<CurrentPage/>);

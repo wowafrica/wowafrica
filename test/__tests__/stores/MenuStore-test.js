@@ -13,7 +13,7 @@ describe('MenuStore', () => {
   it('should update configure status and currentPage when recevice path', () => {
     let menuStore = require('../../../src/stores/MenuStore');
 
-    menuStore.onReceviceUpdatePath('/view_africa_nations');
+    menuStore.onReceiveUpdatePath('/view_africa_nations');
 
     let viewAfricaSection = menuStore.getAll().filter(page => page.showName === '認識非洲');
     let viewSubPage = viewAfricaSection[0].subPage.filter(page => page.showName === '國家基本資料');
@@ -25,7 +25,7 @@ describe('MenuStore', () => {
   it('should let other page status be false when recevice path', () => {
     let menuStore = require('../../../src/stores/MenuStore');
 
-    menuStore.onReceviceUpdatePath('/view_africa_nations');
+    menuStore.onReceiveUpdatePath('/view_africa_nations');
 
     menuStore.getAll().forEach((section) => {
       section.subPage.forEach((page) => {

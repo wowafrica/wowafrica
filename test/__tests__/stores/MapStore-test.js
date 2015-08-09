@@ -4,7 +4,7 @@ jest.dontMock('../../../src/stores/MapStore');
 let fakeMap = {
   'features':[
     {'properties': {'ISO_A3': 'SOM', 'NAME':'Somalia'}},
-    {'properties': {'ISO_A3': 'CAF', 'NAME':'Central African Rep.'}},
+    {'properties': {'ISO_A3': 'CAF', 'NAME':'Central African Rep.'}}
   ]
 };
 

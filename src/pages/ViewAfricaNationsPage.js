@@ -50,8 +50,6 @@ export default React.createClass({
   },
 
   _drawMap(data) {
-    console.log(data);
-
     let width = 700;
     let height = 600;
 

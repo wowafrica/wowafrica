@@ -10,7 +10,7 @@ class MenuStore {
     return this.menuConfig;
   }
 
-  onReceviceUpdatePath(menuName) {
+  onReceiveUpdatePath(menuName) {
     this.updatePath(menuName);
   }
 
