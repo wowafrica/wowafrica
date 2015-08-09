@@ -1,5 +1,3 @@
-'use strict';
-
 import gulp        from 'gulp';
 import gutil       from 'gulp-util';
 import livereload  from 'gulp-livereload';
@@ -72,7 +70,7 @@ gulp.task('server', (done) => {
   app.all('*', (req, res) => {
     gutil.log('URL: ', gutil.colors.yellow(req.url));
 
-    RouteStore.onReceviceUpdatePath(req.url);
+    RouteStore.onReceiveUpdatePath(req.url);
     let {config} = RouteStore.getCurrentRoute();
     let CurrentPage = config['page'];
     let html = React.renderToString(<CurrentPage/>);

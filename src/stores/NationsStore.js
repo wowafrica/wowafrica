@@ -1,5 +1,3 @@
-'use strict';
-
 import {EventEmitter}  from 'events';
 import Tumblr          from 'tumblr.js';
 import request         from 'superagent';
@@ -45,7 +43,7 @@ class NationsStore extends EventEmitter {
     return this.currentNation;
   }
 
-  onReceviceUpdateNations(nationName) {
+  onReceiveUpdateNations(nationName) {
     this.currentNation = null;
     this.nations.forEach((nation) => {
       if (nation.iso === nationName) {
@@ -60,7 +58,7 @@ class NationsStore extends EventEmitter {
     this.emitShow();
   }
 
-  onReceviceLoadNationData() {
+  onReceiveLoadNationData() {
     request.get(NationConstants.NATION_URL).end((err, res) => {
       if (err) {
         console.log('Cannot get Nation json');
@@ -90,10 +88,10 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case NationConstants.NATION_UPDATE:
-      nationsStore.onReceviceUpdateNations(action.nationName);
+      nationsStore.onReceiveUpdateNations(action.nationName);
       break;
     case NationConstants.NATION_LOAD_DATA:
-      nationsStore.onReceviceLoadNationData();
+      nationsStore.onReceiveLoadNationData();
       break;
     default:
       break;

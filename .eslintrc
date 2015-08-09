@@ -12,19 +12,21 @@
     "camelcase": [2],
     "comma-style": [2, "last"],
     "dot-notation": [0],
-    "no-comma-dangle": [2, "always"],
+    "comma-dangle": [2, "never"],
     "no-multiple-empty-lines": [2, {"max": 2}],
     "no-multi-spaces": [0],
     "no-underscore-dangle": [0],
     "no-unused-vars": [0],
-    "indent": [2, 2],
+    "indent": [2, 2, {"SwitchCase": 1}],
     "no-var": [2],
     "quotes": [1, "single", "avoid-escape"],
     "semi": [2],
     "space-after-keywords": [2],
     "space-before-blocks": [2],
     "space-before-function-paren": [2, "never"],
-    "space-in-brackets": [2, "never"],
-    "strict": [2]
+    "object-curly-spacing": [2, "never"],
+    "array-bracket-spacing": [2, "never"],
+    "computed-property-spacing": [2, "never"],
+    "strict": [2, "never"]
   }
 }

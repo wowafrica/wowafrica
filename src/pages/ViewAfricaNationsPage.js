@@ -1,5 +1,3 @@
-'use strict';
-
 import React        from 'react/addons';
 import IndexMenu    from '../components/IndexMenu';
 import MapStore     from '../stores/MapStore';
@@ -52,8 +50,6 @@ export default React.createClass({
   },
 
   _drawMap(data) {
-    console.log(data);
-
     let width = 700;
     let height = 600;
 

@@ -1,5 +1,3 @@
-'use strict';
-
 import $ from 'jquery';
 global.$ = global.jQuery = $;
 require('semantic-ui/dist/semantic.js');

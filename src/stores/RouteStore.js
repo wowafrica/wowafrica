@@ -1,5 +1,3 @@
-'use strict';
-
 import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
@@ -41,7 +39,7 @@ class RouteStore extends EventEmitter {
     return this.routeConfig;
   }
 
-  onReceviceUpdatePath(pathName) {
+  onReceiveUpdatePath(pathName) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
     console.log('currentRoute');
     console.log(this.currentRoute.params);
@@ -67,8 +65,8 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
-      routeStore.onReceviceUpdatePath(action.pathName);
-      MenuStore.onReceviceUpdatePath(action.pathName);
+      routeStore.onReceiveUpdatePath(action.pathName);
+      MenuStore.onReceiveUpdatePath(action.pathName);
       break;
     default:
       break;

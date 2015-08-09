@@ -1,5 +1,3 @@
-'use strict';
-
 import MenuConfig from '../configures/MenuConfig';
 
 class MenuStore {
@@ -12,7 +10,7 @@ class MenuStore {
     return this.menuConfig;
   }
 
-  onReceviceUpdatePath(menuName) {
+  onReceiveUpdatePath(menuName) {
     this.updatePath(menuName);
   }
 

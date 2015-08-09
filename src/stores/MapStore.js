@@ -1,5 +1,3 @@
-'use strict';
-
 import {EventEmitter} from 'events';
 import request        from 'superagent';
 import MapConstants   from '../constants/MapConstants';
@@ -27,7 +25,7 @@ class MapStore extends EventEmitter {
     return nationMap;
   }
 
-  onReceviceUpdateMaps() {
+  onReceiveUpdateMaps() {
     this.loadMapData();
   }
 
@@ -62,7 +60,7 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case RouteConstants.ROUTE_MAP_PAGE:
-      mapStore.onReceviceUpdateMaps();
+      mapStore.onReceiveUpdateMaps();
       break;
     default:
       break;

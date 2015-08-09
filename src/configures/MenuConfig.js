@@ -1,5 +1,3 @@
-'use strict';
-
 export default [
   {
     showName: '關於我們',
@@ -25,26 +23,24 @@ export default [
     showName: '認識非洲',
     currentPage: '',
     subPage: [{
-        url: '/view_africa_nations',
-        showName: '國家基本資料',
-        subPage: [],
-        status: false
-      }, {
-        url: '/view_africa_people',
-        showName: '非洲大人物',
-        subPage: [],
-        status: false
-      }
-    ]
+      url: '/view_africa_nations',
+      showName: '國家基本資料',
+      subPage: [],
+      status: false
+    }, {
+      url: '/view_africa_people',
+      showName: '非洲大人物',
+      subPage: [],
+      status: false
+    }]
   }, {
     showName: '非洲文章',
     currentPage: '',
     subPage: [{
-        url: '/view_post_list',
-        showName: '文章列表',
-        subPage: [],
-        status: false
-      }
-    ]
+      url: '/view_post_list',
+      showName: '文章列表',
+      subPage: [],
+      status: false
+    }]
   }
 ];

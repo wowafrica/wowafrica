@@ -1,5 +1,3 @@
-'use strict';
-
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import NationAction    from './NationAction';

@@ -1,5 +1,3 @@
-'use strict';
-
 import $            from 'jquery';
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
@@ -28,10 +26,6 @@ let GeoMap = React.createClass({
     if (nation === null) {
       return (<svg></svg>);
     }
-
-    console.log(nation);
-    console.log(width);
-    console.log(height);
 
     let projection = d3.geo.equirectangular()
       .scale(500)
@@ -164,7 +158,6 @@ export default React.createClass({
   render() {
     let {nation, map} = this.state;
     console.log('Modal Show: ' + JSON.stringify(nation));
-    console.log('Modal Show Map: ' + JSON.stringify(map));
     return (
       <Modal className="long" ref="modal" init={true}>
         <Icon className="close"/>
