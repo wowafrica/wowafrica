@@ -29,7 +29,7 @@
     "semantic-ui": "2.0.8",
     "superagent": "^1.2.0",
     "tumblr.js": "git://github.com/hankkk/tumblr.js.git",
-    "fullPage.js": "^2.6.7"
+    "fullpage.js": "^2.6.7"
   },
   "devDependencies": {
     "babel": "^5.8.21",
