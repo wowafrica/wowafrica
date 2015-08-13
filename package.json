@@ -11,7 +11,7 @@
   "scripts": {
     "start": "gulp dev",
     "server": "babel-node ./server/server.js",
-    "test": "npm run lint && npm run karma",
+    "test": "npm run lint && gulp build && npm run karma",
     "lint": "eslint ./src && eslint ./server && eslint ./client",
     "karma": "karma start"
   },
@@ -37,6 +37,7 @@
     "browserify": "^10.2.3",
     "browserify-istanbul": "^0.2.1",
     "connect-livereload": "^0.5.0",
+    "coveralls": "^2.11.4",
     "eslint": "^1.1.0",
     "express": "^4.12.3",
     "gulp": "^3.8.11",

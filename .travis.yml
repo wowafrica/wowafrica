@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - "iojs-v1.8.4"
+  - iojs-v1.8.4
 
 sudo: false
 
@@ -12,6 +12,12 @@ before_script:
   - chmod +x .travis/after_success.sh
   - chmod +x ./deploy
 
+script:
+  - npm test
+
+after_script:
+  - cat coverage/phantomjs/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+
 branches:
   except:
     - gh-pages
@@ -21,4 +27,8 @@ env:
     - REPO="git@github.com:jessy1092/explore-africa"
     - secure: f+Ru9XNRGCePbX9dz5W1Fkutgqo+vOESp5AOLH9d4R/9D8x3aIzExg8OOmxDKDlrbvl8GKiwzaTG7STgxBhEp2NwWyT6Bd77xGI848ChUtNuqezWv0jMwX/Sm/zJNzWfF/PIK5MYO45LGfifJK17W2pG3KE05YbzXyajslF8D7A=
 
-after_success: ".travis/after_success.sh"
+after_success: .travis/after_success.sh
+
+notifications:
+  slack:
+    secure: O0GRmyRZHfwFEyr+wCHqt9hT3ul2Y3/Ne3qPgbXSryaZlzuebe62Cqk2D69TMt3mRgAVRJL9Hoe9u+4OZa57MDwc+BqnH7osvnlU8SPuTO/7vzjgCyUfXGhvvvkRH+tYC9j9w1xTgxuNOLjXUFskCzaiwNV6TszoAq2VGj1WC+Q=
