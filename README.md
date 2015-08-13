@@ -1,6 +1,6 @@
 Explore Africa Website
 =============
-[![Travis branch][travis-ci-img]][travis-ci-url] [![Dependency Status][david-dm-image]][david-dm-url]
+[![Travis branch][travis-ci-img]][travis-ci-url] [![Coveralls][coveralls-img]][coveralls-url] [![Dependency Status][david-dm-image]][david-dm-url]
 
 ## Structure
 
@@ -89,3 +89,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 [david-dm-url]: https://david-dm.org/jessy1092/explore-africa
 [david-dm-dev-image]: https://img.shields.io/david/dev/jessy1092/explore-africa.svg?style=flat-square
 [david-dm-dev-url]: https://david-dm.org/jessy1092/explore-africa#info=devDependencies
+
+[coveralls-img]: https://img.shields.io/coveralls/jessy1092/explore-africa.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/github/jessy1092/explore-africa
