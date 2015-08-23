@@ -167,8 +167,8 @@ export default React.createClass({
             {nation.country}
           </div>
         </Header>
-        <div className="content">
-          <div className="ui image">
+        <div className="image content">
+          <div className="ui medium image">
             <img src="/images/kenya_flag.png" />
             <NormalSection name="特殊象徵品">{nation.symbol}</NormalSection>
           </div>
