@@ -81,7 +81,7 @@ gulp.task('server', (done) => {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Explore Africa</title>
-    <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.6/semantic.min.css" type="text/css" rel="stylesheet"></link>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css" type="text/css" rel="stylesheet"></link>
     <link href="/styles/index.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
