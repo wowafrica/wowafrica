@@ -1,5 +1,7 @@
 import React          from 'react/addons';
 import IndexMenu      from '../components/IndexMenu';
+import IndexSection   from '../components/IndexSection';
+import MenuStore      from '../stores/MenuStore';
 import RouteStore     from '../stores/RouteStore';
 import RouteConstants from '../constants/RouteConstants';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
@@ -10,7 +12,6 @@ let firstFPbg = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/
 export default React.createClass({
 
   IndexDispatch: '',
-  fullPageMounted: false,
 
   moveFullPageSection() {
     if (RouteStore.currentHash.length > 0) {
@@ -25,9 +26,14 @@ export default React.createClass({
 
   componentDidMount() {
     $(document).ready(function() {
+
+      let fpAnchors = MenuStore.getIndexAnchors();
+      fpAnchors.unshift('topArticle');
+      fpAnchors.unshift('landing');
+
       $('#fullpage').fullpage({
 
-        anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+        anchors: fpAnchors,
 
         onLeave: function(index, nextIndex, direction) {
           if (index == 1 && direction == 'down') {
@@ -36,7 +42,7 @@ export default React.createClass({
                 .transition('scale in', 750)
               ;
             });
-            $('#FPsection2').css('background', '');
+            $('#fpTopArticle').css('background', '');
           }
 
           if (index == 2 && direction == 'up') {
@@ -45,19 +51,18 @@ export default React.createClass({
                 .transition('scale out', 750)
               ;
             });
-            $('#FPsection2').css('background', '');
+            $('#fpTopArticle').css('background', '');
           }
 
           if (index == 2 && direction == 'down') {
-            $('#FPsection2').css('background', 'url("'+firstFPbg+'")');
+            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
           }
 
           if (index == 3 && direction == 'up') {
-            $('#FPsection2').css('background', 'url("'+firstFPbg+'")');
+            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
           }
         }
       });
-      this.fullPageMounted = true;
     });
     this.moveFullPageSection();
     this.IndexDispatch = AppDispatcher.register((action) => {
@@ -71,13 +76,18 @@ export default React.createClass({
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
-    if (this.fullPageMounted == true) {
+    if (typeof $.fn.fullpage.destroy =='function') {
       $.fn.fullpage.destroy('all');
-      this.fullPageMounted = false;
     }
   },
 
   render() {
+    let sectionsDiv = MenuStore.getArticleSubPages().map((page) => {
+      return (
+          <IndexSection sid={'fp'+page.url.substring(2)} title={page.showName}/>
+      );
+    });
+
     return (
       <div>
         <div className="ui sticky container" style={{position: 'fixed', left: '0', right: '0'}}>
@@ -86,34 +96,20 @@ export default React.createClass({
           </div>
         </div>
         <div style={{background: 'url("'+firstFPbg+'")'}}>
-        <div id="fullpage">
-            <div className="section" id="FPsection1">
+          <div id="fullpage">
+            <div className="section" id="fpLanding">
               <div className="header-box">
                 <p className="header-title" style={{fontSize: '100px', letterSpacing: '38px', fontWeight: 'bolder', marginBottom: '0'}}>WOW!</p>
                 <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>AFRICA</p>
               </div>
             </div>
-            <div className="section" id="FPsection2">
+            <div className="section" id="fpTopArticle">
               <div className="header-box">
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>SECTION 1</p>
+                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>TOP ARTICLE</p>
               </div>
             </div>
-            <div className="section" id="FPsection3">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>SECTION 2</p>
-              </div>
-            </div>
-            <div className="section" id="FPsection4">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>SECTION 3</p>
-              </div>
-            </div>
-            <div className="section" id="FPsection5">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>SECTION 4</p>
-              </div>
-            </div>
-        </div>
+            {sectionsDiv}
+          </div>
         </div>
       </div>
     );

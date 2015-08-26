@@ -37,28 +37,43 @@ export default [
     showName: '非洲文章',
     currentPage: '',
     subPage: [{
-      url: '/view_post_list',
-      showName: '文章列表',
+      url: '/#news',
+      showName: '時事新聞',
       subPage: [],
       status: false
     }, {
-      url: '/#firstPage',
-      showName: 'Section 1',
+      url: '/#people',
+      showName: '人物記事',
       subPage: [],
       status: false
     }, {
-      url: '/#secondPage',
-      showName: 'Section 2',
+      url: '/#nature',
+      showName: '自然保育',
       subPage: [],
       status: false
     }, {
-      url: '/#thirdPage',
-      showName: 'Section 3',
+      url: '/#industry',
+      showName: '產業動態',
       subPage: [],
       status: false
     }, {
-      url: '/#fourthPage',
-      showName: 'Section 4',
+      url: '/#science',
+      showName: '科普人文',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#history',
+      showName: '歷史故事',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#medic',
+      showName: '醫療知識',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#travel',
+      showName: '觀光旅行',
       subPage: [],
       status: false
     }]

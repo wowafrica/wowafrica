@@ -20,7 +20,7 @@ export default React.createClass({
     return (
         <Menu className="secondary" id="index-menu" style={{visibility: visStr}}>
           <Item id="menu-logo">
-            <a href="/#firstPage">
+            <a href="/#landing">
               <img src="/images/wow_logo.png" style={{width: '104px'}}/>
             </a>
           </Item>

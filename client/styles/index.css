@@ -61,15 +61,27 @@ body {
   stroke-opacity: .7;
 }
 
-#FPsection1 {
-
-}
-#FPsection2 {
-
-}
-#FPsection3 {
+#fpnews {
   background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
 }
-#FPsection4 {
+#fppeople {
+  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+}
+#fpnature {
+  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+}
+#fpindustry {
+  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+}
+#fpscience {
+  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+}
+#fphistory {
+  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+}
+#fpmedic {
+  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+}
+#fptravel {
   background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
 }
