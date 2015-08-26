@@ -14,11 +14,14 @@ export default React.createClass({
   },
 
   render() {
+
+    let visStr = this.props.hide ? 'hidden' : 'visible';
+
     return (
-        <Menu className="secondary">
+        <Menu className="secondary" id="index-menu" style={{visibility: visStr}}>
           <Item id="menu-logo">
-            <a href="/">
-              <img src="/images/a-02.jpg" />
+            <a href="/#firstPage">
+              <img src="/images/wow_logo.png" style={{width: '104px'}}/>
             </a>
           </Item>
           {this.renderDropdown()}
@@ -75,8 +78,9 @@ export default React.createClass({
 
   _onClick(e) {
     let {pathname} = e.currentTarget;
-    history.pushState({pathname: pathname}, '', pathname);
-    RouteActions.updatePath(pathname);
+    let {hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteActions.updatePath(pathname, hash);
     e.preventDefault();
   }
 });

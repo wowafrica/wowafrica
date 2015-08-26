@@ -41,6 +41,26 @@ export default [
       showName: '文章列表',
       subPage: [],
       status: false
+    }, {
+      url: '/#firstPage',
+      showName: 'Section 1',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#secondPage',
+      showName: 'Section 2',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#thirdPage',
+      showName: 'Section 3',
+      subPage: [],
+      status: false
+    }, {
+      url: '/#fourthPage',
+      showName: 'Section 4',
+      subPage: [],
+      status: false
     }]
   }
 ];

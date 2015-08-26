@@ -4,11 +4,13 @@ import NationAction   from './NationAction';
 
 class RouteAction {
 
-  updatePath(pathName) {
+  updatePath(pathName, hash) {
     AppDispatcher.dispatch({
       actionType: RouteConstants.ROUTE_UPDATE_PATH,
-      pathName
+      pathName,
+      hash
     });
+
     pathName = pathName.split('\/');
     switch (pathName[1]) {
       case 'about_authors':
@@ -31,6 +33,13 @@ class RouteAction {
         }
         break;
       default:
+        //Index Page fullpage.js hashtage
+        if (typeof hash !== 'undefined') {
+          AppDispatcher.dispatch({
+            actionType: RouteConstants.ROUTE_HASHTAG,
+            hash
+          });
+        }
         break;
     }
   }
