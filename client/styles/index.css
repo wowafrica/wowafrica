@@ -30,6 +30,10 @@ body {
   margin: 0px auto;
 }
 
+.container-post figure {
+  margin: 0px;
+}
+
 .land {
   fill: #593030;
   stroke: white;
