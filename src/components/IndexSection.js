@@ -20,7 +20,7 @@ let SlideBox = React.createClass({
   },
 
   render() {
-    let ttt = [1,2,3]
+    let ttt = [1,2,3];
     let slideDiv = ttt.map(function(article) {
       return (
         <div className="column">
