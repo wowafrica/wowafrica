@@ -39,7 +39,7 @@ let AuthorsBox = React.createClass({
         );
     });
     return (
-      <div className="ui cards" style={{justifyContent: 'center'}}>
+      <div className="ui centered cards">
         {authorsDiv}
       </div>
     );

@@ -54,6 +54,21 @@ body {
   background: rgba(200,200,200,.3);
 }
 
+.section-box {
+  padding-top: 100px;
+  text-align: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 80px;
+  letter-spacing: 34px;
+  font-weight: bolder;
+  background: rgba(200,200,200,.3);
+}
+
 .land {
   fill: #593030;
   stroke: white;
