@@ -27,8 +27,7 @@ class PostStore extends EventEmitter {
     if (err) {
       console.log(err.stack);
     }
-
-    // console.log(data.posts[0]);
+    // console.log(JSON.stringify(data, null, 2));
 
     this.post = data.posts[0];
     this.post['image'] = this.parsePostImage(this.post.body);
