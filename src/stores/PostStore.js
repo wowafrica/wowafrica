@@ -28,11 +28,23 @@ class PostStore extends EventEmitter {
       console.log(err.stack);
     }
 
-    console.log(data.posts[0]);
+    // console.log(data.posts[0]);
 
     this.post = data.posts[0];
-  
+    this.post['image'] = this.parsePostImage(this.post.body);
+
     this.emitChange();
+  }
+
+  parsePostImage(body) {
+    let imageSrc = body.match(/<img [^>]*\/>/g);
+
+    if (imageSrc) {
+      imageSrc = imageSrc[0].match(/http[^\"\'\s]*/)[0];
+    } else {
+      imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
+    }
+    return imageSrc;
   }
 
   emitChange() {

@@ -25,10 +25,18 @@ export default React.createClass({
 
   render() {
     let {post ,loader} = this.state;
+    let {body, title, image} = post;
     return (
       <div>
-        <div className="container-header">
-          <IndexMenu/>
+        <div className="ui sticky container" style={{position: 'fixed', left: '0', right: '0'}}>
+          <div className="ui centered grid">
+            <IndexMenu/>
+          </div>
+        </div>
+        <div className="post-image" style={{backgroundImage: `url(${image})`}}>
+          <div className="inner">
+            {title}
+          </div>
         </div>
         <div className="container-content">
           <div className="container-map">
@@ -36,8 +44,7 @@ export default React.createClass({
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <Header className="large">{post.title}</Header>
-              <div dangerouslySetInnerHTML={{__html: post.body}}></div>
+              <div dangerouslySetInnerHTML={{__html: body}}></div>
             </Segment>
           </div>
         </div>
