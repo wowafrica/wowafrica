@@ -20,10 +20,6 @@ class AuthorsStore extends EventEmitter {
   }
 
   onReceviceUpdateAuthors() {
-    this.loadAuthorData();
-  }
-
-  loadAuthorData() {
     let {tag} = TumblrConfig.author;
     this.client.posts(TumblrConfig.blogName, {tag, filter: 'text'}, this.parseAuthorData.bind(this));
   }

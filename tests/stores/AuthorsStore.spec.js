@@ -1,4 +1,4 @@
-import AuthorsData from '../AuthorsData';
+import AuthorsData     from '../AuthorsData';
 import AuthorsTestData from '../AuthorsTestData';
 
 describe('AuthorsStore', () => {
@@ -7,6 +7,6 @@ describe('AuthorsStore', () => {
 
     authorsStore.parseAuthorData(null, AuthorsData);
 
-    expect(authorsStore.authors).toEqual(AuthorsTestData);
+    expect(authorsStore.getAll()).toEqual(AuthorsTestData);
   });
 });
