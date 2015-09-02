@@ -30,6 +30,24 @@ body {
   margin: 0px auto;
 }
 
+.container-post figure {
+  margin: 0px;
+}
+
+.post-image {
+  width: 100%;
+  height: 640px;
+  background-size: cover;
+  text-align: center;
+  line-height: 640px;
+}
+
+.post-image .inner {
+  font-size: 64px;
+  color: #FFFFFF;
+  background: rgba(89, 48, 48, 0.3);
+}
+
 .land {
   fill: #593030;
   stroke: white;
