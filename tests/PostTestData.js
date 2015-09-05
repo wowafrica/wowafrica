@@ -57,5 +57,6 @@ export default {
       'is_root_item': true
     }
   ],
-  'image': 'http://40.media.tumblr.com/139bf93782184871e30f2245ad74da62/tumblr_inline_nu23stxOjj1rcyt2c_540.jpg'
+  'image': 'http://40.media.tumblr.com/139bf93782184871e30f2245ad74da62/tumblr_inline_nu23stxOjj1rcyt2c_540.jpg',
+  'author': 'WOW Africa'
 };
