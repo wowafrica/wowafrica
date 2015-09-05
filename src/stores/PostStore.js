@@ -5,6 +5,10 @@ import PostConstants  from '../constants/PostConstants';
 import RouteConstants from '../constants/RouteConstants';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 
+let settingAlias = {
+  '作者': 'author'
+};
+
 class PostStore extends EventEmitter {
 
   constructor() {
@@ -26,13 +30,33 @@ class PostStore extends EventEmitter {
   parsePostData(err, data) {
     if (err) {
       console.log(err.stack);
+    } else {
+      // console.log(JSON.stringify(data, null, 2));
+
+      let image = this.parsePostImage(data.posts[0].body);
+      let {settingResult, body} = this.parsePostSetting(data.posts[0].body);
+
+      this.post = {...data.posts[0], body, image, ...settingResult};
+
+      this.emitChange();
     }
-    // console.log(JSON.stringify(data, null, 2));
+  }
 
-    this.post = data.posts[0];
-    this.post['image'] = this.parsePostImage(this.post.body);
+  parsePostSetting(body) {
+    let [setting, ...bodyArray] = body.split('<hr>');
+    let settingResult = {author: 'WOW Africa'};
 
-    this.emitChange();
+    if (bodyArray.length > 0) {
+      body = bodyArray.join('<hr>');
+      // <p>作者: Lee</p>
+      setting.match(/[^>]*:[^<]*/g).forEach((entry) => {
+        // 作者: Lee
+        let [key, value] = entry.split(':');
+        settingResult[settingAlias[key]] = value.trim();
+      });
+    }
+    // console.log(settingResult);
+    return {settingResult, body};
   }
 
   parsePostImage(body) {
