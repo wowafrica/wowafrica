@@ -9,6 +9,7 @@ import plumber      from 'gulp-plumber';
 import uglify       from 'gulp-uglify';
 import gulpif       from 'gulp-if';
 
+import del         from 'del';
 import express     from 'express';
 import liveConnect from 'connect-livereload';
 import path        from 'path';
@@ -143,6 +144,18 @@ gulp.task('server', (done) => {
     gutil.log('Listening on port 3000');
     done();
   });
+});
+
+gulp.task('clean-build', () => {
+  return del(BUILD_PATH);
+});
+
+gulp.task('clean-all', ['clean-build'], () => {
+  return del([
+    'bower_components',
+    'coverage',
+    'node_modules'
+  ]);
 });
 
 gulp.task('watch', (done) => {

@@ -29,6 +29,11 @@ and then open `http://localhost:3000/`
 - `npm i`
 - `npm test`
 
+## Clean Environment
+
+- `npm run clean` only clean build result.
+- `npm run clean-all` clean all dependencies and modules.
+
 ## Contribute
 
 1. Fork it.
