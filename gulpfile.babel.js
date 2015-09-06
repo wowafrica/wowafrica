@@ -114,9 +114,12 @@ gulp.task('server', (done) => {
     gutil.log('URL: ', gutil.colors.yellow(req.url));
 
     RouteStore.onReceiveUpdatePath(req.url);
-    let {config} = RouteStore.getCurrentRoute();
-    let CurrentPage = config['page'];
-    let html = React.renderToString(<CurrentPage/>);
+    let currentRoute = RouteStore.getCurrentRoute();
+    let html = '';
+    if (currentRoute) {
+      let CurrentPage = currentRoute.config['page'];
+      html = React.renderToString(<CurrentPage/>);
+    }
     res.write(`
 <!DOCTYPE html>
 <html>
