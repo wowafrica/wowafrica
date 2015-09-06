@@ -1,0 +1,5 @@
+export default {
+  POST_LIST_UPDATE: 100,
+
+  POST_LIST_EVENT: 'POST_LIST_EVENT'
+};

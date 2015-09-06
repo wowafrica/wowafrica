@@ -43,7 +43,7 @@ export default [
       status: false
     }, {
       url: '/#people',
-      showName: '人物記事',
+      showName: '人物專欄',
       subPage: [],
       status: false
     }, {

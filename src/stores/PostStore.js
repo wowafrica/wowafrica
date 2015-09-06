@@ -1,13 +1,10 @@
 import {EventEmitter} from 'events';
 import Tumblr         from 'tumblr.js';
 import TumblrConfig   from '../configures/TumblrConfig';
+import PostConfig     from '../configures/PostConfig';
 import PostConstants  from '../constants/PostConstants';
 import RouteConstants from '../constants/RouteConstants';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
-
-let settingAlias = {
-  '作者': 'author'
-};
 
 class PostStore extends EventEmitter {
 
@@ -44,7 +41,7 @@ class PostStore extends EventEmitter {
 
   parsePostSetting(body) {
     let [setting, ...bodyArray] = body.split('<hr>');
-    let settingResult = {author: 'WOW Africa'};
+    let settingResult = PostConfig.settingContainer;
 
     if (bodyArray.length > 0) {
       body = bodyArray.join('<hr>');
@@ -52,7 +49,7 @@ class PostStore extends EventEmitter {
       setting.match(/[^>]*:[^<]*/g).forEach((entry) => {
         // 作者: Lee
         let [key, value] = entry.split(':');
-        settingResult[settingAlias[key]] = value.trim();
+        settingResult[PostConfig.settingAlias[key]] = value.trim();
       });
     }
     // console.log(settingResult);
