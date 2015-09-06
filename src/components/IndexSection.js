@@ -1,5 +1,8 @@
-import React        from 'react/addons';
-import Semantify    from 'react-semantify';
+import React          from 'react/addons';
+import Semantify      from 'react-semantify';
+import PostListConfig from '../configures/PostListConfig';
+import PostListStore  from '../stores/PostListStore';
+import PostListAction from '../actions/PostListAction';
 
 let {Cards, Card, Image} = Semantify;
 
@@ -7,45 +10,27 @@ let SlideBox = React.createClass({
 
   getInitialState() {
     return {
-
     };
   },
 
-  componentDidMount() {
-    
-  },
-
-  componentWillUnmount() {
-    
-  },
-
   render() {
-    let ttt = [1,2,3];
-    let slideDiv = ttt.map(function(article) {
+    let slideDiv = this.props.posts.map(function(post) {
       return (
-        <div className="column">
-        <div className="event test">
-          <div className="ui fluid card">
-            <div className="ui dimmer"></div>
-            <Image src={'https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/1606354_525440380907574_486432051_o.jpg'}></Image>
-            <div className="content">
-              <div className="header">
-                {'A'}
-              </div>
-              <div className="meta">
-                {'B'}
-              </div>
-              <div className="description">
-                {'C'}
-              </div>
+        <a className="card" href={'/view_post_list/posts/'+post.id}>
+          <Image src={post.image}></Image>
+          <div className="content">
+            <div className="header">
+              {post.title}
+            </div>
+            <div className="meta">
+              {post.brief}
             </div>
           </div>
-        </div>
-        </div>
-        );
+        </a>
+      );
     });
     return (
-      <div className="row">
+      <div className="ui three cards">
         {slideDiv}
       </div>
     );
@@ -60,49 +45,40 @@ export default React.createClass({
 
   getInitialState() {
     return {
-
+      posts: PostListStore.getPostList(this.props.category)
     };
   },
 
   componentDidMount() {
-    $('.event.test .card')
-      .dimmer({
-        on: 'hover',
-        opacity: 0.5
-      });
+    PostListStore.addChangeListener(this._onChange);
   },
+
+  componentWillUnmount() {
+    PostListStore.removeChangeListener(this._onChange);
+  },
+
 
   render() {
     return (
-      <div className="section" id={this.props.sid}>
+      <div className="section" id={'fp'+this.props.category}>
         <div className="section-box">
           <p className="section-title">{this.props.title}</p>
         </div>
         <div className="slide">
-          <div className="ui container">
-            <div className="ui three column grid">
-              <SlideBox />
-            </div>
-          </div>
-        </div>
-        <div className="slide">
-          <div className="ui container">
-            <div className="ui three column grid">
-              <SlideBox />
-              <SlideBox />
-            </div>
-          </div>
-        </div>
-        <div className="slide">
-          <div className="ui container">
-            <div className="ui three column grid">
-              <SlideBox />
-              <SlideBox />
+          <div className="ui grid container">
+            <div className="wide centered column">
+              <SlideBox posts={this.state.posts}/>
             </div>
           </div>
         </div>
       </div>
     );
+  },
+
+  _onChange() {
+    this.setState({
+      posts: PostListStore.getPostList(this.props.category)
+    });
   }
 
 });

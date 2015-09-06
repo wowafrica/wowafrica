@@ -1,6 +1,7 @@
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import NationAction   from './NationAction';
+import PostListAction from './PostListAction';
 
 class RouteAction {
 
@@ -33,13 +34,14 @@ class RouteAction {
         }
         break;
       default:
-        //Index Page fullpage.js hashtage
+        //Index Page fullpage.js hashtag
         if (typeof hash !== 'undefined') {
           AppDispatcher.dispatch({
             actionType: RouteConstants.ROUTE_HASHTAG,
             hash
           });
         }
+        PostListAction.updateAllPostList(3);
         break;
     }
   }

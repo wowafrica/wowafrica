@@ -3,10 +3,8 @@ import IndexMenu       from '../components/IndexMenu';
 import IndexSection    from '../components/IndexSection';
 import MenuStore       from '../stores/MenuStore';
 import RouteStore      from '../stores/RouteStore';
-import PostListStore   from '../stores/PostListStore';
 import RouteConstants  from '../constants/RouteConstants';
 import AppDispatcher   from '../dispatcher/AppDispatcher';
-import PostListAction  from '../actions/PostListAction';
 
 let firstFPbg = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
 
@@ -73,7 +71,6 @@ export default React.createClass({
           break;
       }
     });
-    PostListAction.updatePostList('news', 5);
   },
 
   componentWillUnmount() {
@@ -86,7 +83,7 @@ export default React.createClass({
   render() {
     let sectionsDiv = MenuStore.getArticleSubPages().map((page) => {
       return (
-          <IndexSection sid={'fp'+page.url.substring(2)} title={page.showName}/>
+          <IndexSection category={page.url.substring(2)} title={page.showName}/>
       );
     });
 

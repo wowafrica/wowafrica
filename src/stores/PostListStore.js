@@ -11,14 +11,14 @@ class PostListStore extends EventEmitter {
 
   constructor() {
     super();
-    this.postList = PostListConfig.categoryAlias;
+    this.postList = PostListConfig.listContainer;
     this.client = Tumblr.createClient({
       consumer_key: TumblrConfig.consumerKey // eslint-disable-line
     });
-    this.currentCategory = '';
 
     PostListConfig.categories.forEach((item) => {
       this.postList[item] = {
+        name: item,
         totalPost: -1,
         loadedPost: 0,
         posts: []
@@ -27,40 +27,44 @@ class PostListStore extends EventEmitter {
   }
 
   getPostList(category) {
-    return this.postList[category];
+    return this.postList[category].posts;
   }
 
   onReceviceUpdatePostList(category, amount) {
     if (this.postList[category].totalPost < 0 ||
        (this.postList[category].loadedPost < this.postList[category].totalPost && this.postList[category].loadedPost < amount)
     ) {
-      this.currentCategory = category;
       this.client.posts(TumblrConfig.blogName, {tag: 'category-'+category, offset: this.postList[category].loadedPost}, this.parsePostListData.bind(this));
     }
   }
 
   parsePostListData(err, data) {
+    let dbgTmp = '';
     if (err) {
       console.log(err.stack);
     } else {
-      this.postList[this.currentCategory].totalPost = data.total_posts;
       data.posts.forEach((post) => {
         let result = this.parsePostData(post);
-        this.postList[this.currentCategory].posts.push(result);
-        this.postList[this.currentCategory].loadedPost++;
+        if (result.valid == true) {
+          this.postList[result.category].posts.push(result);
+          this.postList[result.category].loadedPost++;
+          this.postList[result.category].totalPost = data.total_posts;
+          dbgTmp = result.category;
+        }
       });
       this.emitChange();
     }
-    console.log(this.postList[this.currentCategory]);
+    console.log(this.postList[dbgTmp]);
   }
 
   parsePostData(post) {
     let id = post.id;
     let title = post.title;
     let image = this.parsePostImage(post.body);
-    let grocery = this.parsePostBody(post.body);
+    let setting = this.parsePostBody(post.body);
+    let {category, valid} = this.parsePostCategory(post.tags);
 
-    return {id, title, image, ...grocery};
+    return {id, title, image, category, ...setting, valid};
   }
 
   parsePostBody(body) {
@@ -90,6 +94,16 @@ class PostListStore extends EventEmitter {
     return imageSrc;
   }
 
+  parsePostCategory(tagArray) {
+    let tags = tagArray.join(',');
+    let matchedTag = tags.match(/category-[^,]*/g);
+    if (matchedTag && matchedTag.length == 1) {
+      return {category: matchedTag[0].substring(9), valid: true};
+    } else {
+      return {category: '', valid: false};
+    }
+  }
+
   emitChange() {
     this.emit(PostListConstants.POST_LIST_EVENT);
   }
@@ -109,7 +123,6 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case PostListConstants.POST_LIST_UPDATE:
-      console.log('Update post list ' + action.category + ' ' + action.amount);
       postListStore.onReceviceUpdatePostList(action.category, action.amount);
       break;
     default:

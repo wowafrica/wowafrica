@@ -1,5 +1,7 @@
+import PostConfig  from '../configures/PostConfig';
+
 export default {
-  categoryAlias: {
+  listContainer: {
     'news':     {},
     'people':   {},
     'nature':   {},
@@ -8,6 +10,13 @@ export default {
     'history':  {},
     'medic':    {},
     'travel':   {}
+  },
+  postContainer: {
+    id: '',
+    title: '',
+    image: '',
+    category: '',
+    ...PostConfig.settingContainer
   },
   categories: [
     'news',
