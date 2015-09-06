@@ -11,4 +11,4 @@ gulpfile.js
 coverage/
 
 # bower
-bower_components
+bower_components/

@@ -1,5 +1,4 @@
 require('babel/polyfill');
-require('fullpage.js/jquery.fullPage');
 
 import React        from 'react/addons';
 import RouteActions from '../../src/actions/RouteAction';
