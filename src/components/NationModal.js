@@ -1,4 +1,3 @@
-import $            from 'jquery';
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import NationsStore from '../stores/NationsStore';

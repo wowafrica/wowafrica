@@ -19,12 +19,13 @@ app.all('*', (req, res) => {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Explore Africa</title>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.css" type="text/css" rel="stylesheet"></link>
-    <link href="/styles/index.css" type="text/css" rel="stylesheet"></link>
+    <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
     <div id="content">${html}</div>
     <div id="nation_modal" class="ui dimmer modals page"></div>
+    <script type="text/javascript" src="/scripts/vendor.js"></script>
+    <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
     <script type="text/javascript" src="/scripts/bundle.js"></script>
   </body>
 </html>`);
