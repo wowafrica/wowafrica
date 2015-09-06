@@ -9,3 +9,6 @@ gulpfile.js
 
 # coverage result
 coverage/
+
+# bower
+bower_components/

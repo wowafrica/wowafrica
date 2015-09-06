@@ -3,7 +3,6 @@ import IndexMenu    from '../components/IndexMenu';
 import MapStore     from '../stores/MapStore';
 import NationAction from '../actions/NationAction';
 import d3           from 'd3';
-import $            from 'jquery';
 import Semantify    from 'react-semantify';
 
 export default React.createClass({

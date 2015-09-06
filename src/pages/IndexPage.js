@@ -5,7 +5,6 @@ import MenuStore      from '../stores/MenuStore';
 import RouteStore     from '../stores/RouteStore';
 import RouteConstants from '../constants/RouteConstants';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
-import $              from 'jquery';
 
 let firstFPbg = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
 
