@@ -1,6 +1,7 @@
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import NationAction   from './NationAction';
+import AuthorAction   from './AuthorAction';
 
 class RouteAction {
 
@@ -30,6 +31,7 @@ class RouteAction {
             actionType: RouteConstants.ROUTE_POST_PAGE,
             postID: pathName[3]
           });
+          AuthorAction.loadAuthorData();
         }
         break;
       default:
