@@ -12,11 +12,11 @@ let SlideBox = React.createClass({
   },
 
   componentDidMount() {
-    
+
   },
 
   componentWillUnmount() {
-    
+
   },
 
   render() {
