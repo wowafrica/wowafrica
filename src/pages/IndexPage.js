@@ -6,8 +6,6 @@ import RouteStore      from '../stores/RouteStore';
 import RouteConstants  from '../constants/RouteConstants';
 import AppDispatcher   from '../dispatcher/AppDispatcher';
 
-let firstFPbg = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
-
 export default React.createClass({
 
   IndexDispatch: '',
@@ -38,7 +36,7 @@ export default React.createClass({
           if (index == 1 && direction == 'down') {
             requestAnimationFrame(function() {
               $('#index-menu')
-                .transition('scale in', 750)
+                .transition('fade in', 750)
               ;
             });
             $('#fpTopArticle').css('background', '');
@@ -47,18 +45,18 @@ export default React.createClass({
           if (index == 2 && direction == 'up') {
             requestAnimationFrame(function() {
               $('#index-menu')
-                .transition('scale out', 750)
+                .transition('fade out', 750)
               ;
             });
             $('#fpTopArticle').css('background', '');
           }
 
           if (index == 2 && direction == 'down') {
-            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
+
           }
 
           if (index == 3 && direction == 'up') {
-            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
+
           }
         }
       });
@@ -89,17 +87,14 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="ui sticky container" style={{position: 'fixed', left: '0', right: '0'}}>
-          <div className="ui centered grid">
-            <IndexMenu hide={true}/>
-          </div>
+        <div>
+          <IndexMenu hide={true}/>
         </div>
-        <div style={{background: 'url("'+firstFPbg+'")'}}>
+        <div style={{backgroundColor: 'white'}}>
           <div id="fullpage">
             <div className="section" id="fpLanding">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '100px', letterSpacing: '38px', fontWeight: 'bolder', marginBottom: '0'}}>WOW!</p>
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>AFRICA</p>
+              <div style={{textAlign: 'center'}}>
+                <img src='/images/landing.png' style={{width: '50%'}}/>
               </div>
             </div>
             <div className="section" id="fpTopArticle">

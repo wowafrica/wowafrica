@@ -19,8 +19,6 @@ class PostListStore extends EventEmitter {
     PostListConfig.categories.forEach((item) => {
       this.postList[item] = {
         name: item,
-        totalPost: -1,
-        loadedPost: 0,
         posts: []
       };
     });
@@ -31,7 +29,7 @@ class PostListStore extends EventEmitter {
   }
 
   onReceviceUpdatePostList(category, amount) {
-    this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category], offset: this.postList[category].loadedPost}, this.parsePostListData.bind(this));
+    this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListData.bind(this));
   }
 
   parsePostListData(err, data) {

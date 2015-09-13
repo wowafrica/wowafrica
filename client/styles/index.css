@@ -51,22 +51,23 @@ body {
 }
 
 .header-title {
-  background: rgba(200,200,200,.3);
+  /*background: rgba(200,200,200,.3);*/
 }
 
 .section-box {
   padding-top: 100px;
-  text-align: center;
+  padding-left: 100px;
+  text-align: left;
   position: fixed;
   z-index: 2;
   width: 100%;
 }
 
 .section-title {
-  font-size: 80px;
+  font-size: 36px;
   letter-spacing: 34px;
   font-weight: bolder;
-  background: rgba(200,200,200,.3);
+  /*background: rgba(200,200,200,.3);*/
 }
 
 .land {
@@ -77,26 +78,34 @@ body {
 }
 
 #fpnews {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fppeople {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpnature {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fpindustry {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpscience {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fphistory {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpmedic {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fptravel {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }

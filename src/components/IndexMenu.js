@@ -18,14 +18,18 @@ export default React.createClass({
     let visStr = this.props.hide ? 'hidden' : 'visible';
 
     return (
-        <Menu className="secondary" id="index-menu" style={{visibility: visStr}}>
-          <Item id="menu-logo">
-            <a href="/#landing">
-              <img src="/images/wow_logo.png" style={{width: '104px'}}/>
-            </a>
-          </Item>
-          {this.renderDropdown()}
-        </Menu>
+      <div className="ui sticky" id="index-menu" style={{visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px'}}>
+        <div className="ui centered grid">
+          <Menu className="secondary">
+            <Item id="menu-logo">
+              <a href="/#landing">
+                <img src="/images/wow_logo2.png" style={{width: '200px'}}/>
+              </a>
+            </Item>
+            {this.renderDropdown()}
+          </Menu>
+        </div>
+      </div>
     );
   },
 
@@ -49,8 +53,8 @@ export default React.createClass({
         return (
           <Item active={dropdownSelect}>
             <Dropdown init={true}>
-              <Text>{showName}</Text>
-              <Icon className="dropdown"/>
+              <Text style={{color: 'white'}}>{showName}</Text>
+              <Icon className="dropdown" style={{color: 'white'}}/>
               <Menu>
                 {this.renderItem(section.subPage)}
               </Menu>
