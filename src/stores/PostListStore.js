@@ -31,30 +31,26 @@ class PostListStore extends EventEmitter {
   }
 
   onReceviceUpdatePostList(category, amount) {
-    if (this.postList[category].totalPost < 0 ||
-       (this.postList[category].loadedPost < this.postList[category].totalPost && this.postList[category].loadedPost < amount)
-    ) {
-      this.client.posts(TumblrConfig.blogName, {tag: 'category-'+category, offset: this.postList[category].loadedPost}, this.parsePostListData.bind(this));
-    }
+    this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category], offset: this.postList[category].loadedPost}, this.parsePostListData.bind(this));
   }
 
   parsePostListData(err, data) {
-    let dbgTmp = '';
+    let updatedList = [];
     if (err) {
       console.log(err.stack);
     } else {
       data.posts.forEach((post) => {
         let result = this.parsePostData(post);
         if (result.valid == true) {
-          this.postList[result.category].posts.push(result);
-          this.postList[result.category].loadedPost++;
-          this.postList[result.category].totalPost = data.total_posts;
-          dbgTmp = result.category;
+          updatedList.push(result);
         }
       });
-      this.emitChange();
+      if (updatedList.length > 0) {
+        this.postList[updatedList[0].category].posts = updatedList;
+        this.emitChange();
+        console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
+      };
     }
-    console.log(this.postList[dbgTmp]);
   }
 
   parsePostData(post) {
@@ -95,13 +91,12 @@ class PostListStore extends EventEmitter {
   }
 
   parsePostCategory(tagArray) {
-    let tags = tagArray.join(',');
-    let matchedTag = tags.match(/category-[^,]*/g);
-    if (matchedTag && matchedTag.length == 1) {
-      return {category: matchedTag[0].substring(9), valid: true};
-    } else {
-      return {category: '', valid: false};
-    }
+    for (let tag in tagArray) {
+      if (PostListConfig.categoryMapZh[tag] !== 'undefined') {
+        return {category: PostListConfig.categoryMapZh[tagArray[tag]], valid: true};
+      }
+    };
+    return {category: '', valid: false};
   }
 
   emitChange() {
