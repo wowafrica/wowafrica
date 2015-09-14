@@ -22,17 +22,45 @@ class PostListStore extends EventEmitter {
         posts: []
       };
     });
+    this.postList['new'] = {
+      name: 'new',
+      posts: []
+    }
   }
 
-  getPostList(category) {
-    return this.postList[category].posts;
+  getPostList(item) {
+    return this.postList[item].posts;
   }
 
   onReceviceUpdatePostList(category, amount) {
-    this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListData.bind(this));
+    if (PostListConfig.categoryMap[category] !== undefined) {
+      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListCategory.bind(this));
+    }
+    else if (category == 'new') {
+      this.client.posts(TumblrConfig.blogName, {limit: amount}, this.parsePostListNew.bind(this));
+    }
   }
 
-  parsePostListData(err, data) {
+  parsePostListNew(err, data) {
+    let updatedList = [];
+    if (err) {
+      console.log(err.stack);
+    } else {
+      data.posts.forEach((post) => {
+        let result = this.parsePostData(post);
+        if (result.valid == true) {
+          updatedList.push(result);
+        }
+      });
+      if (updatedList.length > 0) {
+        this.postList['new'].posts = updatedList;
+        this.emitChange();
+        console.log('postlist new updated with '+updatedList.length+' posts');
+      };
+    }
+  }
+
+  parsePostListCategory(err, data) {
     let updatedList = [];
     if (err) {
       console.log(err.stack);

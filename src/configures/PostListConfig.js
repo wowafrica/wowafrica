@@ -9,7 +9,8 @@ export default {
     'science':  {},
     'history':  {},
     'medic':    {},
-    'travel':   {}
+    'travel':   {},
+    'newPosts': {}
   },
   postContainer: {
     id: '',
