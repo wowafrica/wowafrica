@@ -58,8 +58,6 @@ body {
   padding-top: 100px;
   padding-left: 100px;
   text-align: left;
-  position: fixed;
-  z-index: 2;
   width: 100%;
 }
 
@@ -75,6 +73,10 @@ body {
   stroke: white;
   stroke-width: .7px;
   stroke-opacity: .7;
+}
+
+.ui.sticky.fixed.top {
+  padding-top: 15px;
 }
 
 #fpnews {
