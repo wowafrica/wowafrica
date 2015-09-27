@@ -48,5 +48,8 @@ export default {
     '歷史故事': 'history',
     '醫療知識': 'medic',
     '觀光旅行': 'travel'
+  },
+  tagMap: {
+    'top': '置頂文章'
   }
 };

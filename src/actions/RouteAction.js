@@ -41,6 +41,7 @@ class RouteAction {
             hash
           });
         }
+        PostListAction.updatePostList('top', 2);
         PostListAction.updatePostList('new', 2);
         PostListAction.updateAllPostList(3);
         break;

@@ -25,7 +25,11 @@ class PostListStore extends EventEmitter {
     this.postList['new'] = {
       name: 'new',
       posts: []
-    }
+    };
+    this.postList['top'] = {
+      name: 'top',
+      posts: []
+    };
   }
 
   getPostList(item) {
@@ -38,6 +42,28 @@ class PostListStore extends EventEmitter {
     }
     else if (category == 'new') {
       this.client.posts(TumblrConfig.blogName, {limit: amount}, this.parsePostListNew.bind(this));
+    }
+    else if (category == 'top') {
+      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.tagMap['top']}, this.parsePostListTop.bind(this));
+    }
+  }
+
+  parsePostListTop(err, data) {
+    let updatedList = [];
+    if (err) {
+      console.log(err.stack);
+    } else {
+      data.posts.forEach((post) => {
+        let result = this.parsePostData(post);
+        if (result.valid == true) {
+          updatedList.push(result);
+        }
+      });
+      if (updatedList.length > 0) {
+        this.postList['top'].posts = updatedList;
+        this.emitChange('top');
+        console.log('postlist top updated with '+updatedList.length+' posts');
+      };
     }
   }
 
@@ -54,7 +80,7 @@ class PostListStore extends EventEmitter {
       });
       if (updatedList.length > 0) {
         this.postList['new'].posts = updatedList;
-        this.emitChange();
+        this.emitChange('new');
         console.log('postlist new updated with '+updatedList.length+' posts');
       };
     }
@@ -73,7 +99,7 @@ class PostListStore extends EventEmitter {
       });
       if (updatedList.length > 0) {
         this.postList[updatedList[0].category].posts = updatedList;
-        this.emitChange();
+        this.emitChange('category');
         console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
       };
     }
@@ -125,16 +151,50 @@ class PostListStore extends EventEmitter {
     return {category: '', valid: false};
   }
 
-  emitChange() {
-    this.emit(PostListConstants.POST_LIST_EVENT);
+  emitChange(type) {
+    switch (type) {
+      case 'caetgory':
+        this.emit(PostListConstants.POST_LIST_CATEGORY_EVENT);
+        break;
+      case 'new':
+        this.emit(PostListConstants.POST_LIST_NEW_EVENT);
+        break;
+      case 'top':
+        this.emit(PostListConstants.POST_LIST_TOP_EVENT);
+        break;
+      default:
+    }
+
   }
 
-  addChangeListener(listener) {
-    this.on(PostListConstants.POST_LIST_EVENT, listener);
+  addChangeListener(type, listener) {
+    switch (type) {
+      case 'caetgory':
+        this.on(PostListConstants.POST_LIST_CATEGORY_EVENT, listener);
+        break;
+      case 'new':
+        this.on(PostListConstants.POST_LIST_NEW_EVENT, listener);
+        break;
+      case 'top':
+        this.on(PostListConstants.POST_LIST_TOP_EVENT, listener);
+        break;
+      default:
+    }
   }
 
-  removeChangeListener(listener) {
-    this.removeListener(PostListConstants.POST_LIST_EVENT, listener);
+  removeChangeListener(type, listener) {
+    switch (type) {
+      case 'caetgory':
+        this.removeListener(PostListConstants.POST_LIST_CATEGORY_EVENT, listener);
+        break;
+      case 'new':
+        this.removeListener(PostListConstants.POST_LIST_NEW_EVENT, listener);
+        break;
+      case 'top':
+        this.removeListener(PostListConstants.POST_LIST_TOP_EVENT, listener);
+        break;
+      default:
+    }
   }
 }
 

@@ -45,15 +45,6 @@ body {
   background: rgba(89, 48, 48, 0.3);
 }
 
-.header-box {
-  padding-top: 20%;
-  text-align: center;
-}
-
-.header-title {
-  /*background: rgba(200,200,200,.3);*/
-}
-
 .section-box {
   padding-top: 100px;
   padding-left: 100px;
@@ -66,6 +57,30 @@ body {
   letter-spacing: 34px;
   font-weight: bolder;
   /*background: rgba(200,200,200,.3);*/
+}
+
+.header-box {
+  padding-top: 210px;
+  padding-left: 64px;
+  width: 580px;
+  text-align: left;
+  font-size: 36px;
+  letter-spacing: 10px;
+  /*font-weight: bolder;*/
+  color: white;
+}
+
+.header-title {
+  background-color: rgba(0,0,0,0.2);
+  padding-left: 10px;
+}
+
+.header-box a:visited{
+  color: white;
+}
+
+.header-box a{
+  color: white;
 }
 
 .land {
