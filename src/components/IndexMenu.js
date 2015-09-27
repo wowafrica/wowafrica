@@ -18,10 +18,10 @@ export default React.createClass({
     let visStr = this.props.hide ? 'hidden' : 'visible';
 
     return (
-      <div className="ui stick" id="index-menu" style={{visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px', zIndex: '100'}}>
+      <div className="ui stick" id="index-menu" style={{height: '40px', visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px', zIndex: '999'}}>
         <div className="ui centered grid">
           <Menu className="secondary">
-            <Item id="menu-logo">
+            <Item id="menu-logo" style={{paddingTop: '13px'}}>
               <a href="/">
                 <img src="/images/wow_logo2.png" style={{width: '200px'}}/>
               </a>

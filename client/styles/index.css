@@ -79,6 +79,11 @@ body {
   padding-top: 15px;
 }
 
+.ui.segment {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 #fpnews {
   /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
   background-color: white;

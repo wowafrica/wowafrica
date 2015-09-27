@@ -16,9 +16,14 @@ export default React.createClass({
   componentDidMount() {
     $('#category-menu')
     .sticky({
-      offset: 37,
-    })
-    ;
+      offset: 40,
+      onStick: function(){
+        $('#fpnews').css('padding-top', '28px');
+      },
+      onUnstick: function(){
+        $('#fpnews').css('padding-top', '0px');
+      }
+    });
   },
 
   render() {
@@ -26,7 +31,7 @@ export default React.createClass({
     let visStr = this.props.hide ? 'hidden' : 'visible';
 
     return (
-      <div className="ui sticky" id="category-menu" style={{height: '37px', backgroundColor: '#298399', letterSpacing: '15px', marginBottom: '1rem'}}>
+      <div className="ui sticky" id="category-menu" style={{height: '40px', backgroundColor: '#298399', letterSpacing: '10px', marginBottom: '1rem'}}>
         <div className="ui centered grid">
           <Menu className="secondary">
             {this.renderDropdown()}
