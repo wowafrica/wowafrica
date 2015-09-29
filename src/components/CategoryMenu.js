@@ -16,9 +16,8 @@ export default React.createClass({
   componentDidMount() {
     $('#category-menu')
     .sticky({
-      offset: 37,
-    })
-    ;
+      offset: 37
+    });
   },
 
   render() {

@@ -25,7 +25,7 @@ class PostListStore extends EventEmitter {
     this.postList['new'] = {
       name: 'new',
       posts: []
-    }
+    };
   }
 
   getPostList(item) {
