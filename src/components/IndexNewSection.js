@@ -21,11 +21,13 @@ export default React.createClass({
 
   render() {
     let newSection = this.state.posts.map((post) => {
-      <div className="section" style={{background: 'url('+post.image+')'}}>
-        <div className="section-box">
-          <p className="section-title">{post.title}</p>
+      return (
+        <div className="section" style={{background: 'url('+post.image+')'}}>
+          <div className="section-box">
+            <p className="section-title">{post.title}</p>
+          </div>
         </div>
-      </div>
+      );
     });
     return (
       <div>

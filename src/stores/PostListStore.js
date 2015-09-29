@@ -25,7 +25,7 @@ class PostListStore extends EventEmitter {
     this.postList['new'] = {
       name: 'new',
       posts: []
-    }
+    };
   }
 
   getPostList(item) {
@@ -33,7 +33,7 @@ class PostListStore extends EventEmitter {
   }
 
   onReceviceUpdatePostList(category, amount) {
-    if (PostListConfig.categoryMap[category] !== undefined) {
+    if (category in PostListConfig.categoryMap) {
       this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListCategory.bind(this));
     }
     else if (category == 'new') {
@@ -117,9 +117,9 @@ class PostListStore extends EventEmitter {
   }
 
   parsePostCategory(tagArray) {
-    for (let tag in tagArray) {
-      if (PostListConfig.categoryMapZh[tag] !== 'undefined') {
-        return {category: PostListConfig.categoryMapZh[tagArray[tag]], valid: true};
+    for (let tag of tagArray) {
+      if (tag in PostListConfig.categoryMapZh) {
+        return {category: PostListConfig.categoryMapZh[tag], valid: true};
       }
     };
     return {category: '', valid: false};
