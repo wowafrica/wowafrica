@@ -29,10 +29,8 @@ export default React.createClass({
     // console.log(JSON.stringify(post, null, 2));
     return (
       <div>
-        <div className="ui sticky container" style={{position: 'fixed', left: '0', right: '0'}}>
-          <div className="ui centered grid">
-            <IndexMenu/>
-          </div>
+        <div>
+          <IndexMenu hide={false}/>
         </div>
         <div className="post-image" style={{backgroundImage: `url(${image})`}}>
           <div className="inner">
@@ -45,7 +43,7 @@ export default React.createClass({
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <div dangerouslySetInnerHTML={{__html: body}}></div>
+              <div style={{fontSize: '20px'}} dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}

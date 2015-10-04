@@ -18,8 +18,8 @@ export default React.createClass({
     // let {posts = []} = this.state.postList[category];
     return (
       <div>
-        <div className="container-header">
-          <IndexMenu/>
+        <div>
+          <IndexMenu hide={false} />
         </div>
         <div className="container-content">
           <IndexSection category={category} title={category}/>
