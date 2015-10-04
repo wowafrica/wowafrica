@@ -40,11 +40,11 @@ class PostStore extends EventEmitter {
     }
   }
 
-  removeTopTag(tags){
-      let idx = tags.indexOf(PostListConfig.tagMap['top']);
-      if (idx != -1) {
-        tags.splice(idx, 1);
-      }
+  removeTopTag(tags) {
+    let idx = tags.indexOf(PostListConfig.tagMap['top']);
+    if (idx != -1) {
+      tags.splice(idx, 1);
+    }
   }
 
   parsePostSetting(body) {

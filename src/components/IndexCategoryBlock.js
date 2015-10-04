@@ -26,7 +26,7 @@ let CategoryBox = React.createClass({
         <div className="middle aligned centered column">
           <img src="/images/icon_55.png" style={{marginLeft: '25%', width: '50%'}}/>
         </div>
-      )
+      );
     }
     else {
       let backImg = '';
@@ -85,7 +85,7 @@ export default React.createClass({
     let items = [];
     PostListConfig.categories.forEach((item) => {
       items.push(item);
-    })
+    });
     items.splice(4, 0, 'none');
     let viewBlks = items.map((item) => {
       return (

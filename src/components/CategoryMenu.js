@@ -17,10 +17,10 @@ export default React.createClass({
     $('#category-menu')
     .sticky({
       offset: 40,
-      onStick: function(){
+      onStick: function() {
         $('#category-block-divider').css('padding-top', '40px');
       },
-      onUnstick: function(){
+      onUnstick: function() {
         $('#category-block-divider').css('padding-top', '0px');
       }
     });

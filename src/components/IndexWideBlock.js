@@ -6,21 +6,21 @@ import PostListAction from '../actions/PostListAction';
 export default React.createClass({
 
   getInitialState() {
-    switch(this.props.type){
+    switch (this.props.type) {
       case 'new':
-      return {
-        posts: PostListStore.getPostList('new')
-      };
-      break;
+        return {
+          posts: PostListStore.getPostList('new')
+        };
+        break;
 
       case 'top':
-      return {
-        posts: PostListStore.getPostList('top')
-      };
-      break;
+        return {
+          posts: PostListStore.getPostList('top')
+        };
+        break;
 
       default:
-      break;
+        break;
     }
   },
 
@@ -46,7 +46,7 @@ export default React.createClass({
             </p>
           </div>
         </div>
-      )
+      );
     });
     return (
       <div>
@@ -56,21 +56,21 @@ export default React.createClass({
   },
 
   _onChange() {
-    switch(this.props.type){
+    switch (this.props.type) {
       case 'new':
-      this.setState({
-        posts: PostListStore.getPostList('new')
-      });
-      break;
+        this.setState({
+          posts: PostListStore.getPostList('new')
+        });
+        break;
 
       case 'top':
-      this.setState({
-        posts: PostListStore.getPostList('top')
-      });
-      break;
+        this.setState({
+          posts: PostListStore.getPostList('top')
+        });
+        break;
 
       default:
-      break;
+        break;
     }
   }
 

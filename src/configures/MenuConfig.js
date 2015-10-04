@@ -7,12 +7,13 @@ export default [
       showName: '阿非卡緣起',
       subPage: [],
       status: false
-    }, */{
-      url: '/about_authors',
-      showName: '阿非卡成員',
-      subPage: [],
-      status: false
-    }/*, {
+    }, */
+      {
+        url: '/about_authors',
+        showName: '阿非卡成員',
+        subPage: [],
+        status: false
+      }/*, {
       url: '/1',
       showName: '阿非卡年誌',
       subPage: [],
@@ -27,12 +28,14 @@ export default [
       showName: '國家基本資料',
       subPage: [],
       status: false
-    }/*, {
+    }/*,
+    {
       url: '/view_africa_people',
       showName: '非洲大人物',
       subPage: [],
       status: false
-    }*/]
+    }*/
+    ]
   }, {
     showName: '非洲文章',
     currentPage: '',
