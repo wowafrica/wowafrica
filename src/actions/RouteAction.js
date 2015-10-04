@@ -27,10 +27,14 @@ class RouteAction {
         break;
       case 'view_post_list':
         if (pathName.length > 3) {
-          AppDispatcher.dispatch({
-            actionType: RouteConstants.ROUTE_POST_PAGE,
-            postID: pathName[3]
-          });
+          if (pathName[2] === 'posts') {
+            AppDispatcher.dispatch({
+              actionType: RouteConstants.ROUTE_POST_PAGE,
+              postID: pathName[3]
+            });
+          } else if (pathName[2] === 'category') {
+            PostListAction.updatePostList(pathName[3], 10);
+          }
         }
         break;
       default:
