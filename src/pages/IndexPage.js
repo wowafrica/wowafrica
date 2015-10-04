@@ -107,7 +107,9 @@ export default React.createClass({
             <div className="ui basic segment">
               <CategoryMenu />
               <div id="category-block-divider" style={{height: '15px'}} />
-              <IndexCategoryBlock />
+              <div className="ui container">
+                <IndexCategoryBlock />
+              </div>
             </div>
           </div>
         </div>
