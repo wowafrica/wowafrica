@@ -5,9 +5,22 @@
 body {
   font-family:'微軟正黑體';
   padding:0; margin:0; overflow-x:hidden;
-  background-color: #CEC5C5;
+  background-color: white;
   overflow-y: scroll;
 }
+
+/*#fullpage {
+  width: 1124px;
+  margin: 0px auto;
+}*/
+
+#category-box {
+  width: 1124px;
+}
+
+/*#category-box .middle.aligned.column {
+  margin: 0px auto;
+}*/
 
 .container-header {
   width: 100%;
@@ -23,7 +36,7 @@ body {
 }
 
 .container-map {
-  width: 765px;
+  width: 680px;
   margin: 0px auto;
 }
 
@@ -43,30 +56,50 @@ body {
   font-size: 64px;
   color: #FFFFFF;
   background: rgba(89, 48, 48, 0.3);
+  height: 640px;
 }
 
-.header-box {
-  padding-top: 20%;
-  text-align: center;
-}
-
-.header-title {
-  background: rgba(200,200,200,.3);
+.container-post-author div {
+  color: #e6f4ff;
+  padding-top: 18px;
 }
 
 .section-box {
   padding-top: 100px;
-  text-align: center;
-  position: fixed;
-  z-index: 2;
+  padding-left: 100px;
+  text-align: left;
   width: 100%;
 }
 
 .section-title {
-  font-size: 80px;
+  font-size: 36px;
   letter-spacing: 34px;
   font-weight: bolder;
-  background: rgba(200,200,200,.3);
+  /*background: rgba(200,200,200,.3);*/
+}
+
+.header-box {
+  padding-top: 210px;
+  padding-left: 64px;
+  width: 580px;
+  text-align: left;
+  font-size: 36px;
+  letter-spacing: 10px;
+  /*font-weight: bolder;*/
+  color: white;
+}
+
+.header-title {
+  background-color: rgba(0,0,0,0.2);
+  padding-left: 10px;
+}
+
+.header-box a:visited{
+  color: white;
+}
+
+.header-box a{
+  color: white;
 }
 
 .land {
@@ -76,27 +109,44 @@ body {
   stroke-opacity: .7;
 }
 
+.ui.sticky.fixed.top {
+  padding-top: 15px;
+}
+
+.ui.segment {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 #fpnews {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fppeople {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpnature {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fpindustry {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpscience {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fphistory {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }
 #fpmedic {
-  background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");
+  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
+  background-color: white;
 }
 #fptravel {
-  background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");
+  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
+  background-color: white;
 }

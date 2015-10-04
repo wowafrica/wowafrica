@@ -1,12 +1,13 @@
-import React          from 'react/addons';
-import IndexMenu      from '../components/IndexMenu';
-import IndexSection   from '../components/IndexSection';
-import MenuStore      from '../stores/MenuStore';
-import RouteStore     from '../stores/RouteStore';
-import RouteConstants from '../constants/RouteConstants';
-import AppDispatcher  from '../dispatcher/AppDispatcher';
-
-let firstFPbg = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
+import React              from 'react/addons';
+import IndexMenu          from '../components/IndexMenu';
+import CategoryMenu       from '../components/CategoryMenu';
+import IndexSection       from '../components/IndexSection';
+import IndexWideBlock     from '../components/IndexWideBlock';
+import IndexCategoryBlock from '../components/IndexCategoryBlock';
+import MenuStore          from '../stores/MenuStore';
+import RouteStore         from '../stores/RouteStore';
+import RouteConstants     from '../constants/RouteConstants';
+import AppDispatcher      from '../dispatcher/AppDispatcher';
 
 export default React.createClass({
 
@@ -25,8 +26,9 @@ export default React.createClass({
 
   componentDidMount() {
     $(document).ready(function() {
-
+/*
       let fpAnchors = MenuStore.getIndexAnchors();
+      fpAnchors.unshift('newArticle');
       fpAnchors.unshift('topArticle');
       fpAnchors.unshift('landing');
 
@@ -38,30 +40,28 @@ export default React.createClass({
           if (index == 1 && direction == 'down') {
             requestAnimationFrame(function() {
               $('#index-menu')
-                .transition('scale in', 750)
+                .transition('fade in', 750)
               ;
             });
-            $('#fpTopArticle').css('background', '');
           }
 
           if (index == 2 && direction == 'up') {
             requestAnimationFrame(function() {
               $('#index-menu')
-                .transition('scale out', 750)
+                .transition('fade out', 750)
               ;
             });
-            $('#fpTopArticle').css('background', '');
           }
 
           if (index == 2 && direction == 'down') {
-            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
+
           }
 
           if (index == 3 && direction == 'up') {
-            $('#fpTopArticle').css('background', 'url("'+firstFPbg+'")');
+
           }
         }
-      });
+      });*/
     });
     this.moveFullPageSection();
     this.IndexDispatch = AppDispatcher.register((action) => {
@@ -75,40 +75,46 @@ export default React.createClass({
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
+    /*
     if (typeof $.fn.fullpage.destroy =='function') {
       $.fn.fullpage.destroy('all');
     }
+    */
   },
 
   render() {
     let sectionsDiv = MenuStore.getArticleSubPages().map((page) => {
       return (
-          <IndexSection sid={'fp'+page.url.substring(2)} title={page.showName}/>
+          <IndexSection category={page.url.substring(2)} title={page.showName}/>
       );
     });
-
+    /*
+      <div className="section" id="fpLanding">
+        <div style={{textAlign: 'center'}}>
+          <img src='/images/landing.png' style={{width: '50%'}}/>
+        </div>
+      </div>
+    */
     return (
       <div>
-        <div className="ui sticky container" style={{position: 'fixed', left: '0', right: '0'}}>
-          <div className="ui centered grid">
-            <IndexMenu hide={true}/>
+        <div>
+          <IndexMenu hide={false}/>
+        </div>
+        <div style={{backgroundColor: 'white'}}>
+          <div id="fullpage">
+            <IndexWideBlock type='new'/>
+            <IndexWideBlock type='top'/>
+            <div className="ui basic segment">
+              <CategoryMenu />
+              <div id="category-block-divider" style={{height: '15px'}} />
+              <div className="ui container">
+                <IndexCategoryBlock />
+              </div>
+            </div>
           </div>
         </div>
-        <div style={{background: 'url("'+firstFPbg+'")'}}>
-          <div id="fullpage">
-            <div className="section" id="fpLanding">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '100px', letterSpacing: '38px', fontWeight: 'bolder', marginBottom: '0'}}>WOW!</p>
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>AFRICA</p>
-              </div>
-            </div>
-            <div className="section" id="fpTopArticle">
-              <div className="header-box">
-                <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>TOP ARTICLE</p>
-              </div>
-            </div>
-            {sectionsDiv}
-          </div>
+        <div style={{textAlign: 'center', marginTop: '15px', paddingTop: '100px', fontSize: '44px', letterSpacing: '12px', height: '320px', backgroundColor: 'aliceblue'}}>
+        WOW！AFRICA
         </div>
       </div>
     );

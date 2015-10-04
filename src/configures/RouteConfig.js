@@ -25,7 +25,7 @@ export default {
     page: require('../pages/IndexPage')
   },
   viewPostList: {
-    path: '/view_post_list',
+    path: '/view_post_list/category/:category',
     method: 'get',
     page: require('../pages/ViewPostListPage')
   },
