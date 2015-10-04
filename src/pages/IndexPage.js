@@ -1,12 +1,13 @@
-import React           from 'react/addons';
-import IndexMenu       from '../components/IndexMenu';
-import CategoryMenu    from '../components/CategoryMenu';
-import IndexSection    from '../components/IndexSection';
-import IndexWideBlock  from '../components/IndexWideBlock';
-import MenuStore       from '../stores/MenuStore';
-import RouteStore      from '../stores/RouteStore';
-import RouteConstants  from '../constants/RouteConstants';
-import AppDispatcher   from '../dispatcher/AppDispatcher';
+import React              from 'react/addons';
+import IndexMenu          from '../components/IndexMenu';
+import CategoryMenu       from '../components/CategoryMenu';
+import IndexSection       from '../components/IndexSection';
+import IndexWideBlock     from '../components/IndexWideBlock';
+import IndexCategoryBlock from '../components/IndexCategoryBlock';
+import MenuStore          from '../stores/MenuStore';
+import RouteStore         from '../stores/RouteStore';
+import RouteConstants     from '../constants/RouteConstants';
+import AppDispatcher      from '../dispatcher/AppDispatcher';
 
 export default React.createClass({
 
@@ -74,9 +75,11 @@ export default React.createClass({
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
+    /*
     if (typeof $.fn.fullpage.destroy =='function') {
       $.fn.fullpage.destroy('all');
     }
+    */
   },
 
   render() {
@@ -103,9 +106,13 @@ export default React.createClass({
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
               <CategoryMenu />
-              {sectionsDiv}
+              <div id="category-block-divider" style={{height: '15px'}} />
+              <IndexCategoryBlock />
             </div>
           </div>
+        </div>
+        <div style={{textAlign: 'center', marginTop: '15px', paddingTop: '100px', fontSize: '44px', letterSpacing: '12px', height: '320px', backgroundColor: 'aliceblue'}}>
+        WOW！AFRICA
         </div>
       </div>
     );

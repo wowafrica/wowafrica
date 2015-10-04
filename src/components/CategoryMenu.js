@@ -18,10 +18,10 @@ export default React.createClass({
     .sticky({
       offset: 40,
       onStick: function(){
-        $('#fpnews').css('padding-top', '28px');
+        $('#category-block-divider').css('padding-top', '40px');
       },
       onUnstick: function(){
-        $('#fpnews').css('padding-top', '0px');
+        $('#category-block-divider').css('padding-top', '0px');
       }
     });
   },
@@ -49,8 +49,8 @@ export default React.createClass({
         let dropdownSelect = false;
 
         return (
-          <Item active={dropdownSelect}>
-              <Text style={{color: 'white'}}>{showName}</Text>
+          <Item type="link" href={'view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
+              <Text style={{color: '#E8F5FF'}}>{showName}</Text>
           </Item>
         );
       })

@@ -24,11 +24,11 @@ class PostListStore extends EventEmitter {
     });
     this.postList['new'] = {
       name: 'new',
-      posts: []
+      posts: [PostListConfig.postContainer]
     };
     this.postList['top'] = {
       name: 'top',
-      posts: []
+      posts: [PostListConfig.postContainer]
     };
   }
 
@@ -153,7 +153,7 @@ class PostListStore extends EventEmitter {
 
   emitChange(type) {
     switch (type) {
-      case 'caetgory':
+      case 'category':
         this.emit(PostListConstants.POST_LIST_CATEGORY_EVENT);
         break;
       case 'new':
@@ -169,7 +169,7 @@ class PostListStore extends EventEmitter {
 
   addChangeListener(type, listener) {
     switch (type) {
-      case 'caetgory':
+      case 'category':
         this.on(PostListConstants.POST_LIST_CATEGORY_EVENT, listener);
         break;
       case 'new':
@@ -184,7 +184,7 @@ class PostListStore extends EventEmitter {
 
   removeChangeListener(type, listener) {
     switch (type) {
-      case 'caetgory':
+      case 'category':
         this.removeListener(PostListConstants.POST_LIST_CATEGORY_EVENT, listener);
         break;
       case 'new':

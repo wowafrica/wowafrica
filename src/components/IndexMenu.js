@@ -53,8 +53,8 @@ export default React.createClass({
         return (
           <Item active={dropdownSelect}>
             <Dropdown init={true}>
-              <Text style={{color: 'white'}}>{showName}</Text>
-              <Icon className="dropdown" style={{color: 'white'}}/>
+              <Text style={{color: '#E8F5FF'}}>{showName}</Text>
+              <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
               <Menu>
                 {this.renderItem(section.subPage)}
               </Menu>
