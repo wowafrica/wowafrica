@@ -13,6 +13,14 @@ let SlideBox = React.createClass({
     };
   },
 
+  componentDidMount() {
+
+  },
+
+  componentWillUnmount() {
+
+  },
+
   render() {
     let slideDiv = this.props.posts.map(function(post) {
       return (

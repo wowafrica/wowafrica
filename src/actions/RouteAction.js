@@ -2,6 +2,7 @@ import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import NationAction   from './NationAction';
 import PostListAction from './PostListAction';
+import AuthorAction   from './AuthorAction';
 
 class RouteAction {
 
@@ -32,6 +33,7 @@ class RouteAction {
               actionType: RouteConstants.ROUTE_POST_PAGE,
               postID: pathName[3]
             });
+            AuthorAction.loadAuthorData();
           } else if (pathName[2] === 'category') {
             PostListAction.updatePostList(pathName[3], 10);
           }
