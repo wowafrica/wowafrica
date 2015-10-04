@@ -2,6 +2,7 @@ import {EventEmitter} from 'events';
 import Tumblr         from 'tumblr.js';
 import TumblrConfig   from '../configures/TumblrConfig';
 import PostConfig     from '../configures/PostConfig';
+import PostListConfig from '../configures/PostListConfig';
 import PostConstants  from '../constants/PostConstants';
 import RouteConstants from '../constants/RouteConstants';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
@@ -32,11 +33,18 @@ class PostStore extends EventEmitter {
 
       let image = this.parsePostImage(data.posts[0].body);
       let {settingResult, body} = this.parsePostSetting(data.posts[0].body);
-
+      this.removeTopTag(data.posts[0].tags);
       this.post = {...data.posts[0], body, image, ...settingResult};
 
       this.emitChange();
     }
+  }
+
+  removeTopTag(tags){
+      let idx = tags.indexOf(PostListConfig.tagMap['top']);
+      if (idx != -1) {
+        tags.splice(idx, 1);
+      }
   }
 
   parsePostSetting(body) {
