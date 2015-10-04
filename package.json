@@ -1,5 +1,5 @@
 {
-  "name": "explore-africa",
+  "name": "wowafrica",
   "description": "Expolre Africa website",
   "version": "0.3.0",
   "contributor": [
@@ -68,7 +68,7 @@
   "repository": [
     {
       "type": "git",
-      "url": "https://github.com/jessy1092/explore-africa"
+      "url": "https://github.com/wowafrica/wowafrica"
     }
   ],
   "license": "MIT"

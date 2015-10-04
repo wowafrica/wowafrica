@@ -24,7 +24,7 @@ branches:
 
 env:
   global:
-    - REPO="git@github.com:jessy1092/explore-africa"
+    - REPO="git@github.com:wowafrica/wowafrica"
     - secure: f+Ru9XNRGCePbX9dz5W1Fkutgqo+vOESp5AOLH9d4R/9D8x3aIzExg8OOmxDKDlrbvl8GKiwzaTG7STgxBhEp2NwWyT6Bd77xGI848ChUtNuqezWv0jMwX/Sm/zJNzWfF/PIK5MYO45LGfifJK17W2pG3KE05YbzXyajslF8D7A=
 
 after_success: .travis/after_success.sh
