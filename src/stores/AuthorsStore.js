@@ -66,6 +66,9 @@ AppDispatcher.register((action) => {
     case RouteConstants.ROUTE_AUTH_PAGE:
       authorsStore.onReceviceUpdateAuthors();
       break;
+    case AuthorConstants.AUTHOR_LOAD_DATA:
+      authorsStore.onReceviceUpdateAuthors();
+      break;
     default:
       break;
   }

@@ -1,7 +1,7 @@
-import React        from 'react/addons';
-import Semantify    from 'react-semantify';
-import MenuStore    from '../stores/MenuStore';
-import RouteActions from '../actions/RouteAction';
+import React           from 'react/addons';
+import Semantify       from 'react-semantify';
+import PostListConfig  from '../configures/PostListConfig';
+import RouteActions    from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -9,8 +9,21 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      currentMenu: MenuStore.getAll()
+      currentMenu: PostListConfig.categories
     };
+  },
+
+  componentDidMount() {
+    $('#category-menu')
+    .sticky({
+      offset: 40,
+      onStick: function(){
+        $('#category-block-divider').css('padding-top', '40px');
+      },
+      onUnstick: function(){
+        $('#category-block-divider').css('padding-top', '0px');
+      }
+    });
   },
 
   render() {
@@ -18,14 +31,9 @@ export default React.createClass({
     let visStr = this.props.hide ? 'hidden' : 'visible';
 
     return (
-      <div className="ui stick" id="index-menu" style={{height: '40px', visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px', zIndex: '999'}}>
+      <div className="ui sticky" id="category-menu" style={{height: '40px', backgroundColor: '#298399', letterSpacing: '10px', marginBottom: '1rem'}}>
         <div className="ui centered grid">
           <Menu className="secondary">
-            <Item id="menu-logo" style={{paddingTop: '13px'}}>
-              <a href="/">
-                <img src="/images/wow_logo2.png" style={{width: '200px'}}/>
-              </a>
-            </Item>
             {this.renderDropdown()}
           </Menu>
         </div>
@@ -37,28 +45,12 @@ export default React.createClass({
     let {currentMenu} = this.state;
     return (
       currentMenu.map((section) => {
-        let showName = section.showName;
+        let showName = PostListConfig.categoryMap[section];
         let dropdownSelect = false;
 
-        if (section.currentPage !== '') {
-          showName = section.currentPage;
-        }
-
-        for (let page of section.subPage) {
-          if (page.status) {
-            dropdownSelect = true;
-          }
-        }
-
         return (
-          <Item active={dropdownSelect}>
-            <Dropdown init={true}>
+          <Item type="link" href={'view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
-              <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
-              <Menu>
-                {this.renderItem(section.subPage)}
-              </Menu>
-            </Dropdown>
           </Item>
         );
       })
