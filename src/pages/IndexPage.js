@@ -13,61 +13,14 @@ export default React.createClass({
 
   IndexDispatch: '',
 
-  moveFullPageSection() {
-    if (RouteStore.currentHash.length > 0) {
-      $.fn.fullpage.moveTo(RouteStore.currentHash, 0);
-      RouteStore.currentHash = '';
-    }
-  },
-
   getInitialState() {
     return ({targetSection: ''});
   },
 
   componentDidMount() {
-    $(document).ready(function() {
-/*
-      let fpAnchors = MenuStore.getIndexAnchors();
-      fpAnchors.unshift('newArticle');
-      fpAnchors.unshift('topArticle');
-      fpAnchors.unshift('landing');
-
-      $('#fullpage').fullpage({
-
-        anchors: fpAnchors,
-
-        onLeave: function(index, nextIndex, direction) {
-          if (index == 1 && direction == 'down') {
-            requestAnimationFrame(function() {
-              $('#index-menu')
-                .transition('fade in', 750)
-              ;
-            });
-          }
-
-          if (index == 2 && direction == 'up') {
-            requestAnimationFrame(function() {
-              $('#index-menu')
-                .transition('fade out', 750)
-              ;
-            });
-          }
-
-          if (index == 2 && direction == 'down') {
-
-          }
-
-          if (index == 3 && direction == 'up') {
-
-          }
-        }
-      });*/
-    });
-    this.moveFullPageSection();
     this.IndexDispatch = AppDispatcher.register((action) => {
       switch (action.actionType) {
         case RouteConstants.ROUTE_HASHTAG:
-          this.moveFullPageSection();
           break;
       }
     });
@@ -80,11 +33,6 @@ export default React.createClass({
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
-    /*
-    if (typeof $.fn.fullpage.destroy =='function') {
-      $.fn.fullpage.destroy('all');
-    }
-    */
   },
 
   render() {
@@ -93,20 +41,14 @@ export default React.createClass({
           <IndexSection category={page.url.substring(2)} title={page.showName}/>
       );
     });
-    /*
-      <div className="section" id="fpLanding">
-        <div style={{textAlign: 'center'}}>
-          <img src='/images/landing.png' style={{width: '50%'}}/>
-        </div>
-      </div>
-    */
+
     return (
       <div>
         <div>
           <IndexMenu hide={false}/>
         </div>
         <div style={{backgroundColor: 'white'}}>
-          <div id="fullpage" className="ui container">
+          <div className="ui container">
             <IndexWideBlock type='new'/>
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
