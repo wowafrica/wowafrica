@@ -24,6 +24,14 @@ export default React.createClass({
     }
   },
 
+  componentDidUpdate() {
+    let elevator = new Elevator({
+      element: document.querySelector('#btn-article'),
+      targetElement: document.querySelector('#category-block-divider'),
+      duration: 1500
+    });
+  },
+
   componentDidMount() {
     PostListStore.addChangeListener(this.props.type, this._onChange);
   },
@@ -38,10 +46,10 @@ export default React.createClass({
       return (
         <div className="section post-image" style={{backgroundImage: 'url('+post.image+')'}}>
           <div className="header-box">
-            <p className="header-title" style={{fontSize: '54px', marginBottom: '0rem'}}>
+            <p className="header-title" style={{fontSize: '36px', marginBottom: '0rem'}}>
               <a href={'/view_post_list/posts/'+post.id}>{displayType}</a>
             </p>
-            <p className="header-title">
+            <p className="header-title" style={{fontSize: '24px'}}>
               <a href={'/view_post_list/posts/'+post.id}>{post.title}</a>
             </p>
           </div>

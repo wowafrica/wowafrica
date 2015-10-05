@@ -38,6 +38,7 @@ export default React.createClass({
     return (
       currentMenu.map((section) => {
         let showName = section.showName;
+        let name = section.name;
         let dropdownSelect = false;
 
         if (section.currentPage !== '') {
@@ -51,7 +52,7 @@ export default React.createClass({
         }
 
         return (
-          <Item active={dropdownSelect}>
+          <Item id={'btn-'+name} active={dropdownSelect}>
             <Dropdown init={true}>
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
               <Icon className="dropdown" style={{color: '#E8F5FF'}}/>

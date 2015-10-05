@@ -71,6 +71,11 @@ export default React.createClass({
           break;
       }
     });
+    let elevator = new Elevator({
+      element: document.querySelector('#btn-article'),
+      targetElement: document.querySelector('#category-block-divider'),
+      duration: 1500
+    });
   },
 
   componentWillUnmount() {
@@ -101,7 +106,7 @@ export default React.createClass({
           <IndexMenu hide={false}/>
         </div>
         <div style={{backgroundColor: 'white'}}>
-          <div id="fullpage">
+          <div id="fullpage" className="ui container">
             <IndexWideBlock type='new'/>
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">

@@ -1,5 +1,6 @@
 export default [
   {
+    name: 'about',
     showName: '關於我們',
     currentPage: '',
     subPage: [/*{
@@ -21,6 +22,7 @@ export default [
     }*/
     ]
   }, {
+    name: 'knowing',
     showName: '認識非洲',
     currentPage: '',
     subPage: [{
@@ -37,6 +39,7 @@ export default [
     }*/
     ]
   }, {
+    name: 'article',
     showName: '非洲文章',
     currentPage: '',
     subPage: [{

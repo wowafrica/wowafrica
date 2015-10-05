@@ -14,9 +14,6 @@ body {
   margin: 0px auto;
 }*/
 
-#category-box {
-  width: 1124px;
-}
 
 /*#category-box .middle.aligned.column {
   margin: 0px auto;
@@ -32,7 +29,7 @@ body {
 }
 
 .container-content {
-  margin-top: 10px;
+  padding-top: 30px;
 }
 
 .container-map {
@@ -90,7 +87,7 @@ body {
 }
 
 .header-title {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.6);
   padding-left: 10px;
 }
 
