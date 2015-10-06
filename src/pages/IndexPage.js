@@ -48,7 +48,7 @@ export default React.createClass({
           <IndexMenu hide={false}/>
         </div>
         <div style={{backgroundColor: 'white'}}>
-          <div className="ui container">
+          <div>
             <IndexWideBlock type='new'/>
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
