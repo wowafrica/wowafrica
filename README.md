@@ -45,6 +45,10 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2015/10/08 v0.4.1
+- Remove jquery.fullPage.css
+- Add semantic-ui assets
+
 #### 2015/10/07 v0.4.0
 - Change Index page layout
 - Add view post and post-list page
