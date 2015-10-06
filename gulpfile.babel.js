@@ -71,7 +71,12 @@ gulp.task('styles-config', () => {
     .pipe(gulp.dest('./bower_components/semantic-ui/src/'));
 });
 
-gulp.task('styles', ['styles-config'], () => {
+gulp.task('styles-assets', () => {
+  return gulp.src('./bower_components/semantic-ui/src/themes/default/assets/**/*')
+    .pipe(gulp.dest(`${BUILD_PATH}/themes/default/assets/`));
+});
+
+gulp.task('styles', ['styles-config', 'styles-assets'], () => {
   return gulp.src('./client/styles/main.less')
     .pipe(plumber())
     .pipe(less())
