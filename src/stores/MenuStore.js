@@ -1,6 +1,4 @@
-'use strict';
-
-import MenuConfig from './MenuConfig';
+import MenuConfig from '../configures/MenuConfig';
 
 class MenuStore {
 
@@ -12,7 +10,7 @@ class MenuStore {
     return this.menuConfig;
   }
 
-  onReceviceUpdatePath(menuName) {
+  onReceiveUpdatePath(menuName) {
     this.updatePath(menuName);
   }
 
@@ -29,6 +27,26 @@ class MenuStore {
       });
       section.currentPage = currentPage;
     });
+  }
+
+  getArticleSubPages() {
+    for (let page of this.menuConfig) {
+      if (page.showName == '非洲文章') {
+        return page.subPage;
+      }
+    };
+  }
+
+  getIndexAnchors() {
+    let anchors = [];
+    this.menuConfig.forEach((section) => {
+      if (section.showName == '非洲文章') {
+        section.subPage.forEach((page) => {
+          anchors.push(page.url.substring(2));
+        });
+      }
+    });
+    return anchors;
   }
 }
 

@@ -1,9 +1,7 @@
-'use strict';
-
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import MenuStore    from '../stores/MenuStore';
-import RouteActions from '../actions/RouteAction.js';
+import RouteActions from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -16,12 +14,21 @@ export default React.createClass({
   },
 
   render() {
+
+    let visStr = this.props.hide ? 'hidden' : 'visible';
+
     return (
-      <div className="container-menu">
-        <Menu className="secondary pointing">
-          <Item type="link" href="/">{"Explore Africa 探索非洲"}</Item>
-          {this.renderDropdown()}
-        </Menu>
+      <div className="ui stick" id="index-menu" style={{height: '40px', visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px', zIndex: '999'}}>
+        <div className="ui centered grid">
+          <Menu className="secondary">
+            <Item id="menu-logo" style={{paddingTop: '13px'}}>
+              <a href="/">
+                <img src="/images/wow_logo2.png" style={{width: '200px'}}/>
+              </a>
+            </Item>
+            {this.renderDropdown()}
+          </Menu>
+        </div>
       </div>
     );
   },
@@ -31,6 +38,7 @@ export default React.createClass({
     return (
       currentMenu.map((section) => {
         let showName = section.showName;
+        let name = section.name;
         let dropdownSelect = false;
 
         if (section.currentPage !== '') {
@@ -44,10 +52,10 @@ export default React.createClass({
         }
 
         return (
-          <Item active={dropdownSelect}>
+          <Item id={'btn-'+name} active={dropdownSelect}>
             <Dropdown init={true}>
-              <Text>{showName}</Text>
-              <Icon className="dropdown"/>
+              <Text style={{color: '#E8F5FF'}}>{showName}</Text>
+              <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
               <Menu>
                 {this.renderItem(section.subPage)}
               </Menu>
@@ -75,8 +83,9 @@ export default React.createClass({
 
   _onClick(e) {
     let {pathname} = e.currentTarget;
-    history.pushState({pathname: pathname}, '', pathname);
-    RouteActions.updatePath(pathname);
+    let {hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteActions.updatePath(pathname, hash);
     e.preventDefault();
   }
 });

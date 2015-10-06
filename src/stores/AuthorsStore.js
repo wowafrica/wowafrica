@@ -1,9 +1,9 @@
-'use strict';
-
-import {EventEmitter} from 'events';
-import Tumblr         from 'tumblr.js';
-import TumblrConfig   from './TumblrConfig';
-import RouteConstants from '../constants/RouteConstants';
+import {EventEmitter}  from 'events';
+import Tumblr          from 'tumblr.js';
+import TumblrConfig    from '../configures/TumblrConfig';
+import AuthorConstants from '../constants/AuthorConstants';
+import RouteConstants  from '../constants/RouteConstants';
+import AppDispatcher   from '../dispatcher/AppDispatcher';
 
 class AuthorsStore extends EventEmitter {
 
@@ -20,54 +20,58 @@ class AuthorsStore extends EventEmitter {
   }
 
   onReceviceUpdateAuthors() {
-    this.loadAuthorData();
+    let {tag} = TumblrConfig.author;
+    this.client.posts(TumblrConfig.blogName, {tag, filter: 'text'}, this.parseAuthorData.bind(this));
   }
 
-  loadAuthorData() {
-    this.client.posts(TumblrConfig.blogName, {tag: TumblrConfig.tagAuthor, filter: 'text'}, (err, data) => {
-      if (err) {
-        console.log(err.stack);
-      }
+  parseAuthorData(err, data) {
+    if (err) {
+      console.log(err.stack);
+    }
+    let {picWidth} = TumblrConfig.author;
 
-      let tmpAuthors = [];
-      data.posts.map(function(post) {
-        let contents = post.caption.split('\n\n');
-        let targetUrl = '';
-        for ( let i = 0; i < post.photos[0].alt_sizes.length; i++ ) {
-          if ( post.photos[0].alt_sizes[i].width < TumblrConfig.picWidthAuthor ) {
-            targetUrl = post.photos[0].alt_sizes[i].url;
-            break;
-          }
-        }
+    this.authors = data.posts.map((post) => {
+      let contents = post.caption.split('\n\n');
+      let target = post.photos[0].alt_sizes.filter(photo => photo.width < picWidth);
 
-        let newAuthor = {
-          id: post.id,
-          name: contents[0],
-          from: contents[1],
-          description: contents[2],
-          photoUrl: targetUrl
-        };
-
-        tmpAuthors.push(newAuthor);
-      });
-      this.authors = tmpAuthors;
-      this.emitChange();
+      return {
+        id: post.id,
+        name: contents[0],
+        from: contents[1],
+        description: contents[2],
+        photoUrl: target.length ? target[0].url : ''
+      };
     });
+    this.emitChange();
   }
 
   emitChange() {
-    this.emit(RouteConstants.AUTHORS_EVENT);
+    this.emit(AuthorConstants.AUTHORS_EVENT);
   }
 
   addChangeListener(listener) {
-    this.on(RouteConstants.AUTHORS_EVENT, listener);
+    this.on(AuthorConstants.AUTHORS_EVENT, listener);
   }
 
   removeChangeListener(listener) {
-    this.removeListener(RouteConstants.AUTHORS_EVENT, listener);
+    this.removeListener(AuthorConstants.AUTHORS_EVENT, listener);
   }
 }
 
 let authorsStore = new AuthorsStore();
+
+AppDispatcher.register((action) => {
+
+  switch (action.actionType) {
+    case RouteConstants.ROUTE_AUTH_PAGE:
+      authorsStore.onReceviceUpdateAuthors();
+      break;
+    case AuthorConstants.AUTHOR_LOAD_DATA:
+      authorsStore.onReceviceUpdateAuthors();
+      break;
+    default:
+      break;
+  }
+});
 
 export default authorsStore;

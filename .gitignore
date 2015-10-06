@@ -6,3 +6,9 @@ _public/
 # transpile file
 lib/
 gulpfile.js
+
+# coverage result
+coverage/
+
+# bower
+bower_components/

@@ -1,5 +1,3 @@
-'use strict';
-
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
@@ -41,7 +39,7 @@ let AuthorsBox = React.createClass({
         );
     });
     return (
-      <div className="ui cards" style={{justifyContent: 'center'}}>
+      <div className="ui centered cards">
         {authorsDiv}
       </div>
     );

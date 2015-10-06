@@ -1,12 +1,9 @@
-'use strict';
-
 import {EventEmitter} from 'events';
 import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
-import RouteConfig    from './RouteConfig';
+import RouteConfig    from '../configures/RouteConfig';
 import MenuStore      from './MenuStore';
-import AuthorsStore   from './AuthorsStore';
 
 class RouteStore extends EventEmitter {
 
@@ -24,6 +21,7 @@ class RouteStore extends EventEmitter {
     //   page: require('../pages/IndexPage'),
     //   subPage: ['view_afica'] }
     this.currentRoute = this.routeHandler.getRoute('/');
+    this.currentHash = '';
   }
 
   getSubPageById(RouteId) {
@@ -42,9 +40,11 @@ class RouteStore extends EventEmitter {
     return this.routeConfig;
   }
 
-  onReceviceUpdatePath(pathName) {
+  onReceiveUpdatePath(pathName, hash) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
-    MenuStore.onReceviceUpdatePath(pathName);
+    this.currentHash = (typeof hash !== 'undefined') ? hash.substring(1) : '';
+    console.log('currentRoute');
+    console.log(this.currentRoute);
     this.emitChange();
   }
 
@@ -67,10 +67,8 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
-      routeStore.onReceviceUpdatePath(action.pathName);
-      if (action.pathName === '/about_authors') {
-        AuthorsStore.onReceviceUpdateAuthors();
-      }
+      routeStore.onReceiveUpdatePath(action.pathName, action.hash);
+      MenuStore.onReceiveUpdatePath(action.pathName);
       break;
     default:
       break;

@@ -1,25 +1,67 @@
-'use strict';
-
-import React          from 'react/addons';
-import IndexMenu      from '../components/IndexMenu';
-import RouteConstants from '../constants/RouteConstants';
+import React              from 'react/addons';
+import IndexMenu          from '../components/IndexMenu';
+import CategoryMenu       from '../components/CategoryMenu';
+import IndexSection       from '../components/IndexSection';
+import IndexWideBlock     from '../components/IndexWideBlock';
+import IndexCategoryBlock from '../components/IndexCategoryBlock';
+import MenuStore          from '../stores/MenuStore';
+import RouteStore         from '../stores/RouteStore';
+import RouteConstants     from '../constants/RouteConstants';
+import AppDispatcher      from '../dispatcher/AppDispatcher';
 
 export default React.createClass({
 
+  IndexDispatch: '',
+
+  getInitialState() {
+    return ({targetSection: ''});
+  },
+
+  componentDidMount() {
+    this.IndexDispatch = AppDispatcher.register((action) => {
+      switch (action.actionType) {
+        case RouteConstants.ROUTE_HASHTAG:
+          break;
+      }
+    });
+    let elevator = new Elevator({
+      element: document.querySelector('#btn-article'),
+      targetElement: document.querySelector('#category-block-divider'),
+      duration: 1500
+    });
+  },
+
+  componentWillUnmount() {
+    AppDispatcher.unregister(this.IndexDispatch);
+  },
+
   render() {
+    let sectionsDiv = MenuStore.getArticleSubPages().map((page) => {
+      return (
+          <IndexSection category={page.url.substring(2)} title={page.showName}/>
+      );
+    });
 
     return (
       <div>
-        <div className="container-header">
-          <IndexMenu />
+        <div>
+          <IndexMenu hide={false}/>
         </div>
-        <div className="container-content">
-          <div className="header" style={{marginTop: '1%', minHeight: '600px', textAlign: 'center', backgroundPosition: 'top center', backgroundImage: 'url(https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg)'}}>
-            <div className="hearder-box" style={{paddingTop: '50px'}}>
-              <p className="header-title" style={{fontSize: '100px', letterSpacing: '38px', fontWeight: 'bolder', marginBottom: '0'}}>WOW!</p>
-              <p className="header-title" style={{fontSize: '80px', letterSpacing: '34px', fontWeight: 'bolder'}}>AFRICA</p>
+        <div style={{backgroundColor: 'white'}}>
+          <div>
+            <IndexWideBlock type='new'/>
+            <IndexWideBlock type='top'/>
+            <div className="ui basic segment">
+              <CategoryMenu />
+              <div id="category-block-divider" style={{height: '15px'}} />
+              <div className="ui container">
+                <IndexCategoryBlock />
+              </div>
             </div>
           </div>
+        </div>
+        <div style={{textAlign: 'center', marginTop: '15px', paddingTop: '100px', fontSize: '44px', letterSpacing: '12px', height: '320px', backgroundColor: 'aliceblue'}}>
+        WOW！AFRICA
         </div>
       </div>
     );
