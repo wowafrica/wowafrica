@@ -45,6 +45,10 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2015/10/07 v0.4.0
+- Change Index page layout
+- Add view post and post-list page
+
 #### 2015/04/23 v0.3.0
 - Add PostListPage
 - Update CNAME to wowafrica
