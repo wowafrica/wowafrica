@@ -35,6 +35,10 @@ class RouteAction {
             });
             AuthorAction.loadAuthorData();
           } else if (pathName[2] === 'category') {
+            AppDispatcher.dispatch({
+              actionType: RouteConstants.ROUTE_POST_LIST_PAGE,
+              postID: pathName[3]
+            });
             PostListAction.updatePostList(pathName[3], 10);
           }
         }

@@ -2,6 +2,7 @@ import React          from 'react/addons';
 import Semantify      from 'react-semantify';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
+import RouteAction    from '../actions/RouteAction';
 
 let {Cards, Card, Image} = Semantify;
 
@@ -39,7 +40,7 @@ let CategoryBox = React.createClass({
       }
       return (
         <div className="middle aligned column" style={{backgroundSize: 'cover', backgroundImage: 'url('+backImg+')'}}>
-            <a href={url} style={{color: 'grey'}}>
+            <a href={url} onClick={this._onClick} style={{color: 'grey'}}>
               <div style={{width: '100%', position: 'relative'}}>
                 <div style={{margin: '20% 20% 20% 20%', paddingTop: '2%', paddingBottom: '2%', backgroundColor: 'white'}}>
                   <div style={{height: '7em',textAlign: 'center', wordWrap: 'break-word', fontSize: '20px', lineHeight: '1.5em', overflow: 'hidden', margin: '1rem'}}>
@@ -71,6 +72,13 @@ let CategoryBox = React.createClass({
         posts: PostListStore.getPostList(this.props.category)
       });
     }
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });
 

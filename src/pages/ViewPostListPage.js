@@ -1,20 +1,23 @@
-import React        from 'react/addons';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
-import IndexSection from '../components/IndexSection';
-import RouteStore   from '../stores/RouteStore';
+import React         from 'react/addons';
+import IndexMenu     from '../components/IndexMenu';
+import CategoryMenu  from '../components/CategoryMenu';
+import IndexSection  from '../components/IndexSection';
+import RouteStore    from '../stores/RouteStore';
+import PostListStore from '../stores/PostListStore';
 
 export default React.createClass({
 
   getInitialState() {
     return {
-      category: RouteStore.getCurrentRoute().params.category || 'news'
     };
   },
 
+  componentDidMount() {
+    $('#category-menu').show();
+  },
+
   render() {
-    let {category} = this.state;
-    console.log(category);
+    let category = RouteStore.getCurrentRoute().params.category || 'news';
     // let {category} = this.props;
     // let {posts = []} = this.state.postList[category];
     return (
@@ -32,7 +35,6 @@ export default React.createClass({
 
   _onChange() {
     this.setState({
-      category: RouteStore.getCurrentRoute().params.category || 'news'
     });
   }
 });

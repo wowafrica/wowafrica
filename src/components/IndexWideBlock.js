@@ -1,6 +1,7 @@
 import React          from 'react/addons';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
+import RouteAction    from '../actions/RouteAction';
 import PostListAction from '../actions/PostListAction';
 
 export default React.createClass({
@@ -47,10 +48,10 @@ export default React.createClass({
         <div className="section post-image" style={{backgroundImage: 'url('+post.image+')'}}>
           <div className="header-box">
             <p className="header-title" style={{fontSize: '36px', marginBottom: '0rem'}}>
-              <a href={'/view_post_list/posts/'+post.id}>{displayType}</a>
+              <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>{displayType}</a>
             </p>
             <p className="header-title" style={{fontSize: '24px'}}>
-              <a href={'/view_post_list/posts/'+post.id}>{post.title}</a>
+              <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>{post.title}</a>
             </p>
           </div>
         </div>
@@ -80,6 +81,13 @@ export default React.createClass({
       default:
         break;
     }
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 
 });
