@@ -9,25 +9,15 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      category: RouteStore.getCurrentRoute().params.category || 'news'
     };
   },
 
   componentDidMount() {
-    PostListStore.addChangeListener('category', this._onChange);
-  },
-
-  componentWillUnmount() {
-    PostListStore.removeChangeListener('category', this._onChange);
-  },
-
-  componentWillUpdate() {
-    console.log('PostListPage wiil update '+this.state.category);
+    $('#category-menu').show();
   },
 
   render() {
-    let {category} = this.state;
-    console.log('PostListPage: '+category);
+    let category = RouteStore.getCurrentRoute().params.category || 'news';
     // let {category} = this.props;
     // let {posts = []} = this.state.postList[category];
     return (
@@ -45,7 +35,6 @@ export default React.createClass({
 
   _onChange() {
     this.setState({
-      category: RouteStore.getCurrentRoute().params.category || 'news'
     });
   }
 });

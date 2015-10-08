@@ -64,7 +64,6 @@ export default React.createClass({
   },
 
   _onClick(e) {
-    console.log('CategoryMenu pressed: '+e.currentTarget.pathname);
     let {pathname} = e.currentTarget;
     let {hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);

@@ -24,9 +24,6 @@ export default React.createClass({
 
 
   render() {
-    console.log('IndexSection rendering: '+this.props.category);
-    console.log(this.state.posts);
-
     let slideDiv = this.state.posts.map(function(post) {
       return (
         <a className="card" href={'/view_post_list/posts/'+post.id}>
@@ -62,7 +59,6 @@ export default React.createClass({
   },
 
   _onChange() {
-    console.log('get '+this.props.category+' update');
     this.setState({
       posts: PostListStore.getPostList(this.props.category)
     });
