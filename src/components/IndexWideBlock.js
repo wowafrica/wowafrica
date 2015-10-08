@@ -1,6 +1,7 @@
 import React          from 'react/addons';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
+import RouteAction    from '../actions/RouteAction';
 import PostListAction from '../actions/PostListAction';
 
 export default React.createClass({
@@ -83,10 +84,9 @@ export default React.createClass({
   },
 
   _onClick(e) {
-    let {pathname} = e.currentTarget;
-    let {hash} = e.currentTarget;
+    let {pathname, hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
-    RouteActions.updatePath(pathname, hash);
+    RouteAction.updatePath(pathname, hash);
     e.preventDefault();
   }
 

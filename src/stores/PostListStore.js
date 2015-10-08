@@ -63,7 +63,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList['top'].posts = updatedList;
         this.emitChange('top');
-        console.log('postlist top updated with '+updatedList.length+' posts');
+        //console.log('postlist top updated with '+updatedList.length+' posts');
       };
     }
   }
@@ -82,7 +82,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList['new'].posts = updatedList;
         this.emitChange('new');
-        console.log('postlist new updated with '+updatedList.length+' posts');
+        //console.log('postlist new updated with '+updatedList.length+' posts');
       };
     }
   }
@@ -101,7 +101,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList[updatedList[0].category].posts = updatedList;
         this.emitChange('category');
-        console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
+        //console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
       };
     }
   }

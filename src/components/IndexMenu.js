@@ -2,7 +2,7 @@ import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import MenuStore    from '../stores/MenuStore';
 import RouteStore   from '../stores/RouteStore';
-import RouteActions from '../actions/RouteAction';
+import RouteAction  from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -94,10 +94,9 @@ export default React.createClass({
   },
 
   _onClick(e) {
-    let {pathname} = e.currentTarget;
-    let {hash} = e.currentTarget;
+    let {pathname, hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
-    RouteActions.updatePath(pathname, hash);
+    RouteAction.updatePath(pathname, hash);
     e.preventDefault();
   }
 });
