@@ -5,6 +5,7 @@ import PostConfig         from '../configures/PostConfig';
 import PostListConfig     from '../configures/PostListConfig';
 import PostConstants      from '../constants/PostConstants';
 import PostListConstants  from '../constants/PostListConstants';
+import RouteConstants     from '../constants/RouteConstants';
 import AppDispatcher      from '../dispatcher/AppDispatcher';
 
 class PostListStore extends EventEmitter {
@@ -204,6 +205,9 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case PostListConstants.POST_LIST_UPDATE:
+      postListStore.onReceviceUpdatePostList(action.category, action.amount);
+      break;
+    case RouteConstants.ROUTE_POST_LIST_PAGE:
       postListStore.onReceviceUpdatePostList(action.category, action.amount);
       break;
     default:

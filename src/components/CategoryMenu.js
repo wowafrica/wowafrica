@@ -40,7 +40,7 @@ export default React.createClass({
         let dropdownSelect = false;
 
         return (
-          <Item type="link" href={'view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
+          <Item type="link" href={'/view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
           </Item>
         );
@@ -64,6 +64,7 @@ export default React.createClass({
   },
 
   _onClick(e) {
+    console.log('CategoryMenu pressed: '+e.currentTarget.pathname);
     let {pathname} = e.currentTarget;
     let {hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);

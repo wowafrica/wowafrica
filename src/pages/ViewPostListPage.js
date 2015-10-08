@@ -1,8 +1,9 @@
-import React        from 'react/addons';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
-import IndexSection from '../components/IndexSection';
-import RouteStore   from '../stores/RouteStore';
+import React         from 'react/addons';
+import IndexMenu     from '../components/IndexMenu';
+import CategoryMenu  from '../components/CategoryMenu';
+import IndexSection  from '../components/IndexSection';
+import RouteStore    from '../stores/RouteStore';
+import PostListStore from '../stores/PostListStore';
 
 export default React.createClass({
 
@@ -12,9 +13,21 @@ export default React.createClass({
     };
   },
 
+  componentDidMount() {
+    PostListStore.addChangeListener('category', this._onChange);
+  },
+
+  componentWillUnmount() {
+    PostListStore.removeChangeListener('category', this._onChange);
+  },
+
+  componentWillUpdate() {
+    console.log('PostListPage wiil update '+this.state.category);
+  },
+
   render() {
     let {category} = this.state;
-    console.log(category);
+    console.log('PostListPage: '+category);
     // let {category} = this.props;
     // let {posts = []} = this.state.postList[category];
     return (
