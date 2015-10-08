@@ -1,6 +1,7 @@
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
+import CategoryMenu from '../components/CategoryMenu';
 import AuthorsStore from '../stores/AuthorsStore';
 
 let {Cards, Card, Image} = Semantify;
@@ -58,8 +59,9 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="container-header">
-          <IndexMenu/>
+        <div className="fixed-top-menu">
+          <IndexMenu />
+          <CategoryMenu />
         </div>
         <div className="container-content">
           <div className="ui page grid">

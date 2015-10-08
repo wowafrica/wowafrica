@@ -29,7 +29,7 @@ body {
 }
 
 .container-content {
-  padding-top: 30px;
+  padding-top: 50px;
 }
 
 .container-map {
@@ -106,44 +106,33 @@ body {
   stroke-opacity: .7;
 }
 
-.ui.sticky.fixed.top {
-  padding-top: 15px;
+.fixed-top-menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+#index-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #59385E;
+  letter-spacing: 15px;
+}
+
+#category-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #298399;
+  letter-spacing: 10px;
+  /*margin-bottom: 1rem;*/
 }
 
 .ui.segment {
   padding-left: 0px;
   padding-right: 0px;
-}
-
-#fpnews {
-  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
-  background-color: white;
-}
-#fppeople {
-  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
-  background-color: white;
-}
-#fpnature {
-  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
-  background-color: white;
-}
-#fpindustry {
-  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
-  background-color: white;
-}
-#fpscience {
-  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
-  background-color: white;
-}
-#fphistory {
-  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
-  background-color: white;
-}
-#fpmedic {
-  /*background: url("https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xpt1/t31.0-8/10862536_779010172217259_1862445632878671777_o.jpg");*/
-  background-color: white;
-}
-#fptravel {
-  /*background: url("https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xtp1/t31.0-8/11187320_788048337980109_6156798450160298561_o.jpg");*/
-  background-color: white;
 }

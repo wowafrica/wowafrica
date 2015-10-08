@@ -24,6 +24,20 @@ export default React.createClass({
           break;
       }
     });
+
+    $('#category-menu').show();
+
+    $('#category-menu-anchor')
+    .sticky({
+      offset: 40,
+      onStick: function() {
+        $('#category-block-divider').css('margin-top', '40px');
+      },
+      onUnstick: function() {
+        $('#category-block-divider').css('margin-top', '0px');
+      }
+    });
+
     let elevator = new Elevator({
       element: document.querySelector('#btn-article'),
       targetElement: document.querySelector('#category-block-divider'),
@@ -44,15 +58,17 @@ export default React.createClass({
 
     return (
       <div>
-        <div>
-          <IndexMenu hide={false}/>
+        <div className="fixed-top-menu">
+          <IndexMenu />
         </div>
         <div style={{backgroundColor: 'white'}}>
           <div>
             <IndexWideBlock type='new'/>
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
-              <CategoryMenu />
+              <div className="ui sticky" id="category-menu-anchor">
+                <CategoryMenu />
+              </div>
               <div id="category-block-divider" style={{height: '15px'}} />
               <div className="ui container">
                 <IndexCategoryBlock />

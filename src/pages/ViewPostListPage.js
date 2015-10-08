@@ -1,5 +1,6 @@
 import React        from 'react/addons';
 import IndexMenu    from '../components/IndexMenu';
+import CategoryMenu from '../components/CategoryMenu';
 import IndexSection from '../components/IndexSection';
 import RouteStore   from '../stores/RouteStore';
 
@@ -18,8 +19,9 @@ export default React.createClass({
     // let {posts = []} = this.state.postList[category];
     return (
       <div>
-        <div>
-          <IndexMenu hide={false} />
+        <div className="fixed-top-menu">
+          <IndexMenu />
+          <CategoryMenu />
         </div>
         <div className="container-content">
           <IndexSection category={category} title={category}/>

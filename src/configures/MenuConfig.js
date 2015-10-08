@@ -42,7 +42,7 @@ export default [
     name: 'article',
     showName: '非洲文章',
     currentPage: '',
-    subPage: [{
+    subPage: [/*{
       url: '/view_post_list/category/news',
       showName: '時事新聞',
       subPage: [],
@@ -82,6 +82,7 @@ export default [
       showName: '觀光旅行',
       subPage: [],
       status: false
-    }]
+    }*/
+    ]
   }
 ];

@@ -1,5 +1,6 @@
 import React        from 'react/addons';
 import IndexMenu    from '../components/IndexMenu';
+import CategoryMenu from '../components/CategoryMenu';
 import MapStore     from '../stores/MapStore';
 import NationAction from '../actions/NationAction';
 import d3           from 'd3';
@@ -24,8 +25,9 @@ export default React.createClass({
     let {features} = this.state.map;
     return (
       <div>
-        <div className="container-header">
-          <IndexMenu/>
+        <div className="fixed-top-menu">
+          <IndexMenu />
+          <CategoryMenu />
         </div>
         <div className="container-content">
           <div className="container-map" id="africa-map">

@@ -2,6 +2,7 @@ import React        from 'react/addons';
 import classNames   from 'classnames';
 import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
+import CategoryMenu from '../components/CategoryMenu';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
@@ -50,8 +51,9 @@ export default React.createClass({
     // console.log(JSON.stringify(post, null, 2));
     return (
       <div>
-        <div>
-          <IndexMenu hide={false}/>
+        <div className="fixed-top-menu">
+          <IndexMenu />
+          <CategoryMenu />
         </div>
         <div className="post-image" style={{backgroundImage: `url(${image})`}}>
           <div className="inner">
