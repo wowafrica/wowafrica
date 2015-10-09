@@ -8,13 +8,13 @@ export default [
       showName: '阿非卡緣起',
       subPage: [],
       status: false
-    }, */
+    },
       {
         url: '/about_authors',
         showName: '阿非卡成員',
         subPage: [],
         status: false
-      }/*, {
+      }, {
       url: '/1',
       showName: '阿非卡年誌',
       subPage: [],

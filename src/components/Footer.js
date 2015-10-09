@@ -1,4 +1,5 @@
 import React          from 'react/addons';
+import RouteAction    from '../actions/RouteAction';
 
 export default React.createClass({
 
@@ -21,7 +22,9 @@ export default React.createClass({
               <span className="fotter-box-title">訂閱通知</span>
             </div>
             <div className="column footer-box" style={{paddingLeft: '3rem', paddingRight: '3rem'}}>
-              <span className="fotter-box-title">專欄作者</span>
+              <a href="/about_authors" onClick={this._onClick}>
+                <span className="fotter-box-title">專欄作者</span>
+              </a>
               <br/>
               <br/>
               <br/>
@@ -35,5 +38,12 @@ export default React.createClass({
         </div>
       </div>
     )
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });

@@ -44,6 +44,12 @@ export default React.createClass({
       targetElement: document.querySelector('#category-block-divider'),
       duration: 1500
     });
+
+    let elevator_about = new Elevator({
+      element: document.querySelector('#btn-about'),
+      targetElement: document.querySelector('#index-bottom'),
+      duration: 1500
+    });
   },
 
   componentWillUnmount() {
@@ -79,6 +85,7 @@ export default React.createClass({
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
         <Footer/>
+        <div id="index-bottom"/>
       </div>
     );
   }
