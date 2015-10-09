@@ -4,6 +4,7 @@ import CategoryMenu       from '../components/CategoryMenu';
 import IndexSection       from '../components/IndexSection';
 import IndexWideBlock     from '../components/IndexWideBlock';
 import IndexCategoryBlock from '../components/IndexCategoryBlock';
+import Footer             from '../components/Footer'
 import MenuStore          from '../stores/MenuStore';
 import RouteStore         from '../stores/RouteStore';
 import RouteConstants     from '../constants/RouteConstants';
@@ -59,7 +60,7 @@ export default React.createClass({
     return (
       <div>
         <div className="fixed-top-menu">
-          <IndexMenu />
+          <IndexMenu/>
         </div>
         <div style={{backgroundColor: 'white'}}>
           <div>
@@ -67,18 +68,17 @@ export default React.createClass({
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
               <div className="ui sticky" id="category-menu-anchor">
-                <CategoryMenu />
+                <CategoryMenu/>
               </div>
               <div id="category-block-divider" style={{height: '15px'}} />
               <div className="ui container">
-                <IndexCategoryBlock />
+                <IndexCategoryBlock/>
               </div>
             </div>
           </div>
         </div>
-        <div style={{textAlign: 'center', marginTop: '15px', paddingTop: '100px', fontSize: '44px', letterSpacing: '12px', height: '320px', backgroundColor: 'aliceblue'}}>
-        WOW！AFRICA
-        </div>
+        <div id="footer-divider" style={{height: '50px'}} />
+        <Footer/>
       </div>
     );
   }

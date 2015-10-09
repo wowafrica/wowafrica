@@ -132,6 +132,20 @@ body {
   /*margin-bottom: 1rem;*/
 }
 
+.footer {
+  padding-top: 50px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 24px;
+  min-height: 480px;
+  background-color: #EDF6FE;
+  color: #606263;
+}
+
+.fotter-box-title {
+  letter-spacing: 36px;
+}
+
 .ui.segment {
   padding-left: 0px;
   padding-right: 0px;
