@@ -4,7 +4,7 @@ import CategoryMenu       from '../components/CategoryMenu';
 import IndexSection       from '../components/IndexSection';
 import IndexWideBlock     from '../components/IndexWideBlock';
 import IndexCategoryBlock from '../components/IndexCategoryBlock';
-import Footer             from '../components/Footer'
+import Footer             from '../components/Footer';
 import MenuStore          from '../stores/MenuStore';
 import RouteStore         from '../stores/RouteStore';
 import RouteConstants     from '../constants/RouteConstants';
@@ -45,7 +45,7 @@ export default React.createClass({
       duration: 1500
     });
 
-    let elevator_about = new Elevator({
+    let elevatorAbout = new Elevator({
       element: document.querySelector('#btn-about'),
       targetElement: document.querySelector('#index-bottom'),
       duration: 1500
