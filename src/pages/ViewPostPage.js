@@ -65,13 +65,14 @@ export default React.createClass({
     let {body, title, image, tags = [], date} = post;
     let {name, description, photoUrl} = this.getAuthor();
     // console.log(JSON.stringify(post, null, 2));
+    let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
       <div>
         <div className="fixed-top-menu">
           <IndexMenu />
           <CategoryMenu />
         </div>
-        <div className="post-image" style={{backgroundImage: `url(${image})`}}>
+        <div className="post-image" style={{backgroundImage: `url(${largeImage})`}}>
           <div className="inner">
             {title}
           </div>

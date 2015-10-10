@@ -44,8 +44,9 @@ export default React.createClass({
   render() {
     let displayType = this.props.type == 'new' ? '最新文章' : '最新消息' ;
     let newSection = this.state.posts.map((post) => {
+      let image = post.image.replace(/_540.jpg/g, '_1280.jpg');
       return (
-        <div className="section post-image" style={{backgroundImage: 'url('+post.image+')'}}>
+        <div className="section post-image" style={{backgroundImage: 'url('+image+')'}}>
           <div className="header-box">
             <p className="header-title" style={{fontSize: '36px', marginBottom: '0rem'}}>
               <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>{displayType}</a>
