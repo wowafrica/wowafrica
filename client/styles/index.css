@@ -61,18 +61,12 @@ body {
   padding-top: 18px;
 }
 
-.section-box {
-  padding-top: 100px;
-  padding-left: 100px;
-  text-align: left;
-  width: 100%;
-}
-
-.section-title {
+.post-list-title {
+  margin-top: 60px;
+  height: 60px;
   font-size: 36px;
   letter-spacing: 34px;
   font-weight: bolder;
-  /*background: rgba(200,200,200,.3);*/
 }
 
 .post-list-card-img {

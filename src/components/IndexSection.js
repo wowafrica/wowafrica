@@ -41,16 +41,12 @@ export default React.createClass({
     });
 
     return (
-      <div className="section" id={'fp'+this.props.category}>
-        <div className="section-box">
-          <p className="section-title">{this.props.title}</p>
+      <div className="ui container">
+        <div className="post-list-title">
+          {PostListConfig.categoryMap[this.props.title]}
         </div>
-        <div className="slide">
-          <div className="ui container">
-            <div className="ui centered cards">
-              {slideDiv}
-            </div>
-          </div>
+        <div className="ui centered cards">
+          {slideDiv}
         </div>
       </div>
     );
