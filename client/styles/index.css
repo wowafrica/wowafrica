@@ -61,6 +61,45 @@ body {
   padding-top: 18px;
 }
 
+.index-wide {
+  width: 100%;
+  height: 720px;
+  background-size: cover;
+  text-align: center;
+}
+
+.index-wide-box-before {
+  height: 480px;
+}
+
+.index-wide-box {
+  margin-left: 60px;
+  padding: 10px;
+  width: 440px;
+  text-align: justify;
+  font-size: 36px;
+  letter-spacing: 10px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.index-wide-type {
+  font-size: 36px;
+  margin-bottom: 0;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.index-wide-title {
+  font-size: 24px;
+  color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  line-height: 1.25em;
+}
+
 .post-list-title {
   margin-top: 60px;
   height: 60px;
@@ -75,30 +114,6 @@ body {
   overflow: hidden;
   background-size: cover;
   background-position: center;
-}
-
-.header-box {
-  padding-top: 210px;
-  padding-left: 64px;
-  width: 580px;
-  text-align: left;
-  font-size: 36px;
-  letter-spacing: 10px;
-  /*font-weight: bolder;*/
-  color: white;
-}
-
-.header-title {
-  background-color: rgba(0,0,0,0.6);
-  padding-left: 10px;
-}
-
-.header-box a:visited{
-  color: white;
-}
-
-.header-box a{
-  color: white;
 }
 
 .land {
