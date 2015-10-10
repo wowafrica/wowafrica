@@ -16,7 +16,7 @@ export default React.createClass({
 
   componentDidMount() {
     function toggleCatMenu() {
-      $('#category-menu').toggle();
+      $('#category-menu').slideToggle();
     }
 
     if (RouteStore.getCurrentRoute().name == 'index') {

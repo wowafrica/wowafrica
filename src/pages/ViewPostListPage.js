@@ -15,7 +15,6 @@ export default React.createClass({
 
   componentDidMount() {
     window.scroll(0, 0);
-    $('#category-menu').show();
     let elevatorAbout = new Elevator({
       element: document.querySelector('#btn-about'),
       targetElement: document.querySelector('#page-bottom'),
