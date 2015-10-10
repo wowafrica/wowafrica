@@ -27,7 +27,7 @@ export default React.createClass({
     let slideDiv = this.state.posts.map(function(post) {
       return (
         <a className="card" href={'/view_post_list/posts/'+post.id}>
-          <Image src={post.image}></Image>
+          <div className="post-list-card-img" style={{backgroundImage: 'url('+post.image+')'}}/>
           <div className="content">
             <div className="header">
               {post.title}
@@ -46,11 +46,9 @@ export default React.createClass({
           <p className="section-title">{this.props.title}</p>
         </div>
         <div className="slide">
-          <div className="ui grid container">
-            <div className="wide centered column">
-              <div className="ui three cards">
-                {slideDiv}
-              </div>
+          <div className="ui container">
+            <div className="ui centered cards">
+              {slideDiv}
             </div>
           </div>
         </div>

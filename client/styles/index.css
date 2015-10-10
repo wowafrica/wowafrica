@@ -75,6 +75,14 @@ body {
   /*background: rgba(200,200,200,.3);*/
 }
 
+.post-list-card-img {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
 .header-box {
   padding-top: 210px;
   padding-left: 64px;
