@@ -1,6 +1,7 @@
 import React        from 'react/addons';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
+import Footer       from '../components/Footer';
 import MapStore     from '../stores/MapStore';
 import NationAction from '../actions/NationAction';
 import d3           from 'd3';
@@ -14,6 +15,11 @@ export default React.createClass({
 
   componentDidMount() {
     MapStore.addChangeListener(this._onChange);
+    let elevatorAbout = new Elevator({
+      element: document.querySelector('#btn-about'),
+      targetElement: document.querySelector('#page-bottom'),
+      duration: 1500
+    });
   },
 
   componentWillUnmount() {
@@ -34,6 +40,9 @@ export default React.createClass({
             {this._drawMap(features)}
           </div>
         </div>
+        <div id="footer-divider" style={{height: '50px'}} />
+        <Footer/>
+        <div id="page-bottom"/>
       </div>
     );
   },

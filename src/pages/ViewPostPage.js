@@ -3,6 +3,7 @@ import classNames   from 'classnames';
 import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
+import Footer       from '../components/Footer';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
@@ -21,11 +22,26 @@ export default React.createClass({
   componentDidMount() {
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
+    let elevatorAbout = new Elevator({
+      element: document.querySelector('#btn-about'),
+      targetElement: document.querySelector('#page-bottom'),
+      duration: 1500
+    });
+
   },
 
   componentWillUnmount() {
     PostStore.removeChangeListener(this._onChange);
     AuthorsStore.removeChangeListener(this._onAuthorChange);
+  },
+
+  componentDidUpdate() {
+    let elevatorAbout = new Elevator({
+      element: document.querySelector('#btn-about'),
+      targetElement: document.querySelector('#page-bottom'),
+      duration: 1500
+    });
+
   },
 
   getAuthor() {
@@ -83,6 +99,9 @@ export default React.createClass({
             </Segment>
           </div>
         </div>
+        <div id="footer-divider" style={{height: '50px'}} />
+        <Footer/>
+        <div id="page-bottom"/>
       </div>
     );
   },

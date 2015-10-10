@@ -26,7 +26,7 @@ export default React.createClass({
   },
 
   componentDidUpdate() {
-    let elevator = new Elevator({
+    let elevatorArticle = new Elevator({
       element: document.querySelector('#btn-article'),
       targetElement: document.querySelector('#category-block-divider'),
       duration: 1500
