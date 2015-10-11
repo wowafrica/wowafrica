@@ -4,6 +4,7 @@ import CategoryMenu       from '../components/CategoryMenu';
 import IndexSection       from '../components/IndexSection';
 import IndexWideBlock     from '../components/IndexWideBlock';
 import IndexCategoryBlock from '../components/IndexCategoryBlock';
+import Footer             from '../components/Footer';
 import MenuStore          from '../stores/MenuStore';
 import RouteStore         from '../stores/RouteStore';
 import RouteConstants     from '../constants/RouteConstants';
@@ -24,9 +25,29 @@ export default React.createClass({
           break;
       }
     });
-    let elevator = new Elevator({
+
+    $('#category-menu').show();
+
+    $('#category-menu-anchor')
+    .sticky({
+      offset: 40,
+      onStick: function() {
+        $('#category-block-divider').css('margin-top', '40px');
+      },
+      onUnstick: function() {
+        $('#category-block-divider').css('margin-top', '0px');
+      }
+    });
+
+    let elevatorArticle = new Elevator({
       element: document.querySelector('#btn-article'),
       targetElement: document.querySelector('#category-block-divider'),
+      duration: 1500
+    });
+
+    let elevatorAbout = new Elevator({
+      element: document.querySelector('#btn-about'),
+      targetElement: document.querySelector('#page-bottom'),
       duration: 1500
     });
   },
@@ -44,25 +65,27 @@ export default React.createClass({
 
     return (
       <div>
-        <div>
-          <IndexMenu hide={false}/>
+        <div className="fixed-top-menu">
+          <IndexMenu/>
         </div>
         <div style={{backgroundColor: 'white'}}>
           <div>
             <IndexWideBlock type='new'/>
             <IndexWideBlock type='top'/>
             <div className="ui basic segment">
-              <CategoryMenu />
+              <div className="ui sticky" id="category-menu-anchor">
+                <CategoryMenu/>
+              </div>
               <div id="category-block-divider" style={{height: '15px'}} />
               <div className="ui container">
-                <IndexCategoryBlock />
+                <IndexCategoryBlock/>
               </div>
             </div>
           </div>
         </div>
-        <div style={{textAlign: 'center', marginTop: '15px', paddingTop: '100px', fontSize: '44px', letterSpacing: '12px', height: '320px', backgroundColor: 'aliceblue'}}>
-        WOW！AFRICA
-        </div>
+        <div id="footer-divider" style={{height: '50px'}} />
+        <Footer/>
+        <div id="page-bottom"/>
       </div>
     );
   }

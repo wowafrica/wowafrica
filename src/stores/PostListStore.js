@@ -5,6 +5,7 @@ import PostConfig         from '../configures/PostConfig';
 import PostListConfig     from '../configures/PostListConfig';
 import PostConstants      from '../constants/PostConstants';
 import PostListConstants  from '../constants/PostListConstants';
+import RouteConstants     from '../constants/RouteConstants';
 import AppDispatcher      from '../dispatcher/AppDispatcher';
 
 class PostListStore extends EventEmitter {
@@ -62,7 +63,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList['top'].posts = updatedList;
         this.emitChange('top');
-        console.log('postlist top updated with '+updatedList.length+' posts');
+        //console.log('postlist top updated with '+updatedList.length+' posts');
       };
     }
   }
@@ -81,7 +82,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList['new'].posts = updatedList;
         this.emitChange('new');
-        console.log('postlist new updated with '+updatedList.length+' posts');
+        //console.log('postlist new updated with '+updatedList.length+' posts');
       };
     }
   }
@@ -100,7 +101,7 @@ class PostListStore extends EventEmitter {
       if (updatedList.length > 0) {
         this.postList[updatedList[0].category].posts = updatedList;
         this.emitChange('category');
-        console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
+        //console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
       };
     }
   }
@@ -204,6 +205,9 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case PostListConstants.POST_LIST_UPDATE:
+      postListStore.onReceviceUpdatePostList(action.category, action.amount);
+      break;
+    case RouteConstants.ROUTE_POST_LIST_PAGE:
       postListStore.onReceviceUpdatePostList(action.category, action.amount);
       break;
     default:

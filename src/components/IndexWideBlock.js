@@ -1,6 +1,7 @@
 import React          from 'react/addons';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
+import RouteAction    from '../actions/RouteAction';
 import PostListAction from '../actions/PostListAction';
 
 export default React.createClass({
@@ -25,7 +26,7 @@ export default React.createClass({
   },
 
   componentDidUpdate() {
-    let elevator = new Elevator({
+    let elevatorArticle = new Elevator({
       element: document.querySelector('#btn-article'),
       targetElement: document.querySelector('#category-block-divider'),
       duration: 1500
@@ -43,15 +44,23 @@ export default React.createClass({
   render() {
     let displayType = this.props.type == 'new' ? '最新文章' : '最新消息' ;
     let newSection = this.state.posts.map((post) => {
+      let image = post.image.replace(/_540.jpg/g, '_1280.jpg');
       return (
-        <div className="section post-image" style={{backgroundImage: 'url('+post.image+')'}}>
-          <div className="header-box">
-            <p className="header-title" style={{fontSize: '36px', marginBottom: '0rem'}}>
-              <a href={'/view_post_list/posts/'+post.id}>{displayType}</a>
-            </p>
-            <p className="header-title" style={{fontSize: '24px'}}>
-              <a href={'/view_post_list/posts/'+post.id}>{post.title}</a>
-            </p>
+        <div className="index-wide" style={{backgroundImage: 'url('+image+')'}}>
+        <div className="index-wide-box-before"/>
+
+          <div className="index-wide-box">
+            <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
+              <div className="index-wide-type">
+                {displayType}
+              </div>
+            </a>
+            <div className="ui divider" style={{width: '175px', borderTop: '1px solid white', margin: '0.3rem 0rem 0.3rem 0rem'}}/>
+            <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
+              <div className="index-wide-title">
+                {post.title}
+              </div>
+            </a>
           </div>
         </div>
       );
@@ -80,6 +89,13 @@ export default React.createClass({
       default:
         break;
     }
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 
 });

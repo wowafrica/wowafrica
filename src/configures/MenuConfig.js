@@ -8,13 +8,13 @@ export default [
       showName: '阿非卡緣起',
       subPage: [],
       status: false
-    }, */
+    },
       {
         url: '/about_authors',
         showName: '阿非卡成員',
         subPage: [],
         status: false
-      }/*, {
+      }, {
       url: '/1',
       showName: '阿非卡年誌',
       subPage: [],
@@ -42,7 +42,7 @@ export default [
     name: 'article',
     showName: '非洲文章',
     currentPage: '',
-    subPage: [{
+    subPage: [/*{
       url: '/view_post_list/category/news',
       showName: '時事新聞',
       subPage: [],
@@ -82,6 +82,7 @@ export default [
       showName: '觀光旅行',
       subPage: [],
       status: false
-    }]
+    }*/
+    ]
   }
 ];

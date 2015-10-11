@@ -1,7 +1,7 @@
 import React           from 'react/addons';
 import Semantify       from 'react-semantify';
 import PostListConfig  from '../configures/PostListConfig';
-import RouteActions    from '../actions/RouteAction';
+import RouteAction     from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -14,16 +14,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    $('#category-menu')
-    .sticky({
-      offset: 40,
-      onStick: function() {
-        $('#category-block-divider').css('padding-top', '40px');
-      },
-      onUnstick: function() {
-        $('#category-block-divider').css('padding-top', '0px');
-      }
-    });
+
   },
 
   render() {
@@ -31,7 +22,7 @@ export default React.createClass({
     let visStr = this.props.hide ? 'hidden' : 'visible';
 
     return (
-      <div className="ui sticky" id="category-menu" style={{height: '40px', backgroundColor: '#298399', letterSpacing: '10px', marginBottom: '1rem'}}>
+      <div id="category-menu" style={{display: 'none'}}>
         <div className="ui centered grid">
           <Menu className="secondary">
             {this.renderDropdown()}
@@ -49,7 +40,7 @@ export default React.createClass({
         let dropdownSelect = false;
 
         return (
-          <Item type="link" href={'view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
+          <Item type="link" href={'/view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
           </Item>
         );
@@ -73,10 +64,9 @@ export default React.createClass({
   },
 
   _onClick(e) {
-    let {pathname} = e.currentTarget;
-    let {hash} = e.currentTarget;
+    let {pathname, hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
-    RouteActions.updatePath(pathname, hash);
+    RouteAction.updatePath(pathname, hash);
     e.preventDefault();
   }
 });

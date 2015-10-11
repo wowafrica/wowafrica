@@ -2,6 +2,7 @@ import React          from 'react/addons';
 import Semantify      from 'react-semantify';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
+import RouteAction    from '../actions/RouteAction';
 
 let {Cards, Card, Image} = Semantify;
 
@@ -37,19 +38,39 @@ let CategoryBox = React.createClass({
         title = this.state.posts[0].title;
         url = '/view_post_list/posts/'+this.state.posts[0].id;
       }
+
       return (
-        <div className="middle aligned column" style={{backgroundSize: 'cover', backgroundImage: 'url('+backImg+')'}}>
-            <a href={url} style={{color: 'grey'}}>
-              <div style={{width: '100%', position: 'relative'}}>
-                <div style={{margin: '20% 20% 20% 20%', paddingTop: '2%', paddingBottom: '2%', backgroundColor: 'white'}}>
-                  <div style={{height: '7em',textAlign: 'center', wordWrap: 'break-word', fontSize: '20px', lineHeight: '1.5em', overflow: 'hidden', margin: '1rem'}}>
-                    {PostListConfig.categoryMap[this.props.category]}
-                    <div className="ui divider" style={{borderTop: '2px solid grey', margin: '0.5rem 0rem 0.5rem 0rem'}}/>
-                    {title}
-                  </div>
+        <div className="middle aligned column">
+            <div className="category-box" style={{backgroundImage: 'url('+backImg+')'}}>
+              <div className="ui grid">
+                <div className="four wide column" style={{paddingRight: '0'}}>
+                  <a href={url} onClick={this._onClick}>
+                    <div className="category-box-left-up"/>
+                    <div className="category-box-left-bottom"/>
+                  </a>
+                </div>
+                <div className="eight wide column" style={{paddingRight: '0', paddingLeft: '0'}}>
+                  <a href={url} onClick={this._onClick}>
+                    <div className="category-box-center-up"/>
+                    <div className="category-box-center-bottom">
+                      <div className="category-box-title">
+                        {title}
+                      </div>
+                      <div className="ui divider" style={{borderTop: '1px solid grey', margin: '0rem 1rem 0.3rem 1rem'}}/>
+                      <div className="category-box-category">
+                        {PostListConfig.categoryMap[this.props.category]}
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="four wide column" style={{paddingLeft: '0'}}>
+                  <a href={url} onClick={this._onClick}>
+                    <div className="category-box-right-up"/>
+                    <div className="category-box-right-bottom"/>
+                  </a>
                 </div>
               </div>
-            </a>
+            </div>
         </div>
       );
     }
@@ -71,6 +92,13 @@ let CategoryBox = React.createClass({
         posts: PostListStore.getPostList(this.props.category)
       });
     }
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });
 

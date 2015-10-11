@@ -1,7 +1,8 @@
 import React        from 'react/addons';
 import Semantify    from 'react-semantify';
 import MenuStore    from '../stores/MenuStore';
-import RouteActions from '../actions/RouteAction';
+import RouteStore   from '../stores/RouteStore';
+import RouteAction  from '../actions/RouteAction';
 
 let {Dropdown, Icon, Item, Menu, Text} = Semantify;
 
@@ -13,12 +14,23 @@ export default React.createClass({
     };
   },
 
+  componentDidMount() {
+    function toggleCatMenu() {
+      $('#category-menu').slideToggle();
+    }
+
+    if (RouteStore.getCurrentRoute().name == 'index') {
+      $('#btn-article').off('click', toggleCatMenu);
+    }
+    else {
+      $('#btn-article').on('click', toggleCatMenu);
+    }
+  },
+
   render() {
 
-    let visStr = this.props.hide ? 'hidden' : 'visible';
-
     return (
-      <div className="ui stick" id="index-menu" style={{height: '40px', visibility: visStr, position: 'fixed', left: '0', right: '0', backgroundColor: '#59385E', letterSpacing: '15px', zIndex: '999'}}>
+      <div id="index-menu">
         <div className="ui centered grid">
           <Menu className="secondary">
             <Item id="menu-logo" style={{paddingTop: '13px'}}>
@@ -82,10 +94,9 @@ export default React.createClass({
   },
 
   _onClick(e) {
-    let {pathname} = e.currentTarget;
-    let {hash} = e.currentTarget;
+    let {pathname, hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
-    RouteActions.updatePath(pathname, hash);
+    RouteAction.updatePath(pathname, hash);
     e.preventDefault();
   }
 });
