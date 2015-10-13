@@ -5,13 +5,13 @@
     "introduction": "東非和中非經濟領頭羊，觀光業和手機通訊業近年快速發展，首都奈洛比更是東非的金融中心。",
     "symbol": "Telecommunications(手機通訊)",
     "currency": "肯亞先令",
-    "language": "英語、Swahili",
-    "flag": "Kenya_flag",
-    "emblem": "Kenya_svg",
-    "headOfState": "Uhuru Kenyataa",
+    "language": "英語(Officail)、斯瓦希里語(Swahili)",
+    "flag": "Kenya_flag.png",
+    "emblem": "Kenya_svg.png",
+    "headOfState": "總統: Uhuru Kenyataa",
     "politics": "總統制",
     "atmosphere": "從東邊肯亞山附近較涼爽乾燥氣候，到西南邊境，維多利亞大湖區的炎熱、潮濕氣候。",
-    "geography": "平坦高原上的維多利亞湖盆區+中部大裂谷及其高原區域+大裂谷南部+海岸平原區(從西到東)",
+    "geography": "東部海岸平原區+南部大裂谷+中部大裂谷及其高原區域+平坦高原上的維多利亞湖盆區",
     "capital": "Nairobi 奈洛比",
     "population": "45 million",
     "faith": [{
@@ -47,16 +47,36 @@
     "symbol": "野生動物國家公園 (Wildlife)",
     "currency": "坦尚尼亞先令",
     "language": "英語、斯瓦希里語(Swahili)",
-    "flag": "檔案名稱以國家為首唷!記得上傳到另一個google drive 資料夾",
-    "emblem": "",
+    "flag": "Tanzania_flag.png",
+    "emblem": "Tanzania_flag.png",
     "headOfState": "總統: Jakaya Kikwete 總理: Mizengo Pinda",
     "politics": "雙首長制",
     "atmosphere": "東部的熱帶草原氣候，西部內陸高原則屬熱帶高地氣候。整體來說氣溫平均為21—25℃，乾濕季分明。",
     "geography": "東瀕印度洋，為沿海平原地區+內陸低地區域+西部的高原地區。非洲最高峰－吉力馬札羅山，位於坦尚尼亞東北部。",
     "capital": "Dodoma 杜篤瑪",
     "population": "43million",
-    "faith": "天主/基督新教(35%)伊斯蘭教(45%)原始拜物教(20%)",
-    "economy": "一級產業(24.5%)－糧食作物: 玉米；經濟作物: 糖；畜牧業: 牛肉。二級產業(22.2%)－礦物加工製造與營造業。三級產業(53.3%)－觀光、金融"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 35
+      }, {
+        "name": "斯蘭教",
+        "percentage": 45
+      }, {
+        "name": "原始拜物教",
+        "percentage": 20
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-糧食作物: 玉米；經濟作物: 糖；畜牧業: 牛肉",
+        "percentage": 24.5
+      }, {
+        "name": "二級產業-物加工製造與營造業",
+        "percentage": 22.2
+      }, {
+        "name": "三級產業-觀光、金融",
+        "percentage": 53.3
+      }
+    ]
   },
   {
     "iso": "DZA",
@@ -65,16 +85,33 @@
     "symbol": "礦產資源: 天然氣(Natural gas)",
     "currency": "阿爾及利亞第納爾(Dinar)",
     "language": "阿拉伯語",
-    "flag": "",
-    "emblem": "",
+    "flag": "Algeria_flag.png",
+    "emblem": "Algeria_seal.png",
     "headOfState": "總統: Abdelaziz Bouteflika 總理: Abdelmalek Sellal",
     "politics": "半總統制",
     "atmosphere": "北部較溫和濕潤，屬地中海氣候；中南部的高地區譽為過渡性氣候；南部沙漠地帶，氣候乾熱，屬熱帶沙漠氣候。",
     "geography": "北部沿海平原和阿特拉斯山脈+中南部是撒哈拉阿特拉斯山脈和大高原+最南部則涉及撒哈拉沙漠的西北區域。",
     "capital": "阿爾及爾 Algiers",
     "population": "37.9million(2013)",
-    "faith": "遜尼派穆斯林Sunni Muslim(99%) 基督教和猶太教(< 1%)",
-    "economy": "一級產業( 9.4%)－地中海作物。二級產業(62.6%)－石油、天然氣，食品加工。三級產業(28%)"
+    "faith": [{
+        "name": "遜尼派穆斯林Sunni Muslim",
+        "percentage": 99
+      }, {
+        "name": "基督教和猶太教",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-地中海作物",
+        "percentage": 9.4
+      }, {
+        "name": "二級產業-石油、天然氣，食品加工",
+        "percentage": 62.6
+      }, {
+        "name": "三級產業",
+        "percentage": 28
+      }
+    ]
   },
   {
     "iso": "EGY",
@@ -91,8 +128,25 @@
     "geography": "除尼羅河谷及開羅以下的三角洲 ，為狹窄綠帶，其餘地區為沙漠，而東北部的西奈半島則為一片多山的高原。",
     "capital": "開羅 Cairo",
     "population": "86million(2014)",
-    "faith": "伊斯蘭教(90%)，其他(10%)",
-    "economy": "一級產業(14.5%)－棉花。二級產業(37.5%)－石油採礦業。三級產業(48%)－旅遊業、勞務出口。"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 90
+      }, {
+        "name": "其他",
+        "percentage": 10
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-棉花",
+        "percentage": 14.5
+      }, {
+        "name": "二級產業-石油採礦業",
+        "percentage": 47.5
+      }, {
+        "name": "三級產業-旅遊業、勞務出口",
+        "percentage": 48
+      }
+    ]
   },
   {
     "iso": "MAR",
@@ -101,16 +155,33 @@
     "symbol": "露天市場(souk)",
     "currency": "摩洛哥迪拉姆",
     "language": "阿拉伯語",
-    "flag": "",
-    "emblem": "",
+    "flag": "Morocco_flag.png",
+    "emblem": "Morocco_seal.png",
     "headOfState": "國王: Mohammed VI 總理: Abdelilah Benkirane",
     "politics": "君主立憲制",
     "atmosphere": "因處於副熱帶高壓帶和加那利寒流影響下，形成乾燥的熱帶沙漠氣候；而斜貫全國的阿特拉斯山阻擋了南部撒哈拉沙漠熱浪的侵襲。",
     "geography": "位於交通要塞，是地中海入大西洋的門戶。中部和北部為山脈地形，東部和南部是上高原和前撒哈拉高原，西北沿海一帶為狹長的平原。",
     "capital": "拉巴特 Rabat",
     "population": "32.5million(2012)",
-    "faith": "伊斯蘭教(99% official)，基督教(1%)和少數猶太人",
-    "economy": "一級產業(15.1%)－漁業。二級產業(31.7%)－磷酸礦業。三級產業(53.2%)－旅遊業。"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 99
+      }, {
+        "name": "基督教",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-漁業",
+        "percentage": 15.1
+      }, {
+        "name": "二級產業-磷酸礦業",
+        "percentage": 31.7
+      }, {
+        "name": "三級產業-旅遊業",
+        "percentage": 53.2
+      }
+    ]
   },
   {
     "iso": "UGA",
@@ -119,19 +190,42 @@
     "symbol": "Boda boda(摩托計程車)",
     "currency": "烏干達先令",
     "language": "英語、斯瓦希里語(Swahili)",
-    "flag": "",
-    "emblem": "",
+    "flag": "Uganda_flag.png",
+    "emblem": "Uganda_Coat_of_arms.png",
     "headOfState": "總統: Yoweri Museveni 總理: Ruhakana Rugunda",
     "politics": "總統制",
     "atmosphere": "東北是酷熱乾燥的沙漠，西部是雨量豐富的森林區。境內山水相間，氣溫宜人，雨量豐富，大部份地區的氣候終年有如舒適的歐洲夏季。",
     "geography": "瀕臨大湖的內陸國家，整個國家坐落於高原之上，同時位於東非地塹區，東西兩邊都有高山，境內山高谷深。",
     "capital": "坎培拉 Kampala ",
     "population": "36.8million(2013)",
-    "faith": "羅馬天主教(41.9%)，基督新教(42%)，伊斯蘭教(12.1%)，其他%(4%)",
-    "economy": "一級產業(21.8%)－咖啡、皮毛、漁業。二級產業(26.1%)－礦業、基礎製造業。三級產業(52.1%)。  "
+    "faith": [{
+        "name": "羅馬天主教",
+        "percentage": 41.9
+      }, {
+        "name": "基督新教",
+        "percentage": 42
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 12.1
+      }, {
+        "name": "其他",
+        "percentage": 4
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-咖啡、皮毛、漁業",
+        "percentage": 21.8
+      }, {
+        "name": "二級產業-礦業、基礎製造業",
+        "percentage": 26.1
+      }, {
+        "name": "三級產業",
+        "percentage": 52.1
+      }
+    ]
   },
   {
-    "iso": "RW",
+    "iso": "RWA",
     "country": "盧安達 Luanda",
     "introduction": "盧安達國立在1994年的大屠殺期間受到重創，不過此後已有所復甦。尤其靠著自給農業、快速成長的旅遊業來賺取外匯，經濟漸趨穩定。",
     "symbol": "巨猩猩 (gorillas)",
@@ -145,8 +239,34 @@
     "geography": "盧安達整體地勢高聳，中西部以山區為主，中部為連綿起伏的丘陵，東部邊境地區則由熱帶草原、平原和沼澤組成。",
     "capital": "吉佳利 Kigali",
     "population": "12million (2012)",
-    "faith": "羅馬天主教(49.5%)，基督新教(39.4%)，天主教(4.5%)，伊斯蘭教(1.8%)，其他(4.8%)",
-    "economy": "一級產業(32.5%)－重要經濟作物: 咖啡、茶。二級產業(14.8%)－日常用品製造業、採礦業。三級產業(52.7%)－金融、批發零售、旅遊業。"
+    "faith": [{
+        "name": "羅馬天主教",
+        "percentage": 49.5
+      }, {
+        "name": "基督新教",
+        "percentage": 39.4
+      }, {
+        "name": "天主教",
+        "percentage": 4.5
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 1.8
+      }, {
+        "name": "其他",
+        "percentage": 4.8
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-咖啡、茶",
+        "percentage": 32.5
+      }, {
+        "name": "二級產業-日常用品製造業、採礦業",
+        "percentage": 14.8
+      }, {
+        "name": "三級產業-金融、批發零售、旅遊業",
+        "percentage": 52.7
+      }
+    ]
   },
   {
     "iso": "BDI",
@@ -163,26 +283,75 @@
     "geography": "位於東非大裂谷之上，境內地形高聳複雜，陡峭山脊是非洲兩大河流尼羅河水系與剛果河水系的分水嶺，有\"非洲之心\"之稱。",
     "capital": "布松布拉 Bujumbura",
     "population": "8.4million (2013)",
-    "faith": "天主教(62.1%) 基督教(23.9%) 伊斯蘭教(2.5%) 其他或不能識別(11.5%)",
-    "economy": "一級產業(34.4%)－咖啡、茶、香蕉。二級產業(18.4%)－食品加工、啤酒及水泥製造。三級產業(47.2%)。"
+    "faith": [{
+        "name": "天主教",
+        "percentage": 62.1
+      }, {
+        "name": "基督教",
+        "percentage": 23.9
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 2.5
+      }, {
+        "name": "其他",
+        "percentage": 11.5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-咖啡、茶、香蕉",
+        "percentage": 34.4
+      }, {
+        "name": "二級產業-食品加工、啤酒及水泥製造",
+        "percentage": 18.4
+      }, {
+        "name": "三級產業",
+        "percentage": 47.2
+      }
+    ]
   },
   {
-    "iso": "ET",
+    "iso": "ETH",
     "country": "衣索比亞 Ethiopia",
     "introduction": "衣索比亞為世界上最古老的國家之一，也是非洲國家中人口密度最高的國家。非洲聯盟的總部位於衣索比亞的首都－阿迪斯阿貝巴，時尚盛事也常在此舉辦。",
     "symbol": "長跑選手 (Marathon runners)",
     "currency": "衣索比亞比爾(Birr)",
     "language": "阿姆哈拉語(Amharic)",
-    "flag": "",
-    "emblem": "",
+    "flag": "Ethiopia_flag.png",
+    "emblem": "Ethiopia_svg.png",
     "headOfState": "總統: Mulatu Teshome 總理: Hailemariam Desalegn",
     "politics": "議會制",
     "atmosphere": "熱帶草原氣候和亞熱帶森林氣候為主，兼有山地和熱帶沙漠氣候；年降水量從西南向東北遞減。",
     "geography": "2/3國土為衣索比亞高原，有\"非洲屋脊\"之稱；東南屬索馬利亞高地；東非大裂谷縱貫全境中部。",
     "capital": "阿迪斯阿貝巴Addis Ababa",
     "population": "96.6million (2013)",
-    "faith": "伊斯蘭教(33.9%)，衣索比亞正教(43.5%)，基督新教(18.6%)，天主教(0.7%)，原始信仰(2.6%)。",
-    "economy": "一級產業(47%)－咖啡。二級產業(10.8%)－初級加工、紡織。三級產業(42.2%)。"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 33.9
+      }, {
+        "name": "衣索比亞正教",
+        "percentage": 43.5
+      }, {
+        "name": "基督新教",
+        "percentage": 18.6
+      }, {
+        "name": "天主教",
+        "percentage": 0.7
+      }, {
+        "name": "原始信仰",
+        "percentage": 2.6
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-咖啡",
+        "percentage": 47
+      }, {
+        "name": "二級產業-初級加工、紡織",
+        "percentage": 10.8
+      }, {
+        "name": "三級產業",
+        "percentage": 42.2
+      }
+    ]
   },
   {
     "iso": "BFA",
@@ -191,16 +360,39 @@
     "symbol": "乳油木果、非洲電影節",
     "currency": "西非法郎 (FCFA)",
     "language": "法語",
-    "flag": "BurkinaFaso_Flag",
-    "emblem": "BurkinaFaso_emblem",
+    "flag": "BurkinaFaso_Flag.png",
+    "emblem": "BurkinaFaso_emblem.jpg",
     "headOfState": "總統：Michel Kafando 總理：Yacouba Issac ZIDA",
     "politics": "議會制",
     "atmosphere": "布吉納法索以熱帶草原氣候為主，年降水量介於500～1000毫米，南多北少。",
     "geography": "全境無沙漠，北方緊鄰沙漠邊緣，西部地區土壤多沙，南部為草原，作物及水果多產於中南部。",
     "capital": "瓦加杜古 Ouagadougou (簡稱Ouaga）",
     "population": "15 million",
-    "faith": "天主/基督新教(23.2%)伊斯蘭教(60.5%)當地信仰(15.3%)無信仰(1%)",
-    "economy": "農牧業為主，主要經濟作物為棉花，布國亦輸出黃金"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 23.2
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 60.5
+      }, {
+        "name": "當地信仰",
+        "percentage": 15.3
+      }, {
+        "name": "無信仰",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-棉花、芝麻、乳油木果、花生、高粱",
+        "percentage": 38
+      }, {
+        "name": "二級產業-棉製品加工、肥皂製作、農產品加工",
+        "percentage": 22
+      }, {
+        "name": "三級產業",
+        "percentage": 40
+      }
+    ]
   },
   {
     "iso": "GHA",
@@ -209,16 +401,39 @@
     "symbol": "可可",
     "currency": "迦納賽地 (GHS)",
     "language": "英語",
-    "flag": "Ghana_Flag.",
-    "emblem": "Ghana_emblem. .svg",
+    "flag": "Ghana_Flag.png",
+    "emblem": "Ghana_emblem_svg.png",
     "headOfState": "總統：John Dramani Mahama 副總統：Kwesi Amissah-Arthur",
     "politics": "單一制、總統制",
     "atmosphere": "氣候乾濕季分明，沿海平原和西南部阿散蒂高原屬熱帶雨林氣候，伏塔河谷和北部高原地區屬熱帶草原氣候，氣溫較高，降雨量由西南往東北遞減。",
-    "geography": "迦納東南部的沃爾特水庫是世界上最大的人工湖，從Yapei城到Akosombo大壩，長達520公里。這個湖現在主要用來發電和內陸水運，也可以用於灌溉和漁業。",
+    "geography": "迦納近赤道，擁有典型的熱帶氣候，全年氣溫在18℃～40℃之間。北部屬於又熱又乾燥的氣候，盛產西瓜。東南海岸氣候溫暖乾燥，西南則是潮濕炎熱。",
     "capital": "阿克拉 Accra",
     "population": "24 million",
-    "faith": "天主/基督新教(71.2%)伊斯蘭教(17.6%)當地信仰(5.2%)無信仰(5.2%)",
-    "economy": "礦產資源：2007年6月於大西洋幾內亞灣海域發現豐富原油， 2010年底開始產油；農產品資源：腰果、可可、豌豆和落花生。 主要出口產品為黃金、可可、原木、石油及鋁土"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 71.2
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 17.6
+      }, {
+        "name": "當地信仰",
+        "percentage": 5.2
+      }, {
+        "name": "無信仰",
+        "percentage": 5.2
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-可可、木薯、乳油木果、米、玉米、花生、木材",
+        "percentage": 22
+      }, {
+        "name": "二級產業-輕工業、小型商業造船、食品加工、石油加工、農產品加工",
+        "percentage": 28.4
+      }, {
+        "name": "三級產業",
+        "percentage": 49.6
+      }
+    ]
   },
   {
     "iso": "STP",
@@ -227,88 +442,191 @@
     "symbol": "火山",
     "currency": "多布拉 (STD)",
     "language": "葡萄牙語",
-    "flag": "Sao_Tome_and_Principe_Flag. svg",
-    "emblem": "São_Tomé_&_Príncipe_Emblem",
+    "flag": "Sao_Tome_and_Principe_Flag_svg.png",
+    "emblem": "São_Tomé_&_Príncipe_Emblem.png",
     "headOfState": "總統：Manuel Pinto da Costa 總理：Patrice Trovoada",
     "politics": "共和制",
     "atmosphere": "熱帶雨林氣候，終年高溫多雨。年降水量1000～3000毫米，兩島西南迎風坡達5000毫米。",
     "geography": "聖多美島及普林西比島皆為火山島，島上植被茂盛，擁有許多高山及交錯的河流",
     "capital": "聖多美 Sao tome",
-    "population": "183,000",
-    "faith": "天主/基督新教(97%)伊斯蘭教(2%)當地信仰(1%)",
-    "economy": "農業為主，主產可可，其次是咖啡、椰子。工業有肥皂廠、鋸木廠等。兩島主要產品有95%外運。 主要出口可可（占出口總值的3/4）、咖啡、椰子、油棕產品"
+    "population": "194,006",
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 97
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 2
+      }, {
+        "name": "當地信仰",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-可可（占出口總值的3/4）、咖啡、椰子、香蕉、木瓜、棕櫚仁、肉桂",
+        "percentage": 18.8
+      }, {
+        "name": "二級產業-輕工業、魚類加工、鋸木廠、肥皂廠",
+        "percentage": 16.1
+      }, {
+        "name": "三級產業",
+        "percentage": 65.1
+      }
+    ]
   },
   {
     "iso": "TGO",
     "country": "多哥 Togo",
     "introduction": "西非國家之一，國名在當地語言是「水邊」的意思。從15世紀起，葡萄牙、英國、法國等殖民者侵入沿岸販賣奴隸，稱為「奴隸海岸」。",
-    "symbol": "巫毒",
+    "symbol": "巫毒的發源地。一片漆黑的夜景",
     "currency": "西非法郎 (FCFA)",
     "language": "法語",
-    "flag": "Togo_Flag",
-    "emblem": "Togo_emblem",
+    "flag": "Togo_Flag.png",
+    "emblem": "Togo_emblem.jpg",
     "headOfState": "總統：Faure Essozimna Gnassingbé 總理：Komi Sélom Klassou",
     "politics": "共和制",
-    "atmosphere": "多哥為熱帶草原和熱帶雨林氣候，年降水量800-1800毫米。",
-    "geography": "內陸多丘陵和高地，海拔200-500米。沿海有沼澤、瀉湖和沙洲。在北方有一個輕微起伏的熱帶草原，中部為山區；南部有一個高原延向布滿廣闊的礁湖和沼澤地的濱海平原。",
+    "atmosphere": "北部為乾燥少雨的熱帶草原氣候，南部為熱帶雨林氣候",
+    "geography": "國土為南北狹長型狀，北部為起伏平緩的熱帶草原，中部多為山地，南部為平原，沿海低地多潟湖與沼澤",
     "capital": "洛美 Lome",
-    "population": "6 million",
-    "faith": "天主/基督新教(29%)伊斯蘭教(20%)當地信仰(51%)",
-    "economy": "可可、咖啡、棉花等經濟作物占出口30%比例"
+    "population": "7.5 million",
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 29
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 20
+      }, {
+        "name": "當地信仰",
+        "percentage": 51
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-可可（占出口總值的3/4）、咖啡、椰子、山藥、木薯、豆類",
+        "percentage": 27.6
+      }, {
+        "name": "二級產業-農產加工、礦業、手工雕刻",
+        "percentage": 33.9
+      }, {
+        "name": "三級產業",
+        "percentage": 38.5
+      }
+    ]
   },
   {
     "iso": "BEN",
     "country": "貝寧 Benin",
-    "introduction": "西非國家，前法屬殖民地，舊名為達荷美(Dahomey)，全名為貝寧共和國，南臨幾內亞灣。",
-    "symbol": "巫毒",
+    "introduction": "貝寧被認定為經濟開發最落後的國家之一，全國以務農為主，因南部的部落王國早期就與歐洲列強有密切往來，農業經濟太早專業化，導致糧食作物無法自給。棉花的種植方式比其他非洲國家細緻，因此質量較好。",
+    "symbol": "巫毒為國教",
     "currency": "西非法郎 (FCFA)",
     "language": "法語",
-    "flag": "Benin_Flag",
-    "emblem": "Benin_emblem",
+    "flag": "Benin_Flag.png",
+    "emblem": "Benin_emblem.png",
     "headOfState": "總統：Yayi Boni",
     "politics": "共和制",
-    "atmosphere": "北部為乾旱兩季，雨季為5-9月。 南部為赤道型氣候，雨季在3-7月。",
-    "geography": "拉瑪沼澤地 達荷美高原：海拔約300-750英尺，含四處結晶岩，主要由黏土地構成。 阿塔克拉山：位於國境西北部，東北-西南向，最高處為2146公尺。 尼日河平原：於東北部。",
+    "atmosphere": "北部為乾燥少雨的熱帶草原氣候，南部為熱帶雨林氣候",
+    "geography": "南部海岸屬於沙嘴和潟湖地，多為古河口灣侵蝕和淤積的產物。沿海區以北為土質肥沃的黏土區，西北部有高山，東北部為尼日河平原",
     "capital": "新港 亦可稱波多諾夫 Porto-Novo",
-    "population": "8 million",
-    "faith": "天主/基督新教(42.8%)伊斯蘭教(24.4%) 伏督Vodoo(17.3%)其他信仰(9.0)無信仰(6.5)",
-    "economy": "經濟以農業為主：薯蕷、木薯、甘薯、玉米、豌豆、蠶豆及花生；次之為經濟作物為油棕、棉花；以及少數礦產：金紅石、鈦鐵礦、石油。"
+    "population": "10 million",
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 42.8
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 24.4
+      }, {
+        "name": "伏督Vodoo",
+        "percentage": 17.3
+      }, {
+        "name": "當地信仰",
+        "percentage": 9.0
+      }, {
+        "name": "當地信仰",
+        "percentage": 6.5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-棉花、木薯、棕櫚油、腰果、玉米",
+        "percentage": 31.8
+      }, {
+        "name": "二級產業-紡織、建材製作、水泥製造",
+        "percentage": 12.3
+      }, {
+        "name": "三級產業",
+        "percentage": 55.9
+      }
+    ]
   },
   {
     "iso": "SEN",
     "country": "塞內加爾 Senegal",
-    "introduction": "作為西非國家經濟共同體的成員國，塞內加爾正在努力實現區域一體化以及對外統一關稅。",
+    "introduction": "為法國殖民時期的重要據點，故其文化及文學發達。女權意識高，不少中小學皆以對社會有傑出貢獻之女姓文學家、政治家等的名字命名，並在其校內設立該女性之展示館。",
     "symbol": "文學",
     "currency": "西非法郎 (FCFA)",
     "language": "法語",
-    "flag": "Senegal_Flag",
-    "emblem": "Senegal_emblem",
+    "flag": "Senegal_Flag.png",
+    "emblem": "Senegal_emblem.png",
     "headOfState": "總統：Macky Sall 總理：Mohammed Dionne",
     "politics": "半總統制",
     "atmosphere": "受信風帶影響，屬夏雨冬乾型的熱帶莽原氣候，中部和東部大部分為半沙漠地帶。年雨量約600公釐，由南向北遞減，雨季為六月至十月。最高月均溫27℃，最低月均溫17℃，愈內陸愈低溫。",
     "geography": "塞內加爾位於非洲大陸的西部， 地形主要為平原，東部和東南部有丘陵高地，沿岸多起伏的沙丘。",
     "capital": "達卡 Dakar",
     "population": "11 million",
-    "faith": "天主/基督新教(4.2%)伊斯蘭教(95.4%)當地信仰(0.4%)",
-    "economy": "農業：花生、棉花、稻米為主。 其次為漁業、礦業、工業 (食品加工、採礦業、水泥生產、化肥、紡織、進口石油提煉) 和旅遊業為輔。"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 4.2
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 95.4
+      }, {
+        "name": "當地信仰",
+        "percentage": 0.4
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-花生、棉花、稻米、漁業、玉米、漁業、畜牧業",
+        "percentage": 15.6
+      }, {
+        "name": "二級產業-農業與漁業加工、礦業、肥料製造、石油煉造、船體製造與修復",
+        "percentage": 23.8
+      }, {
+        "name": "三級產業",
+        "percentage": 60.6
+      }
+    ]
   },
   {
     "iso": "MRT",
     "country": "毛利坦尼亞 Mauritania",
     "introduction": "全名茅利塔尼亞伊斯蘭共和國，是西非阿拉伯國家之一。 茅利塔尼亞少數區域尚有奴隸制存在，民族組成為40%的白摩爾人（為阿拉伯－柏柏爾血統），另外黑摩爾人（阿拉伯文化語言傳統的哈拉廷人）和非洲黑人各佔30%。",
-    "symbol": "漁業 ",
+    "symbol": "漁業、摩爾人的婚禮儀式",
     "currency": "烏吉拉 (MRO)",
-    "language": "阿拉伯語",
-    "flag": "Mauritania_Flag",
-    "emblem": "Mauritania_emblem",
+    "language": "阿拉伯語、法語",
+    "flag": "Mauritania_Flag.png",
+    "emblem": "Mauritania_emblem.png",
     "headOfState": "總統：Mohamed Ould Abdel Aziz 總理：Moulaye Ould Mohamed Laghdaf",
     "politics": "多黨制",
     "atmosphere": "熱帶沙漠氣候；氣候炎熱乾旱， 最冷月均溫仍達攝氏20度以上，3月到4月間並有沙塵暴",
-    "geography": "全境有一半國土屬撒哈拉沙漠",
+    "geography": "全境有一半國土屬撒哈拉沙漠，西南部有些許草原地形",
     "capital": "諾克少 Nouakchott",
-    "population": "3 million",
-    "faith": "伊斯蘭教(99%)當地信仰(1%)",
-    "economy": "畜牧業與農業(粟、椰棗、稻米及玉米)為主，次之為鐵礦及漁業"
+    "population": "3.6 million",
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 99
+      }, {
+        "name": "當地信仰",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-椰棗、稻米、高粱、玉米、漁業、畜牧業",
+        "percentage": 17.1
+      }, {
+        "name": "二級產業-石油生產、礦業（鐵礦）",
+        "percentage": 48.7
+      }, {
+        "name": "三級產業",
+        "percentage": 34.2
+      }
+    ]
   },
   {
     "iso": "MLI",
@@ -317,34 +635,74 @@
     "symbol": "傑內大教堂 廷巴克圖 Timbuktou",
     "currency": "西非法郎 (FCFA)",
     "language": "法語",
-    "flag": "Mali_Flag",
-    "emblem": "Mali_emblem",
+    "flag": "Mali_Flag.png",
+    "emblem": "Mali_emblem.png",
     "headOfState": "總統：Ibrahim Boubacar Keïta 總理：Modibo Keita",
     "politics": "議會民主制",
     "atmosphere": "馬利的氣候從熱帶溫暖的氣候一直到撒哈拉沙漠的沙漠氣候。 南部年降雨量可達1000毫米，北部有些地方終年不雨。 南部是潮濕的草原，向北演變成灌木草原、半沙漠和沙漠。",
     "geography": "全境平坦，除西南部之外，多壟罩於撒哈拉沙漠之下，為沙漠平原",
     "capital": "巴馬科 Bamako",
     "population": "14 million",
-    "faith": "天主/基督新教(5.0%)伊斯蘭教(90.0%)當地信仰(5.0%)",
-    "economy": "南方農業為主：花生、玉米、高粱和棉花；北方則為小麥，近年來馬利開始出口水果到西歐製作果汁，諸如：芒果、薑、洛神花等。"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 5.0
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 90.0
+      }, {
+        "name": "當地信仰",
+        "percentage": 5.0
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-棉花、米、玉米、花生、高粱，北方則有小麥；芒果、洛神花和薑出口至西歐",
+        "percentage": 38
+      }, {
+        "name": "二級產業-礦業、建築、食品加工",
+        "percentage": 23.3
+      }, {
+        "name": "三級產業",
+        "percentage": 38.7
+      }
+    ]
   },
   {
     "iso": "GMB",
     "country": "甘比亞 Republic of the Gambia",
     "introduction": "全名為甘比亞共和國，西非國家之一 ，陸上被塞內加爾環繞，是非洲大陸最小的國家。1965年甘比亞脫離英國獨立，是世界上最低度開發國家之一。",
-    "symbol": "",
+    "symbol": "孕育歐洲列強奴隸貿易的甘比亞河",
     "currency": "達拉西 (GMD)",
     "language": "英語",
-    "flag": "Gambia_flag",
-    "emblem": "Gambia_Emblem",
+    "flag": "Gambia_flag.png",
+    "emblem": "Gambia_Emblem.png",
     "headOfState": "總統：Yahya Jammeh",
     "politics": "總統制",
-    "atmosphere": "當地屬熱帶氣候，多季節性泛濫沼澤",
-    "geography": "甘比亞河",
+    "atmosphere": "全境屬熱帶氣候，乾濕季分明",
+    "geography": "國土沿著甘比亞河為河谷狹長平原，水網密布，多季節性氾濫成沼澤。",
     "capital": "班竹 Banjul (舊稱巴瑟斯特)",
     "population": "1.7 million",
-    "faith": "天主/基督新教(4.1%)伊斯蘭教(95.3%)當地信仰(0.6%)",
-    "economy": "國家的主要工業是花生加工，另有榨油、魚類加工、紡織等小型工業，以木刻首飾等手工業著名"
+    "faith": [{
+        "name": "天主/基督新教",
+        "percentage": 4.1
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 95.3
+      }, {
+        "name": "當地信仰",
+        "percentage": 0.6
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-米、玉米、花生、高粱、漁業",
+        "percentage": 22.8
+      }, {
+        "name": "二級產業-農業機械組裝、服務紡織、榨油、花生加工、魚類加工、木雕首飾製作",
+        "percentage": 11.8
+      }, {
+        "name": "三級產業-旅遊業盛行",
+        "percentage": 65.5
+      }
+    ]
   },
   {
     "iso": "TCD",
@@ -353,16 +711,42 @@
     "symbol": "查德湖",
     "currency": "中非法郎 Central African CFA franc",
     "language": "法語、阿拉伯語",
-    "flag": "Chad flag",
-    "emblem": "Chad Coat",
-    "headOfState": "國家元首（總統）：伊德里斯·德比 政府首腦（總理）：Djimrangar Dadnadji",
+    "flag": "Chad_flag.png",
+    "emblem": "Chad_coat.png",
+    "headOfState": "總統：Idriss Déby Itno 總理：Djimrangar Dadnadji",
     "politics": "半總統制、共和制",
     "atmosphere": "北部的沙漠地區，屬熱帶沙漠氣候；中部乾旱的薩赫勒地區，屬熱帶草原氣候；和南部較肥沃的蘇丹草原地區，屬熱帶雨林氣候",
     "geography": "該國最明顯的地理特徵：一片被北部、東部和南部的山脈包圍的盆地。查德的國名源於查德湖，查德湖現在是非洲的第二大濕地。位於提貝斯提高原的火山庫西山高3,414米，是查德以至撒哈拉地區的最高山峰",
     "capital": "恩將納N'Djamena",
     "population": "13.2 million(2014)",
-    "faith": "穆斯林(54%)羅馬天主教徒(20%)新教徒(14%)泛靈論者(10%)無神論者(3%)",
-    "economy": "一級產業(80%)自給耕作或畜牧"
+    "faith": [{
+        "name": "穆斯林",
+        "percentage": 54
+      }, {
+        "name": "羅馬天主教徒",
+        "percentage": 20
+      }, {
+        "name": "新教徒",
+        "percentage": 14
+      }, {
+        "name": "泛靈論者",
+        "percentage": 10
+      }, {
+        "name": "無神論者",
+        "percentage": 3
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-米、蜀黍、花生、馬鈴薯",
+        "percentage": 46.3
+      }, {
+        "name": "二級產業-棉織布、石油、肥皂、菸草",
+        "percentage": 9.9
+      }, {
+        "name": "三級產業",
+        "percentage": 43.8
+      }
+    ]
   },
   {
     "iso": "SLE",
@@ -371,16 +755,36 @@
     "symbol": "礦業（血鑽石）",
     "currency": "里昂Leone",
     "language": "英語",
-    "flag": "Sierra_Leone=flag",
-    "emblem": "Sierra_Leone coat",
-    "headOfState": "國家元首（總統）：埃內斯特·巴伊·科羅馬",
+    "flag": "Sierra_Leone_flag.png",
+    "emblem": "Sierra_Leone_coat.png",
+    "headOfState": "總統：Ernest Bai Koroma",
     "politics": "共和國",
     "atmosphere": "熱帶雨林氣候，7、8月降水最多，多雷暴雨；年降水量內陸在1000毫米以上，沿海達3000-4000毫米。",
     "geography": "獅子山境內大部是丘陵、高原，地勢東高西低，一般海拔300-600米，最高峰為洛馬山脈（Loma Mt.）海拔1947米；沿岸多低地、沙洲和澙湖",
     "capital": "自由城 Freetown",
     "population": "6.1 million(2013)",
-    "faith": "伊斯蘭教(60%)基督教(30%)傳統宗教或其他宗教(10%)",
-    "economy": "傳統出口產業也以原料為主，當中包含金紅石、鐵礦、以及最有名的鑽石原石。"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 60
+      }, {
+        "name": "基督教",
+        "percentage": 30
+      }, {
+        "name": "傳統宗教或其他宗教",
+        "percentage": 10
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-可可、米、咖啡、 家禽、棕櫚油",
+        "percentage": 42.5
+      }, {
+        "name": "二級產業-鑽石礦產、織布、菸草",
+        "percentage": 26.8
+      }, {
+        "name": "三級產業",
+        "percentage": 30.7
+      }
+    ]
   },
   {
     "iso": "CIV",
@@ -389,34 +793,77 @@
     "symbol": "咖啡、可可",
     "currency": "西非法郎Western African CFA franc",
     "language": "法語",
-    "flag": "Côte_d'Ivoire flag",
-    "emblem": "Ivory_Coast coat",
-    "headOfState": "國家元首（總統）：阿拉薩內·瓦塔拉 政府首腦（總理）：紀堯姆·索羅",
+    "flag": "Côte_d'Ivoire_flag.png",
+    "emblem": "Ivory_Coast_coat.png",
+    "headOfState": "總統：Alassane Dramane Ouattara 總理：Guillaume Soro",
     "politics": "總統制，但在總統之下另設總理領導內閣，其政體實質為由一黨專政和軍人統治逐漸建立民主的過渡型政體。地方行政方面實行單一制。",
     "atmosphere": "全境屬熱帶海洋氣候，全年分雨季與乾季，5至7月為大雨季，8至11月為小雨季，其餘月份為乾季，年平均溫度為攝氏27度，南部雨量較北部多，年平均降雨量1,400公釐。",
-    "geography": "一般說來，全國地勢由南向北逐漸加高，中部有少數海拔914到1524公尺的山峰，高原表面由砂礫所構成。這個國家的地形，自南部海岸穿越全國直到北方邊境，可以明顯地區分為鹹水湖、森林和草原等三個地區[",
+    "geography": "全國地勢由南向北逐漸加高，中部有少數海拔914到1524公尺的山峰，高原表面由砂礫所構成。自南部海岸穿越全國直到北方邊境，可以明顯地區分為鹹水湖、森林和草原等三個地區[",
     "capital": "雅穆索戈Yamoussoukro",
     "population": " 22.7 million(2014)",
-    "faith": "象國回教徒（主要係西非移民）佔38.6％，基督教32.8％，其餘為當地傳統宗教及無宗教信仰者。",
-    "economy": "以農立國，其次是畜牧業、漁業、工業"
+    "faith": [{
+        "name": "象國回教徒（主要係西非移民）",
+        "percentage": 38.6
+      }, {
+        "name": "基督教",
+        "percentage": 32.8
+      }, {
+        "name": "傳統宗教或其他宗教",
+        "percentage": 28.6
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-咖啡、可可豆、玉米、米、番薯、木材",
+        "percentage": 26.3
+      }, {
+        "name": "二級產業-棕櫚油、鑽石、橡膠製業",
+        "percentage": 21.3
+      }, {
+        "name": "三級產業",
+        "percentage": 52.4
+      }
+    ]
   },
   {
     "iso": "LBR",
-    "country": "賴比瑞亞",
+    "country": "賴比瑞亞（ the Republic of Liberia ）",
     "introduction": "賴比瑞亞，為19世紀初，一些美國黑奴解放後所建立、移居的國家。所以國名在英文有「自由」（liberty）和「解放」（liberated）的意思。",
-    "symbol": "國旗：賴比瑞亞是由從美國回到非洲的黑奴所建立的國家，所以國旗與美國十分相似。國旗左上角的藍色正方形代表非洲大陸，上面浮出一顆白色五角星，這是非洲自由的象徵，也表示賴比瑞亞是當時非洲唯一的黑人獨立國。",
+    "symbol": "國旗",
     "currency": "賴比瑞亞元（LRD）",
     "language": "英語",
-    "flag": "Liberia flag",
-    "emblem": "iberia coat",
-    "headOfState": "元首（總統）：伊德里斯·德比 政府首腦（總理）：Djimrangar Dadnadj",
+    "flag": "Liberia_flag.png",
+    "emblem": "iberia_coat.png",
+    "headOfState": "總統：Ellen Johnson Sirleaf ",
     "politics": "總統制",
     "atmosphere": "賴比瑞亞地近赤道；雖然也屬熱帶氣候，但郤沒有熱帶通常有的炎熱和瘴濕及不適於健康的氣候。最熱的月份是二月和三月，氣溫可達32.2度(華氏90度）。最冷的月份是八月和九月，白天的氣溫可降到18.3度（華氏65度）。",
     "geography": "賴比瑞亞海岸線長537公里。屬熱帶季風氣候，年平均氣溫約25℃。",
     "capital": "蒙羅維亞Monrovia",
     "population": "4 millions(2015)",
-    "faith": "基督教40%、傳統信仰40%、伊斯蘭教15%",
-    "economy": "農業人口佔總人口的70％，全國可耕地380萬公頃，目前已開發的不足15％，糧食不能自給。天然橡膠，木材和鐵礦砂的生產為其國民經濟的主要支柱，均供出口，是賴比瑞亞外匯收入的主要來源。工業不發達，僅有少數企業生產日用消費品。1989年底至1996年8月內戰期間，經濟陷於癱瘓。"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 40
+      }, {
+        "name": "傳統信仰",
+        "percentage": 40
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 15
+      }, {
+        "name": "其他",
+        "percentage": 5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-橡膠、咖啡、可可、米、棕櫚油、蔗糖、香蕉",
+        "percentage": 76.9
+      }, {
+        "name": "二級產業-棕櫚油、鑽石、橡膠製業",
+        "percentage": 5.4
+      }, {
+        "name": "三級產業",
+        "percentage": 17.7
+      }
+    ]
   },
   {
     "iso": "AGO",
@@ -425,16 +872,36 @@
     "symbol": "礦產（鑽石、黃金）",
     "currency": "安哥拉匡撒（AOA）",
     "language": "葡萄牙語",
-    "flag": "Angola flag",
-    "emblem": "Angola coat",
-    "headOfState": "國家元首（總統）：若澤·愛德華多·多斯桑托斯",
+    "flag": "Angola_flag.png",
+    "emblem": "Angola_coat.png",
+    "headOfState": "總統：José Eduardo dos Santos",
     "politics": "總統制",
     "atmosphere": "安哥拉大部分地區屬熱帶草原氣候，每年有溼季（10月~3月）及旱季（4月~9月），位在高原上的夫安波一帶，海拔有1500公尺，氣候溫和，年平均降雨量1450公釐，日平均氣溫為攝氏24至29度。濱海地區的氣溫和雨量均很低。羅安達以南屬半乾燥氣候，羅安達則是典型的草原氣候",
     "geography": "安哥拉西部有濱大西洋的狹窄平原，北部鄰近剛果三角洲一帶地形開闊。內陸為比耶高原，為各大水系的分水嶺，有「安哥拉屋脊」之稱，平均海拔1200公尺，最高點莫寇峰（2619公尺）。境內多河流，但大多不通航運。",
     "capital": "羅安達Luanda",
     "population": "19 millions(2010)            ",
-    "faith": "70%天主教、土著信仰10%、新教20%",
-    "economy": "工業65.8%、服務業24.6%、農業9.6%"
+    "faith": [{
+        "name": "天主教",
+        "percentage": 70
+      }, {
+        "name": "土著信仰",
+        "percentage": 10
+      }, {
+        "name": "新教",
+        "percentage": 20
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-香蕉、蔗糖、咖啡、玉米、菸草、漁業",
+        "percentage": 10.2
+      }, {
+        "name": "二級產業-鑽石、鈾、黃金、長石、礬土",
+        "percentage": 61.4
+      }, {
+        "name": "三級產業",
+        "percentage": 28.4
+      }
+    ]
   },
   {
     "iso": "GIN",
@@ -443,178 +910,355 @@
     "symbol": "",
     "currency": "幾內亞法郎（GNF）",
     "language": "法語",
-    "flag": " Guinea flag",
-    "emblem": "Guinea coat",
-    "headOfState": "國家元首（總統）：阿爾法·孔戴 政府首腦（總理）：艾哈邁德·蒂迪亞內·蘇瓦雷",
+    "flag": "Guinea_flag.png",
+    "emblem": "Guinea_coat.png",
+    "headOfState": "總統：Alpha Condé 總理：Ahmed Tidiane Souaré",
     "politics": "共和制",
     "atmosphere": "幾內亞沿海地區為熱帶季風氣候，內地為熱帶草原氣候。年降水量內陸為1000～1500毫米，沿海達4000毫米。",
     "geography": "",
     "capital": "柯那克里Conakry",
     "population": "12 millions",
-    "faith": "幾內亞最重要的宗教是遜尼派伊斯蘭教。全國約87%的居民信奉伊斯蘭教，5％信奉天主教，其餘信奉拜物教。",
-    "economy": "經濟以農業、礦業為主，工業基礎薄弱。糧食不能自給。鋁礬土、咖啡、可可和橡膠是幾經濟的主要支柱，但經濟作物開發規模不大，難以同西非其他農業強國競爭。"
+    "faith": [{
+        "name": "遜尼派伊斯蘭教",
+        "percentage": 87
+      }, {
+        "name": "天主教",
+        "percentage": 5
+      }, {
+        "name": "拜物教",
+        "percentage": 8
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-香咖啡、鳳梨、香蕉、馬鈴薯",
+        "percentage": 22.9
+      }, {
+        "name": "二級產業-鑽石、黃金、鐵、輕工業",
+        "percentage": 46.5
+      }, {
+        "name": "三級產業",
+        "percentage": 30.6
+      }
+    ]
   },
   {
     "iso": "NGA",
     "country": "奈及利亞Federal Republic of Nigeria",
-    "introduction": "奈及利亞是全非洲人口最多的國家，全世界以黑人為主體的國家中人口最多的國家。它被列為是未來11國中的一員，而且還是大英國協成員。",
+    "introduction": "奈及利亞是全非洲人口最多的國家，它被列為是未來11國中的一員，而且還是大英國協成員。",
     "symbol": "石油、奈萊塢",
     "currency": "奈拉（NGN）",
     "language": "英語",
-    "flag": "Nigeria flag",
-    "emblem": "Nigeria coat",
-    "headOfState": "國家元首（總統）：穆罕默杜·布哈里",
+    "flag": "Nigeria_flag.png",
+    "emblem": "Nigeria_coat.png",
+    "headOfState": "總統：Muhammadu Buhari",
     "politics": "聯邦制、總統制",
     "atmosphere": "奈及利亞位於熱帶地區，氣候潮濕。主要是熱帶草原氣候。西南部拉哥斯受幾內亞暖流影響，自北向南年降水量200-3000毫米。",
-    "geography": "南部是幾內亞灣。奈及利亞北部有阿達馬瓦高原、曼比拉高原、喬斯高原和奧布杜高原等,南部主要是尼日河下游沖積平原，東南邊境多山，沿海多沙洲、沼澤和潟湖。主要的河流有尼日河和貝努埃河。",
+    "geography": "奈及利亞北部有阿達馬瓦高原、曼比拉高原、喬斯高原和奧布杜高原等,南部主要是尼日河下游沖積平原，東南邊境多山，沿海多沙洲、沼澤和潟湖。",
     "capital": "阿布加Abuja",
     "population": "174 millions (2013)",
-    "faith": "基督教佔總人口44.21%，伊斯蘭教為52.61%，傳統宗教約3",
-    "economy": "石油出口收入占出口總收入的98％，有60%的人從事農業，其餘包括製造業及豐富的礦產資源待開發。"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 44.2
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 52.6
+      }, {
+        "name": "傳統宗教",
+        "percentage": 3.2
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-可可豆、棉、棕梠樹",
+        "percentage": 20.6
+      }, {
+        "name": "二級產業-石油、煤礦、橡膠製品",
+        "percentage": 25.6
+      }, {
+        "name": "三級產業-工業、化學製品",
+        "percentage": 53.8
+      }
+    ]
   },
   {
-    "iso": "SUD",
+    "iso": "SDN",
     "country": "蘇丹（北蘇丹）Republic of the Sudan",
     "introduction": "曾被失敗國家指數列表評為「世界上最不安定的國家」，歸咎於軍政府在達佛戰亂問題上的專制統治。同時，南蘇丹於2011年1月9日舉行公民投票，98.83％的投票支持獨立。2011年7月9日，南蘇丹正式宣布獨立。",
     "symbol": "紋面",
     "currency": "蘇丹鎊（SDG）",
     "language": "阿拉伯語、英語",
-    "flag": "Sudan flag",
-    "emblem": "Sudan Emblem",
-    "headOfState": "國家元首（總統）：奧馬爾·巴希爾",
+    "flag": "Sudan_flag.png",
+    "emblem": "Sudan_Emblem.png",
+    "headOfState": "عمر حسن احمد البشير：總統",
     "politics": "國家結構形式：聯邦制 國家政權：共和國 政治體制：總統制",
     "atmosphere": "蘇丹終年炎熱，主要屬熱帶莽原和沙漠氣候，年降水量自北向南由20多毫米遞增至1000毫米以上，北半部多沙漠，南半部多草原、森林和沼澤",
     "geography": "中部是蘇丹盆地，尼羅河河谷貫穿，青尼羅河、白尼羅河匯合處一帶土質最為肥沃，西部和東部是高原。",
     "capital": "喀土木Khartoum",
     "population": "40 millions",
-    "faith": "北方人民大多是阿拉伯人及信仰伊斯蘭教，佔總人口數40%，人民信仰伊斯蘭教，屬遜尼派，其餘則信仰非洲傳統宗教，如拜物教。另外5%信仰基督教。",
-    "economy": "蘇丹的經濟以農牧為基礎，國內最重要的農業區為白、藍尼羅河相夾之「半島」Gezira)區以迄喀土穆。全國半數以上的人口及80％的耕地，均在本區。牧業以南部的牛群為重要。蘇丹人自阿拉伯膠灌木上收集阿拉伯膠。每年經由蘇丹港出口，占全球阿拉伯膠產的四分之三"
+    "faith": [{
+        "name": "遜尼派伊斯蘭教",
+        "percentage": 40
+      }, {
+        "name": "基督教",
+        "percentage": 5
+      }, {
+        "name": "傳統宗教",
+        "percentage": 55
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-棉花、花生、稷、甘蔗",
+        "percentage": 26.8
+      }, {
+        "name": "二級產業-織布、石油、水泥、糖",
+        "percentage": 35.6
+      }, {
+        "name": "三級產業-工業、化學製品",
+        "percentage": 37.6
+      }
+    ]
   },
   {
     "iso": "SSD",
-    "country": "南蘇丹",
+    "country": "南蘇丹（Republic of South Sudan）",
     "introduction": "南蘇丹原是英埃共管蘇丹的一部分，1956年蘇丹共和國獨立後成為其一部分，被劃分為南部10省。之後爆發了兩次蘇丹內戰，第二次內戰於1983年爆發，至2005年才簽署《全面和平條約》，成立蘇丹南方自治政府。2011年，南蘇丹獨立公投通過，遂於2011年7月9日宣告獨立。",
     "symbol": "世界上最年輕的國家",
     "currency": "南蘇丹鎊（SSP）",
     "language": "英語",
-    "flag": "South Sudan flag",
-    "emblem": "South_Sudan coat",
-    "headOfState": "國家元首（總統）：薩爾瓦·基爾·馬亞爾迪特",
+    "flag": "South_Sudan_flag.png",
+    "emblem": "South_Sudan_coat.png",
+    "headOfState": "總統：Salva Kiir Mayardit",
     "politics": "國家結構形式：聯邦制 政治體制：總統制、共和制、民主制",
     "atmosphere": "氣候以熱帶乾濕季氣候為主，全年四季變化不明顯。每年5月至10月為雨季，11月至翌年4月為旱季。",
     "geography": "",
     "capital": "朱巴Juba",
     "population": "11 millions",
     "faith": "南蘇丹共和國以黑人為主，以信仰泛靈論佔多數，少數信仰基督新教、天主教、科普特教派和伊斯蘭教等宗教，不同於主要信奉伊斯蘭教、以阿拉伯人為主並占多數的蘇丹共和國。",
-    "economy": "南蘇丹的石油產量佔分裂前原蘇丹石油出口總量的85%，石油是南蘇丹的重要經濟來源"
+    "economy": [{
+        "name": "一級產業-米、小麥、甘蔗、椰子、番薯、太陽花種子、豆子、芝麻種子、花生",
+        "percentage": 85
+      }, {
+        "name": "其他",
+        "percentage": 15
+      }
+    ]
   },
   {
     "iso": "COG",
     "country": "剛果共和國 Republic of Congo",
-    "introduction": "二戰期間，法國向納粹低頭之際，這裡是支持流亡政權戴高樂將軍的「自由法國」象徵性之地。目前，由政府主導利用絕佳地理位置的優勢，致力發展為全非洲的陸、海、空三方物流中心。",
-    "symbol": "Nope",
+    "introduction": "二戰期間，這裡是「自由法國」象徵性之地。現在利用自身地理位置的優勢，由政府主導致力發展為全非洲的陸海空三方物流中心。",
+    "symbol": "漠南非洲的民選制度楷模 (1990年，剛果執政黨提議廢除一黨獨大制，隔年，第一次民選總統出任，次年由民選制度所建立的政府成立。此舉無疑是替漠南非洲率先做出了民主選舉與多黨共和的楷模。 資料來源：http://goo.gl/cjgYPQ)",
     "currency": "剛果法郎 (CDF)",
     "language": "法語",
-    "flag": "Republic_of_Congo_flag_png",
-    "emblem": "the_Republic_of_Congo_emblem,png",
+    "flag": "Republic_of_Congo_flag.png",
+    "emblem": "the_Republic_of_Congo_emblem.gif",
     "headOfState": "總統：Denis Sassou-Nguesso    總理：Isidore Mvouba",
     "politics": "共和制",
-    "atmosphere": "南部為熱帶草原氣候，中北部為 熱帶雨林氣候。年均溫高、濕度大 。",
-    "geography": "剛果處於非洲中西部，地跨赤道， 北部屬剛果盆地，海拔約200~300 米，多沼澤；南部是海拔500～1000米 的高原，沿海有狹窄低地。",
+    "atmosphere": "北、中部：熱帶雨林氣候。年均溫高、濕度大。 南部：為熱帶草原氣候、終年高溫、明顯乾濕季。",
+    "geography": "剛果處於非洲中西部，地跨赤道 。 北部屬剛果盆地，多沼澤；南部是高原，沿海有狹窄低地。",
     "capital": "Brazzaville  布拉薩市",
     "population": "43 Million",
-    "faith": "45%天主教，24%新教，30%原始宗教 ",
-    "economy": "第一級產業(3.3%)樹薯、熱帶栽培業作物，第二級產業(74%)石油、林業、棕梠油、香菸，第三級產業(22%)轉口貿易、服務業"
+    "faith": [{
+        "name": "天主教",
+        "percentage": 45
+      }, {
+        "name": "新教",
+        "percentage": 24
+      }, {
+        "name": "原始宗教",
+        "percentage": 30
+      }, {
+        "name": "其他",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-樹薯、熱帶栽培業作物",
+        "percentage": 3.3
+      }, {
+        "name": "二級產業-石油、林業、棕梠油、香菸",
+        "percentage": 74
+      }, {
+        "name": "三級產業-轉口貿易、服務業",
+        "percentage": 22
+      }
+    ]
   },
   {
     "iso": "COD",
     "country": "剛果民主共和國 the demoncratic republic of Congo",
-    "introduction": "曾為比利時殖民地，1960年獨立，非洲國土第二大國家，非洲國家人口第四大國。 境內礦產資源豐沛，有「原料倉庫」之稱。首都金夏沙是中部非洲最重要的文化及知識中心，吸引許多音樂家、藝術家社群於此駐點。",
-    "symbol": "Nope",
+    "introduction": "曾為比利時殖民地，1960年獨立，非洲國土第二大國家，非洲國家人口第四大國。 境內礦產資源豐沛，有「原料倉庫」之稱。另外，首都金夏沙是中部非洲最重要的文化及知識中心，許多藝術家社群於此駐點。",
+    "symbol": "1. 熱帶雨林 (僅次於亞馬遜雨林，世界第二大) 2.Rumble in the Jungle (剛果舉辦過世界上規模最大的拳擊賽，其中最著名的參賽者是Muhamed Ali(拳王阿里) 和George Forman。 3.Kinshasa Fashion Week, KFW (以推廣剛果時尚為主，作為非洲籍服裝設計師與非洲服飾品牌的伸展台，標榜布料生產與服裝設計皆為Made in Congo。)",
     "currency": "剛果法郎 (CDF)",
     "language": "法語 ",
-    "flag": "the_Democratic_Republic_of_the_Congo_Flag.svg",
-    "emblem": "the_Democratic_Republic_of_the_Congo_emblem.svg",
+    "flag": "the_Democratic_Republic_of_the_Congo_flag.png",
+    "emblem": "the_Democratic_Republic_of_the_Congo_emblem.png",
     "headOfState": "總統：Joseph Kabila Kabange 總理：Augustin Matata Ponyo Mapon",
     "politics": "半總統制 共和制",
-    "atmosphere": "赤道氣候區，年均溫攝氏27.8以上， 濕熱多雨。全年分乾濕兩季，6月到10月為乾季， 11月至隔年5月為雨季。東部及南部為高原區，終年涼爽，雨量適中。",
-    "geography": "橫跨赤道的國家，國境佔剛果盆地的絕大部份，並且被支流密布的剛果河所灌溉； 除中下游有較大的平原外，其餘東、北、南三面都是被高原和山地所環繞， 其中又以南方和東南方的山嶺最為高峻。平均海拔由600公尺到1500公尺。 西南部剛果河下游一隅瀕大西洋，海岸線只有37公里長。",
+    "atmosphere": "熱帶氣候區，濕熱多雨。 【全境】 乾濕兩季，6月到10月是乾季，11月到隔年5月是雨季。 【區域差異】 北部：日夜溫差大，最高可差攝氏20度 南部、東部：位處高原，涼爽乾燥",
+    "geography": "橫跨赤道的國家，國境佔剛果盆地的絕大部份，並且被支流密布的剛果河所灌溉；除中下游有較大的平原外，其餘東、北、南三面都被高原和山地所環繞，西南部剛果河下游一隅瀕大西洋，海岸線只有37公里長。",
     "capital": "Kinshasa 金夏沙",
     "population": "77 million",
-    "faith": "45％信仰天主教，24％為新教， 17.5％信仰原始宗教，13％信仰金邦古教",
-    "economy": "第一級產業(44%)礦業、熱帶農作物棕梠和咖啡、農業、漁業、林業，第二級產業(21%)礦業加工、民生用品製造、食品加工、水泥，第三級產業(34%)物流服務"
+    "faith": [{
+        "name": "天主教",
+        "percentage": 45
+      }, {
+        "name": "新教",
+        "percentage": 24
+      }, {
+        "name": "原始宗教",
+        "percentage": 17.5
+      }, {
+        "name": "金邦古教",
+        "percentage": 13.5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-礦業、熱帶農作物棕梠和咖啡、農業、漁業、林業",
+        "percentage": 44
+      }, {
+        "name": "二級產業-礦業加工、民生用品製造、食品加工、水泥",
+        "percentage": 21
+      }, {
+        "name": "三級產業-物流服務",
+        "percentage": 35
+      }
+    ]
   },
   {
     "iso": "DJI",
     "country": "吉布地 Djibouti",
-    "introduction": "位處非洲、中東、歐洲三地交界之處，戰略位置重要，國內有美、法兩軍在非洲最大的軍事基地。吉布地港具有東非少數大型的現代化國際港口設施，海上貿易是該國重要的收入來源。尤其國內自然資源貧乏，工農業基礎薄弱，加上政局不穩，因此吉布地是世界上最不已開發國家之一。 ",
-    "symbol": "Nope",
+    "introduction": "位處非洲、中東、歐洲三地交界之處，戰略位置重要。吉布地港具有東非少數大型的現代化國際港口設施，轉口貿易是該國重要的收入來源，但國內缺乏自然資源，工農業基礎薄弱，政局不穩。 ",
+    "symbol": "1.吉布地港 (非洲之角國家中最安全、發展最穩定的港口，同時為內陸國衣索比亞唯一合作對外港口) 2.大馬阿里火山 Dama Ali 與阿貝湖 Lake Abbe (阿貝湖是座船舶可航行的湖，周圍都是小型活火山，其中規模與阿貝湖一樣大的火山叫Dama Ali。 資訊連結：http://goo.gl/MNLiF6)  ",
     "currency": "吉布地法郎 (DJF)",
     "language": "法語 阿拉伯語 ",
-    "flag": "Flag_of_Djibouti",
-    "emblem": "Emblem_of_Djibouti",
+    "flag": "Djibouti_flag.png",
+    "emblem": "Djibouti_emblem.png",
     "headOfState": "總統：Ismaaciil Cumar Geelle  總理：Dileita Mohamed Dileita",
     "politics": "半總統制 共和制",
-    "atmosphere": "沿海地帶為熱帶沙漠氣候，終年高溫少雨，內陸以高原及山地為主。 全年分涼、熱季，4月至10月為熱季，最高溫可達攝氏45度以上； 11月至次年三月，為涼季。",
-    "geography": "吉布地地處亞丁灣西岸，沿海部分是平原和高原，間有低洼平原和湖泊； 西部與南部則是寬廣的高原和山地，海拔500-800米。 除了濱海地帶外，境內大部份土地都是沙漠和草原，無固定河流，只有季節性的小溪流， 全境幾乎是一塊不毛之地，除了沙子和鹼水外，少有其他資源。",
+    "atmosphere": "【全境】全年分涼、熱季，4月至10月為酷熱，最高溫可達攝氏45度以上； 11月至次年三月，為涼季。 【區域】 沿海地帶為熱帶沙漠氣候，終年高溫少雨。 內陸以高原及山地為主，氣候較涼爽。 ",
+    "geography": "吉布地地處亞丁灣西岸，沿海部分是平原和高原，間有低洼平原和湖泊；西部與南部則是寬廣的高原和山地，海拔500-800米。  除了濱海地帶外，境內大部份土地都是沙漠和草原，無固定河流，只有季節性的小溪流， ",
     "capital": "Djibouti (city) 吉布地市",
     "population": "81萬",
-    "faith": "伊斯蘭教為國教，94%的居民為遜尼派穆斯林， 其餘為少數以外來歐洲人為主的基督教徒",
-    "economy": "第一級產業(3%)畜牧業與漁業，第二級產業(17%)鹽業、營建業，第三級產業(79%)轉口貿易"
+    "faith": [{
+        "name": "遜尼派伊斯蘭教",
+        "percentage": 94
+      }, {
+        "name": "基督教",
+        "percentage": 6
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-畜牧業與漁業",
+        "percentage": 3
+      }, {
+        "name": "二級產業-鹽業、營建業",
+        "percentage": 17
+      }, {
+        "name": "三級產業-轉口貿易",
+        "percentage": 80
+      }
+    ]
   },
   {
     "iso": "GAB",
     "country": "加彭 Gabon",
-    "introduction": "擁有豐富的民間傳說與神話故事，並藉由口傳文學的方式來保存傳統文化；另外，加彭還因各類應用在婚喪喜慶等傳統儀式的特殊面具在國際上聞名。海上石油生產收入佔全國GDP一半，就經濟而言比周圍鄰國繁榮許多，但卻沒有應用在發展國內基礎建設上。",
+    "introduction": "擁有豐富的民間傳說與神話故事，並藉由口傳的方式來保存傳統文化；另外，加彭還因各特殊面具在國際上聞名。海上石油生產收入佔全國GDP一半，經濟繁榮。",
     "symbol": "民族面具 民族歌手",
     "currency": "中非法郎 (XAF)",
     "language": "法語 ",
-    "flag": "Gabon_flag",
-    "emblem": "Gabon_emblem",
+    "flag": "Gabon_flag.png",
+    "emblem": "Gabon_emblem.png",
     "headOfState": "總統：Ali Bongo Ondimba 總理：Jean Eyeghe Ndong",
     "politics": "共和制",
     "atmosphere": "南部屬於熱帶草原氣候，北部屬於熱帶雨林氣候， 年降水量內陸為1500毫米以上， 北部沿岸超過2500毫米。",
     "geography": "加彭位於赤道附近中部非洲的大西洋海岸， 為赤道多雨氣候， 國土面積的85%為熱帶雨林所覆蓋。",
     "capital": "Libreville 利柏維爾 (亦可稱自由市)",
     "population": "1 Million",
-    "faith": "基督教55%，其餘為天主教、伊斯蘭教 、當地信仰。",
-    "economy": "第一級產業(3%)農業，第二級產業(63%)石油加工處理、礦產加工、林木業與水泥、食品加工，第三級產業(32%)─旅遊 ##因為加彭全境八十五%以上為熱帶雨林所覆蓋，故林業資源豐沛"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 55
+      }, {
+        "name": "其他",
+        "percentage": 45
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-畜農業",
+        "percentage": 3
+      }, {
+        "name": "二級產業-石油加工處理、礦產加工、林木業與水泥、食品加工",
+        "percentage": 63
+      }, {
+        "name": "三級產業-旅遊",
+        "percentage": 34
+      }
+    ]
   },
   {
     "iso": "ERI",
     "country": "厄立垂亞 Eritrea",
-    "introduction": "厄利垂亞原為衣索比亞所建立的屯墾區，1993年舉行了公民投票，同年5月24日宣布獨立。當地言論自由受限，幾乎毫無新聞自由可言，因為當權政府掌控了所有媒體，報章雜誌、電視台都是國營，所有報導內容都須經過官方審查。",
-    "symbol": "Nope",
+    "introduction": "厄利垂亞曾為義大利殖民區，影響其建築風格，後來成為衣索比亞的屯墾區，1993年舉行了公民投票、獨立。現在，當權政府掌控了所有媒體，所有報導內容都須經過官方審查，當地言論自由受限。",
+    "symbol": "Quhaito (位於厄利垂亞南方的Debub地區，古代城市的石柱遺跡)",
     "currency": "奈克法 (ERN)",
     "language": "",
-    "flag": "Eritrea_flag",
-    "emblem": "Eritre_emblem",
+    "flag": "Eritrea_flag.png",
+    "emblem": "Eritre_emblem.png",
     "headOfState": "總統：Isayas Afewerki",
     "politics": "總統制 一黨專政",
-    "atmosphere": "高原地區氣候宜人，年平均氣溫為17℃。 12月～2月平均氣溫最低，為15℃，5月～6月平均氣溫最高，為25℃；4月～8月為雨季，其餘為旱季。東部和西部低地氣候炎熱乾燥，年平均氣溫分別為30℃和28℃，年均降水量不到400毫米。 紅海沿岸多沙漠，3月～10月間白天氣溫可達40℃以上。",
-    "geography": "位於東非及非洲之角最北部，扼紅海南段。南鄰衣索比亞，西靠蘇丹， 東南與吉布地接壤，東北隔紅海與葉門和沙烏地阿拉伯相望。海岸線（包括達赫拉克群島等355個島嶼）長1350公里。 西部低地丘陵，東部沿海平原。境內最高峰為中部高原的安姆巴-索依拉峰（Amba Soira）， 海拔3013米，最低點為東部平原的科巴爾低地（Kobar），低於海平面75米。",
+    "atmosphere": "【全境】 高原地區氣候宜人，年平均氣溫為17℃。4月～8月為雨季，其餘為旱季。 【區域】 東部和西部低地氣候炎熱乾燥。 紅海沿岸為沙漠區，3月～10月間白天氣溫可達40℃以上。",
+    "geography": "位於東非及非洲之角最北部。 西部低地丘陵，東部沿海平原。 境內最高峰為中部高原的安姆巴-索依拉峰（Amba Soira），海拔3013米，最低點為東部平原的科巴爾低地（Kobar），低於海平面75米。",
     "capital": "Asmara 阿斯馬拉",
     "population": "62萬",
-    "faith": "東正教和伊斯蘭教的約各占一半， 少數人信奉天主教或傳統拜物教。",
-    "economy": "第一級產業(11%)礦業開採、農業、畜牧業，第二級產業(26%)─農畜產加工、紡織業、塑料加工，第三級產業(61%)─港口轉運貿易"
+    "faith": "伊斯蘭教、羅馬天主教、新教徒、基督教。",
+    "economy": [{
+        "name": "一級產業-礦業開採、農業、畜牧業",
+        "percentage": 11
+      }, {
+        "name": "二級產業-農畜產加工、紡織業、塑料加工",
+        "percentage": 26
+      }, {
+        "name": "三級產業-港口轉運貿易",
+        "percentage": 63
+      }
+    ]
   },
   {
     "iso": "BWA",
     "country": "波札那 Botswana",
     "introduction": "1966年9月30日脫離英國宣告獨立，改名為波札那共和國，實施民主化政治， 積極的社會政策與豐富的礦藏，尤其是鑽石礦，佔該國輸出利潤的八成。 讓波札那擁有非洲大部分地區難得一見的開發水準。",
-    "symbol": "鑽石、全非洲最不腐敗的國家",
+    "symbol": "1. 鑽石、全非洲最不腐敗的國家 2. 奧卡萬戈沼澤 Okavango Delta  (全球最大內陸三角洲、觀光賣點之一)",
     "currency": "普拉 (BWP)",
     "language": "英語 次瓦納語",
-    "flag": "Botswana_flag.",
-    "emblem": "Botswana_emblem",
+    "flag": "Botswana_flag.png",
+    "emblem": "Botswana_emblem.jpg",
     "headOfState": "總統：Ian Khama",
     "politics": "總統制",
-    "atmosphere": "熱帶乾旱草原氣候，西部為沙漠、半沙漠氣候",
-    "geography": "面積600,370平方公里，地勢大致平坦，擁有起伏高原，一般海拔800～1100米。 國土中部和西南部屬卡拉哈里沙漠，覆蓋了波札那接近七成土地。 位於西北方的奧卡萬戈沼澤是世上最大的內陸三角洲。 多草原和鹽沼，馬卡迪卡迪鹽沼（Makgadikgadi Pan）面積廣大，盤據波札那北方。 東南部為丘陵。",
+    "atmosphere": "全境熱帶乾旱草原氣候，除了西部為沙漠、半沙漠氣候",
+    "geography": "北方：多草原和鹽沼，馬卡迪卡迪鹽沼（Makgadikgadi Pan）面積廣大。 中部和西南部：屬卡拉哈里沙漠，覆蓋了波札那接近七成土地。 西北方：奧卡萬戈沼澤 (Okavango Delta) 是世上最大的內陸三角洲 東南部：丘陵",
     "capital": "Gaborone 嘉柏隆里",
     "population": "2 Million",
-    "faith": "基督新教71%，傳統宗教6%",
-    "economy": "第一級產業(2%)家畜眷養及農業，第二級產業(35%)─礦產加工、紡織品，第三級產業(62%)觀光與金融"
+    "faith": [{
+        "name": "基督新教",
+        "percentage": 71
+      }, {
+        "name": "傳統宗教",
+        "percentage": 6
+      }, {
+        "name": "其他",
+        "percentage": 23
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-家畜眷養及農業",
+        "percentage": 2
+      }, {
+        "name": "二級產業-礦產加工、紡織品",
+        "percentage": 35
+      }, {
+        "name": "三級產業-觀光與金融",
+        "percentage": 63
+      }
+    ]
   },
   {
     "iso": "NAM",
@@ -623,52 +1267,102 @@
     "symbol": "納米比亞沙漠 卡拉庫爾羔羊",
     "currency": "奈米比亞元 (NAD)",
     "language": "英文 ",
-    "flag": "Namibia_flag",
-    "emblem": "Namibia_Emblem",
+    "flag": "Namibia_flag.png",
+    "emblem": "Namibia_Emblem.png",
     "headOfState": "總統：Hage Gottfried GEINGOB  總理：Nahas Gideon Angula",
     "politics": "半總統制",
-    "atmosphere": "海拔1000-2000米，乾旱少雨， 屬亞熱帶、半沙漠性氣候",
+    "atmosphere": "全境屬亞熱帶、半沙漠性氣候，乾旱少雨。 ",
     "geography": "納米比亞沿岸有狹窄平原，內陸主要由中央高地組成。 南部多沙漠，北部多草原； 常年有水的河流極少，該國盛產稀有寶石礦物硼鋁石。",
     "capital": "Windhoek 溫荷克",
     "population": "2.1 Million",
-    "faith": "80-90％ 基督教 10-20％ 信仰傳統信仰",
-    "economy": "第一級產業(7%)─農業、漁業，第二級產業(29%)─肉類及漁業加工、乳品，第三級產業(62%)─觀光"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 85
+      }, {
+        "name": "傳統宗教",
+        "percentage": 15
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業、漁業",
+        "percentage": 7
+      }, {
+        "name": "二級產業-類及漁業加工、乳品",
+        "percentage": 29
+      }, {
+        "name": "三級產業-觀光",
+        "percentage": 64
+      }
+    ]
   },
   {
     "iso": "LSO",
     "country": "賴索托 Lesotho",
-    "introduction": "位處非洲南部，全世界最大的國中之國，全境完全被南非共和國包圍， 接壤邊境線909公里長。因地處高原，賴索托也被稱為「天空王國」。國內就業市場小，人口外移，國家收入主要為移工與僑民的匯入之金流及國際金援。",
-    "symbol": "Nope",
+    "introduction": "位處非洲南部，全世界最大的國中之國，全境完全被南非共和國包圍。因地處高原，賴索托也被稱為「天空王國」。國內就業市場小，人口外移，國家收入主要為移工與僑民的匯入之金流及國際金援。",
+    "symbol": "1.巴索托帽 Basotho Hat (當地Basotho族擅長編織，其中以奇特帽子最為出名。賴索托國旗中間的黑色標誌，即是巴索托帽，特色是圓錐狀，帽頂有五個圓環)",
     "currency": "賴索托洛蒂 (LSL)",
     "language": "英語 賽索托語",
-    "flag": "Lesotho_flag",
-    "emblem": "Lesotho_emblem",
+    "flag": "Lesotho_flag.gif",
+    "emblem": "Lesotho_emblem.jpg",
     "headOfState": "國王：Letsie III 首相：Thomas Motsoahae \"Tom\" Thabane",
     "politics": "君主立憲制 議會民主制",
-    "atmosphere": "熱帶季風型濕潤氣候",
+    "atmosphere": "全境為熱帶季風型濕潤氣候",
     "geography": "賴索托地勢崎嶇，東高西低，地形以山地為主， 其次為平原、丘陵、河谷地帶。 ",
     "capital": "Maseru / Masero 馬賽魯",
     "population": "1 Million",
-    "faith": "基督教 80%以上 伊斯蘭教 傳統信仰",
-    "economy": "第一級產業(7%)，第二級產業(34%)─食品加工業、手工藝品，第三級產業(58%)─旅遊業"
+    "faith":"基督教 80%以上 伊斯蘭教 傳統信仰",
+    "economy": [{
+        "name": "一級產業",
+        "percentage": 7
+      }, {
+        "name": "二級產業-食品加工業、手工藝品",
+        "percentage": 34
+      }, {
+        "name": "三級產業-旅遊業",
+        "percentage": 59
+      }
+    ]
   },
   {
     "iso": "MUS",
     "country": "模里西斯 Mauritius",
-    "introduction": "模里西斯沒有原住民，人口組成多樣，其中超過一半的人口為印度裔民，為非洲國家中唯一信仰印度教超過六成的國家。主要經濟來源是國際貨運，其擁有印度洋區域內最大的貨櫃轉運設備，再加上對外實施貿易優惠關稅，因此成為備受寵愛的海運中繼站。另外，模里西斯島曾經是世界上僅有的渡渡鳥棲息地，後因殖民者的捕獵而滅亡。",
+    "introduction": "人口組成多樣，其中超過一半的人口為印度裔民，為非洲國家中唯一信仰印度教超過六成的國家。因為擁有印度洋區域內最大的貨櫃轉運設備，而且對外實施貿易優惠關稅，所以主要經濟來源為國際貨運。",
     "symbol": "【人文藝術：賽卡 Sega】 模里西斯一種本土獨有民間音樂和舞蹈的統稱。塞卡音樂來自非洲，起源自法國殖民統治期間。 亦因此傳統塞卡音樂的歌詞內容通常描述當年黑奴在島上的艱苦生活；到了現代是代表基本人權的尊重。",
     "currency": "模里西斯盧比 (MUR)",
     "language": "英語",
-    "flag": "Mauritius_flag",
-    "emblem": "Mauritius_coat",
+    "flag": "Mauritius_flag.png",
+    "emblem": "Mauritius_coat.png",
     "headOfState": "總統：Anerood Jugnauth 總理：Navinchandra Ramgoolam",
     "politics": "議會共和制",
-    "atmosphere": "模里西斯屬熱帶氣候，惟受東南信風影響。 每年五月至十一月為冬季，和暖乾燥； 十一月至五月為夏季，炎熱潮濕。",
-    "geography": "熱帶沙灘加上山區樹林。模里西斯是沉浸在海洋中的火山島嶼， 山勢從南部陡升到中部往北緩降，除南部一小段海岸線外， 整島幾乎均為珊瑚礁包圍。海浪長期淘洗珊瑚、貝殼， 使得模里西斯的海岸有著長白柔細的沙灘。",
+    "atmosphere": "每年5月至10月為冬季，和暖乾燥；11月至4月為夏季，炎熱潮濕。 模里西斯全境屬熱帶氣候，惟受東南信風影響。",
+    "geography": "模里西斯是沉浸在海洋中的火山島嶼，山勢從南部陡升到中部往北緩降，除南部一小段海岸線外，整島幾乎均為珊瑚礁包圍。",
     "capital": "Port Louis 路易港",
     "population": "1.2 Million",
-    "faith": "印度教52%, 羅馬天主教31%,伊斯蘭教16%, 佛教1%",
-    "economy": "第一級產業(4%)─製糖，第二級產業(22%)─紡織業，第三級產業(73%)─海運、旅遊業、金融業"
+    "faith": [{
+        "name": "印度教",
+        "percentage": 52
+      }, {
+        "name": "羅馬天主教",
+        "percentage": 31
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 16
+      }, {
+        "name": "佛教",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-製糖",
+        "percentage": 4
+      }, {
+        "name": "二級產業-紡織業",
+        "percentage": 22
+      }, {
+        "name": "三級產業-海運、旅遊業、金融業",
+        "percentage": 74
+      }
+    ]
   },
   {
     "iso": "SYC",
@@ -677,15 +1371,22 @@
     "symbol": "海耶子、鳥類保育聖地",
     "currency": "塞席爾盧比(SCR)",
     "language": "英語 法語 塞席爾克里奧爾語",
-    "flag": "Seychelles_flag",
-    "emblem": "Seychelles_emblem",
+    "flag": "Seychelles_flag.png",
+    "emblem": "Seychelles_emblem.png",
     "headOfState": "總統：詹姆斯·米歇爾(James Alix Michel)",
     "politics": "總統制 三權分立",
-    "atmosphere": "鄰近赤道，不在氣旋帶內，因此幾乎無颱風、暴雨等災害性天氣。塞席爾全年高溫，各月之間溫​​差不大，降雨較多，氣候炎熱潮濕，屬熱帶雨林氣候。 5-9月是塞席爾的干季，雖然此時降雨相對為少，日照充足，但氣溫卻是全年稍低的時候，月平均最高氣溫29℃左右，平均最低氣溫24℃左右，尤以7月和8月最為涼爽，平均最高溫度28℃。 10月開始塞席爾進入雨季，降雨也開始增多，雨季一直持續到4月，在此期間，塞席爾月平均最高氣溫30℃左右，平均最低氣溫24℃左右，最炎熱的3月和4月平均最高溫度約在31℃。",
-    "geography": "塞席爾位處東經55°-56°、南緯4°-5°之間，西距肯亞和索馬利亞1500多公里，西南和馬達加斯加相距七百浬，東北隔海和馬爾地夫遙遙相望，全國總面積共約455平方公里，塞席爾由40個花崗岩島和45個珊瑚島組成。",
+    "atmosphere": "塞席爾全年高溫，各月之間溫​​差不大，降雨較多，氣候炎熱潮濕，屬熱帶雨林氣候。 ",
+    "geography": "塞席爾位處東經55°-56°、南緯4°-5°之間，全國總面積共約455平方公里，塞席爾由40個花崗岩島和45個珊瑚島組成。",
     "capital": "Victoria 維多利亞港",
     "population": "0.9 Million",
-    "faith": "天主教99%其他宗教1%",
+    "faith": [{
+        "name": "天主教",
+        "percentage": 99
+      }, {
+        "name": "其他",
+        "percentage": 1
+      }
+    ],
     "economy": "農業、漁業、觀光"
   },
   {
@@ -695,13 +1396,13 @@
     "symbol": "黃金 國寶茶",
     "currency": "蘭特（ZAR）",
     "language": "英語",
-    "flag": "Republiek van Suid-Afrika_flag",
-    "emblem": "Republiek van Suid-Afrika_emblem",
+    "flag": "Republiek_van_Suid_Afrika_FLAG.png",
+    "emblem": "Republiek_van_Suid_Afrika_EMBLEM.png",
     "headOfState": "總統：雅各布·祖瑪 (Jacob Gedleyihlekisa Zuma)",
     "politics": "議會制 總統擁有行政實權並對議會負責的議會制",
-    "atmosphere": "南非氣候多樣。西部沿海乾燥無雨。東部屬副熱帶濕潤氣候，德班1月月平均降雨量為280毫米，3月為1300毫米，年平均降雨量1101毫米。西南部屬地中海型氣候，開普敦年平均降雨量為510毫米，7月日平均最低氣溫攝氏7度，1-2月平均最高氣溫攝氏26度。更北部的沙漠地區年降雨量則不足30毫米。",
-    "geography": "南非地處非洲高原的最南端，南、東、西三面之邊緣地區為沿海低地，北面則有重山環抱。北部內陸區屬喀拉哈里沙漠、多為灌叢草地或乾旱沙漠、此區海拔約650至1250米。周圍的高地海拔則超過1200米。南非最高點為東部大陡崖的塔巴納山，海拔3482米。東部則是龍山山脈縱貫。",
-    "capital": "行政首都：普勒托利亞 司法首都：布隆泉 立法首都：開普敦",
+    "atmosphere": "。西部沿海乾燥無雨。東部屬副熱帶濕潤氣候，西南部屬地中海型氣候，更北部的沙漠地區年降雨量則不足30毫米。",
+    "geography": "南非地處非洲高原的最南端，南、東、西三面之邊緣地區為沿海低地，北面則有重山環抱。",
+    "capital": "行政首都：普勒托利亞Pretoria 司法首都：布隆泉Bloemfontein 立法首都：開普敦Cape Town",
     "population": "53Million",
     "faith": "基督教 80% 印度教 伊斯蘭教 傳統信仰",
     "economy": "農業、礦業、鋼鐵業"
@@ -710,18 +1411,25 @@
     "iso": "GNQ",
     "country": "赤道幾內亞",
     "introduction": "赤道幾內亞大陸部分的原始居民為俾格米人，他們的領地後來被班圖人占有。 葡萄牙航海家斐南·德·波（Fernão do Pó）在尋找通往印度的航路過程中發現了斐南多波島，將其命名為「福爾摩薩」（Formosa）。安諾本島是在新年發現的，並由此得名。",
-    "symbol": "石油 可可 咖啡",
+    "symbol": "沒有赤道",
     "currency": "中非法郎（XAF）",
     "language": "西班牙語 法語 葡萄牙語",
-    "flag": "República de Guinea Ecuatorial_FLAG",
-    "emblem": "República de Guinea Ecuatorial_EMBLEM",
+    "flag": "República_de_Guinea_Ecuatorial_FLAG.png",
+    "emblem": "República_de_Guinea_Ecuatorial_EMBLEM.png",
     "headOfState": "總統：特奧多羅·奧比昂·恩圭馬·姆巴索戈Teodoro Obiang Nguema Mbasogo 總理：伊格納西奧·米拉姆·坦恩Ignacio Milam Tang",
     "politics": "總統制共和國",
     "atmosphere": "赤道幾內亞位於赤道地區，氣候濕熱，平均溫度為25度，相對濕度98％。降雨部分，畢歐科島年降雨量為1903豪米，年降雨日約128天；孟尼河區乾雨季分明，每年5月至9月為乾季，其餘時間為雨季，年降雨量為1714豪米，年降雨日約113天",
     "geography": "赤道幾內亞，包含兩大部分，一部分稱為木尼河地區，位於非洲大陸，大致呈東西長、南北窄的長方形，與喀麥隆、加彭接壤，木尼河斜貫該地區。該區以巴塔為主要都市。二是位於木尼河區西北、幾內亞灣中的比奧科島，此外在比奧科島西南595公里處還有安諾本島（Annobón）。",
     "capital": "馬拉博 Malabo",
     "population": "0.7Million",
-    "faith": "  天主教 88.7% ",
+    "faith": [{
+        "name": "天主教",
+        "percentage": 88.7
+      }, {
+        "name": "其他",
+        "percentage": 12.3
+      }
+    ],
     "economy": "主要：石油、可可、咖啡 次要：農業、漁產品加工、旅遊和金融服務業"
   },
   {
@@ -731,15 +1439,25 @@
     "symbol": "塞卜拉泰古城 石油",
     "currency": "利比亞第納爾（Dinar）",
     "language": "阿拉伯語",
-    "flag": "State of Libya_FLAG",
-    "emblem": "State of Libya_emblem",
+    "flag": "State_of_Libya_FLAG.png",
+    "emblem": "State_of_Libya_emblem.png",
     "headOfState": "國家元首（國民代表大會主席）：阿基拉·薩拉赫·伊薩 政府首腦（總理）：阿卜杜拉·薩尼",
     "politics": "共和立憲制 地方分權制",
     "atmosphere": "利比亞沿海地區屬地中海型氣候，內陸廣大地區屬熱帶沙漠氣候，年均溫為20度，夏季常有乾旱情況發生，每年6月至10月有沙漠風暴，溫度可達44度；首都1月份平均溫度為8度至16度，7月溫度為22至29度",
     "geography": "地處北非，北瀕地中海，海岸線長1,900多公里，東與埃及，西與阿爾及利亞、突尼西亞為鄰，南接尼日及查德。利國人民大多居住於北部沿海狹長的平原上。 利比亞除北部沿海地區有狹長的平原及南部山區外，大部分均為沙漠，占總面積的94%。大部分地區海拔300-600米。",
     "capital": "黎波里 Tripoli",
     "population": "6Million",
-    "faith": "伊斯蘭教92.7% 基督宗教4.0% 其他4.3%",
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 92.7
+      }, {
+        "name": "基督宗教",
+        "percentage": 4.0
+      }, {
+        "name": "其他",
+        "percentage": 4.3
+      }
+    ],
     "economy": "石油、鋼鐵、石油加工、電力、紡織、食品加工"
   },
   {
@@ -749,15 +1467,22 @@
     "symbol": "海盜",
     "currency": "索馬利亞先令（SOS",
     "language": "索馬利亞語、阿拉伯語、英語、義大利語",
-    "flag": "Somalia_Flag",
-    "emblem": "Somalia_emblem",
+    "flag": "Somalia_Flag.png",
+    "emblem": "Somalia_emblem.png",
     "headOfState": "總統：哈桑·謝赫·馬哈茂德",
     "politics": "議會民主制",
     "atmosphere": "大部屬於熱帶沙漠氣候，年降水量自南而北從500～600毫米減至100毫米以下，東北海岸偶爾會有來自北印度洋的氣旋風暴吹襲。",
     "geography": "索馬利亞全境以平緩的低高原為主，高度由北向南漸降。有沿海平原、內陸高原、北部山地等地形區。有謝貝利河和朱巴河。",
     "capital": "摩加迪休 Mogadishu",
     "population": "10Million",
-    "faith": "伊斯蘭教98% 傳統信仰",
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 98
+      }, {
+        "name": "傳統信仰",
+        "percentage": 2
+      }
+    ],
     "economy": "畜牧業、半農半牧"
   },
   {
@@ -767,15 +1492,28 @@
     "symbol": "東非大裂谷",
     "currency": "馬拉威克瓦查（MWK）",
     "language": "齊切瓦語、英語",
-    "flag": " Malawi_flag",
-    "emblem": " Malawi_emblem",
+    "flag": " Malawi_flag.png",
+    "emblem": " Malawi_emblem.png",
     "headOfState": "總統：彼得·穆塔里卡",
     "politics": "總統制",
     "atmosphere": "大部份地區的氣候垂直差異顯著，為熱帶乾濕季氣候區的高地氣候，普遍來說高山平原的氣溫十分溫和和穩定，但冬天的氣溫可以低至攝氏4度。而盆地的氣溫較為悶熱，最熱的時候可以攝氏39度，而每年的降雨量也因地理環境而有所差別，平均由600mm至3000mm不等。通常雨季由11月開始至5月，而5月至11月的降雨量很低。馬拉威因處於高原地帶，所以極少受到颶風、洪水等威脅。",
     "geography": "馬拉威位於非洲東南部，南北有東非大裂谷貫穿，谷底就是馬拉威湖，是非洲第三大湖，占馬拉威總面積的20％。希雷河出自馬拉威湖南端，流經馬拉威南部地區，最後注入400公里以南的贊比西河。裂谷的東西面為海拔達900-1200米的高原。北部地區的尼卡高原高達2600米。南部的希雷高地平均海拔600－1600米，不過也有松巴高原高2130米，和木蘭吉山達3050米。希雷河下游地勢較低，海拔只有60－90米。",
     "capital": "里朗威Lilongwe",
     "population": "12Million",
-    "faith": "79.9%天主教 12.8%回教 3%其他 4.3%沒有宗教信仰",
+    "faith": [{
+        "name": "天主教",
+        "percentage": 79.9
+      }, {
+        "name": "回教",
+        "percentage": 12.8
+      }, {
+        "name": "其他",
+        "percentage": 3
+      }, {
+        "name": "沒有宗教信仰",
+        "percentage": 4.3
+      }
+    ],
     "economy": "農業"
   },
   {
@@ -785,15 +1523,25 @@
     "symbol": "橄欖油",
     "currency": "突尼西亞第納爾（TDN）",
     "language": "阿拉伯語、法語",
-    "flag": "Tunisia_flag",
-    "emblem": "Tunisia_emblem",
+    "flag": "Tunisia_flag.png",
+    "emblem": "Tunisia_emblem.png",
     "headOfState": "總統：貝吉·凱德·埃塞卜西 總理：哈比卜·埃西德",
     "politics": "共和制",
     "atmosphere": "突尼西亞北部屬於夏乾冬雨的地中海型氣候，中部是熱帶草原氣候，南部屬熱帶沙漠氣候。",
     "geography": "國土面積的40%為撒哈拉沙漠所占據，餘下的60％則是十分富饒的土地。北部為高山與丘陵地，主要是亞特拉斯山脈東部的延伸；中部為階梯狀台地，由西向東傾斜，台地以南多季節性鹽沼；東部為狹長的沿海平原；南部則為撒哈拉沙漠。 ",
     "capital": "突尼斯Tunis",
     "population": "0.9Million",
-    "faith": "伊斯蘭教98％ 基督教1％ 猶太教或其他宗教1％",
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 98
+      }, {
+        "name": "基督教",
+        "percentage": 1
+      }, {
+        "name": "猶太教或其他宗教",
+        "percentage": 1
+      }
+    ],
     "economy": "農業、觀光業"
   },
   {
@@ -803,15 +1551,28 @@
     "symbol": "克羅斯河大猩猩",
     "currency": "中非法郎（XAF）",
     "language": "法語、英語",
-    "flag": "Cameroun_flag",
-    "emblem": "Cameroun_EMBLEM",
+    "flag": "Cameroun_flag.png",
+    "emblem": "Cameroun_EMBLEM.png",
     "headOfState": "總統：保羅·比亞 總理：菲利蒙·楊",
     "politics": "共和制",
     "atmosphere": "西南沿海有寬達150公里的低地，北部氣候燥熱，為熱帶草原氣候，自北向南，過度到熱帶雨林氣候，大部分地區年降水量1000-4000毫米，西南部火山區可達6000毫米以上。",
     "geography": "大部分為高原，一般海拔1000-1500米，中部地勢漸高，為高原地形。西部有一系列圓頂火山、丘陵，喀麥隆火山海拔4070米，為西非最高峰。",
     "capital": " 雅恩德Yaounde",
     "population": "1.5Million",
-    "faith": "天主教40% 基督新教30% 伊斯蘭教20% 其他10%",
+    "faith": [{
+        "name": "天主教",
+        "percentage": 40
+      }, {
+        "name": "基督新教",
+        "percentage": 30
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 20
+      }, {
+        "name": "其他",
+        "percentage": 10
+      }
+    ],
     "economy": "農業、漁業、畜牧業"
   },
   {
@@ -819,17 +1580,30 @@
     "country": "莫三比克",
     "introduction": "與英國並無憲制關係的國家，在1995年以特殊例子加入大英國協；因其經濟低落再加上曾為社會主義國家，國內經濟等數值常被拿來與朝鮮比較。",
     "symbol": "奴隸貿易 象牙",
-    "currency": "梅蒂卡爾",
+    "currency": "梅蒂卡爾(MZN)",
     "language": "葡萄牙語、Bantn、英語",
-    "flag": "Mozambique_flag",
-    "emblem": "Mozambique_Emblem",
+    "flag": "Mozambique_flag.png",
+    "emblem": "Mozambique_Emblem.png",
     "headOfState": "總統：阿曼多·格布扎 總理：路易莎·迪奧戈",
     "politics": "共和制",
     "atmosphere": "南回歸線在南部通過，因此莫三比克的氣候，北部屬熱帶。南部是副熱帶，所以境內氣候炎熱潮濕，全年平均氣溫為攝氏19.4（華氏67度）。這個國家年分乾濕兩季，乾季比較短，為每年四月至八月；濕季很長，為每年九月到次年五月。因此雨水豐富，幾乎常年都會下雨，年雨量約500公釐到1000公釐。中部三比西河下游沿岸雨量最多，年雨量差不多有1000公釐到1500公釐。",
     "geography": "莫三比克地勢大致自西北向東南傾斜，贊比西河斜貫中部入海，河以北主要是高原，一般海拔500-1500米，沿岸平原較窄，以南主要是平原，最寬處約300公里，濱海多沼澤、沙洲和紅樹林。",
     "capital": "馬布多Maputo",
     "population": "1.8Million",
-    "faith": "天主教29% 基督新教16% 伊斯蘭教18% 其他37%",
+    "faith": [{
+        "name": "天主教",
+        "percentage": 29
+      }, {
+        "name": "基督新教",
+        "percentage": 16
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 18
+      }, {
+        "name": "其他",
+        "percentage": 37
+      }
+    ],
     "economy": "農業、漁業、畜牧業、工業、礦業"
   },
   {
@@ -844,11 +1618,34 @@
     "headOfState": "總統：Hery Rajaonarimampianina 總理：Jean Ravelonarivo",
     "politics": "半總統共和制",
     "atmosphere": "受東南信風和西北季風的共同影響，馬達加斯加每年11月至次年4月都是炎熱的雨季，並且經常會遭遇破壞性的氣旋襲擊，每年的5至10月則是相對較為涼爽的旱季。源於印度洋上空的雨雲會在島上東部沿海地區上空釋放掉大部分濕氣，充沛的降水支撐當地雨林生態系統。中部高地相比東部來說較為乾燥和涼爽，西部則更為乾燥，島上的西南和南部內陸以半乾旱氣候為主。",
-    "geography": "馬達加斯加東海岸沿線存在一條狹長險峻的陡崖，這裡有著島上保留的大部分熱帶低地森林。陡崖所在山脊以西是位於島嶼中部的高原，海拔高度在750到1500米之間。這一中部高地以梯田為主，長滿草地的山地和丘陵之間的山谷中種有水稻，其間還穿插有曾一度覆蓋大片高原地區的半濕潤森林。高地以西地形逐漸乾燥，地勢向沿海地區的莫三比克海峽和紅樹林沼澤傾斜。",
+    "geography": "東海岸沿線存在一條狹長險峻的陡崖，這裡有著島上保留的大部分熱帶低地森林。陡崖所在山脊以西是位於島嶼中部的高原，海拔高度在750到1500米之間。這一中部高地以梯田為主，長滿草地的山地和丘陵之間的山谷中種有水稻，其間還穿插有曾一度覆蓋大片高原地區的半濕潤森林。高地以西地形逐漸乾燥，地勢向沿海地區的莫三比克海峽和紅樹林沼澤傾斜。",
     "capital": "安塔那那利佛Antananarivo",
     "population": "22.3",
-    "faith": "7%伊斯蘭教 50%傳統宗教 40%基督宗教",
-    "economy": "農業29%、製造業15%"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 7
+      }, {
+        "name": "傳統宗教",
+        "percentage": 50
+      }, {
+        "name": "基督宗教",
+        "percentage": 40
+      }, {
+        "name": "其他",
+        "percentage": 3
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 28.1
+      }, {
+        "name": "二級產業-製造業",
+        "percentage": 17.4
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 54.5
+      }
+    ]
   },
   {
     "iso": "CPV",
@@ -865,11 +1662,31 @@
     "geography": "主要由10個島和8個小島組成，可分為兩部分：位於北部的向風群島和南部的背風群島。這些島嶼中，只有聖露西亞島是無人居住的島嶼，現在是一個自然保護區。所有這些島嶼都是火山島，福戈島上還有活火山。  ",
     "capital": "普亞拉 Praia",
     "population": "0.56",
-    "faith": "78.7%天主教 10.4%基督宗教 10.9%其他",
-    "economy": "旅遊業"
+    "faith": [{
+        "name": "天主教",
+        "percentage": 78.7
+      }, {
+        "name": "基督宗教",
+        "percentage": 10.4
+      }, {
+        "name": "其他",
+        "percentage": 10.9
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 10
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 18.6
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 71.4
+      }
+    ]
   },
   {
-    "iso": "CF",
+    "iso": "CAF",
     "country": "中非共和國République centrafricaine",
     "introduction": "中非原為販售黑奴的交通要道，1894年納入法屬剛果，1903年為法屬烏班基沙立領地（Territoire d'Oubangui-Chari），1910年屬法屬赤道非洲，1958年成立自治政府，之後成為半自治的中非共和國，至1960年獨立。目前國內陷入穆斯林與基督徒的族群衝突而內戰不斷。",
     "symbol": "鑽石、棉花",
@@ -879,17 +1696,40 @@
     "emblem": "",
     "headOfState": "總統：Catherine Samba-Panza 總理：Mahamat Kamoun",
     "politics": "共和制",
-    "atmosphere": "中非共和國北部屬於熱帶莽原氣候，南部則為熱帶雨林氣候，平均氣溫約攝氏27.8度（華氏82度）。南部一帶，雨季長達八個月，雨水豐富，最南部年雨量約一千兩百毫米，河谷附近地帶，也很潮濕，適於農耕。",
-    "geography": "中非共和國位置在北緯三度至十一度間，這個國家位在非洲大陸的中心，為南來北往、東西行走必經之路，戰略地位十分重要，全國總面積62萬5900平方公里。中非東北和蘇丹接壤，東接南蘇丹，南界剛果民主共和國，西南鄰剛果，西接喀麥隆，北和查德毗連，距海約一千公里，是個沒有出海口的內陸國家。境內地勢高亢，丘陵起伏，平均海拔約七百公尺，是非洲中南部的高原地帶。",
+    "atmosphere": "北部屬於熱帶莽原氣候，南部則為熱帶雨林氣候，平均氣溫約攝氏27.8度（華氏82度）。南部一帶，雨季長達八個月，雨水豐富，最南部年雨量約一千兩百毫米，河谷附近地帶，也很潮濕，適於農耕。",
+    "geography": "位在非洲大陸的中心，距海約一千公里，是個沒有出海口的內陸國家。境內地勢高亢，丘陵起伏，平均海拔約七百公尺，是非洲中南部的高原地帶。",
     "capital": "班基 Bangui",
     "population": "4.4",
-    "faith": "60%傳統宗教 20%天主教 15%基督教 5%伊斯蘭教",
-    "economy": "鑽石、咖啡、棉花、木材是經濟四大支柱。"
+    "faith": [{
+        "name": "傳統宗教",
+        "percentage": 60
+      }, {
+        "name": "天主教",
+        "percentage": 20
+      }, {
+        "name": "基督教",
+        "percentage": 15
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 55.1
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 12.5
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 32.4
+      }
+    ]
   },
   {
-    "iso": "KM",
+    "iso": "COM",
     "country": "葛摩 Comores",
-    "introduction": "最早發現葛摩群島的可能是腓尼基人，而考古發掘顯示最早在葛摩定居的是來自馬達加斯加的南島語系的居民。接著非洲大陸的班圖人、阿拉伯人和來自印度尼西亞的移民接踵而來。在1841年至1912年間，法國在葛摩建立了殖民地，屬於馬達加斯加總督治下，1946年成為法國「海外領地」。 雖然該國於1975年獨立，1997年昂儒昂和莫赫利分別宣布從葛摩獨立，葛摩政府之後試圖以武力維護統一的行動未能成功。2005年初，葛摩通過了一部法律以界定三個自治政府以及聯合政府的職責，該法律目前已在實施。",
+    "introduction": "葛摩為馬達加斯加的周邊群島之一，南島語系民族，非洲大陸的班圖人、阿拉伯人和來自印度尼西亞的移民接踵而來，在此定居。在1841年至1912年間，為法國殖民地，1946年成為法國「海外領地」。",
     "symbol": "依蘭精油",
     "currency": "葛摩法郎（Comorian franc，KMF）",
     "language": "法語、阿拉伯語",
@@ -898,16 +1738,33 @@
     "headOfState": "總統：Ikililou Dhoinine",
     "politics": "聯邦制、共和制",
     "atmosphere": "熱帶氣候，5-10月涼爽乾燥，11月至次年4月炎熱潮濕。年降水量1000-3000毫米。",
-    "geography": "葛摩群島由四個主要島嶼組成，其中的三個組成了葛摩聯盟，馬約特島依然為法國統治。葛摩群島位於印度洋，在非洲海岸和馬達加斯加之間。群島上有數座或低矮或峻峭的火山，多為死火山，唯一大葛摩島上的高達2316米（7598英尺）的卡爾塔拉山（Le Karthala）是一座活火山。多森林。",
+    "geography": "葛摩群島由四個主要島嶼組成，位於印度洋，在非洲海岸和馬達加斯加之間。群島上有數座或低矮或峻峭的火山，多為死火山，唯一大葛摩島上的高達2316米（7598英尺）的卡爾塔拉山（Le Karthala）是一座活火山。多森林。",
     "capital": "莫洛尼 Moroni",
     "population": "0.79",
-    "faith": "98%伊斯蘭教 2%基督宗教",
-    "economy": "農業人口超過80%"
+    "faith": [{
+        "name": "伊斯蘭教",
+        "percentage": 98
+      }, {
+        "name": "基督宗教",
+        "percentage": 2
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 50.4
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 13.7
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 35.9
+      }
+    ]
   },
   {
-    "iso": "GBS",
+    "iso": "GNB",
     "country": "幾內亞比索 República da Guiné-Bissau",
-    "introduction": "幾內亞比索（Guinea-Bissau）曾為葡萄牙殖民地達四百年之久，十七至十九世紀間，葡萄牙人將幾畢做為奴隸交易的大本營，奴隸曾是此地出口大宗，據估計，至少有四分之一的幾比人祖先曾被販賣到美洲，至今這裏仍是一片赤貧與屬靈黑暗之區。此外，在葡萄牙統治期間，天主教與政府合作密切，基督教則被禁止，一九七四年獨立後對基督教的限制才逐漸放寬。",
+    "introduction": "幾內亞比索曾被葡萄牙殖民地達四百年之久，十七至十九世紀間，葡萄牙人將幾畢做為奴隸交易的大本營，至今這裏仍是一片赤貧與屬靈黑暗之區。此外，在葡萄牙統治期間，天主教與政府合作密切，基督教則被禁止，一九七四年獨立後對基督教的限制才逐漸放寬。",
     "symbol": "腰果、Gunbe",
     "currency": "西非法郎（XOF）",
     "language": "葡萄牙語",
@@ -916,14 +1773,34 @@
     "headOfState": "總統：José Mário Vaz 總理：Domingos Simões Pereira",
     "politics": "共和制",
     "atmosphere": "幾內亞比索屬熱帶海洋性季風氣候，通常炎熱潮濕。6月到11月是季風型雨季，吹西南風。12月到5月是旱季，吹東北哈馬丹風（harmattan）。",
-    "geography": "幾內亞比索位於非洲西部，包括比熱戈斯群島（Bijagos Archipelago）等島嶼，西鄰大西洋，北鄰塞內加爾，東方、南方鄰幾內亞，面積達36,120平方公里，海岸線長達350公里，最高點約300米，境內東部為熱帶稀樹草原（savanna)，地勢較高，大部分地區則為海岸平原。",
+    "geography": "位於非洲西部，包括比熱戈斯群島等島嶼。最高點約300米，境內東部為熱帶稀樹草原，地勢較高，大部分地區則為海岸平原。",
     "capital": "比索 Bissau",
     "population": "1.7",
-    "faith": "50%傳統宗教 45%伊斯蘭教 5%基督宗教（多天主教）",
-    "economy": "農業、漁業"
+    "faith": [{
+        "name": "傳統宗教",
+        "percentage": 50
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 45
+      }, {
+        "name": "基督宗教（多天主教）",
+        "percentage": 5
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 50.4
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 13.7
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 35.9
+      }
+    ]
   },
   {
-    "iso": "SZ",
+    "iso": "SWZ",
     "country": "史瓦濟蘭 Kingdom of Swaziland",
     "introduction": "至今仍施行君主制，雖然國內居民屢次振呼改革，王室在該國還有相當重要地位。北、西、南三面為南非共和國所包圍，東北面與莫三比克為鄰，經濟多仰賴與南非的連結。由於英語讀音相近，人們常把它與瑞士（Switzerland）混淆，使它陰差陽錯而獲「非洲瑞士」之名。",
     "symbol": "鬥士盾牌",
@@ -937,13 +1814,42 @@
     "geography": "地勢西高東低，由於地勢平均較高，使得史瓦濟蘭成為非洲南部水源供應的主要地區。境內有四條主要河流由東部流經再注入印度洋，河川終年不竭。",
     "capital": "皇室首都：洛班巴Lobamba 行政首都：姆巴巴內Mbabane ",
     "population": "1.2",
-    "faith": "40%基督徒 20%天主教 0.95%伊斯蘭教 0.5%巴哈伊教 0.15%印度教",
-    "economy": "農業人口佔75%"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 40
+      }, {
+        "name": "天主教",
+        "percentage": 20
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 0.95
+      }, {
+        "name": "巴哈伊教",
+        "percentage": 0.5
+      }, {
+        "name": "印度教",
+        "percentage": 0.15
+      }, {
+        "name": "其他",
+        "percentage": 38.4
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 7.2
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 47.4
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 45.4
+      }
+    ]
   },
   {
     "iso": "ZMB",
     "country": "尚比亞 Republic of Zambia",
-    "introduction": "尚比亞歷來以銅礦為支柱產業。但由於國際市場銅礦價格下降和缺少投資等因素，銅產量逐年下降，1998年降到了30年來最低點。2001年政府實行了銅產業私有化後，銅礦開始回升，加上近年國際銅價，帶動銅礦業的收入增加。尚比亞經濟復甦。據贊政府數據，2008年尚比亞人均收入已超過一千美元，基本脫離世界最貧困國家行列。",
+    "introduction": "尚比亞以銅礦為支柱產業。但由於國際市場銅礦價格下降和缺少投資等因素，銅產量逐年下降，1998年降到30年來最低點。2001年政府實行銅產業私有化後，銅礦開始回升，加上近年國際銅價，帶動銅礦業收入增加。尚比亞經濟復甦。2008年尚比亞人均收入已超過一千美元，脫離世界最貧困國家行列。",
     "symbol": "銅製品",
     "currency": "克瓦查（ZMK）",
     "language": "英語",
@@ -955,13 +1861,36 @@
     "geography": "尚比亞是一個內陸國家，大部份土地處于海拔1000－1500米的高原上，最高點海拔1774米，亦有丘陵和山地。  贊比西河是第一大河，橫貫南部邊境，有著名的莫西奧圖尼亞瀑布。",
     "capital": "路沙卡 Lusaka",
     "population": "14.1",
-    "faith": "68%基督教 21%天主教 9%其他基督教派 2%其他",
-    "economy": "礦業、農業、能源經濟"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 68
+      }, {
+        "name": "天主教",
+        "percentage": 21
+      }, {
+        "name": "其他基督教派",
+        "percentage": 9
+      }, {
+        "name": "其他",
+        "percentage": 2
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 10.8
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 32.9
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 56.3
+      }
+    ]
   },
   {
-    "iso": "ZW",
+    "iso": "ZWE",
     "country": "辛巴威 Republic of Zimbabwe",
-    "introduction": "辛巴威是南部非洲重要文明發源地，以大辛巴威古城為首都的穆胡姆塔巴帝國（Munhumutapa Empire）透過與來自印度洋岸的回教商隊貿易，在11世紀時漸漸強盛，利用當地生產的黃金、象牙與銅礦等重要物資，交換來自波斯灣地區的布料與玻璃等生產品，15世紀時，已經成為非洲南部最大的邦國。 近年來該國因沒收歐裔土地而進行土地改革，接連受到西方國家的經濟制裁。政府以大量印製新鈔來填補財政上的赤字作為回應，卻導致嚴重的通貨膨脹與幣值急貶，國民生產總值在世界排名敬陪榜尾。",
+    "introduction": "辛巴威是南部非洲重要文明發源地，以大辛巴威古城為首都的穆胡姆塔巴帝國（Munhumutapa Empire）與回教商隊貿易，以象牙、黃金與銅礦等，換取波斯灣地區的布料與玻璃等生產品，15世紀時，已經成為非洲南部最大的邦國。 近年來該國因沒收歐裔土地而進行土地改革，接連受到西方國家的經濟制裁。政府大量印製新鈔來填補財政上的赤字，卻導致一蹶不振的經濟狀況。",
     "symbol": "大辛巴威（Great Zimbabwe）",
     "currency": "美元",
     "language": "英語",
@@ -973,7 +1902,30 @@
     "geography": "辛巴威大部分地區是高原地形，平均海拔1000餘米。地形分高草原、中草原和低草原3種。辛巴威東部伊尼揚加尼山海拔2,592米，為全國最高點。主要河流有讚比西河和林波波河，分別是與鄰國尚比亞和南非的界河。維多利亞瀑布、三比西河、三比西河上游的卡里巴水壩與大壩攔阻河水積蓄而成的卡里巴湖共同圍成辛巴威北邊的疆界，與尚比亞相鄰。辛巴威的東邊國界全部與莫三比克相鄰，西南為波札那，南境則有一部分與南非相連，以林波波河為界。",
     "capital": "哈拉雷 Harare",
     "population": "13.7",
-    "faith": "58%基督教 40%地方宗教 1%伊斯蘭教",
-    "economy": "礦業、農業、觀光業"
+    "faith": [{
+        "name": "基督教",
+        "percentage": 58
+      }, {
+        "name": "傳統宗教",
+        "percentage": 40
+      }, {
+        "name": "伊斯蘭教",
+        "percentage": 1
+      }, {
+        "name": "其他",
+        "percentage": 1
+      }
+    ],
+    "economy": [{
+        "name": "一級產業-農業",
+        "percentage": 20.1
+      }, {
+        "name": "二級產業-工業",
+        "percentage": 25.7
+      }, {
+        "name": "三級產業-服務業",
+        "percentage": 54.2
+      }
+    ]
   }
 ]
