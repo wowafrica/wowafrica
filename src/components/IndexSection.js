@@ -2,7 +2,7 @@ import React          from 'react/addons';
 import Semantify      from 'react-semantify';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
-import PostListAction from '../actions/PostListAction';
+import RouteAction    from '../actions/RouteAction';
 
 let {Cards, Card, Image} = Semantify;
 
@@ -24,9 +24,9 @@ export default React.createClass({
 
 
   render() {
-    let slideDiv = this.state.posts.map(function(post) {
+    let slideDiv = this.state.posts.map((post) => {
       return (
-        <a className="card" href={'/view_post_list/posts/'+post.id}>
+        <a className="card" href={'/view_post_list/posts/' + post.id} onClick={this._onClick}>
           <div className="post-list-card-img" style={{backgroundImage: 'url('+post.image+')'}}/>
           <div className="content">
             <div className="header">
@@ -56,6 +56,13 @@ export default React.createClass({
     this.setState({
       posts: PostListStore.getPostList(this.props.category)
     });
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 
 });

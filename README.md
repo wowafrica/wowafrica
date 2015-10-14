@@ -45,6 +45,9 @@ and then open `http://localhost:3000/`
 
 ## Change Log
 
+#### 2015/10/14 v0.4.3
+- Include files from root directory
+
 #### 2015/10/12 v0.4.2
 - Adjust index page looking
 - Improve post list page
