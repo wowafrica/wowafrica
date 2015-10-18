@@ -81,11 +81,11 @@ export default React.createClass({
         <div className="container-content">
           <div className="container-map">
             <Segment className="very padded container-post">
-              <Rail className="right close">
+              <Rail className="right close" style={{backgroundColor: '#305775', borderRadius: '5px', padding: '0'}}>
                 <Segment className="center aligned container-post-author" style={{backgroundColor: '#305775'}}>
                   <Image className="small centered circular" src={photoUrl}/>
                   <div>{name}</div>
-                  <div>{description}</div>
+                  <div style={{padding: '0 1rem'}}>{description}</div>
                 </Segment>
               </Rail>
               <div className={classNames('ui inverted dimmer', {active: loader})}>
