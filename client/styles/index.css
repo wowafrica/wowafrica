@@ -9,15 +9,12 @@ body {
   overflow-y: scroll;
 }
 
-/*#fullpage {
-  width: 1124px;
-  margin: 0px auto;
-}*/
-
-
-/*#category-box .middle.aligned.column {
-  margin: 0px auto;
-}*/
+.index-landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0 4% 0;
+}
 
 .container-header {
   width: 100%;

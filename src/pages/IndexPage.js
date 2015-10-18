@@ -26,6 +26,22 @@ export default React.createClass({
       }
     });
 
+    $('#landing-img').fadeIn(2200);
+    $('#menu-logo').hide();
+
+    $('#index-menu-anchor')
+    .sticky({
+      offset: 0,
+      onStick: function() {
+        $('#index-main-content').css('margin-top', '40px');
+        $('#menu-logo').fadeIn();
+      },
+      onUnstick: function() {
+        $('#index-main-content').css('margin-top', '0px');
+        $('#menu-logo').hide();
+      }
+    });
+
     $('#category-menu').show();
 
     $('#category-menu-anchor')
@@ -65,27 +81,32 @@ export default React.createClass({
 
     return (
       <div>
-        <div className="fixed-top-menu">
-          <IndexMenu/>
-        </div>
-        <div style={{backgroundColor: 'white'}}>
-          <div>
-            <IndexWideBlock type='new'/>
-            <IndexWideBlock type='top'/>
-            <div className="ui basic segment">
-              <div className="ui sticky" id="category-menu-anchor">
-                <CategoryMenu/>
-              </div>
-              <div id="category-block-divider" style={{height: '15px'}} />
-              <div className="ui container">
-                <IndexCategoryBlock/>
+        <div className="ui basic segment">
+          <div className="index-landing">
+            <img id="landing-img" src="/images/landing.png" style={{width: '35%', display: 'none'}}/>
+          </div>
+          <div className="ui sticky" id="index-menu-anchor">
+            <IndexMenu/>
+          </div>
+          <div id="index-main-content" style={{backgroundColor: 'white'}}>
+            <div>
+              <IndexWideBlock type='new'/>
+              <IndexWideBlock type='top'/>
+              <div className="ui basic segment">
+                <div className="ui sticky" id="category-menu-anchor">
+                  <CategoryMenu/>
+                </div>
+                <div id="category-block-divider" style={{height: '15px'}} />
+                <div className="ui container">
+                  <IndexCategoryBlock/>
+                </div>
               </div>
             </div>
           </div>
+          <div id="footer-divider" style={{height: '50px'}} />
+          <Footer/>
+          <div id="page-bottom"/>
         </div>
-        <div id="footer-divider" style={{height: '50px'}} />
-        <Footer/>
-        <div id="page-bottom"/>
       </div>
     );
   }
