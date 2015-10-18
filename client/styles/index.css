@@ -77,6 +77,15 @@ body {
   font-size: 36px;
   letter-spacing: 10px;
   background-color: rgba(0,0,0,0.6);
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+.index-wide-box:hover{
+  background-color: rgba(0,0,0,0.8);
 }
 
 .index-wide-type {
