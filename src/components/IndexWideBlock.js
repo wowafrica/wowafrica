@@ -43,7 +43,7 @@ export default React.createClass({
 
   render() {
     let displayType = this.props.type == 'new' ? '最新文章' : '最新消息' ;
-    let newSection = this.state.posts.map((post) => {
+    let newSection = this.state.posts.slice(0,2).map((post) => {
       let image = post.image.replace(/_540.jpg/g, '_1280.jpg');
       return (
         <div className="index-wide" style={{backgroundImage: 'url('+image+')'}}>
