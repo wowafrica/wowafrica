@@ -63,7 +63,7 @@ export default React.createClass({
 
   render() {
     let {post ,loader} = this.state;
-    let {body, title, image, tags = [], date} = post;
+    let {body, title, image, tags = [], date = ''} = post;
     let {name, description, photoUrl} = this.getAuthor();
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
@@ -91,7 +91,7 @@ export default React.createClass({
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <div>時間: {date}</div>
+              <div><em style={{'color': 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
               <br/>
               <div style={{fontSize: '20px'}} dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
