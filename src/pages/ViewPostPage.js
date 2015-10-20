@@ -81,7 +81,7 @@ export default React.createClass({
         <div className="container-content">
           <div className="container-map">
             <Segment className="very padded container-post">
-              <Rail className="right close" style={{backgroundColor: '#305775', borderRadius: '5px', padding: '0'}}>
+              <Rail className="right close" style={{backgroundColor: '#305775', border: '1px solid rgba(34, 36, 38, 0.15);', borderRadius: '5px', padding: '0'}}>
                 <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775'}}>
                   <Image className="small centered circular" src={photoUrl}/>
                   <div>{name}</div>
@@ -91,7 +91,7 @@ export default React.createClass({
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <div><em style={{'color': 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
+              <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
               <br/>
               <div style={{fontSize: '20px'}} dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>

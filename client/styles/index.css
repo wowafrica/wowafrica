@@ -39,23 +39,24 @@ body {
 }
 
 .post-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   width: 100%;
   height: 640px;
   background-size: cover;
-  text-align: center;
-  line-height: 640px;
 }
 
 .post-image .inner {
-  font-size: 64px;
+  margin-bottom: 20px;
+  font-size: 42px;
   color: #FFFFFF;
-  background: rgba(89, 48, 48, 0.3);
-  height: 640px;
 }
 
 .container-post-author div {
   color: #e6f4ff;
   padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .index-wide {
