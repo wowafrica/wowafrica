@@ -87,7 +87,7 @@ export default React.createClass({
               </div>
               <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
               <br/>
-              <div style={{fontSize: '20px'}} dangerouslySetInnerHTML={{__html: body}}></div>
+              <div dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}

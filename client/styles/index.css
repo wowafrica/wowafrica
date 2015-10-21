@@ -38,6 +38,22 @@ body {
   margin: 0px;
 }
 
+.container-post img {
+  width: 100%;
+}
+
+.container-post iframe {
+  width: 100%;
+}
+
+.container-post h2 {
+  font-size: 36px;
+}
+
+.container-post p {
+  font-size: 20px;
+}
+
 .post-image {
   display: flex;
   justify-content: center;
