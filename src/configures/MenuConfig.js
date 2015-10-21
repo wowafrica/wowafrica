@@ -40,7 +40,7 @@ export default [
     ]
   }, {
     name: 'article',
-    showName: '非洲文章',
+    showName: '文章分類',
     currentPage: '',
     subPage: [/*{
       url: '/view_post_list/category/news',

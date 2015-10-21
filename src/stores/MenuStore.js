@@ -31,7 +31,7 @@ class MenuStore {
 
   getArticleSubPages() {
     for (let page of this.menuConfig) {
-      if (page.showName == '非洲文章') {
+      if (page.showName == '文章分類') {
         return page.subPage;
       }
     };
@@ -40,7 +40,7 @@ class MenuStore {
   getIndexAnchors() {
     let anchors = [];
     this.menuConfig.forEach((section) => {
-      if (section.showName == '非洲文章') {
+      if (section.showName == '文章分類') {
         section.subPage.forEach((page) => {
           anchors.push(page.url.substring(2));
         });
