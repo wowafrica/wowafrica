@@ -78,16 +78,10 @@ export default React.createClass({
             {title}
           </div>
         </div>
-        <div className="container-content">
-          <div className="container-map">
-            <Segment className="very padded container-post">
-              <Rail className="right close" style={{backgroundColor: '#305775', border: '1px solid rgba(34, 36, 38, 0.15);', borderRadius: '5px', padding: '0'}}>
-                <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775'}}>
-                  <Image className="small centered circular" src={photoUrl}/>
-                  <div>{name}</div>
-                  <div style={{padding: '0 1rem'}}>{description}</div>
-                </Segment>
-              </Rail>
+        <div className="ui stackable three column grid">
+          <div className="four wide column"></div>
+          <div className="eight wide column">
+            <Segment className="very padded container-post basic">
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
@@ -98,6 +92,13 @@ export default React.createClass({
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}
               </div>
+            </Segment>
+          </div>
+          <div className="four wide column">
+            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%'}}>
+              <Image className="small centered circular" src={photoUrl}/>
+              <div>{name}</div>
+              <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
             </Segment>
           </div>
         </div>
