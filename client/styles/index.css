@@ -225,6 +225,7 @@ body {
   position: absolute;
   z-index: 2;
   height: 9rem;
+  width: 100%;
   padding: 0.3rem;
   background-color: white;
   background-origin: content-box;
