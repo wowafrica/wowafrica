@@ -58,13 +58,13 @@ export default [
       subPage: [],
       status: false
     }, {
-      url: '/view_post_list/category/industry',
-      showName: '產業動態',
+      url: '/view_post_list/category/innovation',
+      showName: '創新應用',
       subPage: [],
       status: false
     }, {
-      url: '/view_post_list/category/science',
-      showName: '科普人文',
+      url: '/view_post_list/category/society',
+      showName: '社會人文',
       subPage: [],
       status: false
     }, {
@@ -73,13 +73,13 @@ export default [
       subPage: [],
       status: false
     }, {
-      url: '/view_post_list/category/medic',
-      showName: '醫療知識',
+      url: '/view_post_list/category/art',
+      showName: '生活藝術',
       subPage: [],
       status: false
     }, {
       url: '/view_post_list/category/travel',
-      showName: '觀光旅行',
+      showName: '旅行專欄',
       subPage: [],
       status: false
     }*/
