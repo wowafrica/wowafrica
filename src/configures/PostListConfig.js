@@ -5,10 +5,10 @@ export default {
     'news':     {},
     'people':   {},
     'nature':   {},
-    'industry': {},
-    'science':  {},
+    'innovation': {},
+    'society':  {},
     'history':  {},
-    'medic':    {},
+    'art':    {},
     'travel':   {},
     'newPosts': {}
   },
@@ -23,31 +23,31 @@ export default {
     'news',
     'people',
     'nature',
-    'industry',
-    'science',
+    'innovation',
+    'society',
     'history',
-    'medic',
+    'art',
     'travel'
   ],
   categoryMap: {
-    'news':     '時事新聞',
-    'people':   '人物專欄',
-    'nature':   '自然保育',
-    'industry': '產業動態',
-    'science':  '科普人文',
-    'history':  '歷史故事',
-    'medic':    '醫療知識',
-    'travel':   '觀光旅行'
+    'news':       '時事新聞',
+    'people':     '人物專欄',
+    'nature':     '自然保育',
+    'innovation': '創新應用',
+    'society':    '社會人文',
+    'history':    '歷史故事',
+    'art':        '生活藝術',
+    'travel':     '旅行專欄'
   },
   categoryMapZh: {
     '時事新聞': 'news',
     '人物專欄': 'people',
     '自然保育': 'nature',
-    '產業動態': 'industry',
-    '科普人文': 'science',
+    '創新應用': 'innovation',
+    '社會人文': 'society',
     '歷史故事': 'history',
-    '醫療知識': 'medic',
-    '觀光旅行': 'travel'
+    '生活藝術': 'art',
+    '旅行專欄': 'travel'
   },
   tagMap: {
     'top': '置頂文章'

@@ -156,19 +156,20 @@ export default React.createClass({
 
   render() {
     let {nation, map} = this.state;
+    let {flag='kenya_flag.png', emblem='kenya_svg.png'} = nation;
     console.log('Modal Show: ' + JSON.stringify(nation));
     return (
       <Modal className="long" ref="modal" init={true}>
         <Icon className="close"/>
         <Header className="medium">
-          <img src="/images/kenya_svg.png" />
+          <img src={`/images/nations/${emblem}`} />
           <div className="content">
             {nation.country}
           </div>
         </Header>
         <div className="image content">
           <div className="ui medium image">
-            <img src="/images/kenya_flag.png" />
+            <img src={`/images/nations/${flag}`} />
             <NormalSection name="特殊象徵品">{nation.symbol}</NormalSection>
           </div>
           <div className="description">

@@ -9,7 +9,7 @@ let {Cards, Card, Image} = Semantify;
 let CategoryBox = React.createClass({
 
   getInitialState() {
-    if (this.props.category == 'none') {
+    if (this.props.category == 'more') {
       return {
         posts: []
       };
@@ -22,10 +22,16 @@ let CategoryBox = React.createClass({
   },
 
   render() {
-    if (this.props.category == 'none') {
+    if (this.props.category == 'more') {
       return (
         <div className="middle aligned centered column">
-          <img src="/images/icon_55.png" style={{marginLeft: '25%', width: '50%'}}/>
+          <div className="category-box-more">
+            <a href={'/view_post_list/category/new'} onClick={this._onClick}>
+              <div className="category-box-more-title">
+                閱讀更多文章
+              </div>
+            </a>
+          </div>
         </div>
       );
     }
@@ -85,7 +91,7 @@ let CategoryBox = React.createClass({
   },
 
   _onChange() {
-    if (this.props.category == 'none') {
+    if (this.props.category == 'more') {
     }
     else {
       this.setState({
@@ -114,7 +120,7 @@ export default React.createClass({
     PostListConfig.categories.forEach((item) => {
       items.push(item);
     });
-    items.splice(4, 0, 'none');
+    items.push('more');
     let viewBlks = items.map((item) => {
       return (
       <CategoryBox category={item} />

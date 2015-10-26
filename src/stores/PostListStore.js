@@ -42,7 +42,7 @@ class PostListStore extends EventEmitter {
       this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListCategory.bind(this));
     }
     else if (category == 'new') {
-      this.client.posts(TumblrConfig.blogName, {limit: amount}, this.parsePostListNew.bind(this));
+      this.client.posts(TumblrConfig.blogName, {limit: amount, type: 'text'}, this.parsePostListNew.bind(this));
     }
     else if (category == 'top') {
       this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.tagMap['top']}, this.parsePostListTop.bind(this));
@@ -134,7 +134,6 @@ class PostListStore extends EventEmitter {
 
   parsePostImage(body) {
     let imageSrc = body.match(/<img [^>]*\/>/g);
-
     if (imageSrc) {
       imageSrc = imageSrc[0].match(/http[^\"\'\s]*/)[0];
     } else {

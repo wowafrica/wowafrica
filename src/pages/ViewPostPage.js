@@ -20,6 +20,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
+    window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
     let elevatorAbout = new Elevator({
@@ -62,7 +63,7 @@ export default React.createClass({
 
   render() {
     let {post ,loader} = this.state;
-    let {body, title, image, tags = [], date} = post;
+    let {body, title, image, tags = [], date = ''} = post;
     let {name, description, photoUrl} = this.getAuthor();
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
@@ -77,26 +78,27 @@ export default React.createClass({
             {title}
           </div>
         </div>
-        <div className="container-content">
-          <div className="container-map">
-            <Segment className="very padded container-post">
-              <Rail className="right close">
-                <Segment className="center aligned container-post-author" style={{backgroundColor: '#305775'}}>
-                  <Image className="small centered circular" src={photoUrl}/>
-                  <div>{name}</div>
-                  <div>{description}</div>
-                </Segment>
-              </Rail>
+        <div className="ui stackable three column grid">
+          <div className="four wide column"></div>
+          <div className="eight wide column">
+            <Segment className="very padded container-post basic">
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <div>時間: {date}</div>
+              <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
               <br/>
-              <div style={{fontSize: '20px'}} dangerouslySetInnerHTML={{__html: body}}></div>
+              <div dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}
               </div>
+            </Segment>
+          </div>
+          <div className="four wide column">
+            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%'}}>
+              <Image className="small centered circular" src={photoUrl}/>
+              <div>{name}</div>
+              <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
             </Segment>
           </div>
         </div>

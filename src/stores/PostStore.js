@@ -54,10 +54,12 @@ class PostStore extends EventEmitter {
     if (bodyArray.length > 0) {
       body = bodyArray.join('<hr>');
       // <p>作者: Lee</p>
-      setting.match(/[^>]*:[^<]*/g).forEach((entry) => {
+      setting.match(/[^>]*[：:][^<]*/g).forEach((entry) => {
         // 作者: Lee
-        let [key, value] = entry.split(':');
-        settingResult[PostConfig.settingAlias[key]] = value.trim();
+        let [key, value] = entry.split(/[：:]/);
+        if (key in PostConfig.settingAlias) {
+          settingResult[PostConfig.settingAlias[key]] = value.trim();
+        }
       });
     }
     // console.log(settingResult);

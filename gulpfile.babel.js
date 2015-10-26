@@ -55,7 +55,7 @@ gulp.task('jade', () => {
 });
 
 gulp.task('images', () => {
-  return gulp.src('./client/images/*')
+  return gulp.src('./client/images/**/*')
     .pipe(gulp.dest(`${BUILD_PATH}/images/`))
     .pipe(livereload());
 });

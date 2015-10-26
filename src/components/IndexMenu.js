@@ -33,9 +33,9 @@ export default React.createClass({
       <div id="index-menu">
         <div className="ui centered grid">
           <Menu className="secondary">
-            <Item id="menu-logo" style={{paddingTop: '13px'}}>
+            <Item id="menu-logo" style={{paddingTop: '14px'}}>
               <a href="/">
-                <img src="/images/wow_logo2.png" style={{width: '200px'}}/>
+                <img src="/images/wow_logo2.png" style={{width: '180px'}}/>
               </a>
             </Item>
             {this.renderDropdown()}

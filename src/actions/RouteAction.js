@@ -39,7 +39,7 @@ class RouteAction {
               actionType: RouteConstants.ROUTE_POST_LIST_PAGE,
               postID: pathName[3]
             });
-            PostListAction.updatePostList(pathName[3], 10);
+            PostListAction.updatePostList(pathName[3], 20);
           }
         }
         break;

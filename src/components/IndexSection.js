@@ -14,12 +14,42 @@ export default React.createClass({
     };
   },
 
+  addListener(category) {
+    if (category == 'new') {
+      PostListStore.addChangeListener('new', this._onChange);
+    }
+    else {
+      PostListStore.addChangeListener('category', this._onChange);
+    }
+  },
+
+  removeListener(category) {
+    if (category == 'new') {
+      PostListStore.removeChangeListener('new', this._onChange);
+    }
+    else {
+      PostListStore.removeChangeListener('category', this._onChange);
+    }
+  },
+
   componentDidMount() {
-    PostListStore.addChangeListener('category', this._onChange);
+    this.addListener(this.props.category);
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.category == 'new' || nextProps.category == 'new') {
+      if (this.props.category != nextProps.category) {
+        this.removeListener(this.props.category);
+        this.addListener(nextProps.category);
+        this.setState({
+          posts: PostListStore.getPostList(this.props.category)
+        });
+      }
+    }
   },
 
   componentWillUnmount() {
-    PostListStore.removeChangeListener('category',this._onChange);
+    this.removeListener(this.props.category);
   },
 
 
@@ -40,10 +70,18 @@ export default React.createClass({
       );
     });
 
+    let title = '';
+    if (this.props.category == 'new') {
+      title = '最新文章';
+    }
+    else {
+      title = PostListConfig.categoryMap[this.props.title];
+    }
+
     return (
       <div className="ui container">
         <div className="post-list-title">
-          {PostListConfig.categoryMap[this.props.title]}
+          {title}
         </div>
         <div className="ui centered cards">
           {slideDiv}
