@@ -1,3 +1,16 @@
+<a name="0.4.5"></a>
+## [0.4.5](//compare/v0.4.4...v0.4.5) (2015-10-27)
+
+
+### Bug Fixes
+
+* **menu:** Rename 生活藝術 => 藝文介紹 f0b2020
+* **post:** Parse post brief bug 68bfaaa
+* **post:** Use ： instead of : to display brief 66b58d4
+* **postList:** Remove unnecessary listener 5d63e29
+
+
+
 <a name="0.4.4"></a>
 ## [0.4.4](//compare/v0.4.3...v0.4.4) (2015-10-26)
 
