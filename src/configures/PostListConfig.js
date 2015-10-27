@@ -36,7 +36,7 @@ export default {
     'innovation': '創新應用',
     'society':    '社會人文',
     'history':    '歷史故事',
-    'art':        '生活藝術',
+    'art':        '藝文介紹',
     'travel':     '旅行專欄'
   },
   categoryMapZh: {
@@ -46,7 +46,7 @@ export default {
     '創新應用': 'innovation',
     '社會人文': 'society',
     '歷史故事': 'history',
-    '生活藝術': 'art',
+    '藝文介紹': 'art',
     '旅行專欄': 'travel'
   },
   tagMap: {
