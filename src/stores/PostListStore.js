@@ -127,7 +127,7 @@ class PostListStore extends EventEmitter {
         // 作者: Lee
         let [key, ...value] = entry.split(/[:：]/);
         if (key in PostConfig.settingAlias) {
-          settingResult[PostConfig.settingAlias[key]] = value.join(':').trim();
+          settingResult[PostConfig.settingAlias[key]] = value.join('：').trim();
         }
       });
     }
