@@ -56,9 +56,9 @@ class PostStore extends EventEmitter {
       // <p>作者: Lee</p>
       setting.match(/[^>]*[：:][^<]*/g).forEach((entry) => {
         // 作者: Lee
-        let [key, value] = entry.split(/[：:]/);
+        let [key, ...value] = entry.split(/[：:]/);
         if (key in PostConfig.settingAlias) {
-          settingResult[PostConfig.settingAlias[key]] = value.trim();
+          settingResult[PostConfig.settingAlias[key]] = value.join('：').trim();
         }
       });
     }

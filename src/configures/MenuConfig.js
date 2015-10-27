@@ -74,7 +74,7 @@ export default [
       status: false
     }, {
       url: '/view_post_list/category/art',
-      showName: '生活藝術',
+      showName: '藝文介紹',
       subPage: [],
       status: false
     }, {
