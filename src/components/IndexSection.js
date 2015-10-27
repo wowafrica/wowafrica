@@ -14,8 +14,8 @@ export default React.createClass({
     };
   },
 
-  addListener(category) {
-    if (category == 'new') {
+  componentDidMount() {
+    if (this.props.category === 'new') {
       PostListStore.addChangeListener('new', this._onChange);
     }
     else {
@@ -23,33 +23,13 @@ export default React.createClass({
     }
   },
 
-  removeListener(category) {
-    if (category == 'new') {
+  componentWillUnmount() {
+    if (this.props.category == 'new') {
       PostListStore.removeChangeListener('new', this._onChange);
     }
     else {
       PostListStore.removeChangeListener('category', this._onChange);
     }
-  },
-
-  componentDidMount() {
-    this.addListener(this.props.category);
-  },
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.category == 'new' || nextProps.category == 'new') {
-      if (this.props.category != nextProps.category) {
-        this.removeListener(this.props.category);
-        this.addListener(nextProps.category);
-        this.setState({
-          posts: PostListStore.getPostList(this.props.category)
-        });
-      }
-    }
-  },
-
-  componentWillUnmount() {
-    this.removeListener(this.props.category);
   },
 
 
