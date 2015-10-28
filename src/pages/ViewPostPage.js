@@ -95,7 +95,7 @@ export default React.createClass({
             </Segment>
           </div>
           <div className="four wide column">
-            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%'}}>
+            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%', position: 'absolute'}}>
               <Image className="small centered circular" src={photoUrl}/>
               <div>{name}</div>
               <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
