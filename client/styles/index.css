@@ -57,7 +57,7 @@ body {
 .post-image {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   height: 640px;
   background-size: cover;
