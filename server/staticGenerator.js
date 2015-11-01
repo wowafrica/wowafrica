@@ -10,6 +10,13 @@ let client = Tumblr.createClient({
   consumer_key: TumblrConfig.consumerKey // eslint-disable-line
 });
 
+fs.stat('./_public/view_post_list', (err, stats) => {
+  if (err || !stats.isDirectory()) {
+    fs.mkdirSync('./_public/view_post_list');
+    fs.mkdirSync('./_public/view_post_list/posts');
+  }
+});
+
 let generatePage = function() {
   let html = React.renderToString(<ViewPostPage/>);
   let post = PostStore.getPost();
@@ -44,7 +51,7 @@ let generatePage = function() {
     </script>
   </body>
 </html>`;
-  fs.writeFile(`_public/view_post_list/posts/${id}.html`, template, 'utf8', (error) => {
+  fs.writeFile(`./_public/view_post_list/posts/${id}.html`, template, 'utf8', (error) => {
     if (error) {
       throw error;
     }
