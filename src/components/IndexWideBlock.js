@@ -31,11 +31,6 @@ export default React.createClass({
       targetElement: document.querySelector('#category-block-divider'),
       duration: 1500
     });
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   componentDidMount() {

@@ -23,12 +23,6 @@ export default React.createClass({
     window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
-
   },
 
   componentWillUnmount() {
@@ -37,12 +31,6 @@ export default React.createClass({
   },
 
   componentDidUpdate() {
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
-
   },
 
   getAuthor() {

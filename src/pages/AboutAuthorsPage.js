@@ -15,12 +15,6 @@ let AuthorsBox = React.createClass({
 
   componentDidMount() {
     AuthorsStore.addChangeListener(this._onChange);
-
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   componentWillUnmount() {
@@ -28,11 +22,6 @@ let AuthorsBox = React.createClass({
   },
 
   componentDidUpdate() {
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   render() {
