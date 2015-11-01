@@ -84,8 +84,10 @@ export default React.createClass({
           </div>
           <div className="four wide column">
             <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%', position: 'absolute'}}>
-              <Image className="small centered circular" src={photoUrl}/>
-              <div>{name}</div>
+              <a href="/about_authors" onClick={this._onClick}>
+                <Image className="small centered circular" src={photoUrl}/>
+                <div>{name}</div>
+              </a>
               <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
             </Segment>
           </div>
@@ -108,5 +110,12 @@ export default React.createClass({
     this.setState({
       authors: AuthorsStore.getAll()
     });
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });
