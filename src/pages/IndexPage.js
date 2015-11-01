@@ -25,16 +25,15 @@ export default React.createClass({
           break;
       }
     });
-
     $('#landing-img').fadeIn(2200);
     $('#menu-logo').hide();
-
     $('#index-menu-anchor')
     .sticky({
       offset: 0,
       onStick: function() {
         $('#index-main-content').css('margin-top', '40px');
         $('#menu-logo').fadeIn();
+        $('#index-menu-anchor').css('z-index', 999);
       },
       onUnstick: function() {
         $('#index-main-content').css('margin-top', '0px');
@@ -70,6 +69,15 @@ export default React.createClass({
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
+    $('#menu-logo').show();
+    $('#index-menu-anchor')
+    .sticky({
+      offset: 0,
+      onStick: function() {
+      },
+      onUnstick: function() {
+      }
+    });
   },
 
   render() {
