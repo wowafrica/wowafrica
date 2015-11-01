@@ -1,3 +1,14 @@
+<a name="0.4.7"></a>
+## [0.4.7](//compare/v0.4.6...v0.4.7) (2015-11-01)
+
+
+### Features
+
+* Add homepage fb-share information 64334a5
+* **footer:** Add email subscription 7836669
+
+
+
 <a name="0.4.6"></a>
 ## [0.4.6](//compare/v0.4.5...v0.4.6) (2015-11-01)
 
