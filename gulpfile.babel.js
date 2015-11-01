@@ -54,6 +54,12 @@ gulp.task('jade', () => {
     .pipe(livereload());
 });
 
+gulp.task('ico', () => {
+  return gulp.src('./client/views/*.ico')
+    .pipe(gulp.dest(BUILD_PATH))
+    .pipe(livereload());
+});
+
 gulp.task('images', () => {
   return gulp.src('./client/images/**/*')
     .pipe(gulp.dest(`${BUILD_PATH}/images/`))
@@ -175,6 +181,6 @@ gulp.task('watch', (done) => {
 });
 
 gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
-gulp.task('build', ['jade', 'data', 'images', 'styles', 'bundle']);
+gulp.task('build', ['jade', 'ico', 'data', 'images', 'styles', 'bundle']);
 gulp.task('dev', ['build', 'server', 'watch']);
 gulp.task('default', ['build']);
