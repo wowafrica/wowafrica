@@ -279,11 +279,9 @@ body {
 }
 
 .footer {
-  padding-top: 50px;
   font-size: 20px;
   letter-spacing: 4px;
-  line-height: 24px;
-  min-height: 480px;
+  line-height: 1.5;
   background-color: #EDF6FE;
   color: #606263;
 }
@@ -296,8 +294,17 @@ body {
   color: #606263;
 }
 
-.fotter-box-title {
-  letter-spacing: 36px;
+.footer-box {
+  min-height: 260px;
+  padding: 5rem 2rem 0 2rem;
+}
+
+.footer-box a{
+  color: white;
+}
+
+.footer-box a:visited{
+  color: white;
 }
 
 .ui.segment {

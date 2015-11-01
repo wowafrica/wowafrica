@@ -8,31 +8,48 @@ export default React.createClass({
     return (
       <div className="footer">
         <div className="ui container">
-          <div className="ui three column grid">
-            <div className="footer-box column" style={{paddingLeft: '3rem', paddingRight: '3rem'}}>
-              <span className="fotter-box-title">關於我們</span>
-              <br/>
-              <br/>
-              致力於打造在台灣的非洲資訊平台，透過線上的資料整理以及實體活動讓台灣更認識非洲，看見世界，也看見台灣自己。
-              <br/>
-              <br/>
-              我們是一群曾經在非洲大陸旅行的年輕人，2014年回台灣後辦理講座、為期兩個月的非洲特展，並與非洲駐華使節團合辦餐會，讓大家用不一樣的面向和角度認識非洲。
+          <div className="ui grid">
+            <div className="seven wide column">
+              <div className="footer-box" style={{fontSize: '18px', paddingTop: '3rem'}}>
+                wowAfrica 阿非卡為台灣最完整的非洲資訊平台 最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。
+              </div>
             </div>
-            <div className="column footer-box" style={{paddingLeft: '3rem', paddingRight: '3rem'}}>
-              <span className="fotter-box-title">訂閱通知</span>
+            <div className="four wide column" style={{color: 'white', backgroundColor: '#BE3333'}}>
+              <div className="footer-box">
+                關於 wowAfrica
+                <div>
+                  <a href="/about_authors" onClick={this._onClick}>
+                     成員介紹
+                  </a>
+                </div>
+                <div>
+                  <a href="/about_authors" onClick={this._onClick}>
+                    聯絡我們
+                  </a>
+                </div>
+                <div>
+                  <a href="/about_authors" onClick={this._onClick}>
+                    <img src="/images/rb_mail.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                  </a>
+                  <a href="/about_authors" onClick={this._onClick}>
+                    <img src="/images/rb_tumblr.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                  </a>
+                  <a href="/about_authors" onClick={this._onClick}>
+                    <img src="/images/rb_facebook.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="column footer-box" style={{paddingLeft: '3rem', paddingRight: '3rem'}}>
-              <a href="/about_authors" onClick={this._onClick}>
-                <span className="fotter-box-title">專欄作者</span>
-              </a>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <span className="fotter-box-title">聯絡我們</span>
+            <div className="five wide column">
+              <div className="footer-box">
+                最新資訊及活動通知
+                <div className="ui mini input">
+                  <input type="text" placeholder="Email"/>
+                </div>
+                <button className="ui button" style={{backgroundColor: '#BE3333', color: 'white'}}>
+                  訂閱
+                </button>
+              </div>
             </div>
           </div>
         </div>
