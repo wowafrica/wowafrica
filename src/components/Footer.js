@@ -28,13 +28,13 @@ export default React.createClass({
                   </a>
                 </div>
                 <div style={{paddingTop: '10px'}}>
-                  <a href="/about_authors" onClick={this._onClick}>
+                  <a href="mailto:lighteningdark2014@gmail.com" target="_blank">
                     <img src="/images/rb_mail.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
                   </a>
-                  <a href="/about_authors" onClick={this._onClick}>
+                  <a href="http://wowafrica.tumblr.com/" target="_blank">
                     <img src="/images/rb_tumblr.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
                   </a>
-                  <a href="/about_authors" onClick={this._onClick}>
+                  <a href="https://www.facebook.com/wowafrica.tw/" target="_blank">
                     <img src="/images/rb_facebook.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
                   </a>
                 </div>
@@ -44,9 +44,9 @@ export default React.createClass({
               <div className="footer-box">
                 最新資訊及活動通知
                 <div className="ui mini input">
-                  <input type="text" placeholder="Email"/>
+                  <input id="emailInput" type="text" placeholder="Email"/>
                 </div>
-                <button className="ui button" style={{backgroundColor: '#BE3333', color: 'white'}}>
+                <button id="emailBtn" className="ui button" onClick={this._onSubBtnClick}style={{backgroundColor: '#BE3333', color: 'white'}}>
                   訂閱
                 </button>
               </div>
@@ -62,5 +62,14 @@ export default React.createClass({
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();
+  },
+
+  _onSubBtnClick(e) {
+    let request = $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbzuOLvCRul3ZAzNl3kp9nPihUQ_iowpjB-Uf1nwuvhY9Q5lODI/exec',
+      type: 'post',
+      data: {email: $('#emailInput')[0].value}
+    });
+    $('#emailBtn')[0].innerText = '完成!';
   }
 });
