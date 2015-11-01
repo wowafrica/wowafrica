@@ -6,7 +6,6 @@ import IndexWideBlock     from '../components/IndexWideBlock';
 import IndexCategoryBlock from '../components/IndexCategoryBlock';
 import Footer             from '../components/Footer';
 import MenuStore          from '../stores/MenuStore';
-import RouteStore         from '../stores/RouteStore';
 import RouteConstants     from '../constants/RouteConstants';
 import AppDispatcher      from '../dispatcher/AppDispatcher';
 
