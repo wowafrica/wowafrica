@@ -57518,10 +57518,10 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: end;
-  -webkit-align-items: flex-end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   height: 640px;
   background-size: cover;
@@ -57535,6 +57535,7 @@ body {
   color: #e6f4ff;
   padding-top: 18px;
   padding-bottom: 18px;
+  font-size: 16px;
 }
 .index-wide {
   width: 100%;
@@ -57593,6 +57594,30 @@ body {
   font-size: 36px;
   letter-spacing: 34px;
   font-weight: bolder;
+}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .post-list-title {
+    text-align: center;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .post-list-title {
+    margin-left: 9%;
+  }
+}
+/* Small Monitor */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .post-list-title {
+    margin-left: 2%;
+  }
+}
+/* Large Monitor */
+@media only screen and (min-width: 1200px) {
+  .post-list-title {
+    margin-left: 10%;
+  }
 }
 .post-list-card-img {
   width: 100%;
@@ -57758,11 +57783,9 @@ body {
   border-style: solid;
 }
 .footer {
-  padding-top: 50px;
   font-size: 20px;
   letter-spacing: 4px;
-  line-height: 24px;
-  min-height: 480px;
+  line-height: 1.5;
   background-color: #EDF6FE;
   color: #606263;
 }
@@ -57772,8 +57795,15 @@ body {
 .footer a {
   color: #606263;
 }
-.fotter-box-title {
-  letter-spacing: 36px;
+.footer-box {
+  min-height: 260px;
+  padding: 5rem 2rem 0 2rem;
+}
+.footer-box a {
+  color: white;
+}
+.footer-box a:visited {
+  color: white;
 }
 .ui.segment {
   padding-left: 0px;
