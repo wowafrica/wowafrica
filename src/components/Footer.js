@@ -27,7 +27,7 @@ export default React.createClass({
                     聯絡我們
                   </a>
                 </div>
-                <div>
+                <div style={{paddingTop: '10px'}}>
                   <a href="/about_authors" onClick={this._onClick}>
                     <img src="/images/rb_mail.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
                   </a>
