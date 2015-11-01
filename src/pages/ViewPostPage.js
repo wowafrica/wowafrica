@@ -4,6 +4,7 @@ import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
+import ShareButton  from '../components/ShareButton';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
@@ -53,6 +54,8 @@ export default React.createClass({
     let {post ,loader} = this.state;
     let {body, title, image, tags = [], date = ''} = post;
     let {name, description, photoUrl} = this.getAuthor();
+    let {pageUrl} = this.props;
+
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
@@ -80,6 +83,8 @@ export default React.createClass({
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}
               </div>
+              <br/>
+              <ShareButton pageUrl={pageUrl}/>
             </Segment>
           </div>
           <div className="four wide column">
