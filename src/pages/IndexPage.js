@@ -6,7 +6,6 @@ import IndexWideBlock     from '../components/IndexWideBlock';
 import IndexCategoryBlock from '../components/IndexCategoryBlock';
 import Footer             from '../components/Footer';
 import MenuStore          from '../stores/MenuStore';
-import RouteStore         from '../stores/RouteStore';
 import RouteConstants     from '../constants/RouteConstants';
 import AppDispatcher      from '../dispatcher/AppDispatcher';
 
@@ -25,16 +24,15 @@ export default React.createClass({
           break;
       }
     });
-
     $('#landing-img').fadeIn(2200);
     $('#menu-logo').hide();
-
     $('#index-menu-anchor')
     .sticky({
       offset: 0,
       onStick: function() {
         $('#index-main-content').css('margin-top', '40px');
         $('#menu-logo').fadeIn();
+        $('#index-menu-anchor').css('z-index', 999);
       },
       onUnstick: function() {
         $('#index-main-content').css('margin-top', '0px');
@@ -60,16 +58,19 @@ export default React.createClass({
       targetElement: document.querySelector('#category-block-divider'),
       duration: 1500
     });
-
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   componentWillUnmount() {
     AppDispatcher.unregister(this.IndexDispatch);
+    $('#menu-logo').show();
+    $('#index-menu-anchor')
+    .sticky({
+      offset: 0,
+      onStick: function() {
+      },
+      onUnstick: function() {
+      }
+    });
   },
 
   render() {

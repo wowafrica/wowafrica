@@ -15,20 +15,9 @@ export default React.createClass({
 
   componentDidMount() {
     window.scroll(0, 0);
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
-
   },
 
   componentDidUpdate() {
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   render() {

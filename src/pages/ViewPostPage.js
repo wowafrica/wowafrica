@@ -4,6 +4,7 @@ import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
+import ShareButton  from '../components/ShareButton';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
@@ -23,12 +24,6 @@ export default React.createClass({
     window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
-
   },
 
   componentWillUnmount() {
@@ -37,12 +32,6 @@ export default React.createClass({
   },
 
   componentDidUpdate() {
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
-
   },
 
   getAuthor() {
@@ -65,6 +54,8 @@ export default React.createClass({
     let {post ,loader} = this.state;
     let {body, title, image, tags = [], date = ''} = post;
     let {name, description, photoUrl} = this.getAuthor();
+    let {pageUrl} = this.props;
+
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
@@ -92,12 +83,16 @@ export default React.createClass({
               <div className="ui brown tag labels">
                 {tags.map(tag => <Label>{tag}</Label>)}
               </div>
+              <br/>
+              <ShareButton pageUrl={pageUrl}/>
             </Segment>
           </div>
           <div className="four wide column">
-            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%'}}>
-              <Image className="small centered circular" src={photoUrl}/>
-              <div>{name}</div>
+            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%', position: 'absolute'}}>
+              <a href="/about_authors" onClick={this._onClick}>
+                <Image className="small centered circular" src={photoUrl}/>
+                <div>{name}</div>
+              </a>
               <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
             </Segment>
           </div>
@@ -120,5 +115,12 @@ export default React.createClass({
     this.setState({
       authors: AuthorsStore.getAll()
     });
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });

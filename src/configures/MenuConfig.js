@@ -3,23 +3,17 @@ export default [
     name: 'about',
     showName: '關於我們',
     currentPage: '',
-    subPage: [/*{
+    subPage: [{
       url: '/1',
-      showName: '阿非卡緣起',
+      showName: '團隊緣起',
       subPage: [],
       status: false
-    },
-      {
-        url: '/about_authors',
-        showName: '阿非卡成員',
-        subPage: [],
-        status: false
-      }, {
-      url: '/1',
-      showName: '阿非卡年誌',
+    },{
+      url: '/about_authors',
+      showName: '團隊成員',
       subPage: [],
       status: false
-    }*/
+    }
     ]
   }, {
     name: 'knowing',

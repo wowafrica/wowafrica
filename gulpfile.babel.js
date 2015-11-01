@@ -8,6 +8,7 @@ import jade         from 'gulp-jade';
 import plumber      from 'gulp-plumber';
 import uglify       from 'gulp-uglify';
 import gulpif       from 'gulp-if';
+import shell        from 'gulp-shell';
 
 import del         from 'del';
 import express     from 'express';
@@ -46,10 +47,20 @@ if (gutil.env.env === 'production') {
   production = true;
 }
 
+gulp.task('static-generator', shell.task(
+  'babel-node server/staticGenerator.js'
+));
+
 gulp.task('jade', () => {
   return gulp.src('./client/views/*.jade')
     .pipe(plumber())
     .pipe(jade())
+    .pipe(gulp.dest(BUILD_PATH))
+    .pipe(livereload());
+});
+
+gulp.task('ico', () => {
+  return gulp.src('./client/views/*.ico')
     .pipe(gulp.dest(BUILD_PATH))
     .pipe(livereload());
 });
@@ -117,34 +128,18 @@ gulp.task('browserify', () => {
 gulp.task('server', (done) => {
   app.use(liveConnect());
   app.use(express.static(path.resolve(BUILD_PATH)));
+
   app.all('*', (req, res) => {
     gutil.log('URL: ', gutil.colors.yellow(req.url));
 
-    RouteStore.onReceiveUpdatePath(req.url);
-    let currentRoute = RouteStore.getCurrentRoute();
-    let html = '';
-    if (currentRoute) {
-      let CurrentPage = currentRoute.config['page'];
-      html = React.renderToString(<CurrentPage/>);
+    if (req.url.startsWith('/view_post_list/posts/')) {
+      let postId = req.url.split('/')[3];
+      console.log(postId);
+      res.sendFile(
+        path.resolve(`${BUILD_PATH}/view_post_list/posts/${postId}.html`));
+    } else {
+      res.sendFile(path.resolve(`${BUILD_PATH}/index.html`));
     }
-    res.write(`
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Explore Africa</title>
-    <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
-  </head>
-  <body>
-    <div id="content">${html}</div>
-    <div id="nation_modal" class="ui dimmer modals page"></div>
-    <script type="text/javascript" src="/scripts/vendor.js"></script>
-    <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
-    <script type="text/javascript" src="/scripts/bundle.js"></script>
-  </body>
-</html>`);
-    res.end();
   });
   app.listen(3000, () => {
     gutil.log('Listening on port 3000');
@@ -175,6 +170,6 @@ gulp.task('watch', (done) => {
 });
 
 gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
-gulp.task('build', ['jade', 'data', 'images', 'styles', 'bundle']);
+gulp.task('build', ['jade', 'ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
 gulp.task('dev', ['build', 'server', 'watch']);
 gulp.task('default', ['build']);

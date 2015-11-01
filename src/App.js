@@ -22,7 +22,7 @@ export default React.createClass({
     let {currentRoute} = this.state;
     let CurrentPage = currentRoute.config['page'];
     return (
-      <CurrentPage/>
+      <CurrentPage pageUrl={currentRoute.url}/>
     );
   },
 

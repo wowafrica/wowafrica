@@ -1,3 +1,29 @@
+<a name="0.4.6"></a>
+## [0.4.6](//compare/v0.4.5...v0.4.6) (2015-11-01)
+
+
+### Bug Fixes
+
+* **footer:** Fix icon in footer should have more margin with above component close #53 ab4e646, closes #53
+* **menu:** add 關於我們 menu dropdown close #59 de6203e, closes #59
+* **menu:** Fix menu logo disappear in some pages 38d63c4
+* **post:** Fix image url parser 1556f2d
+* **post:** Fix the right author side height 100% on chrome e1f23c6
+* **post:** Let post author font-size to be larger 0a0eb00
+* **post:** Let post title to be center 7f39c2f
+* **post:** Link author's page when click author on ViewPostPage close #62 907e9f1, closes #62
+* **postList:** Fix Post List's title align with post cards close #52 5c0deb2, closes #52
+* Static page generator script cdfb0c1
+
+### Features
+
+* **favicon:** Add favicon 9694223
+* **footer:** Add footer skeleton 1644a9b
+* **social:** Add Facebook Share Button dcaf0a4
+* **static:** Add Static Page Generator 1ada77c
+
+
+
 <a name="0.4.5"></a>
 ## [0.4.5](//compare/v0.4.4...v0.4.5) (2015-10-27)
 

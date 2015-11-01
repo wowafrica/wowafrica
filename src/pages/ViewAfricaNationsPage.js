@@ -15,11 +15,6 @@ export default React.createClass({
 
   componentDidMount() {
     MapStore.addChangeListener(this._onChange);
-    let elevatorAbout = new Elevator({
-      element: document.querySelector('#btn-about'),
-      targetElement: document.querySelector('#page-bottom'),
-      duration: 1500
-    });
   },
 
   componentWillUnmount() {
