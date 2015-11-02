@@ -56,9 +56,10 @@ class PostListStore extends EventEmitter {
     } else {
       data.posts.forEach((post) => {
         let result = this.parsePostData(post);
-        if (result.valid == true) {
+        /*if (result.valid == true) {
           updatedList.push(result);
-        }
+        }*/
+        updatedList.push(result);
       });
       if (updatedList.length > 0) {
         this.postList['top'].posts = updatedList;
