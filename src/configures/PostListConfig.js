@@ -50,6 +50,6 @@ export default {
     '旅行專欄': 'travel'
   },
   tagMap: {
-    'top': '置頂文章'
+    'top': '最新消息'
   }
 };

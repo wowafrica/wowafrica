@@ -18,7 +18,7 @@ app.all('*', (req, res) => {
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Explore Africa</title>
+    <title>WOW! AFRICA</title>
     <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>

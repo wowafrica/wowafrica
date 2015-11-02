@@ -56,9 +56,10 @@ class PostListStore extends EventEmitter {
     } else {
       data.posts.forEach((post) => {
         let result = this.parsePostData(post);
-        if (result.valid == true) {
+        /*if (result.valid == true) {
           updatedList.push(result);
-        }
+        }*/
+        updatedList.push(result);
       });
       if (updatedList.length > 0) {
         this.postList['top'].posts = updatedList;
@@ -137,7 +138,12 @@ class PostListStore extends EventEmitter {
   parsePostImage(body) {
     let imageSrc = body.match(/<img [^>]*\/>/g);
     if (imageSrc) {
-      imageSrc = imageSrc[0].match(/http[^\"\'\s]*/)[0];
+      let imageSrcList = imageSrc[0].match(/http[^\"\'\s]*/);
+      if (imageSrcList) {
+        imageSrc = imageSrcList[0];
+      } else {
+        imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
+      }
     } else {
       imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
     }

@@ -30,7 +30,7 @@ let generatePage = function() {
     <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${brief}" />
     <meta property="og:image" content="${image}" />
-    <title>Explore Africa</title>
+    <title>WOW! AFRICA</title>
     <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
   </head>
   <body>
