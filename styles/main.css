@@ -9855,6 +9855,7 @@ i.flag.zimbabwe:before {
    Sub Header
 ---------------*/
 .ui.header .sub.header {
+  display: block;
   font-weight: normal;
   padding: 0em;
   margin: 0em;
@@ -13350,6 +13351,9 @@ i.icon.conversation:before {
 }
 i.icon.umbrella:before {
   content: "\f0e9";
+}
+i.icon.clipboard:before {
+  content: "\f0ea";
 }
 i.icon.lightbulb:before {
   content: "\f0eb";
@@ -22398,6 +22402,10 @@ ol.ui.horizontal.list li:before,
   box-shadow: none;
   border-left: 1px solid rgba(34, 36, 38, 0.15);
 }
+/* Border Fixes */
+.ui.segments > .horizontal.segments:first-child {
+  border-top: none;
+}
 .ui.horizontal.segments > .segment:first-child {
   border-left: none;
 }
@@ -23770,7 +23778,7 @@ ol.ui.horizontal.list li:before,
    Stackable
 ---------------*/
 /* Tablet Or Below */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .ui[class*="tablet stackable"].steps {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -25257,7 +25265,6 @@ ol.ui.horizontal.list li:before,
 /* Select */
 /* Text Area */
 /* Checkbox */
-/* Divider */
 /* Inline Validation Prompt */
 /*-------------------
         States
@@ -25303,7 +25310,6 @@ ol.ui.horizontal.list li:before,
 /* Select */
 /* Text Area */
 /* Checkbox */
-/* Divider */
 /* Inline Validation Prompt */
 /*-------------------
         States
@@ -25541,13 +25547,6 @@ ol.ui.horizontal.list li:before,
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
   width: 0px;
-}
-/*--------------------
-       Dividers
----------------------*/
-.ui.form .divider {
-  clear: both;
-  margin: 1em 0em;
 }
 /*--------------------
    Types of Messages
@@ -26194,6 +26193,17 @@ ol.ui.horizontal.list li:before,
     padding-left: 0%;
     padding-right: 0%;
   }
+}
+/*--------------------
+     Equal Width
+---------------------*/
+.ui[class*="equal width"].form .fields > .field,
+.ui.form [class*="equal width"].fields > .field {
+  width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 /*--------------------
     Inline Fields
@@ -27075,8 +27085,8 @@ ol.ui.horizontal.list li:before,
   margin-bottom: 0em;
 }
 /* Segment inside Aligned Grid */
-.ui.grid .aligned.row > .column > .segment:not(.compact),
-.ui.aligned.grid .column > .segment:not(.compact) {
+.ui.grid .aligned.row > .column > .segment:not(.compact):not(.attached),
+.ui.aligned.grid .column > .segment:not(.compact):not(.attached) {
   width: 100%;
 }
 /* Align Dividers with Gutter */
@@ -28721,7 +28731,7 @@ ol.ui.horizontal.list li:before,
 /* These include arbitrary class repetitions for forced specificity */
 /* Mobile Only Hide */
 @media only screen and (max-width: 767px) {
-  .ui.tablet:not(.mobile).only.grid.grid.grid,
+  .ui[class*="tablet only"].grid.grid.grid:not(.mobile),
   .ui.grid.grid.grid > [class*="tablet only"].row:not(.mobile),
   .ui.grid.grid.grid > [class*="tablet only"].column:not(.mobile),
   .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.mobile) {
@@ -28739,10 +28749,10 @@ ol.ui.horizontal.list li:before,
   .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
     display: none !important;
   }
-  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
-  .ui.grid.grid.grid > [class*="large screen only"].row:not(.mobile),
-  .ui.grid.grid.grid > [class*="large screen only"].column:not(.mobile),
-  .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
+  .ui[class*="widescreen only"].grid.grid.grid:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
+  .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
+  .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
     display: none !important;
   }
 }
@@ -28766,7 +28776,7 @@ ol.ui.horizontal.list li:before,
   .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
     display: none !important;
   }
-  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui[class*="widescreen only"].grid.grid.grid:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
   .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
@@ -28793,7 +28803,7 @@ ol.ui.horizontal.list li:before,
   .ui.grid.grid.grid > .row > [class*="large screen only"].column:not(.mobile) {
     display: none !important;
   }
-  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui[class*="widescreen only"].grid.grid.grid:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
   .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
@@ -28814,7 +28824,7 @@ ol.ui.horizontal.list li:before,
   .ui.grid.grid.grid > .row > [class*="tablet only"].column:not(.computer) {
     display: none !important;
   }
-  .ui[class*="widescreen"].grid.grid.grid:not(.mobile),
+  .ui[class*="widescreen only"].grid.grid.grid:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].row:not(.mobile),
   .ui.grid.grid.grid > [class*="widescreen only"].column:not(.mobile),
   .ui.grid.grid.grid > .row > [class*="widescreen only"].column:not(.mobile) {
@@ -33453,38 +33463,54 @@ Floated Menu / Item
   text-overflow: ellipsis;
 }
 /*--------------
-   Hoverable
+   Selectable
 ---------------*/
-.ui.selectable.table tbody tr:hover {
+.ui.selectable.table tbody tr:hover,
+.ui.table tbody tr td.selectable:hover {
   background: rgba(0, 0, 0, 0.05) !important;
   color: rgba(0, 0, 0, 0.95) !important;
 }
-.ui.selectable.inverted.table tbody tr:hover {
+.ui.selectable.inverted.table tbody tr:hover,
+.ui.inverted.table tbody tr td.selectable:hover {
   background: rgba(255, 255, 255, 0.08) !important;
   color: #ffffff !important;
 }
+/* Selectable Cell Link */
+.ui.table tbody tr td.selectable {
+  padding: 0em;
+}
+.ui.table tbody tr td.selectable > a:not(.ui) {
+  display: block;
+  color: inherit;
+  padding: 0.71428571em 0.71428571em;
+}
 /* Other States */
 .ui.selectable.table tr.error:hover,
+.ui.table tr td.selectable.error:hover,
 .ui.selectable.table tr:hover td.error {
   background: #ffe7e7 !important;
   color: #943634 !important;
 }
 .ui.selectable.table tr.warning:hover,
+.ui.table tr td.selectable.warning:hover,
 .ui.selectable.table tr:hover td.warning {
   background: #fff4e4 !important;
   color: #493107 !important;
 }
 .ui.selectable.table tr.active:hover,
+.ui.table tr td.selectable.active:hover,
 .ui.selectable.table tr:hover td.active {
   background: #E0E0E0 !important;
   color: rgba(0, 0, 0, 0.87) !important;
 }
 .ui.selectable.table tr.positive:hover,
+.ui.table tr td.selectable.positive:hover,
 .ui.selectable.table tr:hover td.positive {
   background: #f7ffe6 !important;
   color: #275b28 !important;
 }
 .ui.selectable.table tr.negative:hover,
+.ui.table tr td.selectable.negative:hover,
 .ui.selectable.table tr:hover td.negative {
   background: #ffe7e7 !important;
   color: #943634 !important;
@@ -46822,7 +46848,7 @@ select.ui.dropdown {
   }
 }
 /* Tablet and Mobile */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .ui.modal > .header {
     padding-right: 2.25rem;
   }
@@ -46917,7 +46943,7 @@ select.ui.dropdown {
   color: rgba(0, 0, 0, 0.85);
 }
 /* Tablet and Mobile */
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .ui.basic.modal > .close {
     color: #FFFFFF;
   }
@@ -46966,7 +46992,7 @@ select.ui.dropdown {
 .undetached.dimmable.dimmed > .pusher {
   z-index: auto;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 991px) {
   .modals.dimmer .ui.scrolling.modal {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
@@ -48438,6 +48464,7 @@ a.ui.nag {
 /* Header */
 /* Content Border */
 /* Arrow */
+/* Arrow color by position */
 /*-------------------
        Coupling
 --------------------*/
@@ -48451,6 +48478,7 @@ a.ui.nag {
 --------------------*/
 /* Wide */
 /* Inverted */
+/* Arrow color by position */
 /* Packaged Theme */
 /*******************************
              Popup
@@ -48465,6 +48493,7 @@ a.ui.nag {
 /* Header */
 /* Content Border */
 /* Arrow */
+/* Arrow color by position */
 /*-------------------
        Coupling
 --------------------*/
@@ -48478,6 +48507,7 @@ a.ui.nag {
 --------------------*/
 /* Wide */
 /* Inverted */
+/* Arrow color by position */
 /* Site Theme */
 /*******************************
              Mix-ins
@@ -48505,7 +48535,7 @@ a.ui.nag {
   border: 1px solid #D4D4D5;
   line-height: 1.4285em;
   max-width: 250px;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
   padding: 0.833em 1em;
   font-weight: normal;
   font-style: normal;
@@ -48610,6 +48640,7 @@ a.ui.nag {
 .ui.bottom.left.popup {
   margin-left: 0em;
 }
+/*rtl:rename*/
 .ui.bottom.left.popup:before {
   top: -0.325em;
   left: 1em;
@@ -48621,6 +48652,7 @@ a.ui.nag {
 .ui.bottom.right.popup {
   margin-right: 0em;
 }
+/*rtl:rename*/
 .ui.bottom.right.popup:before {
   top: -0.325em;
   right: 1em;
@@ -48640,6 +48672,7 @@ a.ui.nag {
 .ui.top.left.popup {
   margin-left: 0em;
 }
+/*rtl:rename*/
 .ui.top.left.popup:before {
   bottom: -0.325em;
   left: 1em;
@@ -48650,6 +48683,7 @@ a.ui.nag {
 .ui.top.right.popup {
   margin-right: 0em;
 }
+/*rtl:rename*/
 .ui.top.right.popup:before {
   bottom: -0.325em;
   right: 1em;
@@ -48658,6 +48692,7 @@ a.ui.nag {
   margin-left: 0em;
 }
 /*--- Left Center ---*/
+/*rtl:rename*/
 .ui.left.center.popup:before {
   top: 50%;
   right: -0.325em;
@@ -48667,6 +48702,7 @@ a.ui.nag {
   box-shadow: 1px -1px 0px 0px #bababc;
 }
 /*--- Right Center  ---*/
+/*rtl:rename*/
 .ui.right.center.popup:before {
   top: 50%;
   left: -0.325em;
@@ -48674,6 +48710,28 @@ a.ui.nag {
   right: auto;
   margin-top: -0.325em;
   box-shadow: -1px 1px 0px 0px #bababc;
+}
+/* Arrow Color By Location */
+.ui.bottom.popup:before {
+  background: #FFFFFF;
+}
+.ui.right.center.popup:before,
+.ui.left.center.popup:before {
+  background: #FFFFFF;
+}
+.ui.top.popup:before {
+  background: #FFFFFF;
+}
+/* Inverted Arrow Color */
+.ui.inverted.bottom.popup:before {
+  background: #1B1C1D;
+}
+.ui.inverted.right.center.popup:before,
+.ui.inverted.left.center.popup:before {
+  background: #1B1C1D;
+}
+.ui.inverted.top.popup:before {
+  background: #1B1C1D;
 }
 /*******************************
             Coupling
