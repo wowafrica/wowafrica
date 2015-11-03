@@ -14,7 +14,7 @@ export default React.createClass({
                 wowAfrica 阿非卡為台灣最完整的非洲資訊平台 最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。
               </div>
             </div>
-            <div className="four wide column" style={{color: 'white', backgroundColor: '#BE3333'}}>
+            <div className="four wide column" style={{color: 'white', backgroundColor: '#BF3333'}}>
               <div className="footer-box">
                 關於 wowAfrica
                 <div>
@@ -23,9 +23,6 @@ export default React.createClass({
                   </a>
                 </div>
                 <div>
-                  <a href="/about_authors" onClick={this._onClick}>
-                    聯絡我們
-                  </a>
                 </div>
                 <div style={{paddingTop: '10px'}}>
                   <a href="mailto:lighteningdark2014@gmail.com" target="_blank">
@@ -46,7 +43,7 @@ export default React.createClass({
                 <div className="ui mini input">
                   <input id="emailInput" type="text" placeholder="Email"/>
                 </div>
-                <button id="emailBtn" className="ui button" onClick={this._onSubBtnClick}style={{backgroundColor: '#BE3333', color: 'white'}}>
+                <button id="emailBtn" className="ui button" onClick={this._onSubBtnClick}style={{backgroundColor: '#BF3333', color: 'white'}}>
                   訂閱
                 </button>
               </div>
