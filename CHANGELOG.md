@@ -1,12 +1,10 @@
 <a name="0.4.9"></a>
-## [0.4.9](//compare/v0.4.7...v0.4.9) (2015-11-03)
+## [0.4.9](//compare/v0.4.8...v0.4.9) (2015-11-05)
 
 
 ### Bug Fixes
 
 * **menu:** Remove empty page link 27897fc
-* **postList:** Fix image url parser 30100f6
-* **postList:** post without category tag could also be showed in top article block 778e287
 
 
 
