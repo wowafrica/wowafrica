@@ -1,35 +1,26 @@
-import express    from 'express';
-import path       from 'path';
-import React      from 'react';
-import RouteStore from '../src/stores/RouteStore';
+import express     from 'express';
+import path        from 'path';
+import React       from 'react';
+import connectLive from 'connect-livereload';
+import RouteStore  from '../src/stores/RouteStore';
 
 let app = express();
 
-app.use(express.static(path.resolve('_public')));
+let BUILD_PATH = '_public';
+
+app.use(connectLive());
+app.use(express.static(path.resolve(BUILD_PATH)));
 
 app.all('*', (req, res) => {
-  RouteStore.onReceiveUpdatePath(req.url);
-  let {config} = RouteStore.getCurrentRoute();
-  let CurrentPage = config['page'];
-  let html = React.renderToString(<CurrentPage/>);
-  res.write(`
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>WOW! AFRICA</title>
-    <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
-  </head>
-  <body>
-    <div id="content">${html}</div>
-    <div id="nation_modal" class="ui dimmer modals page"></div>
-    <script type="text/javascript" src="/scripts/vendor.js"></script>
-    <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
-    <script type="text/javascript" src="/scripts/bundle.js"></script>
-  </body>
-</html>`);
-  res.end();
+  console.log('URL:' + req.url);
+
+  if (req.url.startsWith('/view_post_list/posts/')) {
+    let postId = req.url.split('/')[3];
+    res.sendFile(
+      path.resolve(`${BUILD_PATH}/view_post_list/posts/${postId}.html`));
+  } else {
+    res.sendFile(path.resolve(`${BUILD_PATH}/index.html`));
+  }
 });
 
 app.listen(3000, () => {
