@@ -158,6 +158,8 @@ export default React.createClass({
     let {nation, map} = this.state;
     let {flag='kenya_flag.png', emblem='kenya_svg.png'} = nation;
     // console.log('Modal Show: ' + JSON.stringify(nation));
+    flag = flag === '' ? 'kenya_flag.png' : flag;
+    emblem = emblem === '' ? 'kenya_svg.png' : emblem;
     return (
       <Modal className="long" ref="modal" init={true}>
         <Icon className="close"/>
