@@ -2,28 +2,24 @@ import gulp         from 'gulp';
 import autoprefixer from 'gulp-autoprefixer';
 import concat       from 'gulp-concat';
 import gutil        from 'gulp-util';
-import livereload   from 'gulp-livereload';
 import less         from 'gulp-less';
+import livereload   from 'gulp-livereload';
 import jade         from 'gulp-jade';
 import plumber      from 'gulp-plumber';
 import uglify       from 'gulp-uglify';
 import gulpif       from 'gulp-if';
 import shell        from 'gulp-shell';
+import nodemon      from 'gulp-nodemon';
 
 import del         from 'del';
-import express     from 'express';
-import liveConnect from 'connect-livereload';
-import path        from 'path';
+import livereact   from 'livereactload';
+import watchify    from 'watchify';
 
 import source     from 'vinyl-source-stream';
 import buffer     from 'vinyl-buffer';
 import browserify from 'browserify';
 import babelify   from 'babelify';
 
-import RouteStore from './src/stores/RouteStore';
-import React      from 'react';
-
-let app        = express();
 let BUILD_PATH = './_public';
 let production = false;
 
@@ -61,14 +57,12 @@ gulp.task('jade', () => {
 
 gulp.task('ico', () => {
   return gulp.src('./client/views/*.ico')
-    .pipe(gulp.dest(BUILD_PATH))
-    .pipe(livereload());
+    .pipe(gulp.dest(BUILD_PATH));
 });
 
 gulp.task('images', () => {
   return gulp.src('./client/images/**/*')
-    .pipe(gulp.dest(`${BUILD_PATH}/images/`))
-    .pipe(livereload());
+    .pipe(gulp.dest(`${BUILD_PATH}/images/`));
 });
 
 gulp.task('data', () => {
@@ -113,38 +107,62 @@ gulp.task('browserify-dependencies', () => {
     .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
 });
 
+let bundler = browserify('./client/scripts/index.js', {
+  transform: [[babelify, {stage: 0}]],
+  plugin: production ? [] : [livereact],
+  debug: !production,
+  fullPaths: !production
+});
+
 gulp.task('browserify', () => {
-  return browserify('./client/scripts/index.js')
+  return bundler
     .external(dependencies)
-    .transform(babelify.configure({stage: 0}))
     .bundle()
     .pipe(source('bundle.js'))
     .pipe(gulpif(production, buffer()))
     .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`))
-    .pipe(livereload());
+    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
 });
 
-gulp.task('server', (done) => {
-  app.use(liveConnect());
-  app.use(express.static(path.resolve(BUILD_PATH)));
+gulp.task('watch-js', () => {
+  let watcher = watchify(bundler);
+  return watcher
+    .on('error', gutil.log)
+    .on('update', () => {
+      gutil.log('Update JS bundle');
+      watcher
+        .external(dependencies)
+        .bundle()
+        .on('error', gutil.log)
+        .pipe(source('bundle.js'))
+        .pipe(gulpif(production, buffer()))
+        .pipe(gulpif(production, uglify()))
+        .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
+    });
+});
 
-  app.all('*', (req, res) => {
-    gutil.log('URL: ', gutil.colors.yellow(req.url));
+gulp.task('watch-server', () => {
 
-    if (req.url.startsWith('/view_post_list/posts/')) {
-      let postId = req.url.split('/')[3];
-      console.log(postId);
-      res.sendFile(
-        path.resolve(`${BUILD_PATH}/view_post_list/posts/${postId}.html`));
-    } else {
-      res.sendFile(path.resolve(`${BUILD_PATH}/index.html`));
+  let serverIgnoreJS = [
+    'node_modules/*',
+    'client/*',
+    'server/staticGenerator.js',
+    'src/*',
+    '_public/*',
+    'gulpfile.babel.js',
+    'karma.config.js'
+  ];
+
+  nodemon({
+    script: 'server/server.js',
+    ext: 'js',
+    exec: 'babel-node',
+    ignore: serverIgnoreJS
+  }).on('change')
+    .on('resatrt', () => {
+      gutil.log('Server restarted');
     }
-  });
-  app.listen(3000, () => {
-    gutil.log('Listening on port 3000');
-    done();
-  });
+  );
 });
 
 gulp.task('clean-build', () => {
@@ -159,17 +177,14 @@ gulp.task('clean-all', ['clean-build'], () => {
   ]);
 });
 
-gulp.task('watch', (done) => {
+gulp.task('watch', () => {
   livereload.listen({start: true});
   gulp.watch('./client/views/*.jade', ['jade']);
   gulp.watch('./client/styles/**/*', ['styles']);
   gulp.watch('./client/data/**/*', ['data']);
-  gulp.watch('./client/scripts/**/*', ['browserify']);
-  gulp.watch('./src/**/*', ['browserify']);
-  done();
 });
 
 gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
 gulp.task('build', ['jade', 'ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
-gulp.task('dev', ['build', 'server', 'watch']);
+gulp.task('dev', ['build', 'watch-server', 'watch', 'watch-js']);
 gulp.task('default', ['build']);
