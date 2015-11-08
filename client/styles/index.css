@@ -333,6 +333,16 @@ body {
   max-width: 100%;
 }
 
+#contactForm #submitBtn {
+  width: 80px;
+  color: white;
+  background-color: #606263;
+}
+
+#contactForm #submitBtn:hover {
+  background-color: #BF3333;
+}
+
 .footer {
   font-size: 20px;
   letter-spacing: 4px;
@@ -341,11 +351,11 @@ body {
   color: #606263;
 }
 
-.footer a:visited{
+.footer a:visited {
   color: #606263;
 }
 
-.footer a{
+.footer a {
   color: #606263;
 }
 
@@ -354,12 +364,56 @@ body {
   padding: 5rem 2rem 0 2rem;
 }
 
-.footer-box a{
+.footer-box a {
   color: white;
 }
 
-.footer-box a:visited{
+.footer-box a:visited {
   color: white;
+}
+
+.footer-icon-groups {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-icon {
+  width: 50px;
+  height: 50px;
+  border: thin solid white;
+  margin: 3px;
+  background-size: cover;
+}
+
+.footer-icon.footer-icon-mail {
+  background-image: url(/images/rb_mail.png);
+}
+.footer-icon.footer-icon-mail:hover {
+  background-image: url(/images/wb_mail.png);
+}
+
+.footer-icon.footer-icon-tumblr {
+  background-image: url(/images/rb_tumblr.png);
+}
+.footer-icon.footer-icon-tumblr:hover {
+  background-image: url(/images/wb_tumblr.png);
+}
+
+.footer-icon.footer-icon-facebook {
+  background-image: url(/images/rb_facebook.png);
+}
+.footer-icon.footer-icon-facebook:hover {
+  background-image: url(/images/wb_facebook.png);
+}
+
+#footer-emailBtn {
+  color: white;
+  background-color: #606263;
+}
+
+#footer-emailBtn:hover {
+  background-color: #BF3333;
 }
 
 .ui.segment {

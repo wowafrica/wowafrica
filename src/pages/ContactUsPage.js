@@ -66,7 +66,7 @@ export default React.createClass({
                 <div className="ui grid">
                   <div className="nine wide column"/>
                   <div className="two wide column">
-                    <div id="submitBtn" onClick={this._onSubBtnClick} className="ui submit button" style={{width: '80px', color: 'white', backgroundColor: '#BF3333'}}>
+                    <div id="submitBtn" onClick={this._onSubBtnClick} className="ui submit button" style={{}}>
                       發送
                     </div>
                   </div>

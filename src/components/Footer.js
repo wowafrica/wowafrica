@@ -29,15 +29,15 @@ export default React.createClass({
                 </div>
                 <div>
                 </div>
-                <div style={{paddingTop: '10px'}}>
+                <div className="footer-icon-groups">
                   <a href="mailto:lighteningdark2014@gmail.com" target="_blank">
-                    <img src="/images/rb_mail.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                    <div className="footer-icon footer-icon-mail"/>
                   </a>
                   <a href="http://wowafrica.tumblr.com/" target="_blank">
-                    <img src="/images/rb_tumblr.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                    <div className="footer-icon footer-icon-tumblr"/>
                   </a>
                   <a href="https://www.facebook.com/wowafrica.tw/" target="_blank">
-                    <img src="/images/rb_facebook.png" style={{width: '50px', border: 'thin solid white', margin: '3px'}}/>
+                    <div className="footer-icon footer-icon-facebook"/>
                   </a>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export default React.createClass({
                   <div className="ui error message" style={{fontSize: '14px'}}>
                     oops! 現在有些問題，請稍候再試
                   </div>
-                  <div id="emailBtn" className="ui submit button" onClick={this._onSubBtnClick} style={{backgroundColor: '#BF3333', color: 'white'}}>
+                  <div id="footer-emailBtn" className="ui submit button" onClick={this._onSubBtnClick}>
                     訂閱
                   </div>
                 </div>
@@ -73,20 +73,20 @@ export default React.createClass({
 
   _onSubBtnClick(e) {
     $('#emailForm').removeClass('error');
-    $('#emailBtn').removeClass('button').addClass('loading button');
+    $('#footer-emailBtn').removeClass('button').addClass('loading button');
     let request = $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbzuOLvCRul3ZAzNl3kp9nPihUQ_iowpjB-Uf1nwuvhY9Q5lODI/exec',
       type: 'post',
       data: {'email': $('#emailInput')[0].value}
     })
     .done(function(data) {
-      $('#emailBtn').text('完成!');
+      $('#footer-emailBtn').text('完成!');
     })
     .fail(function(data) {
       $('#emailForm').addClass('error');
     })
     .always(function() {
-      $('#emailBtn').removeClass('loading button').addClass('button');
+      $('#footer-emailBtn').removeClass('loading button').addClass('button');
     });
   }
 });
