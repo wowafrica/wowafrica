@@ -11,7 +11,7 @@ export default React.createClass({
           <div className="ui grid">
             <div className="seven wide column">
               <div className="footer-box" style={{fontSize: '18px', paddingTop: '3rem'}}>
-                wowAfrica 阿非卡為台灣最完整的非洲資訊平台 最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。
+                wowAfrica 阿非卡為台灣最完整的非洲資訊平台，我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。
               </div>
             </div>
             <div className="four wide column" style={{color: 'white', backgroundColor: '#BF3333'}}>
@@ -45,7 +45,7 @@ export default React.createClass({
             <div className="five wide column">
               <div className="footer-box">
                 最新資訊及活動通知
-                <div id="emailForm" className="ui form">
+                <div id="emailForm" className="ui form" style={{paddingTop: '8px'}}>
                   <div className="field">
                     <input id="emailInput" type="email" placeholder="Email"/>
                   </div>
