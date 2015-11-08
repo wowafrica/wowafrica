@@ -3,5 +3,6 @@ export default {
   NATION_LOAD_DATA: 11,
 
   NATION_SHOW_EVENT: 'NATION_SHOW_EVENT',
+  NATION_AREA_EVENT: 'NATION_AREA_EVENT',
   NATION_URL: '/data/nations.json'
 };
