@@ -44,14 +44,12 @@ class MapStore extends EventEmitter {
       if (err) {
         console.log('Cannot get Africa geoJson');
       } else {
-        console.log('Get!!!');
         this.geoJson.features = res.body.features;
       }
       request.get(MapConfig.areaUrl).end((err, res) => {
         if (err) {
           console.log('Cannot Get Africa area');
         } else {
-          console.log('Get Area!!');
           this.geoJson.area = res.body;
         }
         this.emitChange();

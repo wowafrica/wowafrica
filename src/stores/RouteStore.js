@@ -43,8 +43,8 @@ class RouteStore extends EventEmitter {
   onReceiveUpdatePath(pathName, hash) {
     this.currentRoute = this.routeHandler.getRoute(pathName);
     this.currentHash = (typeof hash !== 'undefined') ? hash.substring(1) : '';
-    console.log('currentRoute');
-    console.log(this.currentRoute);
+    // console.log('currentRoute');
+    // console.log(this.currentRoute);
     this.emitChange();
   }
 

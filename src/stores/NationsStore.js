@@ -63,7 +63,6 @@ class NationsStore extends EventEmitter {
       if (err) {
         console.log('Cannot get Nation json');
       } else {
-        console.log('Get!!!');
         this.nations = res.body;
       }
     });
