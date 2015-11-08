@@ -23,6 +23,11 @@ export default React.createClass({
                   </a>
                 </div>
                 <div>
+                  <a href="/contact_us" onClick={this._onClick}>
+                     聯絡我們
+                  </a>
+                </div>
+                <div>
                 </div>
                 <div style={{paddingTop: '10px'}}>
                   <a href="mailto:lighteningdark2014@gmail.com" target="_blank">
@@ -40,12 +45,17 @@ export default React.createClass({
             <div className="five wide column">
               <div className="footer-box">
                 最新資訊及活動通知
-                <div className="ui mini input">
-                  <input id="emailInput" type="text" placeholder="Email"/>
+                <div id="emailForm" className="ui form">
+                  <div className="field">
+                    <input id="emailInput" type="email" placeholder="Email"/>
+                  </div>
+                  <div className="ui error message" style={{fontSize: '14px'}}>
+                    oops! 現在有些問題，請稍候再試
+                  </div>
+                  <div id="emailBtn" className="ui submit button" onClick={this._onSubBtnClick} style={{backgroundColor: '#BF3333', color: 'white'}}>
+                    訂閱
+                  </div>
                 </div>
-                <button id="emailBtn" className="ui button" onClick={this._onSubBtnClick}style={{backgroundColor: '#BF3333', color: 'white'}}>
-                  訂閱
-                </button>
               </div>
             </div>
           </div>
@@ -62,11 +72,21 @@ export default React.createClass({
   },
 
   _onSubBtnClick(e) {
+    $('#emailForm').removeClass('error');
+    $('#emailBtn').removeClass('button').addClass('loading button');
     let request = $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbzuOLvCRul3ZAzNl3kp9nPihUQ_iowpjB-Uf1nwuvhY9Q5lODI/exec',
       type: 'post',
-      data: {email: $('#emailInput')[0].value}
+      data: {'email': $('#emailInput')[0].value}
+    })
+    .done(function(data) {
+      $('#emailBtn').text('完成!');
+    })
+    .fail(function(data) {
+      $('#emailForm').addClass('error');
+    })
+    .always(function() {
+      $('#emailBtn').removeClass('loading button').addClass('button');
     });
-    $('#emailBtn')[0].innerText = '完成!';
   }
 });
