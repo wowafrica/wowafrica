@@ -1,14 +1,24 @@
 import {EventEmitter} from 'events';
 import request        from 'superagent';
 import MapConstants   from '../constants/MapConstants';
-import RouteConstants  from '../constants/RouteConstants';
-import AppDispatcher   from '../dispatcher/AppDispatcher';
+import MapConfig      from '../configures/MapConfig';
+import RouteConstants from '../constants/RouteConstants';
+import AppDispatcher  from '../dispatcher/AppDispatcher';
 
 class MapStore extends EventEmitter {
 
   constructor() {
     super();
-    this.geoJson = {features: []};
+    this.geoJson = {
+      features: [],
+      area: {
+        CentralAfrica: {},
+        EastAfrica: {},
+        NorthAfrica: {},
+        SouthernAfrica: {},
+        WestAfrica: {}
+      }
+    };
   }
 
   getAll() {
@@ -30,14 +40,20 @@ class MapStore extends EventEmitter {
   }
 
   loadMapData() {
-    request.get(MapConstants.MAP_URL).end((err, res) => {
+    request.get(MapConfig.contryUrl).end((err, res) => {
       if (err) {
         console.log('Cannot get Africa geoJson');
       } else {
-        console.log('Get!!!');
-        this.geoJson = res.body;
+        this.geoJson.features = res.body.features;
       }
-      this.emitChange();
+      request.get(MapConfig.areaUrl).end((err, res) => {
+        if (err) {
+          console.log('Cannot Get Africa area');
+        } else {
+          this.geoJson.area = res.body;
+        }
+        this.emitChange();
+      });
     });
   }
 

@@ -63,7 +63,6 @@ class NationsStore extends EventEmitter {
       if (err) {
         console.log('Cannot get Nation json');
       } else {
-        console.log('Get!!!');
         this.nations = res.body;
       }
     });
@@ -79,6 +78,14 @@ class NationsStore extends EventEmitter {
 
   removeShowListener(listener) {
     this.removeListener(NationConstants.NATION_SHOW_EVENT, listener);
+  }
+
+  addAreaListener(listener) {
+    this.on(NationConstants.NATION_AREA_EVENT, listener);
+  }
+
+  removeShowListener(listener) {
+    this.removeListener(NationConstants.NATION_AREA_EVENT, listener);
   }
 }
 
