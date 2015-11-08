@@ -2846,7 +2846,7 @@ input::selection {
       -ms-user-select: none;
           user-select: none;
   -webkit-transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
-          transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+  transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
   will-change: '';
   -webkit-tap-highlight-color: transparent;
 }
@@ -2917,7 +2917,7 @@ input::selection {
   opacity: 1;
   pointer-events: auto;
   -webkit-transition: all 0s linear, opacity 0.1s ease;
-          transition: all 0s linear, opacity 0.1s ease;
+  transition: all 0s linear, opacity 0.1s ease;
 }
 .ui.loading.button:before {
   position: absolute;
@@ -3024,7 +3024,7 @@ input::selection {
 .ui.animated.button .visible.content,
 .ui.animated.button .hidden.content {
   -webkit-transition: right 0.3s ease 0s;
-          transition: right 0.3s ease 0s;
+  transition: right 0.3s ease 0s;
 }
 .ui.animated.button .visible.content {
   left: auto;
@@ -3050,7 +3050,9 @@ input::selection {
 .ui.vertical.animated.button .visible.content,
 .ui.vertical.animated.button .hidden.content {
   -webkit-transition: top 0.3s ease, -webkit-transform 0.3s ease;
-          transition: top 0.3s ease, transform 0.3s ease;
+  transition: top 0.3s ease, -webkit-transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease;
+  transition: top 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .ui.vertical.animated.button .visible.content {
   -webkit-transform: translateY(0%);
@@ -3079,7 +3081,9 @@ input::selection {
 .ui.fade.animated.button .visible.content,
 .ui.fade.animated.button .hidden.content {
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
-          transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .ui.fade.animated.button .visible.content {
   left: auto;
@@ -3365,7 +3369,7 @@ input::selection {
   opacity: 0.8;
   margin: 0em 0.42857143em 0em -0.21428571em;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
   vertical-align: '';
   color: '';
 }
@@ -11161,7 +11165,7 @@ i.link.icon {
   cursor: pointer;
   opacity: 0.8;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 i.link.icon:hover {
   opacity: 1 !important;
@@ -15138,7 +15142,7 @@ img.ui.bordered.image {
   color: rgba(0, 0, 0, 0.87);
   border-radius: 0.28571429rem;
   -webkit-transition: box-shadow 0.1s ease, border-color 0.1s ease;
-          transition: box-shadow 0.1s ease, border-color 0.1s ease;
+  transition: box-shadow 0.1s ease, border-color 0.1s ease;
   box-shadow: none;
 }
 /*--------------------
@@ -15316,7 +15320,7 @@ img.ui.bordered.image {
   opacity: 0.5;
   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
   -webkit-transition: opacity 0.3s ease;
-          transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 .ui.icon.input > i.icon:not(.link) {
   pointer-events: none;
@@ -16267,7 +16271,7 @@ img.ui.bordered.image {
   border: 0px solid transparent;
   border-radius: 0.28571429rem;
   -webkit-transition: background 0.1s ease;
-          transition: background 0.1s ease;
+  transition: background 0.1s ease;
 }
 .ui.label:first-child {
   margin-left: 0em;
@@ -16285,7 +16289,7 @@ a.ui.label {
   color: inherit;
   opacity: 0.5;
   -webkit-transition: 0.1s opacity ease;
-          transition: 0.1s opacity ease;
+  transition: 0.1s opacity ease;
 }
 .ui.label > a:hover {
   opacity: 1;
@@ -16321,7 +16325,7 @@ a.ui.label {
   font-size: 0.92857143em;
   opacity: 0.5;
   -webkit-transition: background 0.1s ease;
-          transition: background 0.1s ease;
+  transition: background 0.1s ease;
 }
 .ui.label > .delete.icon:hover {
   opacity: 1;
@@ -16400,7 +16404,7 @@ a.ui.label {
   padding-right: 1.5em;
   border-radius: 0em 0.28571429rem 0.28571429rem 0em;
   -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 .ui.tag.labels .label:before,
 .ui.tag.label:before {
@@ -16416,7 +16420,7 @@ a.ui.label {
   width: 1.56em;
   height: 1.56em;
   -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 .ui.tag.labels .label:after,
 .ui.tag.label:after {
@@ -16446,7 +16450,7 @@ a.ui.label {
   height: 4em;
   z-index: 1;
   -webkit-transition: border-color 0.1s ease;
-          transition: border-color 0.1s ease;
+  transition: border-color 0.1s ease;
 }
 /* Icon Label */
 .ui.corner.label {
@@ -16467,7 +16471,7 @@ a.ui.label {
   border-left: 0em solid transparent;
   border-right-color: inherit;
   -webkit-transition: border-color 0.1s ease;
-          transition: border-color 0.1s ease;
+  transition: border-color 0.1s ease;
 }
 .ui.corner.label .icon {
   cursor: default;
@@ -17244,7 +17248,7 @@ a.ui.basic.label:hover {
   width: 0.6666em;
   height: 0.6666em;
   -webkit-transition: background 0.1s ease;
-          transition: background 0.1s ease;
+  transition: background 0.1s ease;
 }
 /*--- Above ---*/
 .ui.pointing.label,
@@ -18161,7 +18165,7 @@ ol.ui.list ol li,
   padding-right: 0.28571429em;
   vertical-align: top;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.list .list > .item > i.icon:only-child,
 .ui.list > .item > i.icon:only-child {
@@ -18430,7 +18434,7 @@ ol.ui.list ol li,
 .ui.link.list .item a:not(.ui) {
   color: rgba(0, 0, 0, 0.4);
   -webkit-transition: 0.1s color ease;
-          transition: 0.1s color ease;
+  transition: 0.1s color ease;
 }
 .ui.link.list a.item:hover,
 .ui.link.list .item a:not(.ui):hover {
@@ -18474,7 +18478,7 @@ ol.ui.list ol li,
   color: rgba(0, 0, 0, 0.4);
   border-radius: 0.5em;
   -webkit-transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
-          transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
+  transition: 0.1s color ease, 0.1s padding-left ease, 0.1s background-color ease;
 }
 .ui.selection.list .list > .item:last-child,
 .ui.selection.list > .item:last-child {
@@ -18528,7 +18532,7 @@ ol.ui.list ol li,
 --------------------*/
 .ui.animated.list > .item {
   -webkit-transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s, 0.25s background-color ease 0.1s;
-          transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s, 0.25s background-color ease 0.1s;
+  transition: 0.25s color ease 0.1s, 0.25s padding-left ease 0.1s, 0.25s background-color ease 0.1s;
 }
 .ui.animated.list:not(.horizontal) > .item:hover {
   padding-left: 1em;
@@ -21156,7 +21160,7 @@ ol.ui.horizontal.list li:before,
   left: 0em !important;
   z-index: 3 !important;
   -webkit-transition: all 0.5s ease 0.1s;
-          transition: all 0.5s ease 0.1s;
+  transition: all 0.5s ease 0.1s;
 }
 .ui.reveal > .hidden.content {
   position: relative !important;
@@ -21184,7 +21188,9 @@ ol.ui.horizontal.list li:before,
   float: left;
   margin: 0em;
   -webkit-transition: -webkit-transform 0.5s ease 0.1s;
-          transition: transform 0.5s ease 0.1s;
+  transition: -webkit-transform 0.5s ease 0.1s;
+  transition: transform 0.5s ease 0.1s;
+  transition: transform 0.5s ease 0.1s, -webkit-transform 0.5s ease 0.1s;
 }
 .ui.slide.reveal > .visible.content {
   position: relative !important;
@@ -21288,7 +21294,9 @@ ol.ui.horizontal.list li:before,
   float: left;
   margin: 0em;
   -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s;
-          transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s;
+  transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s, -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1) 0.1s;
 }
 .ui.move.reveal > .visible.content {
   position: relative !important;
@@ -22429,7 +22437,7 @@ ol.ui.horizontal.list li:before,
   text-shadow: none !important;
   color: transparent !important;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear;
+  transition: all 0s linear;
 }
 .ui.loading.segment:before {
   position: absolute;
@@ -23466,7 +23474,7 @@ ol.ui.horizontal.list li:before,
   border: none;
   border-right: 1px solid rgba(34, 36, 38, 0.15);
   -webkit-transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
-          transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+  transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
 }
 /* Arrow */
 .ui.steps .step:after {
@@ -23484,7 +23492,7 @@ ol.ui.horizontal.list li:before,
   border-color: rgba(34, 36, 38, 0.15);
   border-width: 0px 1px 1px 0px;
   -webkit-transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
-          transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+  transition: background-color 0.1s ease, opacity 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
   -webkit-transform: translateY(-50%) translateX(50%) rotate(-45deg);
       -ms-transform: translateY(-50%) translateX(50%) rotate(-45deg);
           transform: translateY(-50%) translateX(50%) rotate(-45deg);
@@ -25441,7 +25449,7 @@ ol.ui.horizontal.list li:before,
   border-radius: 0.28571429rem;
   box-shadow: 0em 0em 0em 0em transparent inset;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
-          transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
 }
 /* Text Area */
 .ui.form textarea {
@@ -25456,7 +25464,7 @@ ol.ui.horizontal.list li:before,
   border-radius: 0.28571429rem;
   box-shadow: 0em 0em 0em 0em transparent inset;
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
-          transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
   font-size: 1em;
   line-height: 1.2857;
   resize: vertical;
@@ -25490,7 +25498,7 @@ ol.ui.horizontal.list li:before,
   padding: 0.62em 1em;
   color: rgba(0, 0, 0, 0.87);
   -webkit-transition: color 0.1s ease, border-color 0.1s ease;
-          transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
 }
 /*--------------------
        Dropdown
@@ -25867,7 +25875,7 @@ ol.ui.horizontal.list li:before,
   text-shadow: none !important;
   color: transparent !important;
   -webkit-transition: all 0s linear;
-          transition: all 0s linear;
+  transition: all 0s linear;
   z-index: 100;
 }
 .ui.loading.form:before {
@@ -29671,7 +29679,7 @@ ol.ui.horizontal.list li:before,
   color: rgba(0, 0, 0, 0.87);
   font-weight: normal;
   -webkit-transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
-          transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
 }
 .ui.menu > .item:first-child {
   border-radius: 0.28571429rem 0px 0px 0.28571429rem;
@@ -29817,7 +29825,7 @@ ol.ui.horizontal.list li:before,
   font-weight: normal !important;
   box-shadow: none !important;
   -webkit-transition: none !important;
-          transition: none !important;
+  transition: none !important;
 }
 .ui.menu .ui.dropdown .menu > .item:hover {
   background: rgba(0, 0, 0, 0.05) !important;
@@ -30303,7 +30311,7 @@ Floated Menu / Item
   margin: 0em 0.35714286em;
   background: none;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
   border-radius: 0.28571429rem;
 }
 /* No Divider */
@@ -30412,7 +30420,7 @@ Floated Menu / Item
   padding: 0.85714286em 1.14285714em;
   border-bottom-width: 2px;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 /* Item Types */
 .ui.secondary.pointing.menu .header.item {
@@ -30518,7 +30526,7 @@ Floated Menu / Item
   font-weight: normal;
   color: rgba(0, 0, 0, 0.6);
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 /* Border */
 .ui.text.menu .item:before,
@@ -31191,7 +31199,7 @@ Floated Menu / Item
   border-right: 1px solid #D4D4D5;
   z-index: 2;
   -webkit-transition: background 0.1s ease;
-          transition: background 0.1s ease;
+  transition: background 0.1s ease;
 }
 .ui.vertical.pointing.menu .item:after {
   position: absolute;
@@ -31986,7 +31994,7 @@ Floated Menu / Item
   line-height: 1.4285em;
   color: rgba(0, 0, 0, 0.87);
   -webkit-transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
-          transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
+  transition: opacity 0.1s ease, color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
   border-radius: 0.28571429rem;
   box-shadow: 0px 0px 0px 1px rgba(34, 36, 38, 0.22) inset, 0px 0px 0px 0px rgba(0, 0, 0, 0);
 }
@@ -32067,7 +32075,7 @@ Floated Menu / Item
   right: 0.5em;
   opacity: 0.7;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 .ui.message > .close.icon:hover {
   opacity: 1;
@@ -33093,7 +33101,7 @@ Floated Menu / Item
 .ui.table th,
 .ui.table td {
   -webkit-transition: background 0.1s ease, color 0.1s ease;
-          transition: background 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease, color 0.1s ease;
 }
 /* Headers */
 .ui.table thead {
@@ -35550,7 +35558,9 @@ Floated Menu / Item
   border-radius: 0.28571429rem;
   box-shadow: 0px 1px 3px 0px #D4D4D5, 0px 0px 0px 1px #D4D4D5;
   -webkit-transition: box-shadow 0.1s ease, -webkit-transform 0.1s ease;
-          transition: box-shadow 0.1s ease, transform 0.1s ease;
+  transition: box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+  transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-transform 0.1s ease;
   z-index: '';
 }
 .ui.card {
@@ -35781,7 +35791,7 @@ Floated Menu / Item
 .ui.card > .content a:not(.ui) {
   color: '';
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.cards > .card > .content a:not(.ui):hover,
 .ui.card > .content a:not(.ui):hover {
@@ -35833,7 +35843,7 @@ Floated Menu / Item
   cursor: pointer;
   opacity: 0.75;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.cards > .card > .content .star.icon:hover,
 .ui.card > .content .star.icon:hover {
@@ -35851,7 +35861,7 @@ Floated Menu / Item
   cursor: pointer;
   opacity: 0.75;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.cards > .card > .content .like.icon:hover,
 .ui.card > .content .like.icon:hover {
@@ -35884,7 +35894,7 @@ Floated Menu / Item
   color: rgba(0, 0, 0, 0.4);
   box-shadow: none;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.cards > .card > .extra a:not(.ui),
 .ui.card > .extra a:not(.ui) {
@@ -37213,7 +37223,7 @@ a.ui.card:hover,
   right: 0px;
   left: auto;
   -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
 }
@@ -38109,7 +38119,7 @@ a.ui.card:hover,
 .ui.feed > .event > .content .meta .like {
   color: '';
   -webkit-transition: 0.2s color ease;
-          transition: 0.2s color ease;
+  transition: 0.2s color ease;
 }
 .ui.feed > .event > .content .meta .like:hover .icon {
   color: #FF2733;
@@ -38131,7 +38141,7 @@ a.ui.card:hover,
   opacity: 1;
   color: rgba(0, 0, 0, 0.5);
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.feed > .event > .content .meta a:hover,
 .ui.feed > .event > .content .meta a:hover .icon,
@@ -38841,7 +38851,7 @@ a.ui.card:hover,
   border-radius: 0rem;
   box-shadow: none;
   -webkit-transition: box-shadow 0.1s ease;
-          transition: box-shadow 0.1s ease;
+  transition: box-shadow 0.1s ease;
   z-index: '';
 }
 .ui.items > .item a {
@@ -39019,7 +39029,7 @@ a.ui.card:hover,
 .ui.items > .item > .content a:not(.ui) {
   color: '';
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.items > .item > .content a:not(.ui):hover {
   color: '';
@@ -39047,7 +39057,7 @@ a.ui.card:hover,
   cursor: pointer;
   opacity: 0.75;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.items > .item > .content .favorite.icon:hover {
   opacity: 1;
@@ -39062,7 +39072,7 @@ a.ui.card:hover,
   cursor: pointer;
   opacity: 0.75;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 .ui.items > .item > .content .like.icon:hover {
   opacity: 1;
@@ -39086,7 +39096,7 @@ a.ui.card:hover,
   color: rgba(0, 0, 0, 0.4);
   box-shadow: none;
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
   border-top: none;
 }
 .ui.items > .item .extra > * {
@@ -41103,8 +41113,10 @@ a.ui.card:hover,
   margin: 0em 0.25rem 0em 0rem;
   padding: 0em;
   font-size: 1em;
-  -webkit-transition: -webkit-transform 0.1s ease, opacity 0.1s ease;
-          transition: transform 0.1s ease, opacity 0.1s ease;
+  -webkit-transition: opacity 0.1s ease, -webkit-transform 0.1s ease;
+  transition: opacity 0.1s ease, -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+  transition: transform 0.1s ease, opacity 0.1s ease, -webkit-transform 0.1s ease;
   vertical-align: baseline;
   -webkit-transform: none;
       -ms-transform: none;
@@ -41167,7 +41179,7 @@ a.ui.card:hover,
   font-weight: bold;
   border-top: 1px solid rgba(34, 36, 38, 0.15);
   -webkit-transition: background 0.1s ease, color 0.1s ease;
-          transition: background 0.1s ease, color 0.1s ease;
+  transition: background 0.1s ease, color 0.1s ease;
 }
 .ui.styled.accordion > .title:first-child,
 .ui.styled.accordion .accordion .title:first-child {
@@ -41979,8 +41991,10 @@ a.ui.card:hover,
   content: '';
   background: #FFFFFF;
   border-radius: 0.21428571rem;
-  -webkit-transition: border 0.1s ease, opacity 0.1s ease, -webkit-transform 0.1s ease, box-shadow 0.1s ease;
-          transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  -webkit-transition: border 0.1s ease, opacity 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
   border: 1px solid #D4D4D5;
 }
 /*--------------
@@ -41997,8 +42011,10 @@ a.ui.card:hover,
   text-align: center;
   opacity: 0;
   color: rgba(0, 0, 0, 0.87);
-  -webkit-transition: border 0.1s ease, opacity 0.1s ease, -webkit-transform 0.1s ease, box-shadow 0.1s ease;
-          transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  -webkit-transition: border 0.1s ease, opacity 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  transition: border 0.1s ease, opacity 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease, -webkit-transform 0.1s ease;
 }
 /*--------------
       Label
@@ -42008,7 +42024,7 @@ a.ui.card:hover,
 .ui.checkbox + label {
   color: rgba(0, 0, 0, 0.87);
   -webkit-transition: color 0.1s ease;
-          transition: color 0.1s ease;
+  transition: color 0.1s ease;
 }
 /* Outside */
 .ui.checkbox + label {
@@ -42251,7 +42267,7 @@ a.ui.card:hover,
           transform: none;
   border-radius: 500rem;
   -webkit-transition: background 0.3s ease;
-          transition: background 0.3s ease;
+  transition: background 0.3s ease;
 }
 /* Handle */
 .ui.slider.checkbox .box:after,
@@ -42273,7 +42289,7 @@ a.ui.card:hover,
           transform: none;
   border-radius: 500rem;
   -webkit-transition: left 0.3s ease;
-          transition: left 0.3s ease;
+  transition: left 0.3s ease;
 }
 /* Focus */
 .ui.slider.checkbox input:focus ~ .box:before,
@@ -42367,7 +42383,7 @@ a.ui.card:hover,
   left: 0em;
   border-radius: 500rem;
   -webkit-transition: background 0.3s ease, left 0.3s ease;
-          transition: background 0.3s ease, left 0.3s ease;
+  transition: background 0.3s ease, left 0.3s ease;
 }
 .ui.toggle.checkbox input ~ .box:after,
 .ui.toggle.checkbox input ~ label:after {
@@ -43114,7 +43130,7 @@ a.ui.card:hover,
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
   -webkit-transition: background-color 0.5s linear;
-          transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -43187,8 +43203,8 @@ body.dimmable > .dimmer {
 .blurring.dimmable > :not(.dimmer) {
   -webkit-filter: blur(0px) grayscale(0);
           filter: blur(0px) grayscale(0);
-  -webkit-transition: 800ms -webkit-filter ease, 800ms filter ease;
-          transition: 800ms -webkit-filter ease, 800ms filter ease;
+  -webkit-transition: 800ms filter ease;
+  transition: 800ms filter ease;
 }
 .blurring.dimmed.dimmable > :not(.dimmer) {
   -webkit-filter: blur(5px) grayscale(0.7);
@@ -44009,7 +44025,7 @@ body.dimmable > .dimmer {
   outline: none;
   text-align: left;
   -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
-          transition: box-shadow 0.1s ease, width 0.1s ease;
+  transition: box-shadow 0.1s ease, width 0.1s ease;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 /*******************************
@@ -44037,7 +44053,7 @@ body.dimmable > .dimmer {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0.28571429rem;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
   z-index: 11;
   will-change: transform, opacity;
 }
@@ -44074,7 +44090,7 @@ body.dimmable > .dimmer {
 .ui.dropdown > .text {
   display: inline-block;
   -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 /*--------------
     Menu Item
@@ -44288,6 +44304,7 @@ body.dimmable > .dimmer {
   white-space: normal;
   outline: 0;
   -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotate(0deg);
           transform: rotateZ(0deg);
   min-width: 14em;
   min-height: 2.7142em;
@@ -44299,7 +44316,7 @@ body.dimmable > .dimmer {
   border: 1px solid rgba(34, 36, 38, 0.15);
   border-radius: 0.28571429rem;
   -webkit-transition: box-shadow 0.1s ease, width 0.1s ease;
-          transition: box-shadow 0.1s ease, width 0.1s ease;
+  transition: box-shadow 0.1s ease, width 0.1s ease;
 }
 .ui.selection.dropdown.visible,
 .ui.selection.dropdown.active {
@@ -44324,7 +44341,7 @@ select.ui.dropdown {
   right: 1em;
   opacity: 0.8;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 /* Compact */
 .ui.compact.selection.dropdown {
@@ -44346,7 +44363,7 @@ select.ui.dropdown {
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
   box-shadow: 0px 2px 3px 0px rgba(34, 36, 38, 0.15);
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 .ui.selection.dropdown .menu:after,
 .ui.selection.dropdown .menu:before {
@@ -44712,7 +44729,7 @@ select.ui.dropdown {
 ----------------------*/
 .ui.loading.dropdown > .text {
   -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 /* Used To Check Position */
 .ui.dropdown .loading.menu {
@@ -44960,7 +44977,7 @@ select.ui.dropdown {
   width: 0;
   height: 0;
   -webkit-transition: opacity 0.1s ease;
-          transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
 }
 .ui.simple.active.dropdown,
 .ui.simple.dropdown:hover {
@@ -45939,7 +45956,7 @@ select.ui.dropdown {
   background: radial-gradient(transparent 45%, rgba(0, 0, 0, 0.3));
   opacity: 0.5;
   -webkit-transition: opacity 0.5s ease;
-          transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 .ui.embed > .icon:before {
   position: absolute;
@@ -45953,7 +45970,7 @@ select.ui.dropdown {
   font-size: 6rem;
   text-shadow: 0px 2px 10px rgba(34, 36, 38, 0.2);
   -webkit-transition: opacity 0.5s ease, color 0.5s ease;
-          transition: opacity 0.5s ease, color 0.5s ease;
+  transition: opacity 0.5s ease, color 0.5s ease;
   z-index: 10;
 }
 /*******************************
@@ -47768,7 +47785,7 @@ select.ui.dropdown {
   color: rgba(0, 0, 0, 0.87);
   border-radius: 0em 0em 0.28571429rem 0.28571429rem;
   -webkit-transition: 0.2s background ease;
-          transition: 0.2s background ease;
+  transition: 0.2s background ease;
 }
 a.ui.nag {
   cursor: pointer;
@@ -47788,7 +47805,7 @@ a.ui.nag {
   margin: -0.5em 0em 0em;
   color: #FFFFFF;
   -webkit-transition: opacity 0.2s ease;
-          transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 /*******************************
              States
@@ -49523,7 +49540,7 @@ a.ui.nag {
   background: #888888;
   border-radius: 0.28571429rem;
   -webkit-transition: width 0.1s ease, background-color 0.1s ease;
-          transition: width 0.1s ease, background-color 0.1s ease;
+  transition: width 0.1s ease, background-color 0.1s ease;
 }
 /* Percent Complete */
 .ui.progress .bar > .progress {
@@ -49556,7 +49573,7 @@ a.ui.nag {
   margin-top: 0.2em;
   text-align: center;
   -webkit-transition: color 0.4s ease;
-          transition: color 0.4s ease;
+  transition: color 0.4s ease;
 }
 /*******************************
             Types
@@ -50599,7 +50616,7 @@ a.ui.nag {
   width: 1.25em;
   height: auto;
   -webkit-transition: opacity 0.1s ease, background 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
-          transition: opacity 0.1s ease, background 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
+  transition: opacity 0.1s ease, background 0.1s ease, text-shadow 0.1s ease, color 0.1s ease;
 }
 /*******************************
              Types
@@ -51452,7 +51469,7 @@ a.ui.nag {
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0em 0em 0em 0em transparent inset;
   -webkit-transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
-          transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
+  transition: background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease;
 }
 .ui.search .prompt {
   border-radius: 500rem;
@@ -51657,7 +51674,7 @@ a.ui.nag {
   box-shadow: none;
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
   -webkit-transition: background 0.1s ease, border-color 0.1s ease;
-          transition: background 0.1s ease, border-color 0.1s ease;
+  transition: background 0.1s ease, border-color 0.1s ease;
 }
 /* Last Category */
 .ui.category.search > .results .category:last-child {
@@ -51677,7 +51694,7 @@ a.ui.nag {
   border-left: 1px solid rgba(34, 36, 38, 0.15);
   border-bottom: 1px solid rgba(34, 36, 38, 0.1);
   -webkit-transition: background 0.1s ease, border-color 0.1s ease;
-          transition: background 0.1s ease, border-color 0.1s ease;
+  transition: background 0.1s ease, border-color 0.1s ease;
   padding: 0.85714286em 1.14285714em;
 }
 .ui.category.search > .results .category:last-child .result:last-child {
@@ -52377,8 +52394,10 @@ a.ui.nag {
   display: inline-block;
   -webkit-perspective: 2000px;
           perspective: 2000px;
-  -webkit-transition: -webkit-transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
-          transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
+  -webkit-transition: left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 .ui.shape .sides {
   -webkit-transform-style: preserve-3d;
@@ -52467,12 +52486,14 @@ a.ui.nag {
   position: absolute;
 }
 .ui.shape.animating .sides {
-  -webkit-transition: -webkit-transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
-          transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
+  -webkit-transition: left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out, height 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 .ui.shape.animating .side {
   -webkit-transition: opacity 0.6s ease-in-out;
-          transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 }
 /*--------------
      Active
@@ -53134,7 +53155,7 @@ a.ui.nag {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: none;
-          transition: none;
+  transition: none;
   will-change: transform;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
@@ -53152,6 +53173,7 @@ a.ui.nag {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotate(0deg);
           transform: rotateZ(0deg);
 }
 /*--------------
@@ -53216,7 +53238,9 @@ body.pushable {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
   will-change: transform;
   z-index: 101;
 }
@@ -53230,7 +53254,9 @@ body.pushable {
   overflow: hidden;
   min-height: 100%;
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
   z-index: 2;
 }
 body.pushable > .pusher {
@@ -53252,7 +53278,7 @@ body.pushable > .pusher {
   overflow: hidden;
   opacity: 0;
   -webkit-transition: opacity 500ms;
-          transition: opacity 500ms;
+  transition: opacity 500ms;
   will-change: opacity;
   z-index: 1000;
 }
@@ -53440,7 +53466,9 @@ html.ios body {
 .animating.ui.overlay.sidebar,
 .ui.visible.overlay.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 /* End - Sidebar */
 .ui.visible.left.overlay.sidebar {
@@ -53472,7 +53500,9 @@ html.ios body {
 /* Initial */
 .ui.push.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
   z-index: 102;
 }
 /* Sidebar - Initial */
@@ -53511,7 +53541,9 @@ html.ios body {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 /*--------------
    Slide Along
@@ -53540,7 +53572,9 @@ html.ios body {
 /* Animation */
 .ui.animating.slide.along.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 /* End */
 .ui.visible.slide.along.sidebar {
@@ -53574,7 +53608,9 @@ html.ios body {
 /* Animation */
 .ui.animating.slide.out.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 /* End */
 .ui.visible.slide.out.sidebar {
@@ -53587,7 +53623,9 @@ html.ios body {
 /* Initial */
 .ui.scale.down.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
   z-index: 102;
 }
 /* Sidebar - Initial  */
@@ -53631,7 +53669,9 @@ html.ios body {
 /* Animation */
 .ui.animating.scale.down > .visible.ui.sidebar {
   -webkit-transition: -webkit-transform 500ms ease;
-          transition: transform 500ms ease;
+  transition: -webkit-transform 500ms ease;
+  transition: transform 500ms ease;
+  transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
 .ui.visible.scale.down.sidebar ~ .pusher,
 .ui.animating.scale.down.sidebar ~ .pusher {
@@ -54273,7 +54313,7 @@ html.ios body {
 .ui.sticky {
   position: static;
   -webkit-transition: none;
-          transition: none;
+  transition: none;
   z-index: 800;
 }
 /*******************************
@@ -57567,6 +57607,9 @@ body {
 .container-post p {
   font-size: 20px;
 }
+.content-area {
+  margin-top: 50px;
+}
 .post-image {
   display: -webkit-box;
   display: -webkit-flex;
@@ -57840,11 +57883,44 @@ body {
   border-width: thin;
   border-style: solid;
 }
+.contact-us-box {
+  background-color: #E8F5FF;
+}
+.contact-us-box-title {
+  color: white;
+  background-color: #BF3333;
+  padding: 15px;
+  text-align: right;
+  font-size: 30px;
+  margin-top: -20px;
+  padding-right: 17%;
+}
+.contact-us-box-inner {
+  margin-top: 20px;
+  padding-left: 30%;
+  width: 100%;
+  min-height: 302px;
+}
+.contact-us-box-content {
+  font-size: 20px;
+  line-height: 1.5em;
+  color: #606263;
+  width: 360px;
+  max-width: 100%;
+}
+#contactForm #submitBtn {
+  width: 80px;
+  color: white;
+  background-color: #606263;
+}
+#contactForm #submitBtn:hover {
+  background-color: #BF3333;
+}
 .footer {
   font-size: 20px;
   letter-spacing: 4px;
   line-height: 1.5;
-  background-color: #EDF6FE;
+  background-color: #E8F5FF;
   color: #606263;
 }
 .footer a:visited {
@@ -57862,6 +57938,50 @@ body {
 }
 .footer-box a:visited {
   color: white;
+}
+.footer-icon-groups {
+  padding-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.footer-icon {
+  width: 50px;
+  height: 50px;
+  border: thin solid white;
+  margin: 3px;
+  background-size: cover;
+}
+.footer-icon.footer-icon-mail {
+  background-image: url(/images/rb_mail.png);
+}
+.footer-icon.footer-icon-mail:hover {
+  background-image: url(/images/wb_mail.png);
+}
+.footer-icon.footer-icon-tumblr {
+  background-image: url(/images/rb_tumblr.png);
+}
+.footer-icon.footer-icon-tumblr:hover {
+  background-image: url(/images/wb_tumblr.png);
+}
+.footer-icon.footer-icon-facebook {
+  background-image: url(/images/rb_facebook.png);
+}
+.footer-icon.footer-icon-facebook:hover {
+  background-image: url(/images/wb_facebook.png);
+}
+#footer-emailBtn {
+  color: white;
+  background-color: #606263;
+}
+#footer-emailBtn:hover {
+  background-color: #BF3333;
 }
 .ui.segment {
   padding-left: 0px;

@@ -1,0 +1,68 @@
+{
+  "CentralAfrica": {
+    "CMR": "Cameroon",
+    "RCA": "Central African Republic",
+    "TCD": "Chad",
+    "COG": "Congo-Brazzaville",
+    "COD": "Congo-Kinshasa",
+    "GNQ": "Equatorial Guinea",
+    "GAB": "Gabon",
+    "STP": "São Tomé and Príncipe",
+    "CAF": "Central African Republic"
+  },
+  "EastAfrica": {
+    "BDI": "Burundi",
+    "COM": "Comoros",
+    "DJI": "Djibouti",
+    "ERI": "Eritrea",
+    "ETH": "Ethiopia",
+    "KEN": "Kenya",
+    "MDG": "Madagascar",
+    "MUS": "Mauritius",
+    "RWA": "Rwanda",
+    "SYC": "Seychelles",
+    "SOM": "Somalia",
+    "SSD": "South Sudan",
+    "SDN": "Sudan",
+    "TZA": "Tanzania",
+    "UGA": "Uganda"
+  },
+  "NorthAfrica": {
+    "DZA": "Algeria",
+    "EGY": "Egypt",
+    "LBY": "Libya",
+    "MAR": "Morocco",
+    "TUN": "Tunisia",
+    "ESH": "Western Sahara"
+  },
+  "SouthernAfrica": {
+    "AGO": "Angola",
+    "BWA": "Botswana",
+    "LSO": "Lesotho",
+    "MWI": "Malawi",
+    "MOZ": "Mozambique",
+    "NAM": "Namibia",
+    "ZAF": "South Africa",
+    "SWZ": "Swaziland",
+    "ZMB": "Zambia",
+    "ZWE": "Zimbabwe"
+  },
+  "WestAfrica": {
+    "BEN": "Benin",
+    "BFA": "Burkina Faso",
+    "CPV": "Cape Verde",
+    "CIV": "Cote d'Ivoire",
+    "GMB": "Gambia",
+    "GHA": "Ghana",
+    "GIN": "Guinea",
+    "GNB": "Guinea Bissau",
+    "LBR": "Liberia",
+    "MLI": "Mali",
+    "MRT": "Mauritania",
+    "NER": "Niger",
+    "NGA": "Nigeria",
+    "SEN": "Senegal",
+    "SLE": "Sierra Leone",
+    "TGO": "Togo"
+  }
+}
