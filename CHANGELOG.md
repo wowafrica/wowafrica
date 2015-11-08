@@ -1,3 +1,22 @@
+<a name="0.5.0"></a>
+# [0.5.0](//compare/v0.4.9...v0.5.0) (2015-11-08)
+
+
+### Bug Fixes
+
+* **IndexWideBlock:** Extend link coverage to whole block, close #71 3f9f075, closes #71
+* **modal:** Fix undefined image request 3e5d4b5
+* **nation:** Fix Nation data a2752ef
+* **post:** Shift the post content to the left center c2195c8
+
+### Features
+
+* **contactUsPage:** Add contact us page 945e850
+* **footer:** Add icon and button hover effect, close #77 ecc8a90, closes #77
+* **nation:** Add Africa Country List. issue #76 8d8a593
+
+
+
 <a name="0.4.9"></a>
 ## [0.4.9](//compare/v0.4.8...v0.4.9) (2015-11-05)
 
