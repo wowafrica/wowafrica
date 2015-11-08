@@ -14,6 +14,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
+    $('#category-menu').show();
     window.scroll(0, 0);
   },
 
