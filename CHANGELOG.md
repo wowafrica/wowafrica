@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](//compare/v0.5.0...v0.5.1) (2015-11-08)
+
+
+### Bug Fixes
+
+* **nation:** Fix image name typo 12422d3
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](//compare/v0.4.9...v0.5.0) (2015-11-08)
 
