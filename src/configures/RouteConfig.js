@@ -38,5 +38,10 @@ export default {
     path: '/about_authors',
     method: 'get',
     page: require('../pages/AboutAuthorsPage')
+  },
+  contactUs: {
+    path: '/contact_us',
+    method: 'get',
+    page: require('../pages/ContactUsPage')
   }
 };

@@ -46,22 +46,21 @@ export default React.createClass({
     let newSection = this.state.posts.slice(0,2).map((post) => {
       let image = post.image.replace(/_540.jpg/g, '_1280.jpg');
       return (
-        <div className="index-wide" style={{backgroundImage: 'url('+image+')'}}>
-        <div className="index-wide-box-before"/>
-
-          <div className="index-wide-box">
-            <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
-              <div className="index-wide-type">
-                {displayType}
+        <div>
+          <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
+            <div className="index-wide" style={{backgroundImage: 'url('+image+')'}}>
+              <div className="index-wide-box-before"/>
+              <div className="index-wide-box">
+                <div className="index-wide-type">
+                  {displayType}
+                </div>
+              <div className="ui divider" style={{width: '175px', borderTop: '1px solid white', margin: '0.3rem 0rem 0.3rem 0rem'}}/>
+                <div className="index-wide-title">
+                  {post.title}
+                </div>
               </div>
-            </a>
-            <div className="ui divider" style={{width: '175px', borderTop: '1px solid white', margin: '0.3rem 0rem 0.3rem 0rem'}}/>
-            <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
-              <div className="index-wide-title">
-                {post.title}
-              </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       );
     });

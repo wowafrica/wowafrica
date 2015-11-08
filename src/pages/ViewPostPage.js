@@ -69,9 +69,9 @@ export default React.createClass({
             {title}
           </div>
         </div>
-        <div className="ui stackable three column grid">
-          <div className="four wide column"></div>
-          <div className="eight wide column">
+        <div className="ui stackable four column grid">
+          <div className="one wide column"></div>
+          <div className="ten wide column">
             <Segment className="very padded container-post basic">
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
@@ -87,6 +87,7 @@ export default React.createClass({
               <ShareButton pageUrl={pageUrl}/>
             </Segment>
           </div>
+          <div className="one wide column"></div>
           <div className="four wide column">
             <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%', position: 'absolute'}}>
               <a href="/about_authors" onClick={this._onClick}>

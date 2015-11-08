@@ -18,9 +18,6 @@ export default React.createClass({
   },
 
   render() {
-
-    let visStr = this.props.hide ? 'hidden' : 'visible';
-
     return (
       <div id="category-menu" style={{display: 'none'}}>
         <div className="ui centered grid">

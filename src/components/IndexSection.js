@@ -32,6 +32,11 @@ export default React.createClass({
     }
   },
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      posts: PostListStore.getPostList(nextProps.category)
+    });
+  },
 
   render() {
     let slideDiv = this.state.posts.map((post) => {

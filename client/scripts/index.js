@@ -1,5 +1,3 @@
-require('babel/polyfill');
-
 import React        from 'react/addons';
 import RouteActions from '../../src/actions/RouteAction';
 import App          from '../../src/App';
