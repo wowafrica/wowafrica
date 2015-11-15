@@ -84,7 +84,7 @@ class NationsStore extends EventEmitter {
     this.on(NationConstants.NATION_AREA_EVENT, listener);
   }
 
-  removeShowListener(listener) {
+  removeAreaListener(listener) {
     this.removeListener(NationConstants.NATION_AREA_EVENT, listener);
   }
 }
