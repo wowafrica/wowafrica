@@ -3,6 +3,7 @@ import RouteConstants from '../constants/RouteConstants';
 import NationAction   from './NationAction';
 import PostListAction from './PostListAction';
 import AuthorAction   from './AuthorAction';
+import TumblrConfig   from '../configures/TumblrConfig';
 
 class RouteAction {
 
@@ -39,7 +40,7 @@ class RouteAction {
               actionType: RouteConstants.ROUTE_POST_LIST_PAGE,
               postID: pathName[3]
             });
-            PostListAction.updatePostList(pathName[3], 20);
+            PostListAction.updatePostList(pathName[3], TumblrConfig.postList.loadAmount);
           }
         }
         break;
