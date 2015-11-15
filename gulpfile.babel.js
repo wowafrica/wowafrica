@@ -179,12 +179,11 @@ gulp.task('clean-all', ['clean-build'], () => {
 
 gulp.task('watch', () => {
   livereload.listen({start: true});
-  gulp.watch('./client/views/*.jade', ['jade']);
   gulp.watch('./client/styles/**/*', ['styles']);
   gulp.watch('./client/data/**/*', ['data']);
 });
 
 gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
-gulp.task('build', ['jade', 'ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
+gulp.task('build', ['ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
 gulp.task('dev', ['build', 'watch-server', 'watch', 'watch-js']);
 gulp.task('default', ['build']);
