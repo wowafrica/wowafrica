@@ -17,9 +17,6 @@ export default React.createClass({
     window.scroll(0, 0);
   },
 
-  componentDidUpdate() {
-  },
-
   render() {
     let category = RouteStore.getCurrentRoute().params.category || 'news';
     // let {category} = this.props;

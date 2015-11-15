@@ -13,10 +13,6 @@ export default React.createClass({
     };
   },
 
-  componentDidMount() {
-
-  },
-
   render() {
     return (
       <div id="category-menu">
