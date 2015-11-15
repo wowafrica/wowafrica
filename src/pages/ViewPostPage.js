@@ -16,7 +16,7 @@ export default React.createClass({
     return {
       authors: AuthorsStore.getAll(),
       post: PostStore.getPost(),
-      loader: true
+      loader: PostStore.getLoader()
     };
   },
 
