@@ -40,8 +40,6 @@ export default React.createClass({
       }
     });
 
-    $('#category-menu').show();
-
     $('#category-menu-anchor')
     .sticky({
       offset: 40,

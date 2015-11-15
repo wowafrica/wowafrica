@@ -5,6 +5,7 @@ import CategoryMenu from '../components/CategoryMenu';
 export default React.createClass({
 
   componentDidMount() {
+    $('#category-menu').hide();
   },
 
   componentWillUnmount() {

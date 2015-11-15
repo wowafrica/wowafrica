@@ -36,7 +36,6 @@ let generatePage = function() {
   <body>
     <div id="content">${html}</div>
     <div id="nation_modal" class="ui dimmer modals page"></div>
-    <div id="fb-root"></div>
     <script type="text/javascript" src="/scripts/vendor.js"></script>
     <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
     <script type="text/javascript" src="/scripts/bundle.js"></script>
@@ -72,6 +71,9 @@ let getPostList = function() {
         } else {
           // console.log(data);
           data.posts.forEach((post) => {
+            // For Old WebView, because it would not running js.
+            PostStore.setLoader(false);
+            console.log(PostStore.getLoader());
             PostStore.onReceviceUpdatePosts(post.id);
           });
         }

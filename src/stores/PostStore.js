@@ -15,10 +15,19 @@ class PostStore extends EventEmitter {
     this.client = Tumblr.createClient({
       consumer_key: TumblrConfig.consumerKey // eslint-disable-line
     });
+    this.loader = true;
   }
 
   getPost() {
     return this.post;
+  }
+
+  getLoader() {
+    return this.loader;
+  }
+
+  setLoader(value) {
+    this.loader = value;
   }
 
   onReceviceUpdatePosts(postID) {

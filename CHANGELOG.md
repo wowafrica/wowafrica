@@ -1,3 +1,14 @@
+<a name="0.5.3"></a>
+## [0.5.3](//compare/v0.5.2...v0.5.3) (2015-11-15)
+
+
+### Bug Fixes
+
+* **nation:** Fix undefined function removeAreaListener b95ecb0
+* **post:** Remove Loader on server side render ab9dc2e
+
+
+
 <a name="0.5.2"></a>
 ## [0.5.2](//compare/v0.5.1...v0.5.2) (2015-11-08)
 

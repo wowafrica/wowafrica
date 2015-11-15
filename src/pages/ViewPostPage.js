@@ -16,11 +16,12 @@ export default React.createClass({
     return {
       authors: AuthorsStore.getAll(),
       post: PostStore.getPost(),
-      loader: true
+      loader: PostStore.getLoader()
     };
   },
 
   componentDidMount() {
+    $('#category-menu').hide();
     window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
