@@ -73,7 +73,6 @@ let getPostList = function() {
           data.posts.forEach((post) => {
             // For Old WebView, because it would not running js.
             PostStore.setLoader(false);
-            console.log(PostStore.getLoader());
             PostStore.onReceviceUpdatePosts(post.id);
           });
         }

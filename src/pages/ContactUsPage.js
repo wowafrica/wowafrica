@@ -8,12 +8,6 @@ export default React.createClass({
     $('#category-menu').hide();
   },
 
-  componentWillUnmount() {
-  },
-
-  componentDidUpdate() {
-  },
-
   render() {
     return (
       <div>
