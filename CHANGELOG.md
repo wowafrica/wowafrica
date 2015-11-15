@@ -1,3 +1,13 @@
+<a name="0.5.4"></a>
+## [0.5.4](//compare/v0.5.3...v0.5.4) (2015-11-15)
+
+
+### Features
+
+* **static:** Add IndexPage generator 63555ff
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](//compare/v0.5.2...v0.5.3) (2015-11-15)
 
