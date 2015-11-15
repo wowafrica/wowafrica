@@ -19,7 +19,7 @@ export default React.createClass({
 
   render() {
     return (
-      <div id="category-menu" style={{display: 'none'}}>
+      <div id="category-menu">
         <div className="ui centered grid">
           <Menu className="secondary">
             {this.renderDropdown()}

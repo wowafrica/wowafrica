@@ -22,6 +22,7 @@ export default React.createClass({
   componentDidMount() {
     NationsStore.addAreaListener(this._onChange);
     MapStore.addChangeListener(this._onChange);
+    $('#category-menu').hide();
   },
 
   componentWillUnmount() {

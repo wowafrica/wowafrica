@@ -59,6 +59,10 @@ let AuthorsBox = React.createClass({
 
 export default React.createClass({
 
+  componentDidMount() {
+    $('#category-menu').hide();
+  },
+
   render() {
     return (
       <div>
