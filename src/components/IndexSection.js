@@ -3,6 +3,7 @@ import Semantify      from 'react-semantify';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
 import RouteAction    from '../actions/RouteAction';
+import TumblrConfig   from '../configures/TumblrConfig';
 
 let {Cards, Card, Image} = Semantify;
 
@@ -10,7 +11,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      posts: PostListStore.getPostList(this.props.category)
+      listCon: PostListStore.getListContainer(this.props.category)
     };
   },
 
@@ -34,12 +35,12 @@ export default React.createClass({
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      posts: PostListStore.getPostList(nextProps.category)
+      listCon: PostListStore.getListContainer(nextProps.category)
     });
   },
 
   render() {
-    let slideDiv = this.state.posts.map((post) => {
+    let slideDiv = this.state.listCon.posts.map((post) => {
       return (
         <a className="card" href={'/view_post_list/posts/' + post.id} onClick={this._onClick}>
           <div className="post-list-card-img" style={{backgroundImage: 'url('+post.image+')'}}/>
@@ -54,6 +55,18 @@ export default React.createClass({
         </a>
       );
     });
+    let lCon = this.state.listCon;
+    if (lCon.parsedPostNum < lCon.totalPostNum) {
+      slideDiv.push(
+        <a className="card" onClick={this._onLoadMoreClick} style={{boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+          <div>
+            <div id="postList-loadMoreBtn" className="ui button">
+              載入更多文章
+            </div>
+          </div>
+        </a>
+      );
+    }
 
     let title = '';
     if (this.props.category == 'new') {
@@ -77,8 +90,9 @@ export default React.createClass({
 
   _onChange() {
     this.setState({
-      posts: PostListStore.getPostList(this.props.category)
+      listCon: PostListStore.getListContainer(this.props.category)
     });
+    $('#postList-loadMoreBtn').removeClass('loading button').addClass('button');
   },
 
   _onClick(e) {
@@ -86,6 +100,12 @@ export default React.createClass({
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();
+  },
+
+  _onLoadMoreClick(e) {
+    e.preventDefault();
+    $('#postList-loadMoreBtn').removeClass('button').addClass('loading button');
+    PostListStore.loadMorePosts(this.props.category, TumblrConfig.postList.loadAmount);
   }
 
 });

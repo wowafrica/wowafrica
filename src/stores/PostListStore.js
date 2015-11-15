@@ -20,12 +20,16 @@ class PostListStore extends EventEmitter {
     PostListConfig.categories.forEach((item) => {
       this.postList[item] = {
         name: item,
-        posts: []
+        posts: [],
+        parsedPostNum: 0,
+        totalPostNum: 0
       };
     });
     this.postList['new'] = {
       name: 'new',
-      posts: [PostListConfig.postContainer]
+      posts: [PostListConfig.postContainer],
+      parsedPostNum: 0,
+      totalPostNum: 0
     };
     this.postList['top'] = {
       name: 'top',
@@ -33,34 +37,90 @@ class PostListStore extends EventEmitter {
     };
   }
 
+  getListContainer(item) {
+    return this.postList[item];
+  }
+
   getPostList(item) {
     return this.postList[item].posts;
   }
 
-  onReceviceUpdatePostList(category, amount) {
+  loadMorePosts(category, amount) {
     if (category in PostListConfig.categoryMap) {
-      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.parsePostListCategory.bind(this));
+      if (this.postList[category].parsedPostNum < this.postList[category].totalPostNum) {
+        this.client.posts(TumblrConfig.blogName, {
+          offset: this.postList[category].parsedPostNum,
+          tag: PostListConfig.categoryMap[category]
+        }, this.loadMorePostsCategory.bind(this));
+      }
     }
     else if (category == 'new') {
-      this.client.posts(TumblrConfig.blogName, {limit: amount, type: 'text'}, this.parsePostListNew.bind(this));
-    }
-    else if (category == 'top') {
-      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.tagMap['top']}, this.parsePostListTop.bind(this));
+      if (this.postList['new'].parsedPostNum < this.postList['new'].totalPostNum) {
+        this.client.posts(TumblrConfig.blogName, {
+          offset: this.postList[category].parsedPostNum,
+          limit: amount,
+          type: 'text'
+        }, this.loadMorePostsNew.bind(this));
+      }
     }
   }
 
-  parsePostListTop(err, data) {
-    let updatedList = [];
+  loadMorePostsCategory(err, data) {
     if (err) {
       console.log(err.stack);
-    } else {
-      data.posts.forEach((post) => {
-        let result = this.parsePostData(post);
-        /*if (result.valid == true) {
-          updatedList.push(result);
-        }*/
-        updatedList.push(result);
-      });
+    }
+    else {
+      let updatedList = this.parsePostsNew(data);
+      if (updatedList.length > 0) {
+        this.postList[pdatedList[0].category].parsedPostNum += data.posts.length;
+        this.postList[pdatedList[0].category].totalPostNum = data.total_posts; // eslint-disable-line
+        updatedList.forEach((post) => {
+          this.postList[pdatedList[0].category].posts.push(post);
+        });
+        this.emitChange('category');
+        //console.log('postlist new load more with '+updatedList.length+' posts');
+      };
+    }
+  }
+
+  loadMorePostsNew(err, data) {
+    if (err) {
+      console.log(err.stack);
+    }
+    else {
+      let updatedList = this.parsePostsNew(data);
+      if (updatedList.length > 0) {
+        this.postList['new'].parsedPostNum += data.posts.length;
+        this.postList['new'].totalPostNum = data.total_posts; // eslint-disable-line
+        updatedList.forEach((post) => {
+          this.postList['new'].posts.push(post);
+        });
+        this.emitChange('new');
+        //console.log('postlist new load more with '+updatedList.length+' posts');
+      };
+    }
+  }
+
+  onReceviceUpdatePostList(category, amount) {
+    if (category in PostListConfig.categoryMap) {
+      this.postList[category].totalPostNum = 0;
+      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.updateListCategory.bind(this));
+    }
+    else if (category == 'new') {
+      this.postList['new'].totalPostNum = 0;
+      this.client.posts(TumblrConfig.blogName, {limit: amount, type: 'text'}, this.updateListNew.bind(this));
+    }
+    else if (category == 'top') {
+      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.tagMap['top']}, this.updateListTop.bind(this));
+    }
+  }
+
+  updateListTop(err, data) {
+    if (err) {
+      console.log(err.stack);
+    }
+    else {
+      let updatedList = this.parsePostsTop(data);
       if (updatedList.length > 0) {
         this.postList['top'].posts = updatedList;
         this.emitChange('top');
@@ -69,18 +129,15 @@ class PostListStore extends EventEmitter {
     }
   }
 
-  parsePostListNew(err, data) {
-    let updatedList = [];
+  updateListNew(err, data) {
     if (err) {
       console.log(err.stack);
-    } else {
-      data.posts.forEach((post) => {
-        let result = this.parsePostData(post);
-        if (result.valid == true) {
-          updatedList.push(result);
-        }
-      });
+    }
+    else {
+      let updatedList = this.parsePostsNew(data);
       if (updatedList.length > 0) {
+        this.postList['new'].parsedPostNum = data.posts.length;
+        this.postList['new'].totalPostNum = data.total_posts; // eslint-disable-line
         this.postList['new'].posts = updatedList;
         this.emitChange('new');
         //console.log('postlist new updated with '+updatedList.length+' posts');
@@ -88,23 +145,54 @@ class PostListStore extends EventEmitter {
     }
   }
 
-  parsePostListCategory(err, data) {
-    let updatedList = [];
+  updateListCategory(err, data) {
     if (err) {
       console.log(err.stack);
-    } else {
-      data.posts.forEach((post) => {
-        let result = this.parsePostData(post);
-        if (result.valid == true) {
-          updatedList.push(result);
-        }
-      });
+    }
+    else {
+      let updatedList = this.parsePostsCategory(data);
       if (updatedList.length > 0) {
+        this.postList[updatedList[0].category].parsedPostNum = data.posts.length;
+        this.postList[updatedList[0].category].totalPostNum = data.total_posts; // eslint-disable-line
         this.postList[updatedList[0].category].posts = updatedList;
         this.emitChange('category');
         //console.log('postlist '+updatedList[0].category+' updated with '+updatedList.length+' posts');
       };
     }
+  }
+
+  parsePostsTop(data) {
+    let updatedList = [];
+    data.posts.forEach((post) => {
+      let result = this.parsePostData(post);
+      /*if (result.valid == true) {
+        updatedList.push(result);
+      }*/
+      updatedList.push(result);
+    });
+    return updatedList;
+  }
+
+  parsePostsNew(data) {
+    let updatedList = [];
+    data.posts.forEach((post) => {
+      let result = this.parsePostData(post);
+      if (result.valid == true) {
+        updatedList.push(result);
+      }
+    });
+    return updatedList;
+  }
+
+  parsePostsCategory(data) {
+    let updatedList = [];
+    data.posts.forEach((post) => {
+      let result = this.parsePostData(post);
+      if (result.valid == true) {
+        updatedList.push(result);
+      }
+    });
+    return updatedList;
   }
 
   parsePostData(post) {

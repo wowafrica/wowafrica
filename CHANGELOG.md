@@ -1,3 +1,13 @@
+<a name="0.5.5"></a>
+## [0.5.5](//compare/v0.5.4...v0.5.5) (2015-11-15)
+
+
+### Features
+
+* **PositList:** Add load more posts button, close #75 6cdd939, closes #75
+
+
+
 <a name="0.5.4"></a>
 ## [0.5.4](//compare/v0.5.3...v0.5.4) (2015-11-15)
 

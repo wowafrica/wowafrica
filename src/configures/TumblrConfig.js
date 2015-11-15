@@ -9,5 +9,8 @@ export default {
   },
   nation: {
     tag: 'nation'
+  },
+  postList: {
+    loadAmount: 20
   }
 };
