@@ -16,11 +16,9 @@ export default React.createClass({
   render() {
     return (
       <div id="category-menu">
-        <div className="ui centered grid">
-          <Menu className="secondary">
-            {this.renderDropdown()}
-          </Menu>
-        </div>
+        <Menu className="secondary">
+          {this.renderDropdown()}
+        </Menu>
       </div>
     );
   },

@@ -1,8 +1,10 @@
 import React          from 'react/addons';
 import RouteAction    from '../actions/RouteAction';
+import Semantify      from 'react-semantify';
+
+let {Menu, Item, Text} = Semantify;
 
 export default React.createClass({
-
 
   render() {
     return (
@@ -16,17 +18,17 @@ export default React.createClass({
             </div>
             <div className="four wide column" style={{color: 'white', backgroundColor: '#BF3333'}}>
               <div className="footer-box">
-                關於 wowAfrica
-                <div>
-                  <a href="/about_authors" onClick={this._onClick}>
-                     成員介紹
-                  </a>
-                </div>
-                <div>
-                  <a href="/contact_us" onClick={this._onClick}>
-                     聯絡我們
-                  </a>
-                </div>
+                <Menu className="vertical secondary">
+                  <Item style={{color: 'white', fontSize: '18px'}} onClick={this._onClick}>
+                      <Text>關於 wowAfrica</Text>
+                  </Item>
+                  <Item style={{color: 'white', fontSize: '18px'}} type="link" href={'/about_authors'} onClick={this._onClick}>
+                      <Text>成員介紹</Text>
+                  </Item>
+                  <Item style={{color: 'white', fontSize: '18px'}} type="link" href={'/contact_us'} onClick={this._onClick}>
+                      <Text>聯絡我們</Text>
+                  </Item>
+                </Menu>
                 <div>
                 </div>
                 <div className="footer-icon-groups">

@@ -1,3 +1,9 @@
+<a name="0.5.6"></a>
+## [0.5.6](//compare/v0.5.5...v0.5.6) (2015-11-22)
+
+* Change looks of some components
+
+
 <a name="0.5.5"></a>
 ## [0.5.5](//compare/v0.5.4...v0.5.5) (2015-11-15)
 

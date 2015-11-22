@@ -127,7 +127,7 @@ export default React.createClass({
       );
     });
     return (
-      <div id="category-box" className="ui three column padded grid">
+      <div id="category-box" className="ui three column stackable padded grid">
         {viewBlks}
       </div>
     );

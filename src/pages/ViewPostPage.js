@@ -67,7 +67,9 @@ export default React.createClass({
         </div>
         <div className="post-image" style={{backgroundImage: `url(${largeImage})`}}>
           <div className="inner">
-            {title}
+            <div className="inner-title">
+              {title}
+            </div>
           </div>
         </div>
         <div className="ui stackable four column grid">
