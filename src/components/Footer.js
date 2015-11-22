@@ -19,7 +19,7 @@ export default React.createClass({
             <div className="four wide column" style={{color: 'white', backgroundColor: '#BF3333'}}>
               <div className="footer-box">
                 <Menu className="vertical secondary">
-                  <Item style={{color: 'white', fontSize: '18px'}} href={'/about_authors'} onClick={this._onClick}>
+                  <Item style={{color: 'white', fontSize: '18px'}} onClick={this._onClick}>
                       <Text>關於 wowAfrica</Text>
                   </Item>
                   <Item style={{color: 'white', fontSize: '18px'}} type="link" href={'/about_authors'} onClick={this._onClick}>

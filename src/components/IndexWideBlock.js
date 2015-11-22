@@ -48,7 +48,7 @@ export default React.createClass({
       return (
         <div>
           <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
-            <div className="index-wide" style={{backgroundImage: 'url('+image+')'}}>
+            <div className="index-wide" style={{backgroundImage: 'url('+image+')', backgroundPosition: 'center'}}>
               <div className="index-wide-box-before"/>
               <div className="index-wide-box">
                 <div className="index-wide-type">
