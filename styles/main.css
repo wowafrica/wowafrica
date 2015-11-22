@@ -57611,6 +57611,9 @@ body {
   margin-top: 50px;
 }
 .post-image {
+  background-size: cover;
+}
+.post-image .inner {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57625,10 +57628,9 @@ body {
           align-items: center;
   width: 100%;
   height: 640px;
-  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.3);
 }
-.post-image .inner {
-  margin-bottom: 20px;
+.post-image .inner-title {
   font-size: 42px;
   color: #FFFFFF;
 }
@@ -57935,7 +57937,7 @@ body {
 }
 .footer-box {
   min-height: 260px;
-  padding: 5rem 2rem 0 2rem;
+  padding: 2rem 2rem 0 2rem;
 }
 .footer-box a {
   color: white;
