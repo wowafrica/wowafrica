@@ -58,5 +58,10 @@ export default {
     path: '/contact_us',
     method: 'get',
     page: require('../pages/ContactUsPage')
+  },
+  ugandaLetter: {
+    path: '/activity/uganda_letter',
+    method: 'get',
+    page: require('../pages/UgandaLetter')
   }
 };
