@@ -431,3 +431,38 @@ body {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+.about-button {
+  background-color: #298299 !important;
+  color: white !important;
+  line-height: 50px !important;
+}
+
+.about-button:hover {
+  background-color: #FFBF6B !important;
+}
+
+.header-section {
+  background-image: url(/images/about_us_1.jpg);
+  margin-top: -10px;
+  height: 2000px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.header-divider {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}
+
+.header-section .title {
+  color: white !important;
+}
+
+.header-section .container {
+  padding-top: 200px;
+}
+
+.header-button {
+  margin-top: 50px;
+}

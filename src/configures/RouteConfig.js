@@ -49,6 +49,11 @@ export default {
     method: 'get',
     page: require('../pages/AboutAuthorsPage')
   },
+  aboutUs: {
+    path: '/about_us',
+    method: 'get',
+    page: require('../pages/AboutUsPage')
+  },
   contactUs: {
     path: '/contact_us',
     method: 'get',
