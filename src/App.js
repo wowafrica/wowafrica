@@ -1,4 +1,4 @@
-import React      from 'react/addons';
+import React      from 'react';
 import RouteStore from './stores/RouteStore';
 import IndexPage  from './pages/IndexPage';
 

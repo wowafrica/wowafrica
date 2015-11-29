@@ -1,8 +1,6 @@
 import express     from 'express';
 import path        from 'path';
-import React       from 'react';
 import connectLive from 'connect-livereload';
-import RouteStore  from '../src/stores/RouteStore';
 
 let app = express();
 

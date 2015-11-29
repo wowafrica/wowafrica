@@ -1,5 +1,6 @@
 import Tumblr         from 'tumblr.js';
 import React          from 'react';
+import ReactDOMServer from 'react-dom/server';
 import TumblrConfig   from '../src/configures/TumblrConfig';
 import PostListConfig from '../src/configures/PostListConfig';
 import PostStore      from '../src/stores/PostStore';
@@ -21,7 +22,7 @@ fs.stat('./_public/view_post_list', (err, stats) => {
 });
 
 let generatePage = function() {
-  let html = React.renderToString(<ViewPostPage/>);
+  let html = ReactDOMServer.renderToString(<ViewPostPage/>);
   let post = PostStore.getPost();
   let {id, title, brief, image} = post;
   let template = `
@@ -88,7 +89,7 @@ AuthorsStore.addChangeListener(getPostList);
 AuthorsStore.onReceviceUpdateAuthors();
 
 let setIndexPage = function() {
-  let html = React.renderToString(<IndexPage/>);
+  let html = ReactDOMServer.renderToString(<IndexPage/>);
   let template = `
 <!DOCTYPE html>
 <html>

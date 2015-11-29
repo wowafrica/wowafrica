@@ -1,4 +1,4 @@
-import React      from 'react/addons';
+import React      from 'react';
 import IndexMenu  from '../components/IndexMenu';
 
 export default React.createClass({
