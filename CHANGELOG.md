@@ -1,3 +1,13 @@
+<a name="0.5.7"></a>
+## [0.5.7](//compare/v0.5.6...v0.5.7) (2015-11-29)
+
+
+### Features
+
+* **tagPostList:** Post list page with specific tag, close #43 d1aaa50, closes #43
+
+
+
 <a name="0.5.6"></a>
 ## [0.5.6](//compare/v0.5.5...v0.5.6) (2015-11-22)
 

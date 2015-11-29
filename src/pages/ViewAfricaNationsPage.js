@@ -1,4 +1,5 @@
-import React        from 'react/addons';
+import React        from 'react';
+import ReactDOM     from 'react-dom';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
@@ -6,9 +7,10 @@ import MapStore     from '../stores/MapStore';
 import NationsStore from '../stores/NationsStore';
 import NationAction from '../actions/NationAction';
 import d3           from 'd3';
-import Semantify    from 'react-semantify';
 
-let {Modal, Content, Icon, Accordion, List, Image} = Semantify;
+import {
+  Modal, Content, Icon, Accordion, List, Image
+} from 'react-semantify';
 
 export default React.createClass({
 
@@ -34,7 +36,7 @@ export default React.createClass({
     let {currentTarget} = e;
     let iso = $(currentTarget).attr('data-nation');
     if (iso in this.refs) {
-      this.refs[iso].getDOMNode().style.fill = '#F88D2F';
+      ReactDOM.findDOMNode(this.refs[iso]).style.fill = '#F88D2F';
     }
   },
 
@@ -42,7 +44,7 @@ export default React.createClass({
     let {currentTarget} = e;
     let iso = $(currentTarget).attr('data-nation');
     if (iso in this.refs) {
-      this.refs[iso].getDOMNode().style.fill = '#2E8398';
+      ReactDOM.findDOMNode(this.refs[iso]).style.fill = '#2E8398';
     }
   },
 

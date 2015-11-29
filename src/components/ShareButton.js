@@ -1,7 +1,6 @@
-import React     from 'react/addons';
-import Semantify from 'react-semantify';
+import React from 'react';
 
-let {Image} = Semantify;
+import {Image} from 'react-semantify';
 
 export default React.createClass({
 

@@ -1,6 +1,5 @@
-import React        from 'react/addons';
+import React        from 'react';
 import classNames   from 'classnames';
-import Semantify    from 'react-semantify';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
@@ -8,7 +7,9 @@ import ShareButton  from '../components/ShareButton';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
-let {Segment, Header, Label, Divider, Rail, Image} = Semantify;
+import {
+  Segment, Header, Label, Divider, Rail, Image
+} from 'react-semantify';
 
 export default React.createClass({
 
@@ -84,7 +85,11 @@ export default React.createClass({
               <div dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
               <div className="ui brown tag labels">
-                {tags.map(tag => <Label>{tag}</Label>)}
+                {tags.map(tag =>
+                  <a className="ui tag label" href={'/view_post_list/tag/'+tag} onClick={this._onClick}>
+                    {tag}
+                  </a>
+                )}
               </div>
               <br/>
               <ShareButton pageUrl={pageUrl}/>

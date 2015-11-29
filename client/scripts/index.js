@@ -1,4 +1,5 @@
-import React        from 'react/addons';
+import React        from 'react';
+import ReactDOM     from 'react-dom';
 import RouteActions from '../../src/actions/RouteAction';
 import App          from '../../src/App';
 import NationModal  from '../../src/components/NationModal';
@@ -6,8 +7,8 @@ import NationModal  from '../../src/components/NationModal';
 let pathName = location.pathname;
 console.log(pathName);
 
-React.render(<App />, document.getElementById('content'));
-React.render(<NationModal />, document.getElementById('nation_modal'));
+ReactDOM.render(<App />, document.getElementById('content'));
+ReactDOM.render(<NationModal />, document.getElementById('nation_modal'));
 
 RouteActions.updatePath(pathName);
 

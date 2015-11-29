@@ -1,9 +1,10 @@
-import React           from 'react/addons';
-import Semantify       from 'react-semantify';
+import React           from 'react';
 import PostListConfig  from '../configures/PostListConfig';
 import RouteAction     from '../actions/RouteAction';
 
-let {Dropdown, Icon, Item, Menu, Text} = Semantify;
+import {
+  Dropdown, Icon, Item, Menu, Text
+} from 'react-semantify';
 
 export default React.createClass({
 
