@@ -41,6 +41,12 @@ class RouteAction {
               postID: pathName[3]
             });
             PostListAction.updatePostList(pathName[3], TumblrConfig.postList.loadAmount);
+          } else if (pathName[2] === 'tag') {
+            pathName[3] = decodeURIComponent(pathName[3]);
+            AppDispatcher.dispatch({
+              actionType: RouteConstants.ROUTE_POST_LIST_TAG_PAGE,
+              tag: pathName[3]
+            });
           }
         }
         break;

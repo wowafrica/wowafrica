@@ -85,7 +85,11 @@ export default React.createClass({
               <div dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
               <div className="ui brown tag labels">
-                {tags.map(tag => <Label>{tag}</Label>)}
+                {tags.map(tag =>
+                  <a className="ui tag label" href={'/view_post_list/tag/'+tag} onClick={this._onClick}>
+                    {tag}
+                  </a>
+                )}
               </div>
               <br/>
               <ShareButton pageUrl={pageUrl}/>

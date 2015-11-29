@@ -29,6 +29,11 @@ export default {
     method: 'get',
     page: require('../pages/ViewPostListPage')
   },
+  viewPostListTag: {
+    path: '/view_post_list/tag/:tag',
+    method: 'get',
+    page: require('../pages/ViewPostListTagPage')
+  },
   viewPost: {
     path: '/view_post_list/posts/:post',
     method: 'get',

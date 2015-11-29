@@ -70,12 +70,12 @@ class PostListStore extends EventEmitter {
       console.log(err.stack);
     }
     else {
-      let updatedList = this.parsePostsNew(data);
+      let updatedList = this.parsePostsCategory(data);
       if (updatedList.length > 0) {
-        this.postList[pdatedList[0].category].parsedPostNum += data.posts.length;
-        this.postList[pdatedList[0].category].totalPostNum = data.total_posts; // eslint-disable-line
+        this.postList[updatedList[0].category].parsedPostNum += data.posts.length;
+        this.postList[updatedList[0].category].totalPostNum = data.total_posts; // eslint-disable-line
         updatedList.forEach((post) => {
-          this.postList[pdatedList[0].category].posts.push(post);
+          this.postList[updatedList[0].category].posts.push(post);
         });
         this.emitChange('category');
         //console.log('postlist new load more with '+updatedList.length+' posts');

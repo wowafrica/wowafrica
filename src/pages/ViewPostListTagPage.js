@@ -17,14 +17,8 @@ export default React.createClass({
     window.scroll(0, 0);
   },
 
-  componentDidUpdate() {
-    window.scroll(0, 0);
-  },
-
   render() {
-    let category = RouteStore.getCurrentRoute().params.category || 'news';
-    // let {category} = this.props;
-    // let {posts = []} = this.state.postList[category];
+    let tag = decodeURIComponent(RouteStore.getCurrentRoute().params.tag) || '非洲';
     return (
       <div>
         <div className="fixed-top-menu">
@@ -32,7 +26,7 @@ export default React.createClass({
           <CategoryMenu />
         </div>
         <div className="container-content">
-          <IndexSection category={category} title={category}/>
+          <IndexSection category="tag" tag={tag} title={tag}/>
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
         <Footer/>
