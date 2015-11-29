@@ -445,7 +445,7 @@ body {
 .header-section {
   background-image: url(/images/about_us_1.jpg);
   margin-top: -10px;
-  height: 2000px;
+  height: 2480px;
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -459,10 +459,22 @@ body {
   color: white !important;
 }
 
-.header-section .container {
+.header-section .index {
   padding-top: 200px;
 }
 
 .header-button {
   margin-top: 50px;
+}
+
+.header-section .goal {
+  margin-top: 240px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #60C5DB;
+}
+
+.header-section p {
+  font-size: 20px;
+  color: white;
 }
