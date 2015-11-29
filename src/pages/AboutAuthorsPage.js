@@ -1,11 +1,12 @@
-import React        from 'react/addons';
-import Semantify    from 'react-semantify';
+import React        from 'react';
 import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
 import AuthorsStore from '../stores/AuthorsStore';
 
-let {Cards, Card, Image} = Semantify;
+import {
+  Cards, Card, Image
+} from 'react-semantify';
 
 let AuthorsBox = React.createClass({
 

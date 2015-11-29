@@ -36,6 +36,7 @@ let dependencies = [
   'flux',
   'routr',
   'react',
+  'react-dom',
   'superagent'
 ];
 

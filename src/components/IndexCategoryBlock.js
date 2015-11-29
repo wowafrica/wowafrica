@@ -1,10 +1,11 @@
-import React          from 'react/addons';
-import Semantify      from 'react-semantify';
+import React          from 'react';
 import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
 import RouteAction    from '../actions/RouteAction';
 
-let {Cards, Card, Image} = Semantify;
+import {
+  Cards, Card, Image
+} from 'react-semantify';
 
 let CategoryBox = React.createClass({
 

@@ -1,10 +1,12 @@
-import React        from 'react/addons';
-import Semantify    from 'react-semantify';
+import React        from 'react';
+import ReactDOM     from 'react-dom';
 import NationsStore from '../stores/NationsStore';
 import MapStore     from '../stores/MapStore';
 import d3           from 'd3';
 
-let {Divider, Modal, Icon, Header, Tab, Segment} = Semantify;
+import {
+  Divider, Modal, Icon, Header, Tab, Segment
+} from 'react-semantify';
 
 let NormalSection = React.createClass({
   render() {
@@ -151,7 +153,7 @@ export default React.createClass({
       nation: nation,
       map: map
     });
-    $(React.findDOMNode(this.refs.modal)).modal('show');
+    $(ReactDOM.findDOMNode(this.refs.modal)).modal('show');
   },
 
   render() {

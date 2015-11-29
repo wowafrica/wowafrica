@@ -1,8 +1,9 @@
-import React          from 'react/addons';
+import React          from 'react';
 import RouteAction    from '../actions/RouteAction';
-import Semantify      from 'react-semantify';
 
-let {Menu, Item, Text} = Semantify;
+import {
+  Menu, Item, Text
+} from 'react-semantify';
 
 export default React.createClass({
 
