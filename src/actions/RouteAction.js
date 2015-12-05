@@ -47,6 +47,12 @@ class RouteAction {
               actionType: RouteConstants.ROUTE_POST_LIST_TAG_PAGE,
               tag: pathName[3]
             });
+          } else if (pathName[2] === 'author') {
+            pathName[3] = decodeURIComponent(pathName[3]);
+            AppDispatcher.dispatch({
+              actionType: RouteConstants.ROUTE_POST_LIST_AUTHOR_PAGE,
+              author: pathName[3]
+            });
           }
         }
         break;

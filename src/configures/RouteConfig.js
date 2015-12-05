@@ -34,6 +34,11 @@ export default {
     method: 'get',
     page: require('../pages/ViewPostListTagPage')
   },
+  viewPostListAuthor: {
+    path: '/view_post_list/author/:author',
+    method: 'get',
+    page: require('../pages/ViewPostListAuthorPage')
+  },
   viewPost: {
     path: '/view_post_list/posts/:post',
     method: 'get',
