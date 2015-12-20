@@ -438,6 +438,10 @@ body {
   line-height: 50px !important;
 }
 
+.about-button.hover {
+  background-color: #FFBF6B !important;
+}
+
 .about-button:hover {
   background-color: #FFBF6B !important;
 }
@@ -472,9 +476,65 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #60C5DB;
+  color: white;
 }
 
-.header-section p {
+.goal p {
   font-size: 20px;
+}
+
+.story-button {
+  background-image: url(/images/about_us_2.jpg);
+  background-size: cover;
+  height: 1024px;
+  padding-top: 180px;
+}
+
+.story-section .index {
+  /*margin-top: 200px;*/
+}
+
+.story-section .wow-func {
+  background-color: #298299;
   color: white;
+}
+
+.story-section .goal {
+  padding: 50px 0px;
+}
+
+.wow-func .title {
+  color: white !important;
+}
+
+.wow-func .content {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.wow-func .information-before {
+  float: left;
+  margin-top: -33px;
+  margin-left: 10px;
+}
+
+.wow-func .information-after {
+  float: right;
+  margin-top: -33px;
+  margin-right: 10px;
+}
+
+.member {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.partner-button {
+  background-image: url(/images/about_us_3.jpg);
+  background-size: cover;
+  height: 1024px;
+  padding-top: 630px;
+  margin-bottom: 50px;
 }
