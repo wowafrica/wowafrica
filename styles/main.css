@@ -8188,7 +8188,7 @@ i.flag:not(.icon) {
 i.flag:not(.icon):before {
   display: inline-block;
   content: '';
-  background: url("../../themes/default/assets/images/flags.png") no-repeat 0px 0px;
+  background: url("../../themes/default/assets/images/flags.png") no-repeat -108px -1976px;
   width: 16px;
   height: 11px;
 }
@@ -25821,11 +25821,6 @@ ol.ui.horizontal.list li:before,
   position: relative;
   cursor: default;
   point-events: none;
-  text-shadow: none !important;
-  color: transparent !important;
-  -webkit-transition: all 0s linear;
-  transition: all 0s linear;
-  z-index: 100;
 }
 .ui.loading.form:before {
   position: absolute;
@@ -30118,7 +30113,8 @@ Floated Menu / Item
   border-radius: 0.28571429rem 0.28571429rem 0px 0px !important;
 }
 /* Coupling with segment for attachment */
-.ui.tabular.menu + .bottom.attached.segment {
+.ui.tabular.menu + .attached:not(.top).segment,
+.ui.tabular.menu + .attached:not(.top).segment + .attached:not(.top).segment {
   border-top: none;
   margin: 0px;
   width: 100%;
@@ -51326,6 +51322,7 @@ a.ui.nag {
 /*******************************
             Types
 *******************************/
+/* Selection */
 /* Category */
 /* Packaged Theme */
 /*******************************
@@ -51351,6 +51348,7 @@ a.ui.nag {
 /*******************************
             Types
 *******************************/
+/* Selection */
 /* Category */
 /* Site Theme */
 /*******************************
@@ -51578,7 +51576,37 @@ a.ui.nag {
            Types
 *******************************/
 /*--------------
-    Categories
+    Selection
+---------------*/
+.ui.search.selection .prompt {
+  border-radius: 0.28571429rem;
+}
+/* Remove input */
+.ui.search.selection > .icon.input > .remove.icon {
+  pointer-events: none;
+  position: absolute;
+  left: auto;
+  opacity: 0;
+  color: '';
+  top: 0em;
+  right: 0em;
+  -webkit-transition: color 0.1s ease, opacity 0.1s ease;
+  transition: color 0.1s ease, opacity 0.1s ease;
+}
+.ui.search.selection > .icon.input > .active.remove.icon {
+  cursor: pointer;
+  opacity: 0.8;
+  pointer-events: auto;
+}
+.ui.search.selection > .icon.input:not([class*="left icon"]) > .icon ~ .remove.icon {
+  right: 1.85714em;
+}
+.ui.search.selection > .icon.input > .remove.icon:hover {
+  opacity: 1;
+  color: #DB2828;
+}
+/*--------------
+    Category
 ---------------*/
 .ui.category.search .results {
   width: 28em;
@@ -53087,8 +53115,6 @@ a.ui.nag {
 .ui.sidebar > * {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
 }
 /*--------------
    Direction
@@ -53287,13 +53313,13 @@ html.ios body {
      Width
 ---------------*/
 /* Left / Right */
-.ui[class*="very thin"].left.sidebar,
-.ui[class*="very thin"].right.sidebar {
-  width: 60px;
-}
 .ui.thin.left.sidebar,
 .ui.thin.right.sidebar {
   width: 150px;
+}
+.ui[class*="very thin"].left.sidebar,
+.ui[class*="very thin"].right.sidebar {
+  width: 60px;
 }
 .ui.left.sidebar,
 .ui.right.sidebar {
@@ -53308,15 +53334,15 @@ html.ios body {
   width: 475px;
 }
 /* Left Visible */
-.ui.visible[class*="very thin"].left.sidebar ~ .fixed,
-.ui.visible[class*="very thin"].left.sidebar ~ .pusher {
-  -webkit-transform: translate3d(60px, 0, 0);
-          transform: translate3d(60px, 0, 0);
-}
 .ui.visible.thin.left.sidebar ~ .fixed,
 .ui.visible.thin.left.sidebar ~ .pusher {
   -webkit-transform: translate3d(150px, 0, 0);
           transform: translate3d(150px, 0, 0);
+}
+.ui.visible[class*="very thin"].left.sidebar ~ .fixed,
+.ui.visible[class*="very thin"].left.sidebar ~ .pusher {
+  -webkit-transform: translate3d(60px, 0, 0);
+          transform: translate3d(60px, 0, 0);
 }
 .ui.visible.wide.left.sidebar ~ .fixed,
 .ui.visible.wide.left.sidebar ~ .pusher {
@@ -53329,15 +53355,15 @@ html.ios body {
           transform: translate3d(475px, 0, 0);
 }
 /* Right Visible */
-.ui.visible[class*="very thin"].right.sidebar ~ .fixed,
-.ui.visible[class*="very thin"].right.sidebar ~ .pusher {
-  -webkit-transform: translate3d(-60px, 0, 0);
-          transform: translate3d(-60px, 0, 0);
-}
 .ui.visible.thin.right.sidebar ~ .fixed,
 .ui.visible.thin.right.sidebar ~ .pusher {
   -webkit-transform: translate3d(-150px, 0, 0);
           transform: translate3d(-150px, 0, 0);
+}
+.ui.visible[class*="very thin"].right.sidebar ~ .fixed,
+.ui.visible[class*="very thin"].right.sidebar ~ .pusher {
+  -webkit-transform: translate3d(-60px, 0, 0);
+          transform: translate3d(-60px, 0, 0);
 }
 .ui.visible.wide.right.sidebar ~ .fixed,
 .ui.visible.wide.right.sidebar ~ .pusher {
