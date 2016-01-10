@@ -234,13 +234,19 @@ let PartnerSection = () => {
       <div className="ui six column stackable grid">
         <div className="two wide column"/>
         <div className="four wide column">
-          <Image className="centered" src="/images/A_cooperator_homeward.png" />
+          <a className="ui centered image" href="//homewardpublish.wordpress.com/" target="_blank">
+            <img src="/images/A_cooperator_homeward.png"/>
+          </a>
         </div>
         <div className="four wide column">
-          <Image className="centered" src="/images/B_cooperator_npost.png" />
+          <a className="ui centered image" href="//npost.tw/" target="_blank">
+            <img src="/images/B_cooperator_npost.png" />
+          </a>
         </div>
         <div className="four wide column">
-          <Image className="centered" src="/images/C_cooperator_ATEF_.png" />
+          <a className="ui centered image" href="//www.africa.org.tw/" target="_blank">
+            <img src="/images/C_cooperator_ATEF_.png" />
+          </a>
         </div>
         <div className="two wide column"/>
       </div>
