@@ -25,7 +25,7 @@ export default [
     'title': '進擊的攻城屍 ／ Web Enginer No.1'
   }, {
     'name': '吳咨翰 ／ TzuHan',
-    'title': '進擊的攻城屍 ／ Web Enginer No.1'
+    'title': '進擊的攻城屍 ／ Web Enginer No.2'
   }, {
     'name': '洪暄晴 ／',
     'title': '插花的網頁介面設計師 ／ Web UI Designer'

@@ -449,7 +449,7 @@ body {
 .header-section {
   background-image: url(/images/about_us_1.jpg);
   margin-top: -10px;
-  height: 2480px;
+  height: 3100px;
   background-position: top center;
   background-repeat: no-repeat;
 }
@@ -486,8 +486,15 @@ body {
 .story-button {
   background-image: url(/images/about_us_2.jpg);
   background-size: cover;
+  background-position: center;
   height: 1024px;
   padding-top: 180px;
+}
+
+@media screen and (max-width: 768px) {
+  .story-button {
+    height: 100%;
+  }
 }
 
 .story-section .index {
@@ -534,7 +541,14 @@ body {
 .partner-button {
   background-image: url(/images/about_us_3.jpg);
   background-size: cover;
+  background-position:center;
   height: 1024px;
   padding-top: 630px;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .partner-button {
+    height: 100%;
+  }
 }
