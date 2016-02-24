@@ -11,7 +11,13 @@ export default [
     },*/
       {
         url: '/about_authors',
-        showName: '團隊成員',
+        showName: '寫手介紹',
+        subPage: [],
+        status: false
+      },
+      {
+        url: '/about_us',
+        showName: '團隊介紹',
         subPage: [],
         status: false
       }
