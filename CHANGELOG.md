@@ -1,3 +1,23 @@
+<a name="0.6.0"></a>
+# [0.6.0](//compare/v0.5.7...v0.6.0) (2016-02-24)
+
+
+### Bug Fixes
+
+* Add partner URL 408858f
+* Modify section display on mobile bd573ff
+* workaround card image resize issue in chrome 48 52c1726
+
+### Features
+
+* **AuthorPostList:** Add page to show post list of specific author 45feeb7
+* **about:** Add Story and partner information c4856fc
+* **about:** Add about us into menu 5e928c1
+* **about:** Add about us page header 9d5c987
+* **about:** Add about us video 5eae8e6
+
+
+
 <a name="0.5.7"></a>
 ## [0.5.7](//compare/v0.5.6...v0.5.7) (2015-11-29)
 
