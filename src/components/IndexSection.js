@@ -1,9 +1,10 @@
-import React             from 'react';
-import PostListConfig    from '../configures/PostListConfig';
-import PostListStore     from '../stores/PostListStore';
-import PostListTagStore  from '../stores/PostListTagStore';
-import RouteAction       from '../actions/RouteAction';
-import TumblrConfig      from '../configures/TumblrConfig';
+import React               from 'react';
+import PostListConfig      from '../configures/PostListConfig';
+import PostListStore       from '../stores/PostListStore';
+import PostListTagStore    from '../stores/PostListTagStore';
+import PostListAuthorStore from '../stores/PostListAuthorStore';
+import RouteAction         from '../actions/RouteAction';
+import TumblrConfig        from '../configures/TumblrConfig';
 
 import {
   Cards, Card, Image
@@ -17,6 +18,11 @@ export default React.createClass({
         listCon: PostListTagStore.getListContainer()
       };
     }
+    else if (this.props.category === 'author') {
+      return {
+        listCon: PostListAuthorStore.getListContainer(this.props.author)
+      };
+    }
     else {
       return {
         listCon: PostListStore.getListContainer(this.props.category)
@@ -27,6 +33,9 @@ export default React.createClass({
   componentDidMount() {
     if (this.props.category === 'tag') {
       PostListTagStore.addChangeListener(this._onChange);
+    }
+    else if (this.props.category === 'author') {
+      PostListAuthorStore.addChangeListener(this._onChange);
     }
     else if (this.props.category === 'new') {
       PostListStore.addChangeListener('new', this._onChange);
@@ -40,6 +49,9 @@ export default React.createClass({
     if (this.props.category == 'tag') {
       PostListTagStore.removeChangeListener(this._onChange);
     }
+    else if (this.props.category == 'author') {
+      PostListAuthorStore.removeChangeListener(this._onChange);
+    }
     else if (this.props.category == 'new') {
       PostListStore.removeChangeListener('new', this._onChange);
     }
@@ -52,6 +64,11 @@ export default React.createClass({
     if (this.props.category == 'tag') {
       this.setState({
         listCon: PostListTagStore.getListContainer()
+      });
+    }
+    else if (this.props.category == 'author') {
+      this.setState({
+        listCon: PostListAuthorStore.getListContainer(nextProps.author)
       });
     }
     else {
@@ -94,6 +111,9 @@ export default React.createClass({
     if (this.props.category == 'tag') {
       title = this.props.title;
     }
+    else if (this.props.category == 'author') {
+      title = this.props.title;
+    }
     else if (this.props.category == 'new') {
       title = '最新文章';
     }
@@ -117,6 +137,11 @@ export default React.createClass({
     if (this.props.category == 'tag') {
       this.setState({
         listCon: PostListTagStore.getListContainer()
+      });
+    }
+    else if (this.props.category == 'author') {
+      this.setState({
+        listCon: PostListAuthorStore.getListContainer(this.props.author)
       });
     }
     else {

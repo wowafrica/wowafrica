@@ -84,9 +84,10 @@ class PostListTagStore extends EventEmitter {
     let updatedList = [];
     data.posts.forEach((post) => {
       let result = this.parsePostData(post);
-      if (result.valid == true) {
+      /*if (result.valid == true) {
         updatedList.push(result);
-      }
+      }*/
+      updatedList.push(result);
     });
     return updatedList;
   }

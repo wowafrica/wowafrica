@@ -26,10 +26,10 @@ let AuthorsBox = React.createClass({
   },
 
   render() {
-    let authorsDiv = this.state.authors.map(function(author) {
+    let authorsDiv = this.state.authors.map((author) => {
       return (
-          <div className="card" key={author.id}>
-            <Image src={author.photoUrl}></Image>
+          <a className="card" href={'/view_post_list/author/'+author.name} onClick={this._onClick} key={author.id}>
+            <Image src={author.photoUrl} style={{minHeight: 0, minWidth: 0}}></Image>
             <div className="content">
               <div className="header">
                 {author.name}
@@ -41,7 +41,7 @@ let AuthorsBox = React.createClass({
                 {author.description}
               </div>
             </div>
-          </div>
+          </a>
         );
     });
     return (
@@ -55,6 +55,13 @@ let AuthorsBox = React.createClass({
     this.setState({
       authors: AuthorsStore.getAll()
     });
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });
 
