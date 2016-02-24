@@ -215,6 +215,11 @@ let StorySection = () => {
         <p>並以換桌會議的形式深入探討我們也舉辦展覽、</p>
         <p>讓台灣認識長年忽視的非洲大陸，增加國際視野，</p>
         <p>非洲美食日等活動讓台灣認識非洲。</p>
+        <div className="video-container">
+          <div className="video">
+            <iframe src="https://www.youtube.com/embed/o1_-2SDwAXU" frameborder="0" allowfullscreen />
+          </div>
+        </div>
       </Section>
       <Section title="團隊成員">
         <ShowTeam/>
