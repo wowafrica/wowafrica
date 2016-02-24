@@ -29,7 +29,7 @@ let AuthorsBox = React.createClass({
     let authorsDiv = this.state.authors.map((author) => {
       return (
           <a className="card" href={'/view_post_list/author/'+author.name} onClick={this._onClick} key={author.id}>
-            <Image src={author.photoUrl}></Image>
+            <Image src={author.photoUrl} style={{minHeight: 0, minWidth: 0}}></Image>
             <div className="content">
               <div className="header">
                 {author.name}
