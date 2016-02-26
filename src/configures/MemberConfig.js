@@ -9,7 +9,7 @@ export default [
     'name': '何佩佳 ／ Pejia Ho',
     'title': '共同創辦人 & 市場開發經理 ／ Cofunder & BD Manager'
   }, {
-    'name': '葉菀苓 ／ Bear Ya',
+    'name': '葉菀菱 ／ Bear Ya',
     'title': '社群總編 ／ Social Media Editor'
   }, {
     'name': '程可安 ／ Anna',
@@ -27,7 +27,7 @@ export default [
     'name': '吳咨翰 ／ TzuHan',
     'title': '進擊的攻城屍 ／ Web Enginer No.2'
   }, {
-    'name': '洪暄晴 ／',
+    'name': '洪野馬 ／',
     'title': '插花的網頁介面設計師 ／ Web UI Designer'
   }
 ];
