@@ -43,7 +43,7 @@ export default [
     name: 'article',
     showName: '文章分類',
     currentPage: '',
-    subPage: [/*{
+    subPage: [{
       url: '/view_post_list/category/news',
       showName: '時事新聞',
       subPage: [],
@@ -83,7 +83,7 @@ export default [
       showName: '旅行專欄',
       subPage: [],
       status: false
-    }*/
+    }
     ]
   }
 ];

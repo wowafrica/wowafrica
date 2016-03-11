@@ -22,7 +22,14 @@ export default React.createClass({
     let {currentRoute} = this.state;
     let CurrentPage = currentRoute.config['page'];
     return (
-      <CurrentPage pageUrl={currentRoute.url}/>
+      <div>
+        <div id="side-menu" className="ui vertical fixed icon inverted menu">
+          <a className="item" onClick={this._onSideBarClick}>
+            <i className="large sidebar icon"></i>
+          </a>
+        </div>
+        <CurrentPage pageUrl={currentRoute.url}/>
+      </div>
     );
   },
 
@@ -30,5 +37,10 @@ export default React.createClass({
     this.setState({
       currentRoute: RouteStore.getCurrentRoute()
     });
+  },
+
+  _onSideBarClick(e) {
+    e.preventDefault();
+    $('.ui.sidebar').sidebar('toggle');
   }
 });
