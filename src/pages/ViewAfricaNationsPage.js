@@ -12,12 +12,40 @@ import {
   Modal, Content, Icon, Accordion, List, Image
 } from 'react-semantify';
 
+const CONFIG_SCALE = {
+  'origin': {
+    'scale': 380,
+    'rotate': [-20, 0]
+  },
+  'CentralAfrica': {
+    'scale': 1000,
+    'rotate': [-20, -5]
+  },
+  'EastAfrica': {
+    'scale': 800,
+    'rotate': [-40, 0]
+  },
+  'NorthAfrica': {
+    'scale': 600,
+    'rotate': [-13, -20]
+  },
+  'SouthernAfrica': {
+    'scale': 1000,
+    'rotate': [-28, 20]
+  },
+  'WestAfrica': {
+    'scale': 780,
+    'rotate': [4, -5]
+  }
+};
+
 export default React.createClass({
 
   getInitialState() {
     return ({
       map: MapStore.getAll(),
-      nations: NationsStore.getAll()
+      nations: NationsStore.getAll(),
+      type: 'origin'
     });
   },
 
@@ -78,7 +106,7 @@ export default React.createClass({
   },
 
   render() {
-    let {nations} = this.state;
+    let {nations, type} = this.state;
     let {features, area} = this.state.map;
     nations.forEach((nation) => {
       for (let key in area) {
@@ -97,19 +125,29 @@ export default React.createClass({
           <div className="ui stackable four column grid">
             <div className="three wide column"></div>
             <div className="six wide column">
-              {this._drawMap(features)}
+              {this._drawMap(features, type)}
             </div>
             <div className="five wide column">
               <Accordion className="content-area" init={true}>
-                <div className="title"><Icon className="dropdown"/>中非</div>
-              {this.renderArea(area.CentralAfrica)}
-                <div className="title"><Icon className="dropdown"/>東非</div>
+                <div className="title" onClick={this._onCentralAfricaClick}>
+                  <Icon className="dropdown"/>中非
+                </div>
+                {this.renderArea(area.CentralAfrica)}
+                <div className="title" onClick={this._onEastAfricaClick}>
+                  <Icon className="dropdown"/>東非
+                </div>
                 {this.renderArea(area.EastAfrica)}
-                <div className="title"><Icon className="dropdown"/>北非</div>
+                <div className="title" onClick={this._onNorthAfricaClick}>
+                  <Icon className="dropdown"/>北非
+                </div>
                 {this.renderArea(area.NorthAfrica)}
-                <div className="title"><Icon className="dropdown"/>南非</div>
+                <div className="title" onClick={this._onSouthernAfricaClick}>
+                  <Icon className="dropdown"/>南非
+                </div>
                 {this.renderArea(area.SouthernAfrica)}
-                <div className="title"><Icon className="dropdown"/>西非</div>
+                <div className="title" onClick={this._onWestAfricaClick}>
+                  <Icon className="dropdown"/>西非
+                </div>
                 {this.renderArea(area.WestAfrica)}
               </Accordion>
             </div>
@@ -136,20 +174,57 @@ export default React.createClass({
     NationAction.updateNation($(currentTarget).attr('data-nation'));
   },
 
-  _drawMap(data) {
+  _onCentralAfricaClick() {
+    let {type} = this.state;
+    this.setState({
+      type: type === 'CentralAfrica' ? 'origin' : 'CentralAfrica'
+    });
+  },
+
+  _onEastAfricaClick() {
+    let {type} = this.state;
+    this.setState({
+      type: type === 'EastAfrica' ? 'origin' : 'EastAfrica'
+    });
+  },
+
+  _onNorthAfricaClick() {
+    let {type} = this.state;
+    this.setState({
+      type: type === 'NorthAfrica' ? 'origin' : 'NorthAfrica'
+    });
+  },
+
+  _onSouthernAfricaClick() {
+    let {type} = this.state;
+    this.setState({
+      type: type === 'SouthernAfrica' ? 'origin' : 'SouthernAfrica'
+    });
+  },
+
+  _onWestAfricaClick() {
+    let {type} = this.state;
+    this.setState({
+      type: type === 'WestAfrica' ? 'origin' : 'WestAfrica'
+    });
+  },
+
+  _drawMap(data, type) {
     let width = 600;
     let height = 600;
 
+    let config = CONFIG_SCALE[type];
+
     let projection = d3.geo.equirectangular()
-      .scale(380)
+      .scale(config['scale'])
       .translate([width / 2, height / 2])
-      .rotate([-20, 0]);
+      .rotate(config['rotate']);
 
     let path = d3.geo.path()
       .projection(projection);
 
     return (
-      <svg ref="svg" width={width} height={height}>
+      <svg className="map-africa" viewBox="0 0 550 600">
       {
         data.map((d) => {
           return (
