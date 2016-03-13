@@ -20,7 +20,7 @@
     "clean-all": "gulp clean-all"
   },
   "engines": {
-    "node": "1.x"
+    "node": ">=4"
   },
   "dependencies": {
     "classnames": "^2.1.3",
