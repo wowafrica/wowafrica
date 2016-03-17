@@ -66,7 +66,7 @@ export default React.createClass({
           <IndexMenu />
           <CategoryMenu />
         </div>
-        <div className="post-image" style={{backgroundImage: `url(${largeImage})`}}>
+        <div className="post-image" style={{backgroundImage: `url(${largeImage})`, backgroundPosition: 'center'}}>
           <div className="inner">
             <div className="inner-title">
               {title}
@@ -76,7 +76,7 @@ export default React.createClass({
         <div className="ui stackable four column grid">
           <div className="one wide column"></div>
           <div className="ten wide column">
-            <Segment className="very padded container-post basic">
+            <Segment className="very padded container-post basic anti-very-padded" style={{}}>
               <div className={classNames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>

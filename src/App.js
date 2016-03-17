@@ -23,9 +23,9 @@ export default React.createClass({
     let CurrentPage = currentRoute.config['page'];
     return (
       <div>
-        <div id="side-menu" className="ui vertical fixed icon inverted menu">
+        <div id="side-menu" className="ui vertical fixed icon inverted menu sidebar-trans">
           <a className="item" onClick={this._onSideBarClick}>
-            <i className="large sidebar icon"></i>
+            <i className="sidebar icon"></i>
           </a>
         </div>
         <CurrentPage pageUrl={currentRoute.url}/>

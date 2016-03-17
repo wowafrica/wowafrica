@@ -13,10 +13,26 @@ export default React.createClass({
     };
   },
 
+  componentDidMount() {
+    //$('.ui.sidebar').sidebar('setting', 'debug', true);
+    $('.ui.sidebar').sidebar('setting', 'onHide', () => {
+      $('#side-menu').addClass('sidebar-trans');
+    });
+    $('.ui.sidebar').sidebar('setting', 'onVisible', () => {
+      $('#side-menu').removeClass('sidebar-trans');
+    });
+    //document.querySelectorAll('.ui.sidebar')[0].sidebar();
+    //document.querySelectorAll('.ui.sidebar')[0].style.background = 'blue';
+    //document.querySelectorAll('#side-menu')[0].sidebar('get oninput');
+    //document.querySelectorAll('#side-menu')[0].onHidden = () => {
+    //  console.log('hidden!');
+    //};
+  },
+
   render() {
     return (
       <Sidebar className="inverted vertical menu" init='hide'>
-        <Item id="menu-logo" style={{paddingTop: '14px'}}>
+        <Item id="sidebar-menu-logo" style={{paddingTop: '14px'}}>
           <a href="/">
             <img src="/images/logo_color_trans.png" style={{width: '180px'}}/>
           </a>
