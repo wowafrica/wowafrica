@@ -1,3 +1,18 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/wowafrica/wowafrica/compare/v0.6.1...v0.7.0) (2016-03-18)
+
+
+### Bug Fixes
+
+* **env:** Setting node v4 compiler requirements for native add-on ([597f305](https://github.com/wowafrica/wowafrica/commit/597f305))
+
+### Features
+
+* **env:** Update node version to 4.x ([a155cee](https://github.com/wowafrica/wowafrica/commit/a155cee))
+* **map:** Support RWD view and scale Africa area by accordion ([d8678e9](https://github.com/wowafrica/wowafrica/commit/d8678e9))
+
+
+
 <a name="0.6.1"></a>
 ## [0.6.1](//compare/v0.6.0...v0.6.1) (2016-02-26)
 
