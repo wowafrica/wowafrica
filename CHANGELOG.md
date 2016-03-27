@@ -1,3 +1,13 @@
+<a name="0.7.1"></a>
+## [0.7.1](//compare/v0.7.0...v0.7.1) (2016-03-27)
+
+
+### Bug Fixes
+
+* Post list of specific author is not complete 2ad5c8e
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/wowafrica/wowafrica/compare/v0.6.1...v0.7.0) (2016-03-18)
 
