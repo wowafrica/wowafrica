@@ -86,22 +86,23 @@ export default function() {
   PostStore.addChangeListener(generatePage);
 
   let getPostList = function() {
-    client.blogInfo(TumblrConfig.blogName, (err, data) => {
+    client.posts(TumblrConfig.blogName, {limit: 1, type: 'text'}, (err, data) => {
       if (err) {
         console.log(err.stack);
       } else {
-        client.posts(TumblrConfig.blogName, {limit: data.blog.posts, type: 'text'}, (err, data) => {
-          if (err) {
-            console.log(err.stack);
-          } else {
-            // console.log(data);
-            data.posts.forEach((post) => {
-              // For Old WebView, because it would not running js.
-              PostStore.setLoader(false);
-              PostStore.onReceviceUpdatePosts(post.id);
-            });
-          }
-        });
+        for (let offset = 0; offset < data.total_posts; offset += 20) {
+          client.posts(TumblrConfig.blogName, {limit: data.blog.posts, offset: offset, type: 'text'}, (err, data) => {
+            if (err) {
+              console.log(err.stack);
+            } else {
+              data.posts.forEach((post) => {
+                // For Old WebView, because it would not running js.
+                PostStore.setLoader(false);
+                PostStore.onReceviceUpdatePosts(post.id);
+              });
+            }
+          });
+        }
       }
     });
   };
