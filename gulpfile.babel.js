@@ -27,7 +27,6 @@ let vendor = [
   'bower_components/jquery/dist/jquery.js',
   'bower_components/fullpage/jquery.fullpage.js',
   'bower_components/semantic-ui/dist/semantic.js',
-  'bower_components/slick-carousel/slick/slick.js',
   'client/vendor/elevator.min.js'
 ];
 

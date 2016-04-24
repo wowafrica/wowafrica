@@ -2,53 +2,79 @@ import React         from 'react/addons';
 import IndexMenu     from '../components/IndexMenu';
 import CategoryMenu  from '../components/CategoryMenu';
 import Footer        from '../components/Footer';
+import ULConfig      from '../configures/UgandaLetterConfig';
 
 export default React.createClass({
 
   getInitialState() {
-    return {
-    };
+    return ULConfig.origin;
   },
 
   componentDidMount() {
     window.scroll(0, 0);
     $('#category-menu').hide();
-    $('.autoplay').slick({
-      dots: true,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000
+  },
+
+  _onClick(e) {
+    e.preventDefault();
+    this.setState(ULConfig[e.target.id]);
+  },
+
+  pictureDiv(pics) {
+    let cssClass = 'showroom-anima-'+pics.length;
+    return pics.map((pic, i) => {
+      return (<div key={'pic'+i} className={'showroom-position showroom-img '+cssClass} style={{backgroundImage: 'url(/images/uganda/'+pic+')', animationDelay: i*3+'s'}}><span></span></div>);
     });
   },
 
   render() {
+    let {title, picture, content} = this.state;
     return (
       <div>
         <div className="fixed-top-menu">
           <IndexMenu />
           <CategoryMenu />
         </div>
-        <div className="container-content">
-          <div className="ui centered grid">
-            <div className="letter-container">
-              <div className="slider autoplay">
-                <div>
-                  <img style={{width: '100%'}} src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xpt1/l/t31.0-8/11224593_876815579103384_3221965630580204722_o.jpg"/>
+        <div className="container-content" style={{backgroundColor: 'rgb(230,236,240)'}}>
+          <div className="ui container">
+            <div className="ui stackable grid" style={{width: 'inherit', marginLeft: '0'}}>
+              <div className="uganda-showroom">
+                {this.pictureDiv(picture)}
+              </div>
+              <div className="row">
+              <div className="column">
+                <div className="ui grid" style={{paddingTop: '10px'}}>
+                  <div className="one wide column" style={{height: 0}}/>
+                  <div className="fifteen wide column" style={{textAlign: 'left', textDecoration:'underline', fontSize: '1.6rem', paddingTop: '20px'}}>
+                    <div style={{height: '1.5em'}}><span style={{backgroundColor: 'rgb(190,156,194)'}}>&nbsp;UGANDA PENPAL&nbsp;</span></div>
+                    <div style={{height: '1.5em'}}><span style={{backgroundColor: 'rgb(230,236,240)'}}>&nbsp;烏干達筆友&nbsp;</span></div>
+                    <div style={{height: '1.5em'}}><span style={{backgroundColor: 'rgb(230,236,240)'}}>&nbsp;{title}&nbsp;</span></div>
+                  </div>
                 </div>
-                <div>
-                  <img style={{width: '100%'}} src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/t31.0-8/12032830_876815569103385_8341906416830465739_o.jpg"/>
+              </div>
+              </div>
+              <div className="row" style={{height: '20em'}}/>
+              <div className="row">
+                <div className="five wide column" style={{textAlign: 'left', textDecoration:'underline', fontSize: '1.6rem', paddingTop: '20px'}}>
+                  <div className="ui grid" style={{paddingTop: '3em', backgroundColor: 'rgb(150,0,31)'}}>
+                    <div className="two wide column"/>
+                    <div className="fourteen wide column">
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='origin' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動源起&nbsp;</span></a></div>
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='method' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動方式&nbsp;</span></a></div>
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='introduction' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;烏干達小介紹&nbsp;</span></a></div>
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='firstLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第一封信&nbsp;</span></a></div>
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='secondLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第二封信&nbsp;</span></a></div>
+                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='thirdLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第三封信&nbsp;</span></a></div>
+                      <div className="showromm-title"></div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <img style={{width: '100%'}} src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtf1/t31.0-8/11116524_876815522436723_3501810549566678588_o.jpg"/>
+                <div className="one wide column"/>
+                <div className="ten wide column" style={{paddingTop: '6em', textAlign: 'left', fontSize:'1.5rem', lineHeight: '2em'}}>
+                  <div dangerouslySetInnerHTML={{__html: content}} />
                 </div>
-                <div>
-                  <img style={{width: '100%'}} src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xaf1/t31.0-8/12027167_876815495770059_2033263884560156694_o.jpg"/>
-                </div>
-                <div>
-                  <img style={{width: '100%'}} src="https://scontent-tpe1-1.xx.fbcdn.net/hphotos-xtf1/t31.0-8/12045282_876815439103398_5678456448918497992_o.jpg"/>
-                </div>
-                </div>
+              </div>
+              <div style={{height: '100px'}}/>
             </div>
           </div>
         </div>
