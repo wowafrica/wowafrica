@@ -427,6 +427,10 @@ body {
   background-color: #BF3333;
 }
 
+.letter-slider {
+  width: 90%;
+}
+
 .ui.segment {
   padding-left: 0px;
   padding-right: 0px;
