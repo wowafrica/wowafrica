@@ -57308,6 +57308,149 @@ html.ios body {
             transform: scale3d(1, 1, 1);
   }
 }
+.uganda-showroom {
+  width: inherit;
+  padding-top: 30px;
+}
+.showroom-position {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.showroom-img {
+  height: 509px;
+  color: transparent;
+  width: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.showroom-anima-5 {
+  visibility: hidden;
+  -webkit-animation: backimgAnimation-5 15s linear infinite 0s;
+          animation: backimgAnimation-5 15s linear infinite 0s;
+}
+.showroom-anima-7 {
+  visibility: hidden;
+  -webkit-animation: backimgAnimation-7 21s linear infinite 0s;
+          animation: backimgAnimation-7 21s linear infinite 0s;
+}
+.showromm-title {
+  height: 2em;
+  line-height: 1em;
+}
+.showromm-title a {
+  color: black;
+}
+@-webkit-keyframes backimgAnimation-5 {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    background-position: 995px 0px;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  6% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  20% {
+    opacity: 1;
+    background-position: 0 0;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  26% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+  100% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+}
+@keyframes backimgAnimation-5 {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    background-position: 995px 0px;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  6% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  20% {
+    opacity: 1;
+    background-position: 0 0;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  26% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+  100% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+}
+@-webkit-keyframes backimgAnimation-7 {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    background-position: 995px 0px;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  5% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  14% {
+    opacity: 1;
+    background-position: 0 0;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  19% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+  100% {
+    opacity: 0;
+    background-position: -955px 0px;
+  }
+}
+@keyframes backimgAnimation-7 {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    background-position: 995px 0px;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  5% {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  14% {
+    opacity: 1;
+    background-position: 0 0;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+  }
+  19% {
+    opacity: 0;
+    background-position: -995px 0px;
+  }
+  100% {
+    opacity: 0;
+    background-position: -955px 0px;
+  }
+}
 /*-------------------------| Common |-------------------------*/
 body {
   font-family: '微軟正黑體';
@@ -57716,6 +57859,9 @@ body {
 }
 #footer-emailBtn:hover {
   background-color: #BF3333;
+}
+.letter-slider {
+  width: 90%;
 }
 .ui.segment {
   padding-left: 0px;
