@@ -1,3 +1,19 @@
+<a name="0.8.0"></a>
+# [0.8.0](//compare/v0.7.1...v0.8.0) (2016-05-19)
+
+
+### Bug Fixes
+
+* Index page static render <meta /> content 32dba70
+
+### Features
+
+* **UgandaLetter:** Add carousel template by slick 8d08423
+* **UgandaLetter:** Uganda letter page with css-driver picture slideshow 95eb318
+* **nation:** Update 撒拉威阿拉伯民主共和國 and 尼日 d68ff6c
+
+
+
 <a name="0.7.2"></a>
 ## [0.7.2](//compare/v0.7.1...v0.7.2) (2016-04-17)
 
