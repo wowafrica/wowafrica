@@ -51,6 +51,7 @@ export default function() {
     <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta property="og:title" content="${title}" />
       <meta property="og:description" content="${brief}" />
       <meta property="og:image" content="${image}" />
