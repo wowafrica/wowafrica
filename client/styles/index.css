@@ -549,6 +549,10 @@ body {
   .section-post-author {
     min-height: 400px;
   }
+
+  .map-africa {
+    display: none;
+  }
 }
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
