@@ -48,7 +48,7 @@ export default React.createClass({
       currentMenu.map((section) => {
         return (
           <Item>
-            <div className="header">
+            <div className="ui inverted large header">
               {section.showName}
               {this.renderItem(section)}
             </div>
@@ -63,7 +63,8 @@ export default React.createClass({
       return (
       <Item type="link"
             href={page.url}
-            onClick={this._onClick}>
+            onClick={this._onClick}
+            style={{fontSize: '1.5em'}}>
         {page.showName}
       </Item>
       );
