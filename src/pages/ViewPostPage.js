@@ -96,8 +96,8 @@ export default React.createClass({
             </Segment>
           </div>
           <div className="one wide column"></div>
-          <div className="four wide column">
-            <Segment className="center aligned basic container-post-author" style={{backgroundColor: '#305775', height: '100%', position: 'absolute'}}>
+          <div className="four wide column section-post-author" style={{backgroundColor: '#305775'}}>
+            <Segment className="center aligned basic container-post-author" style={{height: '100%', position: 'absolute'}}>
               <a href={'/view_post_list/author/'+name} onClick={this._onClick}>
                 <Image className="small centered circular" src={photoUrl}/>
                 <div>{name}</div>
