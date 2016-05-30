@@ -22,12 +22,8 @@ export default function() {
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="chrome=1">
       <meta property="og:title" content="WOW! AFRICA" />
-<<<<<<< 27d572897409e92e0a0dc7eee36d88d7b09eada3
-      <meta property="og:description" content="wowAfrica阿非卡為台灣最完整的非洲資訊平台，最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。" />
-=======
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta property="og:description" content=""wowAfrica 阿非卡為台灣最完整的非洲資訊平台 最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。" />
->>>>>>> Sidebar button use transparent background when sidebar is hidden
+      <meta property="og:description" content="wowAfrica阿非卡為台灣最完整的非洲資訊平台，最新資訊及活動通知我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。" />
       <meta property="og:image" content="http://wowafrica.tw/images/landing.png" />
       <title>WOW! AFRICA</title>
       <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
