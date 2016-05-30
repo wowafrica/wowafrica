@@ -1,3 +1,17 @@
+<a name="0.9.0"></a>
+# [0.9.0](//compare/v0.8.0...v0.9.0) (2016-05-30)
+
+
+### Bug Fixes
+
+* **author:** Margin error on post page fc11d70
+* **author:** RWD author on post page 0209795
+* **map:** RWD on map page. ebe6979
+* **post:** Enable static page RWD setting 1445dda
+* **sidebar:** adjust font size 5e615e6
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](//compare/v0.7.1...v0.8.0) (2016-05-19)
 
