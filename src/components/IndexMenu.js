@@ -70,7 +70,7 @@ export default React.createClass({
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
               <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
               <Menu>
-                {this.renderItem(section.subPage)}
+                {this.renderItem(section)}
               </Menu>
             </Dropdown>
           </Item>
@@ -79,9 +79,12 @@ export default React.createClass({
     );
   },
 
-  renderItem(subPage) {
+  renderItem(section) {
+    if (section.name === 'article')
+      return ;
+      
     return (
-      subPage.map((page) => {
+      section.subPage.map((page) => {
         return (
         <Item type="link"
               active={page.status}
