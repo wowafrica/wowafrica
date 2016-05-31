@@ -6671,7 +6671,6 @@ input::selection {
 .ui.justified.container {
   text-align: justify;
   -webkit-hyphens: auto;
-     -moz-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
 }
@@ -28077,7 +28076,6 @@ ol.ui.horizontal.list li:before,
 .ui.grid > .row > .justified.column {
   text-align: justify;
   -webkit-hyphens: auto;
-     -moz-hyphens: auto;
       -ms-hyphens: auto;
           hyphens: auto;
 }
