@@ -4,7 +4,6 @@ import concat       from 'gulp-concat';
 import gutil        from 'gulp-util';
 import less         from 'gulp-less';
 import livereload   from 'gulp-livereload';
-import jade         from 'gulp-jade';
 import plumber      from 'gulp-plumber';
 import uglify       from 'gulp-uglify';
 import gulpif       from 'gulp-if';
@@ -47,14 +46,6 @@ if (gutil.env.env === 'production') {
 gulp.task('static-generator', shell.task(
   'babel-node server/staticGenerator.js'
 ));
-
-gulp.task('jade', () => {
-  return gulp.src('./client/views/*.jade')
-    .pipe(plumber())
-    .pipe(jade())
-    .pipe(gulp.dest(BUILD_PATH))
-    .pipe(livereload());
-});
 
 gulp.task('ico', () => {
   return gulp.src('./client/views/*.ico')

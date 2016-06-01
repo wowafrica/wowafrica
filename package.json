@@ -51,7 +51,6 @@
     "gulp-autoprefixer": "3.0.1",
     "gulp-concat": "^2.6.0",
     "gulp-if": "^1.2.5",
-    "gulp-jade": "^1.0.0",
     "gulp-less": "^3.0.3",
     "gulp-livereload": "^3.7.0",
     "gulp-nodemon": "^2.0.4",
