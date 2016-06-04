@@ -1,3 +1,14 @@
+<a name="0.9.1"></a>
+## [0.9.1](//compare/v0.9.0...v0.9.1) (2016-06-04)
+
+
+### Bug Fixes
+
+* **index-wide-title:** fix index-wide-title overflow in mobile index page 949115f
+* **sideBar:** fix sidebar should display if access website through post url 4da0662
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](//compare/v0.8.0...v0.9.0) (2016-05-30)
 

@@ -78,7 +78,7 @@ export default React.createClass({
             </div>
           </div>
         </div>
-        <div id="footer-divider" style={{height: '50px'}} />
+        <div id="footer-divider"/>
         <Footer/>
         <div id="page-bottom"/>
       </div>

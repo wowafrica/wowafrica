@@ -259,20 +259,27 @@ let PartnerSection = () => {
   );
 };
 
-export default () => {
-  return (
-    <div>
-      <div className="fixed-top-menu">
-        <IndexMenu />
-        <CategoryMenu />
+export default React.createClass({
+  componentDidMount() {
+    $('#category-menu').hide();
+    window.scroll(0, 0);
+  },
+
+  render() {
+    return (
+      <div>
+        <div className="fixed-top-menu">
+          <IndexMenu />
+          <CategoryMenu />
+        </div>
+        <div className="container-content">
+          <HeaderSection />
+          <StorySection />
+          <PartnerSection />
+        </div>
+        <div id="footer-divider" style={{height: '50px'}} />
+        <Footer/>
       </div>
-      <div className="container-content">
-        <HeaderSection />
-        <StorySection />
-        <PartnerSection />
-      </div>
-      <div id="footer-divider" style={{height: '50px'}} />
-      <Footer/>
-    </div>
-  );
-};
+    );
+  }
+});
