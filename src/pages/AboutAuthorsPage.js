@@ -69,6 +69,7 @@ export default React.createClass({
 
   componentDidMount() {
     $('#category-menu').hide();
+    window.scroll(0, 0);
   },
 
   render() {
