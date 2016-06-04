@@ -555,6 +555,24 @@ body {
     margin-top: 0px;
   }
 
+  .index-wide {
+    height: 480px;
+  }
+
+  .index-wide-box-before {
+    height: 240px;
+  }
+
+  .index-wide-box {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .index-wide-title {
+    height: auto;
+    line-height: 1.4em;
+  }
+
   .map-africa {
     display: none;
   }
