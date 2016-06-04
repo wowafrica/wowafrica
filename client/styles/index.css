@@ -38,54 +38,6 @@ body {
   margin-top: 50px;
 }
 
-.index-wide {
-  width: 100%;
-  height: 720px;
-  background-size: cover;
-  text-align: center;
-}
-
-.index-wide-box-before {
-  height: 480px;
-}
-
-.index-wide-box {
-  margin-left: 60px;
-  padding: 10px;
-  width: 440px;
-  text-align: justify;
-  font-size: 36px;
-  letter-spacing: 10px;
-  background-color: rgba(0,0,0,0.6);
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-}
-
-.index-wide-box:hover{
-  background-color: rgba(0,0,0,0.8);
-}
-
-.index-wide-type {
-  font-size: 36px;
-  margin-bottom: 0;
-  color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.index-wide-title {
-  font-size: 24px;
-  color: white;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  line-height: 1.25em;
-}
-
 .land {
   fill: #593030;
   stroke: white;
@@ -375,24 +327,6 @@ body {
 @media only screen and (max-width: 767px) {
   .post-list-title {
     text-align: center;
-  }
-
-  .index-wide {
-    height: 480px;
-  }
-
-  .index-wide-box-before {
-    height: 240px;
-  }
-
-  .index-wide-box {
-    margin-left: 0;
-    width: 100%;
-  }
-
-  .index-wide-title {
-    height: auto;
-    line-height: 1.4em;
   }
 
   .footer-box-info {
