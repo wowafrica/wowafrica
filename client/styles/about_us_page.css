@@ -76,6 +76,57 @@
   height: 100%;
 }
 
+.header-section {
+  background-image: url(/images/about_us_1.jpg);
+  margin-top: -10px;
+  height: 3100px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.header-divider {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}
+
+.header-section .title {
+  color: white !important;
+}
+
+.header-section .index {
+  padding-top: 200px;
+}
+
+.header-button {
+  margin-top: 50px;
+}
+
+.header-section .goal {
+  margin-top: 240px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #60C5DB;
+  color: white;
+}
+
+.goal p {
+  font-size: 20px;
+}
+
+.about-button {
+  background-color: #298299 !important;
+  color: white !important;
+  line-height: 50px !important;
+}
+
+.about-button.hover {
+  background-color: #FFBF6B !important;
+}
+
+.about-button:hover {
+  background-color: #FFBF6B !important;
+}
+
 @media screen and (max-width: 768px) {
   .partner-button {
     height: 100%;
