@@ -346,6 +346,11 @@ body {
   color: white;
 }
 
+.footer-box-info {
+  font-size: 18px;
+  padding-top: 3rem;
+}
+
 .footer-icon-groups {
   padding-top: 10px;
   display: flex;
@@ -379,6 +384,10 @@ body {
 }
 .footer-icon.footer-icon-facebook:hover {
   background-image: url(/images/wb_facebook.png);
+}
+
+#footer-divider {
+  height: 50px;
 }
 
 #footer-emailBtn {
@@ -571,6 +580,14 @@ body {
   .index-wide-title {
     height: auto;
     line-height: 1.4em;
+  }
+
+  .footer-box-info {
+    padding-top: 1rem;
+  }
+
+  #footer-divider {
+    height: 0;
   }
 
   .map-africa {

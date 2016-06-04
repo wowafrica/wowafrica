@@ -14,7 +14,7 @@ export default React.createClass({
           <div className="ui stackable grid">
             <div className="one wide column" />
             <div className="six wide centered column">
-              <div className="footer-box" style={{fontSize: '18px', paddingTop: '3rem'}}>
+              <div className="footer-box footer-box-info">
                 wowAfrica 阿非卡為台灣最完整的非洲資訊平台，我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。
               </div>
             </div>
@@ -62,7 +62,7 @@ export default React.createClass({
                 </div>
               </div>
             </div>
-            <div className="one wide column" />            
+            <div className="one wide column" />
           </div>
         </div>
       </div>
