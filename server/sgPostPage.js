@@ -59,6 +59,7 @@ export default function() {
       <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
     </head>
     <body>
+      <div id="side_bar"></div>
       <div id="content">${html}</div>
       <div id="nation_modal" class="ui dimmer modals page"></div>
       <script type="text/javascript" src="/scripts/vendor.js"></script>
