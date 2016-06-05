@@ -13,6 +13,8 @@ export default function() {
     consumer_key: TumblrConfig.consumerKey // eslint-disable-line
   });
 
+  let allPostList = [];
+
   let authorPostList = {
     '何佩佳': [],
     '謝睿哲': [],
@@ -31,6 +33,15 @@ export default function() {
     }
   });
 
+  let updateAllPostListFile = function(id) {
+    allPostList.push(id);
+    fs.writeFile('./_public/view_post_list/allPostList.json', JSON.stringify(allPostList), 'utf8', (error) => {
+      if (error) {
+        throw error;
+      }
+    });
+  };
+
   let updateAuthorPostListFile = function(author, id) {
     authorPostList[author].push(id);
     fs.writeFile(`./_public/view_post_list/authorPostList.json`, JSON.stringify(authorPostList), 'utf8', (error) => {
@@ -42,9 +53,9 @@ export default function() {
   };
 
   let generatePage = function() {
-    let html = ReactDOMServer.renderToString(<ViewPostPage/>);
     let post = PostStore.getPost();
     let {id, title, brief, image, author} = post;
+    let html = ReactDOMServer.renderToString(<ViewPostPage pageUrl={'/view_post_list/posts/'+id}/>);
     let template = `
   <!DOCTYPE html>
   <html>
@@ -82,6 +93,7 @@ export default function() {
       }
       console.log(`${id} done`);
     });
+    updateAllPostListFile(id);
     updateAuthorPostListFile(author, id);
   };
 
