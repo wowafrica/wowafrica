@@ -1,3 +1,18 @@
+<a name="0.9.2"></a>
+## [0.9.2](//compare/v0.9.1...v0.9.2) (2016-06-05)
+
+
+### Bug Fixes
+
+* **sgPostPage:** Pass page url into post page static generator to generate correct fb share link 9e05bc0
+
+### Features
+
+* **readMore:** Add random read more block under post page
+* **semanticUI:** Upgrade to 2.1.8 8fb5b01
+
+
+
 <a name="0.9.1"></a>
 ## [0.9.1](//compare/v0.9.0...v0.9.1) (2016-06-04)
 
