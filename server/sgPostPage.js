@@ -13,6 +13,8 @@ export default function() {
     consumer_key: TumblrConfig.consumerKey // eslint-disable-line
   });
 
+  let allPostList = [];
+
   let authorPostList = {
     '何佩佳': [],
     '謝睿哲': [],
@@ -30,6 +32,15 @@ export default function() {
       fs.mkdirSync('./_public/view_post_list/posts');
     }
   });
+
+  let updateAllPostListFile = function(id) {
+    allPostList.push(id);
+    fs.writeFile('./_public/view_post_list/allPostList.json', JSON.stringify(allPostList), 'utf8', (error) => {
+      if (error) {
+        throw error;
+      }
+    });
+  };
 
   let updateAuthorPostListFile = function(author, id) {
     authorPostList[author].push(id);
@@ -82,6 +93,7 @@ export default function() {
       }
       console.log(`${id} done`);
     });
+    updateAllPostListFile(id);
     updateAuthorPostListFile(author, id);
   };
 

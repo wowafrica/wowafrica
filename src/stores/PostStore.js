@@ -109,8 +109,6 @@ AppDispatcher.register((action) => {
 
   switch (action.actionType) {
     case RouteConstants.ROUTE_POST_PAGE:
-      console.log('Get Post Action');
-      console.log(action.postID);
       postStore.onReceviceUpdatePosts(action.postID);
       break;
     default:

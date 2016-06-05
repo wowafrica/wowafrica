@@ -4,6 +4,7 @@ import IndexMenu    from '../components/IndexMenu';
 import CategoryMenu from '../components/CategoryMenu';
 import Footer       from '../components/Footer';
 import ShareButton  from '../components/ShareButton';
+import ReadMoreBlk  from '../components/ReadMoreBlock';
 import PostStore    from '../stores/PostStore';
 import AuthorsStore from '../stores/AuthorsStore';
 
@@ -93,6 +94,8 @@ export default React.createClass({
               </div>
               <br/>
               <ShareButton pageUrl={pageUrl}/>
+              <div style={{height: '30px'}}/>
+              <ReadMoreBlk postId={pageUrl.substr(pageUrl.lastIndexOf('/')+1)}/>
             </Segment>
           </div>
           <div className="one wide column"></div>
