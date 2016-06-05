@@ -19,34 +19,6 @@ let NormalSection = React.createClass({
   }
 });
 
-let GeoMap = React.createClass({
-  render() {
-
-    let {nation, width, height} = this.props;
-
-    if (nation === null) {
-      return (<svg></svg>);
-    }
-
-    let projection = d3.geo.equirectangular()
-      .scale(500)
-      .translate([width / 2, height / 2])
-      .rotate([-35, 0]);
-
-    let path = d3.geo.path()
-      .projection(projection);
-
-    return (
-      <svg ref="svg" width={width} height={height}>
-        <path className="land"
-              d={path(nation)}
-              data-nation={nation.properties.ISO_A3}>
-        </path>
-      </svg>
-    );
-  }
-});
-
 let PieChar = React.createClass({
   render() {
 

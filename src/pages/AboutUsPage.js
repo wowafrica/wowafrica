@@ -240,20 +240,32 @@ let PartnerSection = () => {
         <div className="two wide column"/>
         <div className="four wide column">
           <a className="ui centered image" href="//homewardpublish.wordpress.com/" target="_blank">
-            <img src="/images/A_cooperator_homeward.png"/>
+            <img src="/images/cooperator_A_homeward.png"/>
           </a>
         </div>
         <div className="four wide column">
-          <a className="ui centered image" href="//npost.tw/" target="_blank">
-            <img src="/images/B_cooperator_npost.png" />
+          <a className="ui centered image" href="//npost.tw/archives/author/wowafrica" target="_blank">
+            <img src="/images/cooperator_B_npost.png" />
           </a>
         </div>
         <div className="four wide column">
           <a className="ui centered image" href="//www.africa.org.tw/" target="_blank">
-            <img src="/images/C_cooperator_ATEF_.png" />
+            <img src="/images/cooperator_C_ATEF_.png" />
           </a>
         </div>
         <div className="two wide column"/>
+        <div className="four wide column"/>
+        <div className="four wide column">
+          <a className="ui centered image" href="//www.seinsights.asia/" target="_blank">
+            <img src="/images/cooperator_D_sei.png" />
+          </a>
+        </div>
+        <div className="four wide column">
+          <a className="ui centered image" href="//buzzorange.com/author/wowafrica/" target="_blank">
+            <img src="/images/cooperator_E_buzzorange.png" />
+          </a>
+        </div>
+        <div className="four wide column"/>
       </div>
     </div>
   );

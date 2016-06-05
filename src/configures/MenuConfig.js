@@ -10,14 +10,14 @@ export default [
       status: false
     },*/
       {
-        url: '/about_authors',
-        showName: '寫手介紹',
+        url: '/about_us',
+        showName: '團隊介紹',
         subPage: [],
         status: false
       },
       {
-        url: '/about_us',
-        showName: '團隊介紹',
+        url: '/about_authors',
+        showName: '寫手介紹',
         subPage: [],
         status: false
       }
