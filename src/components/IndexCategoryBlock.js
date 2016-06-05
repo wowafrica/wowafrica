@@ -50,13 +50,13 @@ let CategoryBox = React.createClass({
         <div className="middle aligned column">
             <div className="category-box" style={{backgroundImage: 'url('+backImg+')'}}>
               <div className="ui grid">
-                <div className="four wide column" style={{paddingRight: '0'}}>
+                <div className="four wide column" style={{paddingRight: 0}}>
                   <a href={url} onClick={this._onClick}>
                     <div className="category-box-left-up"/>
                     <div className="category-box-left-bottom"/>
                   </a>
                 </div>
-                <div className="eight wide column" style={{paddingRight: '0', paddingLeft: '0'}}>
+                <div className="eight wide column" style={{paddingRight: 0, paddingLeft: 0}}>
                   <a href={url} onClick={this._onClick}>
                     <div className="category-box-center-up"/>
                     <div className="category-box-center-bottom">
@@ -70,7 +70,7 @@ let CategoryBox = React.createClass({
                     </div>
                   </a>
                 </div>
-                <div className="four wide column" style={{paddingLeft: '0'}}>
+                <div className="four wide column" style={{paddingLeft: 0}}>
                   <a href={url} onClick={this._onClick}>
                     <div className="category-box-right-up"/>
                     <div className="category-box-right-bottom"/>
