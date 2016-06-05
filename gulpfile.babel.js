@@ -30,7 +30,7 @@ let vendor = [
 ];
 
 let dependencies = [
-  'babel/polyfill',
+  'babel-polyfill',
   'd3',
   'flux',
   'routr',
@@ -100,7 +100,7 @@ gulp.task('browserify-dependencies', () => {
 });
 
 let bundler = browserify('./client/scripts/index.js', {
-  transform: [[babelify, {stage: 0}]],
+  transform: [[babelify, {presets: ["es2015", "react", "stage-0"]}]],
   plugin: production ? [] : [livereact],
   debug: !production,
   fullPaths: !production

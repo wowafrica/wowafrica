@@ -16,7 +16,7 @@ module.exports = function(config) {
     },
 
     browserify: {
-      transform: [['babelify', {'stage': 0}], 'browserify-istanbul'],
+      transform: [['babelify', {presets: ["es2015", "react", "stage-0"]}], 'browserify-istanbul'],
       extensions: ['js'],
       debug: true,
       bundleDelay: 1000

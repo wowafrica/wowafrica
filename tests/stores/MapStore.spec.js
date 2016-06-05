@@ -14,7 +14,7 @@ let fakeMap = {
 
 describe('MapStore', () => {
   it('should have initialize format', () => {
-    let mapStore = require('../../src/stores/MapStore');
+    let mapStore = require('../../src/stores/MapStore').default;
 
     expect(mapStore.geoJson).toEqual({
       features: [],
@@ -29,7 +29,7 @@ describe('MapStore', () => {
   });
 
   it('should get Nation map infor by ISO', () => {
-    let mapStore = require('../../src/stores/MapStore');
+    let mapStore = require('../../src/stores/MapStore').default;
 
     mapStore.geoJson = fakeMap;
     let testNation = mapStore.getNationMapByISO('SOM');

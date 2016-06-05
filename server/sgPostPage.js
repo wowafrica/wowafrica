@@ -44,7 +44,7 @@ export default function() {
 
   let updateAuthorPostListFile = function(author, id) {
     authorPostList[author].push(id);
-    fs.writeFile(`./_public/view_post_list/authorPostList.json`, JSON.stringify(authorPostList), 'utf8', (error) => {
+    fs.writeFile('./_public/view_post_list/authorPostList.json', JSON.stringify(authorPostList), 'utf8', (error) => {
       if (error) {
         throw error;
       }
