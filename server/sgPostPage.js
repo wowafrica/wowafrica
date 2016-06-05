@@ -53,9 +53,9 @@ export default function() {
   };
 
   let generatePage = function() {
-    let html = ReactDOMServer.renderToString(<ViewPostPage/>);
     let post = PostStore.getPost();
     let {id, title, brief, image, author} = post;
+    let html = ReactDOMServer.renderToString(<ViewPostPage pageUrl={'/view_post_list/posts/'+id}/>);
     let template = `
   <!DOCTYPE html>
   <html>
