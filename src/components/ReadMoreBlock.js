@@ -29,9 +29,10 @@ export default React.createClass({
   },
 
   render() {
-    let blocks = this.state.posts.map((post) => {
+    let blocks = this.state.posts.map((post, idx) => {
+      let style = idx == 0 ? {borderTop: '1px solid rgba(34, 36, 38, 0.15)', padding: '1em 0em !important'} : {};
       return (
-          <a className="item" href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
+          <a className="item" href={'/view_post_list/posts/'+post.id} onClick={this._onClick} style={style}>
             <div className="ui medium image">
               <img src={post.image} style={{maxWidth: '300px', maxHeight: '200px'}}/>
             </div>

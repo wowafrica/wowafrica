@@ -94,7 +94,7 @@ export default React.createClass({
               </div>
               <br/>
               <ShareButton pageUrl={pageUrl}/>
-              <div style={{height: '30px'}}/>
+              <div style={{height: '10px'}}/>
               <ReadMoreBlk postId={pageUrl.substr(pageUrl.lastIndexOf('/')+1)}/>
             </Segment>
           </div>
