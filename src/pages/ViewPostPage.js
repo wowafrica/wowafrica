@@ -35,6 +35,7 @@ export default React.createClass({
   },
 
   componentDidUpdate() {
+    window.scroll(0, 0);
   },
 
   getAuthor() {

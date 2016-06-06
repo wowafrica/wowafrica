@@ -1,7 +1,7 @@
 import React              from 'react';
 import PostListConstants  from '../constants/PostListConstants';
 import ReadMoreStore      from '../stores/PostListReadMoreStore';
-
+import RouteAction        from '../actions/RouteAction';
 
 export default React.createClass({
   getInitialState() {
@@ -26,6 +26,7 @@ export default React.createClass({
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();
+    ReadMoreStore.onUpdateRandomPostList(3, this.props.postId);
   },
 
   render() {
