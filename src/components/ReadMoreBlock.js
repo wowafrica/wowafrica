@@ -40,7 +40,7 @@ export default React.createClass({
                 {post.title}
               </div>
               <div className="description">
-                {post.brief}
+                {post.brief.length > 80 ? post.brief.substr(0, 80)+'...' : post.brief}
               </div>
             </div>
           </a>
