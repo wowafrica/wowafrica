@@ -1,21 +1,22 @@
 {
   "base": "",
   "version": "2.1.8",
-   "paths": {
-     "source": {
+  "paths": {
+    "source": {
       "config"      : "src/theme.config",
       "definitions" : "src/definitions/",
       "site"        : "src/site/",
       "themes"      : "src/themes/"
     },
-     "output": {
+    "output": {
       "packaged"     : "dist/",
       "uncompressed" : "dist/components/",
       "compressed"   : "dist/components/",
       "themes"       : "dist/themes/"
     },
-    "clean"        : "dist/"
+    "clean": "dist/"
   },
   "permission" : false,
   "rtl": false,
+  "autoInstall": true
 }

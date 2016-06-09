@@ -1,6 +1,7 @@
 import path        from 'path';
 import webpack     from 'webpack';
-import babelConfig from './babel.config.dev.client';
+import babelConfig from './babel.config.prod';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
   entry: {
@@ -8,7 +9,6 @@ export default {
     vendor: [
       'jquery',
       'semantic-ui/dist/semantic.js',
-      'webpack-hot-middleware/client',
       'babel-polyfill',
       'd3',
       'flux',
@@ -25,6 +25,7 @@ export default {
     publicPath: '/scripts/'
   },
   plugins: [
+    new ExtractTextPlugin('../styles/main.css', {allChunks: true}),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
@@ -52,6 +53,12 @@ export default {
       ],
       loader: 'babel',
       query: babelConfig
+    }, {
+      test: /\.less$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+    }, {
+      test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+      loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
   },
   node: {

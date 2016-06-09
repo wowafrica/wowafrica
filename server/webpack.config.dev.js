@@ -49,6 +49,12 @@ export default {
       ],
       loader: 'babel',
       query: babelConfig
+    }, {
+      test: /\.less$/,
+      loader: 'style!css!less'
+    }, {
+      test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
+      loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
   },
   node: {

@@ -232,7 +232,7 @@ gulp.task('watch', () => {
 
 // gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
 gulp.task('bundle', ['webpack']);
-gulp.task('build', ['ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
+gulp.task('build', ['ico', 'data', 'images', 'static-generator', 'bundle']);
 // gulp.task('dev', ['build', 'watch-server', 'watch', 'watch-js']);
 gulp.task('dev', ['build', 'webpack:watch-server']);
 gulp.task('default', ['build']);
