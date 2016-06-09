@@ -82,7 +82,7 @@ export default React.createClass({
   renderItem(section) {
     if (section.name === 'article')
       return ;
-      
+
     return (
       section.subPage.map((page) => {
         return (

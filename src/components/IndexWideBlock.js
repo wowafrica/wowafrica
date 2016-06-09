@@ -3,6 +3,7 @@ import PostListConfig from '../configures/PostListConfig';
 import PostListStore  from '../stores/PostListStore';
 import RouteAction    from '../actions/RouteAction';
 import PostListAction from '../actions/PostListAction';
+import Elevator       from '../vendors/elevator';
 
 export default React.createClass({
 
