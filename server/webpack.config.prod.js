@@ -3,7 +3,6 @@ import webpack     from 'webpack';
 import babelConfig from './babel.config.dev.client';
 
 export default {
-  devtool: 'cheap-module-eval-source-map',
   entry: {
     app: path.join(__dirname, '../client/scripts/index'),
     vendor: [
@@ -31,14 +30,18 @@ export default {
       jQuery: 'jquery'
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development'),
+        NODE_ENV: JSON.stringify('production'),
         BROWSER: JSON.stringify(true)
       }
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.optimize.UglifyJsPlugin({
+      compressor: {
+        warnings: false
+      }
+    })
   ],
   module: {
     loaders: [{
