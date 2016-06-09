@@ -5,7 +5,7 @@ import PostSettingTestData from '../PostSettingTestData';
 
 describe('PostStore', () => {
   it('should parse post data and use default setting without setting in post', () => {
-    let postStore = require('../../src/stores/PostStore');
+    let postStore = require('../../src/stores/PostStore').default;
 
     postStore.parsePostData(null, PostData);
 
@@ -13,7 +13,7 @@ describe('PostStore', () => {
   });
 
   it('should parse post data and setting config from post', () => {
-    let postStore = require('../../src/stores/PostStore');
+    let postStore = require('../../src/stores/PostStore').default;
 
     postStore.parsePostData(null, PostSettingData);
 

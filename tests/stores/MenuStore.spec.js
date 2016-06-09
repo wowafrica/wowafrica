@@ -1,13 +1,13 @@
 describe('MenuStore', () => {
   it('should have initialize menuConfig', () => {
-    let menuStore = require('../../src/stores/MenuStore');
-    let menuConfig = require('../../src/configures/MenuConfig');
+    let menuStore = require('../../src/stores/MenuStore').default;
+    let menuConfig = require('../../src/configures/MenuConfig').default;
 
     expect(menuStore.getAll()).toEqual(menuConfig);
   });
 
   it('should update configure status and currentPage when recevice path', () => {
-    let menuStore = require('../../src/stores/MenuStore');
+    let menuStore = require('../../src/stores/MenuStore').default;
 
     menuStore.onReceiveUpdatePath('/view_africa_nations');
 
@@ -19,7 +19,7 @@ describe('MenuStore', () => {
   });
 
   it('should let other page status be false when recevice path', () => {
-    let menuStore = require('../../src/stores/MenuStore');
+    let menuStore = require('../../src/stores/MenuStore').default;
 
     menuStore.onReceiveUpdatePath('/view_africa_nations');
 

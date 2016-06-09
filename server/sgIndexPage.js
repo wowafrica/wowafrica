@@ -50,13 +50,13 @@ export default function() {
       if (error) {
         throw error;
       }
-      console.log(`index.html done`);
+      console.log('index.html done');
     });
     fs.writeFile('./_public/404.html', template, 'utf8', (error) => {
       if (error) {
         throw error;
       }
-      console.log(`404.html done`);
+      console.log('404.html done');
     });
   };
 
