@@ -1,7 +1,7 @@
 import React              from 'react';
-import PostListConstants  from '../constants/PostListConstants';
-import ReadMoreStore      from '../stores/PostListReadMoreStore';
-import RouteAction        from '../actions/RouteAction';
+import PostListConstants  from '../../constants/PostListConstants';
+import ReadMoreStore      from '../../stores/PostListReadMoreStore';
+import RouteAction        from '../../actions/RouteAction';
 
 export default React.createClass({
   getInitialState() {

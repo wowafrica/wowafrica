@@ -1,10 +1,10 @@
 import React               from 'react';
-import PostListConfig      from '../configures/PostListConfig';
-import PostListStore       from '../stores/PostListStore';
-import PostListTagStore    from '../stores/PostListTagStore';
-import PostListAuthorStore from '../stores/PostListAuthorStore';
-import RouteAction         from '../actions/RouteAction';
-import TumblrConfig        from '../configures/TumblrConfig';
+import PostListConfig      from '../../configures/PostListConfig';
+import PostListStore       from '../../stores/PostListStore';
+import PostListTagStore    from '../../stores/PostListTagStore';
+import PostListAuthorStore from '../../stores/PostListAuthorStore';
+import RouteAction         from '../../actions/RouteAction';
+import TumblrConfig        from '../../configures/TumblrConfig';
 
 import {
   Cards, Card, Image

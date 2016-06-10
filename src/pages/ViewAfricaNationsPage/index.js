@@ -1,11 +1,11 @@
 import React        from 'react';
 import ReactDOM     from 'react-dom';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
-import Footer       from '../components/Footer';
-import MapStore     from '../stores/MapStore';
-import NationsStore from '../stores/NationsStore';
-import NationAction from '../actions/NationAction';
+import IndexMenu    from '../../components/IndexMenu';
+import CategoryMenu from '../../components/CategoryMenu';
+import Footer       from '../../components/Footer';
+import MapStore     from '../../stores/MapStore';
+import NationsStore from '../../stores/NationsStore';
+import NationAction from '../../actions/NationAction';
 import d3           from 'd3';
 
 import {

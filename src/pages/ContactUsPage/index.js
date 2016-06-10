@@ -1,6 +1,6 @@
 import React        from 'react';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
+import IndexMenu    from '../../components/IndexMenu';
+import CategoryMenu from '../../components/CategoryMenu';
 
 export default React.createClass({
 

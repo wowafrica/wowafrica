@@ -1,7 +1,7 @@
 import React        from 'react';
 import ReactDOM     from 'react-dom';
-import NationsStore from '../stores/NationsStore';
-import MapStore     from '../stores/MapStore';
+import NationsStore from '../../stores/NationsStore';
+import MapStore     from '../../stores/MapStore';
 import d3           from 'd3';
 
 import {

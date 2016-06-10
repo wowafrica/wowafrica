@@ -1,6 +1,6 @@
 import React           from 'react';
-import PostListConfig  from '../configures/PostListConfig';
-import RouteAction     from '../actions/RouteAction';
+import PostListConfig  from '../../configures/PostListConfig';
+import RouteAction     from '../../actions/RouteAction';
 
 import {
   Dropdown, Icon, Item, Menu, Text

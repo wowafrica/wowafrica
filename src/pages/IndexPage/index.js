@@ -1,14 +1,14 @@
 import React              from 'react';
-import IndexMenu          from '../components/IndexMenu';
-import CategoryMenu       from '../components/CategoryMenu';
-import IndexSection       from '../components/IndexSection';
-import IndexWideBlock     from '../components/IndexWideBlock';
-import IndexCategoryBlock from '../components/IndexCategoryBlock';
-import Footer             from '../components/Footer';
-import MenuStore          from '../stores/MenuStore';
-import RouteConstants     from '../constants/RouteConstants';
-import AppDispatcher      from '../dispatcher/AppDispatcher';
-import Elevator           from '../vendors/elevator';
+import IndexMenu          from '../../components/IndexMenu';
+import CategoryMenu       from '../../components/CategoryMenu';
+import IndexSection       from '../../components/IndexSection';
+import IndexWideBlock     from '../../components/IndexWideBlock';
+import IndexCategoryBlock from '../../components/IndexCategoryBlock';
+import Footer             from '../../components/Footer';
+import MenuStore          from '../../stores/MenuStore';
+import RouteConstants     from '../../constants/RouteConstants';
+import AppDispatcher      from '../../dispatcher/AppDispatcher';
+import Elevator           from '../../vendors/elevator';
 
 export default React.createClass({
 

@@ -1,7 +1,7 @@
 import React          from 'react';
-import PostListConfig from '../configures/PostListConfig';
-import PostListStore  from '../stores/PostListStore';
-import RouteAction    from '../actions/RouteAction';
+import PostListConfig from '../../configures/PostListConfig';
+import PostListStore  from '../../stores/PostListStore';
+import RouteAction    from '../../actions/RouteAction';
 
 import {
   Cards, Card, Image

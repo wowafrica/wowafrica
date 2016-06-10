@@ -1,5 +1,5 @@
 import React          from 'react';
-import RouteAction    from '../actions/RouteAction';
+import RouteAction    from '../../actions/RouteAction';
 
 import {
   Menu, Item, Text

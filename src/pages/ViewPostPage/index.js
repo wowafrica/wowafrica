@@ -1,12 +1,12 @@
 import React        from 'react';
 import classNames   from 'classnames';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
-import Footer       from '../components/Footer';
-import ShareButton  from '../components/ShareButton';
-import ReadMoreBlk  from '../components/ReadMoreBlock';
-import PostStore    from '../stores/PostStore';
-import AuthorsStore from '../stores/AuthorsStore';
+import IndexMenu    from '../../components/IndexMenu';
+import CategoryMenu from '../../components/CategoryMenu';
+import Footer       from '../../components/Footer';
+import ShareButton  from '../../components/ShareButton';
+import ReadMoreBlk  from '../../components/ReadMoreBlock';
+import PostStore    from '../../stores/PostStore';
+import AuthorsStore from '../../stores/AuthorsStore';
 
 import {
   Segment, Header, Label, Divider, Rail, Image

@@ -1,5 +1,5 @@
 import React      from 'react';
-import MenuStore  from '../stores/MenuStore';
+import MenuStore  from '../../stores/MenuStore';
 
 import {
   Sidebar, Menu, Item, Dropdown, Icon, Text

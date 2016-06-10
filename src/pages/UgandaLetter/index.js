@@ -1,8 +1,8 @@
 import React         from 'react';
-import IndexMenu     from '../components/IndexMenu';
-import CategoryMenu  from '../components/CategoryMenu';
-import Footer        from '../components/Footer';
-import ULConfig      from '../configures/UgandaLetterConfig';
+import IndexMenu     from '../../components/IndexMenu';
+import CategoryMenu  from '../../components/CategoryMenu';
+import Footer        from '../../components/Footer';
+import ULConfig      from '../../configures/UgandaLetterConfig';
 
 export default React.createClass({
 

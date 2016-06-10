@@ -1,7 +1,7 @@
 import React        from 'react';
-import MenuStore    from '../stores/MenuStore';
-import RouteStore   from '../stores/RouteStore';
-import RouteAction  from '../actions/RouteAction';
+import MenuStore    from '../../stores/MenuStore';
+import RouteStore   from '../../stores/RouteStore';
+import RouteAction  from '../../actions/RouteAction';
 
 import {
   Dropdown, Icon, Item, Menu, Text

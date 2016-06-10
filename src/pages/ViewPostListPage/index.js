@@ -1,10 +1,10 @@
 import React         from 'react';
-import IndexMenu     from '../components/IndexMenu';
-import CategoryMenu  from '../components/CategoryMenu';
-import IndexSection  from '../components/IndexSection';
-import Footer        from '../components/Footer';
-import RouteStore    from '../stores/RouteStore';
-import PostListStore from '../stores/PostListStore';
+import IndexMenu     from '../../components/IndexMenu';
+import CategoryMenu  from '../../components/CategoryMenu';
+import IndexSection  from '../../components/IndexSection';
+import Footer        from '../../components/Footer';
+import RouteStore    from '../../stores/RouteStore';
+import PostListStore from '../../stores/PostListStore';
 
 export default React.createClass({
 

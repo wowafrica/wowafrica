@@ -1,9 +1,9 @@
 import React        from 'react';
 import classNames   from 'classnames';
-import IndexMenu    from '../components/IndexMenu';
-import CategoryMenu from '../components/CategoryMenu';
-import Footer       from '../components/Footer';
-import MemberConfig from '../configures/MemberConfig';
+import IndexMenu    from '../../components/IndexMenu';
+import CategoryMenu from '../../components/CategoryMenu';
+import Footer       from '../../components/Footer';
+import MemberConfig from '../../configures/MemberConfig';
 
 import {
   Divider, Image, Header, Segment
