@@ -1,7 +1,8 @@
-import path        from 'path';
-import webpack     from 'webpack';
-import babelConfig from './babel.config.prod';
+import path              from 'path';
+import webpack           from 'webpack';
+import babelConfig       from './babel.config.prod';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer      from 'autoprefixer';
 
 export default {
   entry: {
@@ -55,11 +56,14 @@ export default {
       query: babelConfig
     }, {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
     }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
+  },
+  postcss: function() {
+    return [autoprefixer];
   },
   node: {
     fs: 'empty'

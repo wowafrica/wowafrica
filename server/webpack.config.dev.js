@@ -1,6 +1,7 @@
-import path        from 'path';
-import webpack     from 'webpack';
-import babelConfig from './babel.config.dev.client';
+import path         from 'path';
+import webpack      from 'webpack';
+import babelConfig  from './babel.config.dev.client';
+import autoprefixer from 'autoprefixer';
 
 export default {
   devtool: 'cheap-module-eval-source-map',
@@ -51,11 +52,14 @@ export default {
       query: babelConfig
     }, {
       test: /\.less$/,
-      loader: 'style!css!less'
+      loader: 'style!css!postcss!less'
     }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
+  },
+  postcss: function() {
+    return [autoprefixer];
   },
   node: {
     fs: 'empty'
