@@ -51,32 +51,17 @@ body {
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  .post-list-title {
-    text-align: center;
-  }
-
   #footer-divider {
     height: 0;
   }
 }
 /* Tablet */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .post-list-title {
-    margin-left: 9%;
-  }
-}
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
 /* Small Monitor */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .post-list-title {
-    margin-left: 2%;
-  }
-}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
 /* Large Monitor */
-@media only screen and (min-width: 1200px) {
-  .post-list-title {
-    margin-left: 10%;
-  }
-}
+@media only screen and (min-width: 1200px) {}
+  
 /* Mobile and Tablet */
 @media only screen and (max-width: 991px) {
   #index-menu {

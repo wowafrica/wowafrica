@@ -6,6 +6,8 @@ import PostListAuthorStore from '../../stores/PostListAuthorStore';
 import RouteAction         from '../../actions/RouteAction';
 import TumblrConfig        from '../../configures/TumblrConfig';
 
+import styles from './index.css';
+
 import {
   Cards, Card, Image
 } from 'react-semantify';
@@ -82,7 +84,7 @@ export default React.createClass({
     let slideDiv = this.state.listCon.posts.map((post) => {
       return (
         <a className="card" href={'/view_post_list/posts/' + post.id} onClick={this._onClick}>
-          <div className="post-list-card-img" style={{backgroundImage: 'url('+post.image+')'}}/>
+          <div className={styles.postListCardImg} style={{backgroundImage: 'url('+post.image+')'}}/>
           <div className="content">
             <div className="header">
               {post.title}
@@ -99,7 +101,7 @@ export default React.createClass({
       slideDiv.push(
         <a className="card" onClick={this._onLoadMoreClick} style={{boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <div>
-            <div id="postList-loadMoreBtn" className="ui button">
+            <div id={styles.postListLoadMoreBtn} className="ui button">
               載入更多文章
             </div>
           </div>
@@ -123,7 +125,7 @@ export default React.createClass({
 
     return (
       <div className="ui container">
-        <div className="post-list-title">
+        <div className={styles.postListTitle}>
           {title}
         </div>
         <div className="ui centered cards">
@@ -149,7 +151,7 @@ export default React.createClass({
         listCon: PostListStore.getListContainer(this.props.category)
       });
     }
-    $('#postList-loadMoreBtn').removeClass('loading button').addClass('button');
+    $(`#${styles.postListLoadMoreBtn}`).removeClass('loading button').addClass('button');
   },
 
   _onClick(e) {
@@ -161,7 +163,7 @@ export default React.createClass({
 
   _onLoadMoreClick(e) {
     e.preventDefault();
-    $('#postList-loadMoreBtn').removeClass('button').addClass('loading button');
+    $(`#${styles.postListLoadMoreBtn}`).removeClass('button').addClass('loading button');
     if (this.props.category === 'tag') {
       PostListTagStore.loadMorePosts(this.props.tag, TumblrConfig.postList.loadAmount);
     }
