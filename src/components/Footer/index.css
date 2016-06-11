@@ -15,31 +15,31 @@
   color: #606263;
 }
 
-.footer-box {
+.footerBox {
   min-height: 260px;
   padding: 2rem 2rem 0 2rem;
 }
 
-.footer-box a {
+.footerBox a {
   color: white;
 }
 
-.footer-box a:visited {
+.footerBox a:visited {
   color: white;
 }
 
-.footer-box-info {
+.footerBoxInfo {
   font-size: 18px;
   padding-top: 3rem;
 }
 
-.footer-icon-groups {
+.footerIconGroups {
   padding-top: 10px;
   display: flex;
   flex-direction: row;
 }
 
-.footer-icon {
+.footerIcon {
   width: 50px;
   height: 50px;
   border: thin solid white;
@@ -47,39 +47,39 @@
   background-size: cover;
 }
 
-.footer-icon.footer-icon-mail {
+.footerIconMail {
   background-image: url(/images/rb_mail.png);
 }
-.footer-icon.footer-icon-mail:hover {
+.footerIconMail:hover {
   background-image: url(/images/wb_mail.png);
 }
 
-.footer-icon.footer-icon-tumblr {
+.footerIconTumblr {
   background-image: url(/images/rb_tumblr.png);
 }
-.footer-icon.footer-icon-tumblr:hover {
+.footerIconTumblr:hover {
   background-image: url(/images/wb_tumblr.png);
 }
 
-.footer-icon.footer-icon-facebook {
+.footerIconFacebook {
   background-image: url(/images/rb_facebook.png);
 }
-.footer-icon.footer-icon-facebook:hover {
+.footerIconFacebook:hover {
   background-image: url(/images/wb_facebook.png);
 }
 
-#footer-emailBtn {
+.footerEmailBtn {
   color: white;
   background-color: #606263;
 }
 
-#footer-emailBtn:hover {
+.footerEmailBtn:hover {
   background-color: #BF3333;
 }
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  .footer-box-info {
+  .footerBoxInfo {
     padding-top: 1rem;
   }
 }

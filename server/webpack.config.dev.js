@@ -54,12 +54,15 @@ export default {
       test: /\.less$/,
       loader: 'style!css!postcss!less'
     }, {
+      test: /\.css$/,
+      loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
+    }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer()];
   },
   node: {
     fs: 'empty'

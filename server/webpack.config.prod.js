@@ -5,6 +5,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer      from 'autoprefixer';
 
 export default {
+  devtool: 'source-map',
   entry: {
     app: path.join(__dirname, '../client/scripts/index'),
     vendor: [
@@ -31,18 +32,25 @@ export default {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
         BROWSER: JSON.stringify(true)
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
+    // }),
+    // This is some problem when use css modules, so I use uglify-loader
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compressor: {
+    //     warnings: false
+    //   },
+    //   mangle: {
+    //     except: ['$super', '$', 'exports', 'require']
+    //   }
     })
   ],
   module: {
@@ -52,18 +60,20 @@ export default {
         path.join(__dirname, '../src'),
         path.join(__dirname, '../client/scripts')
       ],
-      loader: 'babel',
-      query: babelConfig
+      loader: 'uglify!babel?presets[]=es2015,presets[]=react,presets[]=stage-0,-babelrc'
     }, {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!less-loader')
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize!postcss-loader!less-loader')
+    }, {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minimize&-autoprefixer!postcss-loader')
     }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
       loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
     }]
   },
   postcss: function() {
-    return [autoprefixer];
+    return [autoprefixer()];
   },
   node: {
     fs: 'empty'

@@ -1,9 +1,10 @@
 module.exports = {
   presets: [
     'react-hmre',
-    'react',
     'es2015',
+    'react',
     'stage-0'
   ],
-  cacheDirectory: true
+  cacheDirectory: true,
+  babelrc: false
 };
