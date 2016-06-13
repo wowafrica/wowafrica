@@ -5,6 +5,8 @@ import RouteAction    from '../../actions/RouteAction';
 import PostListAction from '../../actions/PostListAction';
 import Elevator       from '../../vendors/elevator';
 
+import styles from './index.css';
+
 export default React.createClass({
 
   getInitialState() {
@@ -49,14 +51,14 @@ export default React.createClass({
       return (
         <div>
           <a href={'/view_post_list/posts/'+post.id} onClick={this._onClick}>
-            <div className="index-wide" style={{backgroundImage: 'url('+image+')', backgroundPosition: 'center'}}>
-              <div className="index-wide-box-before"/>
-              <div className="index-wide-box">
-                <div className="index-wide-type">
-                  {displayType}
-                </div>
+            <div className={styles.indexWide} style={{backgroundImage: 'url('+image+')', backgroundPosition: 'center'}}>
+              <div className={styles.indexWideBoxBefore}/>
+            <div className={styles.indexWideBox}>
+              <div className={styles.indexWideType}>
+                {displayType}
+              </div>
               <div className="ui divider" style={{width: '175px', borderTop: '1px solid white', margin: '0.3rem 0rem 0.3rem 0rem'}}/>
-                <div className="index-wide-title">
+                <div className={styles.indexWideTitle}>
                   {post.title}
                 </div>
               </div>

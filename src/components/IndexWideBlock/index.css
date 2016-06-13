@@ -1,16 +1,16 @@
 
-.index-wide {
+.indexWide {
   width: 100%;
   height: 720px;
   background-size: cover;
   text-align: center;
 }
 
-.index-wide-box-before {
+.indexWideBoxBefore {
   height: 480px;
 }
 
-.index-wide-box {
+.indexWideBox {
   margin-left: 60px;
   padding: 10px;
   width: 440px;
@@ -25,11 +25,11 @@
   transition:.5s;
 }
 
-.index-wide-box:hover{
+.indexWideBox:hover{
   background-color: rgba(0,0,0,0.8);
 }
 
-.index-wide-type {
+.indexWideType {
   font-size: 36px;
   margin-bottom: 0;
   color: white;
@@ -38,7 +38,7 @@
   align-items: center;
 }
 
-.index-wide-title {
+.indexWideTitle {
   font-size: 24px;
   color: white;
   height: 70px;
@@ -49,20 +49,20 @@
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
-  .index-wide {
+  .indexWide {
     height: 480px;
   }
 
-  .index-wide-box-before {
+  .indexWideBoxBefore {
     height: 240px;
   }
 
-  .index-wide-box {
+  .indexWideBox {
     margin-left: 0;
     width: 100%;
   }
 
-  .index-wide-title {
+  .indexWideTitle {
     height: auto;
     line-height: 1.4em;
   }
