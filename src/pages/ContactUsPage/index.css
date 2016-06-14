@@ -1,9 +1,9 @@
 
-.contact-us-box {
+.contactUsBox {
   background-color: #E8F5FF;
 }
 
-.contact-us-box-title {
+.contactUsBoxTitle {
   color: white;
   background-color: #BF3333;
   font-size: 30px;
@@ -14,14 +14,14 @@
   padding-right: 17%;
 }
 
-.contact-us-box-inner {
+.contactUsBoxInner {
   margin-top: 20px;
   padding-left: 30%;
   width: 100%;
   min-height: 302px;
 }
 
-.contact-us-box-content {
+.contactUsBoxContent {
   font-size: 20px;
   line-height: 1.5em;
   color: #606263;

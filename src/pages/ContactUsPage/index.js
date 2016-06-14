@@ -2,6 +2,8 @@ import React        from 'react';
 import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 
+import styles from './index.css';
+
 export default React.createClass({
 
   componentDidMount() {
@@ -18,31 +20,31 @@ export default React.createClass({
         <div style={{paddingTop: '180px'}}>
           <div className="ui two column stackable grid">
             <div className="seven wide column">
-              <div className="contact-us-box">
+              <div className={styles.contactUsBox}>
                 <div className="ui two column grid">
                   <div className="ten wide column">
-                    <div className="contact-us-box-title">
+                    <div className={styles.contactUsBoxTitle}>
                       聯絡我們
                     </div>
                   </div>
                   <div className="column">
                   </div>
                 </div>
-                <div className="contact-us-box-inner">
-                  <div className="contact-us-box-content">
+                <div className={styles.contactUsBoxInner}>
+                  <div className={styles.contactUsBoxContent}>
                     如果想要可以即時和我們展開討論，請追蹤我們的粉絲團，掌握最新動態。
                   </div>
                   <a href="https://www.facebook.com/wowafrica.tw/" target="_blank">
                     <img src="/images/rb_facebook.png" style={{width: '50px', margin: '3px'}}/>
                   </a>
-                  <div className="contact-us-box-content">
+                  <div className={styles.contactUsBoxContent}>
                     或者可以填寫聯絡表單，我們會以 Email 和您聯繫！
                   </div>
                 </div>
               </div>
             </div>
             <div className="column">
-              <div id="contactForm" className="ui large form">
+              <div id={styles.contactForm} className="ui large form">
                 <div className="eleven wide field">
                   <label>稱謂</label>
                   <input id="nameInput" type="text"/>
@@ -61,7 +63,7 @@ export default React.createClass({
                 <div className="ui grid">
                   <div className="nine wide column"/>
                   <div className="two wide column">
-                    <div id="submitBtn" onClick={this._onSubBtnClick} className="ui submit button" style={{}}>
+                    <div id={styles.submitBtn} onClick={this._onSubBtnClick} className="ui submit button" style={{}}>
                       發送
                     </div>
                   </div>
@@ -75,8 +77,8 @@ export default React.createClass({
   },
 
   _onSubBtnClick(e) {
-    $('#contactForm').removeClass('error');
-    $('#submitBtn').removeClass('button').addClass('loading button');
+    $(`#${styles.contactForm}`).removeClass('error');
+    $(`#${styles.submitBtn}`).removeClass('button').addClass('loading button');
     let request = $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbw2q99zSLMh2kKqXUT4QD5CRtCACbJL8Xun7s7Y_jvO5lzJHno/exec',
       type: 'post',
@@ -87,13 +89,13 @@ export default React.createClass({
       }
     })
     .done(function(data) {
-      $('#submitBtn').text('完成!');
+      $(`#${styles.submitBtn}`).text('完成!');
     })
     .fail(function(data) {
-      $('#contactForm').addClass('error');
+      $(`#${styles.contactForm}`).addClass('error');
     })
     .always(function() {
-      $('#submitBtn').removeClass('loading button').addClass('button');
+      $(`#${styles.submitBtn}`).removeClass('loading button').addClass('button');
     });
   }
 });
