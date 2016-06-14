@@ -1,5 +1,5 @@
 
-.category-box {
+.categoryBox {
   background-origin: content-box;
   background-clip: content-box;
   background-size: cover;
@@ -10,45 +10,45 @@
   color: grey;
 }
 
-.category-box:hover {
+.categoryBox:hover {
   -webkit-transform: translateY(-3px);
       -ms-transform: translateY(-3px);
           transform: translateY(-3px);
 }
 
-.category-box a {
+.categoryBox a {
   color: grey;
 }
 
-.category-box a:visited {
+.categoryBox a:visited {
   color: grey;
 }
 
-.category-box-left-up {
+.categoryBoxLeftUp {
   height: 23rem;
 }
 
-.category-box-left-bottom {
+.categoryBoxLeftBottom {
   margin-right: -200%;
   height: 3rem;
   background-color: white;
 }
 
-.category-box-right-up {
+.categoryBoxRightUp {
   height: 23rem;
 }
 
-.category-box-right-bottom {
+.categoryBoxRightBottom {
   margin-left: -200%;
   height: 3rem;
   background-color: white;
 }
 
-.category-box-center-up {
+.categoryBoxCenterUp {
   height: 17rem;
 }
 
-.category-box-center-bottom {
+.categoryBoxCenterBottom {
   position: absolute;
   z-index: 2;
   height: 9rem;
@@ -63,12 +63,12 @@
   text-align: center;
 }
 
-.category-box-category {
+.categoryBoxCategory {
   font-size: 16px;
   letter-spacing: 2px;
 }
 
-.category-box-title {
+.categoryBoxTitle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,13 +80,13 @@
   overflow: hidden;
 }
 
-.category-box-more:hover {
+.categoryBoxMore:hover {
   -webkit-transform: translateY(-3px);
       -ms-transform: translateY(-3px);
           transform: translateY(-3px);
 }
 
-.category-box-more-title {
+.categoryBoxMoreTitle {
   margin-left: 25%;
   width: 50%;
   display: flex;

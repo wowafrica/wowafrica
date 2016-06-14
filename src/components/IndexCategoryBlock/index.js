@@ -3,6 +3,8 @@ import PostListConfig from '../../configures/PostListConfig';
 import PostListStore  from '../../stores/PostListStore';
 import RouteAction    from '../../actions/RouteAction';
 
+import styles from './index.css';
+
 import {
   Cards, Card, Image
 } from 'react-semantify';
@@ -26,9 +28,9 @@ let CategoryBox = React.createClass({
     if (this.props.category == 'more') {
       return (
         <div className="middle aligned centered column">
-          <div className="category-box-more">
+          <div className={styles.categoryBoxMore}>
             <a href={'/view_post_list/category/new'} onClick={this._onClick}>
-              <div className="category-box-more-title">
+              <div className={styles.categoryBoxMoreTitle}>
                 閱讀更多文章
               </div>
             </a>
@@ -48,23 +50,23 @@ let CategoryBox = React.createClass({
 
       return (
         <div className="middle aligned column">
-            <div className="category-box" style={{backgroundImage: 'url('+backImg+')'}}>
+            <div className={styles.categoryBox} style={{backgroundImage: 'url('+backImg+')'}}>
               <div className="ui grid">
                 <div className="four wide column" style={{paddingRight: 0}}>
                   <a href={url} onClick={this._onClick}>
-                    <div className="category-box-left-up"/>
-                    <div className="category-box-left-bottom"/>
+                    <div className={styles.categoryBoxLeftUp}/>
+                    <div className={styles.categoryBoxLeftBottom}/>
                   </a>
                 </div>
                 <div className="eight wide column" style={{paddingRight: 0, paddingLeft: 0}}>
                   <a href={url} onClick={this._onClick}>
-                    <div className="category-box-center-up"/>
-                    <div className="category-box-center-bottom">
-                      <div className="category-box-title">
+                    <div className={styles.categoryBoxCenterUp}/>
+                    <div className={styles.categoryBoxCenterBottom}>
+                      <div className={styles.categoryBoxTitle}>
                         {title}
                       </div>
                       <div className="ui divider" style={{borderTop: '1px solid grey', margin: '0rem 1rem 0.3rem 1rem'}}/>
-                      <div className="category-box-category">
+                      <div className={styles.categoryBoxCategory}>
                         {PostListConfig.categoryMap[this.props.category]}
                       </div>
                     </div>
@@ -72,8 +74,8 @@ let CategoryBox = React.createClass({
                 </div>
                 <div className="four wide column" style={{paddingLeft: 0}}>
                   <a href={url} onClick={this._onClick}>
-                    <div className="category-box-right-up"/>
-                    <div className="category-box-right-bottom"/>
+                    <div className={styles.categoryBoxRightUp}/>
+                    <div className={styles.categoryBoxRightBottom}/>
                   </a>
                 </div>
               </div>
@@ -128,7 +130,7 @@ export default React.createClass({
       );
     });
     return (
-      <div id="category-box" className="ui three column stackable padded grid">
+      <div id={styles.categoryBox} className="ui three column stackable padded grid">
         {viewBlks}
       </div>
     );
