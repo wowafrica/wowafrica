@@ -1,9 +1,11 @@
 import React        from 'react';
-import classNames   from 'classnames';
+import classnames   from 'classnames';
 import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import MemberConfig from '../../configures/MemberConfig';
+
+import styles from './index.css';
 
 import {
   Divider, Image, Header, Segment
@@ -11,7 +13,7 @@ import {
 
 let Section = ({title, imageUrl='', children, className}) => {
   return (
-    <div className={classNames(className, 'goal')}>
+    <div className={classnames(className, styles.goal)}>
       <div className="ui fluid container">
         <Segment className="basic center aligned">
           {(() => {
@@ -32,7 +34,7 @@ let Button = ({href, children, active=''}) => {
     <div className="four wide column">
       <a
         href={href}
-        className={classNames('ui fluid about-button huge button', {hover: active})}
+        className={classnames('ui fluid huge button', styles.aboutButton, {[styles.hover]: active})}
         style={{borderRadius: '0px'}}>
         {children}
       </a>
@@ -72,18 +74,18 @@ let Buttons = ({active}) => {
 
 let HeaderSection = () => {
   return (
-    <div className="header-section" id="header">
-      <div className="ui container index">
+    <div className={styles.headerSection} id="header">
+      <div className={classnames('ui container', styles.index)}>
         <div className="ui three column grid">
           <div className="five wide column"></div>
           <div className="six wide column">
             <Image className="centered medium" src="/images/website-color.png"/>
-            <Divider className="header-divider" />
-            <Header className="center aligned huge title">台灣最大的非洲平台網站</Header>
+            <Divider className={styles.headerDivider} />
+            <Header className={classnames('center aligned huge', styles.title)}>台灣最大的非洲平台網站</Header>
           </div>
           <div className="five wide column"></div>
         </div>
-        <div className="header-button" >
+        <div className={styles.headerButton} >
           <Buttons active={0} />
         </div>
       </div>
@@ -154,7 +156,7 @@ let ShowFunc = () => {
 
 let Member = ({name, title}) => {
   return (
-    <div className="member">
+    <div className={styles.member}>
       <div>{name}</div>
       <div>{title}</div>
     </div>
@@ -187,8 +189,8 @@ let ShowTeam = () => {
 
 let StorySection = () => {
   return (
-    <div className="story-section" id="story">
-      <div className="story-button">
+    <div className={styles.storySection} id="story">
+      <div className={styles.storyButton}>
         <div className="ui container index">
           <Buttons active={1}/>
         </div>
@@ -204,7 +206,7 @@ let StorySection = () => {
       <p>讓台灣認識長年忽視的非洲大陸，增加國際視野，</p>
         <p>也希望看到越來越多台灣與非洲之間的交流產生。</p>
       </Section>
-      <Section className="wow-func" title="wowAfrica方程式：">
+      <Section className={styles.wowFunc} title="wowAfrica方程式：">
         <br/>
         <ShowFunc/>
         <br/>
@@ -215,8 +217,8 @@ let StorySection = () => {
         <p>並以換桌會議的形式深入探討我們也舉辦展覽、</p>
         <p>讓台灣認識長年忽視的非洲大陸，增加國際視野，</p>
         <p>非洲美食日等活動讓台灣認識非洲。</p>
-        <div className="video-container">
-          <div className="video">
+        <div className={styles.videoContainer}>
+          <div className={styles.video}>
             <iframe src="https://www.youtube.com/embed/o1_-2SDwAXU" frameborder="0" allowfullscreen />
           </div>
         </div>
@@ -231,7 +233,7 @@ let StorySection = () => {
 let PartnerSection = () => {
   return (
     <div className="partner-section" id="partner">
-      <div className="partner-button">
+      <div className={styles.partnerButton}>
         <div className="ui container index">
           <Buttons active={2}/>
         </div>

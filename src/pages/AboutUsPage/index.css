@@ -1,5 +1,5 @@
 
-.story-button {
+.storyButton {
   background-image: url(/images/about_us_2.jpg);
   background-size: cover;
   background-position: center;
@@ -7,35 +7,35 @@
   padding-top: 180px;
 }
 
-.story-section .index {
+.storySection .index {
   /*margin-top: 200px;*/
 }
 
-.story-section .wow-func {
+.storySection .wowFunc {
   background-color: #298299;
   color: white;
 }
 
-.story-section .goal {
+.storySection .goal {
   padding: 50px 0px;
 }
 
-.wow-func .title {
+.wowFunc .title {
   color: white !important;
 }
 
-.wow-func .content {
+.wowFunc .content {
   font-size: 30px;
   margin: 10px 0;
 }
 
-.wow-func .information-before {
+.wowFunc .informationBefore {
   float: left;
   margin-top: -33px;
   margin-left: 10px;
 }
 
-.wow-func .information-after {
+.wowFunc .informationAfter {
   float: right;
   margin-top: -33px;
   margin-right: 10px;
@@ -48,7 +48,7 @@
   margin-left: 25px;
 }
 
-.partner-button {
+.partnerButton {
   background-image: url(/images/about_us_3.jpg);
   background-size: cover;
   background-position:center;
@@ -57,7 +57,7 @@
   margin-bottom: 50px;
 }
 
-.video-container {
+.videoContainer {
   margin: 0 auto;
   max-width: 900px;
 }
@@ -76,7 +76,7 @@
   height: 100%;
 }
 
-.header-section {
+.headerSection {
   background-image: url(/images/about_us_1.jpg);
   margin-top: -10px;
   height: 3100px;
@@ -84,24 +84,24 @@
   background-repeat: no-repeat;
 }
 
-.header-divider {
+.headerDivider {
   border-top-color: white !important;
   border-bottom-color: white !important;
 }
 
-.header-section .title {
+.headerSection .title {
   color: white !important;
 }
 
-.header-section .index {
+.headerSection .index {
   padding-top: 200px;
 }
 
-.header-button {
+.headerButton {
   margin-top: 50px;
 }
 
-.header-section .goal {
+.headerSection .goal {
   margin-top: 240px;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -113,26 +113,26 @@
   font-size: 20px;
 }
 
-.about-button {
+.aboutButton {
   background-color: #298299 !important;
   color: white !important;
   line-height: 50px !important;
 }
 
-.about-button.hover {
+.aboutButton.hover {
   background-color: #FFBF6B !important;
 }
 
-.about-button:hover {
+.aboutButton:hover {
   background-color: #FFBF6B !important;
 }
 
 @media screen and (max-width: 768px) {
-  .partner-button {
+  .partnerButton {
     height: 100%;
   }
 
-  .story-button {
+  .storyButton {
     height: 100%;
   }
 }
