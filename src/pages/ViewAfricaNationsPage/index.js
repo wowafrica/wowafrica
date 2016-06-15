@@ -8,6 +8,8 @@ import NationsStore from '../../stores/NationsStore';
 import NationAction from '../../actions/NationAction';
 import d3           from 'd3';
 
+import styles from './index.css';
+
 import {
   Modal, Content, Icon, Accordion, List, Image
 } from 'react-semantify';
@@ -128,7 +130,7 @@ export default React.createClass({
               {this._drawMap(features, type)}
             </div>
             <div className="five wide column">
-              <Accordion className="content-area" init={true}>
+              <Accordion className={styles.contentArea} init={true}>
                 <div className="title" onClick={this._onCentralAfricaClick}>
                   <Icon className="dropdown"/>中非
                 </div>
@@ -224,17 +226,16 @@ export default React.createClass({
       .projection(projection);
 
     return (
-      <svg className="map-africa" viewBox="0 0 550 600">
+      <svg className={styles.mapAfrica} viewBox="0 0 550 600">
       {
         data.map((d) => {
           return (
-            <path className="land"
+            <path className={styles.land}
                   d={path(d)}
                   data-nation={d.properties.ISO_A3}
                   onMouseEnter={this._onMouseEnter}
                   onMouseLeave={this._onMouseLeave}
                   ref={d.properties.ISO_A3}
-                  style={{fill: '#2E8398'}}
                   onClick={this._onClick}>
             </path>
           );
