@@ -1,11 +1,10 @@
-@charset "utf-8";
 
-.uganda-showroom {
+.ugandaShowroom {
   width: inherit;
   padding-top: 30px;
 }
 
-.showroom-position {
+.showroomPosition {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -13,7 +12,7 @@
   right: 0;
 }
 
-.showroom-img {
+.showroomImg {
   height: 509px;
   color: transparent;
   width: inherit;
@@ -21,22 +20,22 @@
   background-repeat: no-repeat;
 }
 
-.showroom-anima-5 {
+.showroomAnima5 {
   visibility: hidden;
   animation: backimgAnimation-5 15s linear infinite 0s;
 }
 
-.showroom-anima-7 {
+.showroomAnima7 {
   visibility: hidden;
   animation: backimgAnimation-7 21s linear infinite 0s;
 }
 
-.showromm-title {
+.showrommTitle {
   height: 2em;
   line-height: 1em;
 }
 
-.showromm-title a {
+.showrommTitle a {
   color: black;
 }
 

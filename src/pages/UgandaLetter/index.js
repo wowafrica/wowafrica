@@ -1,8 +1,11 @@
 import React         from 'react';
+import classnames    from 'classnames';
 import IndexMenu     from '../../components/IndexMenu';
 import CategoryMenu  from '../../components/CategoryMenu';
 import Footer        from '../../components/Footer';
 import ULConfig      from '../../configures/UgandaLetterConfig';
+
+import styles from './index.css';
 
 export default React.createClass({
 
@@ -21,9 +24,15 @@ export default React.createClass({
   },
 
   pictureDiv(pics) {
-    let cssClass = 'showroom-anima-'+pics.length;
+    let cssClass = 'showroomAnima' + pics.length;
     return pics.map((pic, i) => {
-      return (<div key={'pic'+i} className={'showroom-position showroom-img '+cssClass} style={{backgroundImage: 'url(/images/uganda/'+pic+')', animationDelay: i*3+'s'}}><span></span></div>);
+      return (
+        <div key={'pic' + i}
+            className={classnames(styles.showroomPosition, styles.showroomImg, styles[cssClass])}
+            style={{backgroundImage: 'url(/images/uganda/' + pic + ')', animationDelay: i * 3 + 's'}}>
+            <span></span>
+        </div>
+      );
     });
   },
 
@@ -38,7 +47,7 @@ export default React.createClass({
         <div className="container-content" style={{backgroundColor: 'rgb(230,236,240)'}}>
           <div className="ui container">
             <div className="ui stackable grid" style={{width: 'inherit', marginLeft: '0'}}>
-              <div className="uganda-showroom">
+              <div className={styles.ugandaShowroom}>
                 {this.pictureDiv(picture)}
               </div>
               <div className="row">
@@ -59,13 +68,13 @@ export default React.createClass({
                   <div className="ui grid" style={{paddingTop: '3em', backgroundColor: 'rgb(150,0,31)'}}>
                     <div className="two wide column"/>
                     <div className="fourteen wide column">
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='origin' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動源起&nbsp;</span></a></div>
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='method' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動方式&nbsp;</span></a></div>
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='introduction' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;烏干達小介紹&nbsp;</span></a></div>
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='firstLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第一封信&nbsp;</span></a></div>
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='secondLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第二封信&nbsp;</span></a></div>
-                      <div className="showromm-title"><a href='' onClick={this._onClick}><span id='thirdLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第三封信&nbsp;</span></a></div>
-                      <div className="showromm-title"></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='origin' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動源起&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='method' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;活動方式&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='introduction' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;烏干達小介紹&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='firstLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第一封信&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='secondLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第二封信&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}><a href='' onClick={this._onClick}><span id='thirdLetter' style={{backgroundColor: 'rgb(255,255,220)'}}>&nbsp;第三封信&nbsp;</span></a></div>
+                      <div className={styles.showrommTitle}></div>
                     </div>
                   </div>
                 </div>
