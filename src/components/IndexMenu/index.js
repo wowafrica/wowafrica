@@ -3,6 +3,8 @@ import MenuStore    from '../../stores/MenuStore';
 import RouteStore   from '../../stores/RouteStore';
 import RouteAction  from '../../actions/RouteAction';
 
+import styles from './index.css';
+
 import {
   Dropdown, Icon, Item, Menu, Text
 } from 'react-semantify';
@@ -31,7 +33,7 @@ export default React.createClass({
   render() {
 
     return (
-      <div id="index-menu">
+      <div id={styles.indexMenu}>
         <div className="ui centered grid">
           <Menu className="secondary">
             <Item id="menu-logo" style={{paddingTop: '14px'}}>

@@ -10,6 +10,8 @@ import RouteConstants     from '../../constants/RouteConstants';
 import AppDispatcher      from '../../dispatcher/AppDispatcher';
 import Elevator           from '../../vendors/elevator';
 
+import styles from './index.css';
+
 export default React.createClass({
 
   IndexDispatch: '',
@@ -82,7 +84,7 @@ export default React.createClass({
     return (
       <div>
         <div className="ui basic segment">
-          <div className="index-landing">
+          <div className={styles.indexLanding}>
             <img id="landing-img" src="/images/landing.png" style={{width: '35%', display: 'none'}}/>
           </div>
           <div className="ui sticky" id="index-menu-anchor">
