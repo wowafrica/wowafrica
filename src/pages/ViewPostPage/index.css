@@ -1,9 +1,9 @@
 
-.post-image {
+.postImage {
   background-size: cover;
 }
 
-.post-image .inner {
+.postImage .inner {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,52 +12,52 @@
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.post-image .inner-title {
+.postImage .innerTitle {
   font-size: 42px;
   color: #FFFFFF;
   line-height: 1;
   text-align: center;
 }
 
-.container-post figure {
+.containerPost figure {
   margin: 0px;
 }
 
-.container-post img {
+.containerPost img {
   width: 100%;
 }
 
-.container-post iframe {
+.containerPost iframe {
   width: 100%;
 }
 
-.container-post h2 {
+.containerPost h2 {
   font-size: 36px;
 }
 
-.container-post p {
+.containerPost p {
   font-size: 20px;
 }
 
-.container-post-author div {
+.containerPostAuthor div {
   color: #e6f4ff;
   padding-top: 18px;
   padding-bottom: 18px;
   font-size: 16px;
 }
 
-.section-post-author {
+.sectionPostAuthor {
   margin-top: 1rem;
 }
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
   /* for ViewPostPage */
-  .anti-very-padded {
+  .antiVeryPadded {
     padding: 1em !important;
   }
 
-  .section-post-author {
+  .sectionPostAuthor {
     min-height: 400px;
     margin-top: 0px;
   }
@@ -65,7 +65,7 @@
 
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .section-post-author {
+  .sectionPostAuthor {
     min-height: 350px;
     margin-top: 0px;
   }

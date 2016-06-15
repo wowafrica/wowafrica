@@ -1,5 +1,5 @@
 import React        from 'react';
-import classNames   from 'classnames';
+import classnames   from 'classnames';
 import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
@@ -7,6 +7,8 @@ import ShareButton  from '../../components/ShareButton';
 import ReadMoreBlk  from '../../components/ReadMoreBlock';
 import PostStore    from '../../stores/PostStore';
 import AuthorsStore from '../../stores/AuthorsStore';
+
+import styles from './index.css';
 
 import {
   Segment, Header, Label, Divider, Rail, Image
@@ -68,9 +70,9 @@ export default React.createClass({
           <IndexMenu />
           <CategoryMenu />
         </div>
-        <div className="post-image" style={{backgroundImage: `url(${largeImage})`, backgroundPosition: 'center'}}>
-          <div className="inner">
-            <div className="inner-title">
+        <div className={styles.postImage} style={{backgroundImage: `url(${largeImage})`, backgroundPosition: 'center'}}>
+          <div className={styles.inner}>
+            <div className={styles.innerTitle}>
               {title}
             </div>
           </div>
@@ -78,8 +80,8 @@ export default React.createClass({
         <div className="ui stackable four column grid">
           <div className="one wide column"></div>
           <div className="ten wide column">
-            <Segment className="very padded container-post basic anti-very-padded" style={{}}>
-              <div className={classNames('ui inverted dimmer', {active: loader})}>
+            <Segment className={classnames('very padded basic', styles.containerPost, styles.antiVeryPadded)}>
+              <div className={classnames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
               <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
@@ -100,8 +102,8 @@ export default React.createClass({
             </Segment>
           </div>
           <div className="one wide column"></div>
-          <div className="four wide column section-post-author" style={{backgroundColor: '#305775'}}>
-            <Segment className="center aligned basic container-post-author" style={{height: '100%', position: 'absolute'}}>
+          <div className={classnames('four wide column', styles.sectionPostAuthor)} style={{backgroundColor: '#305775'}}>
+            <Segment className={classnames('center aligned basic', styles.containerPostAuthor)} style={{height: '100%', position: 'absolute'}}>
               <a href={'/view_post_list/author/'+name} onClick={this._onClick}>
                 <Image className="small centered circular" src={photoUrl}/>
                 <div>{name}</div>
