@@ -1,12 +1,12 @@
 import path         from 'path';
 import webpack      from 'webpack';
-import babelConfig  from './babel.config.dev.client';
+import babelConfig  from './babel.config.client';
 import autoprefixer from 'autoprefixer';
 
 export default {
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: path.join(__dirname, '../client/scripts/index'),
+    app: path.join(__dirname, '../../client/scripts/index'),
     vendor: [
       'jquery',
       'semantic-ui/dist/semantic.js',
@@ -21,7 +21,7 @@ export default {
     ]
   },
   output: {
-    path: path.join(__dirname, '../_public/scripts'),
+    path: path.join(__dirname, '../../_public/scripts'),
     filename: 'bundle.js',
     chunkFilename: '[id].chunk.js',
     publicPath: '/scripts/'
@@ -45,22 +45,22 @@ export default {
     loaders: [{
       test: /\.js?$/,
       include: [
-        path.join(__dirname, '../src'),
-        path.join(__dirname, '../client/scripts')
+        path.join(__dirname, '../../src'),
+        path.join(__dirname, '../../client/scripts')
       ],
       loader: 'babel',
       query: babelConfig
     }, {
       test: /\.css$/,
       include: [
-        path.join(__dirname, '../client/styles'),
-        path.join(__dirname, '../node_modules')
+        path.join(__dirname, '../../client/styles'),
+        path.join(__dirname, '../../node_modules')
       ],
       loader: 'style!css!postcss'
     }, {
       test: /\.css$/,
       include: [
-        path.join(__dirname, '../src')
+        path.join(__dirname, '../../src')
       ],
       loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
     }, {
