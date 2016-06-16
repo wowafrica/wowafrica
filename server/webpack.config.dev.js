@@ -51,10 +51,17 @@ export default {
       loader: 'babel',
       query: babelConfig
     }, {
-      test: /\.less$/,
-      loader: 'style!css!postcss!less'
+      test: /\.css$/,
+      include: [
+        path.join(__dirname, '../client/styles'),
+        path.join(__dirname, '../node_modules')
+      ],
+      loader: 'style!css!postcss'
     }, {
       test: /\.css$/,
+      include: [
+        path.join(__dirname, '../src')
+      ],
       loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
     }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,

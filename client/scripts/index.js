@@ -5,7 +5,8 @@ import App          from '../../src/App';
 import NationModal  from '../../src/components/NationModal';
 import SideBar      from '../../src/components/SideBar';
 
-import '../styles/main.less';
+import 'semantic-ui/dist/semantic.css';
+import '../styles/index.css';
 
 let pathName = location.pathname;
 console.log(pathName);

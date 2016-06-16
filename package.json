@@ -66,8 +66,6 @@
     "karma-jasmine": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-webpack": "^1.7.0",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
     "nodemon": "^1.8.1",
     "phantomjs-prebuilt": "^2.1.5",
     "postcss-loader": "^0.9.1",

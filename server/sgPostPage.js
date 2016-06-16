@@ -67,6 +67,7 @@ export default function() {
       <meta property="og:description" content="${brief}" />
       <meta property="og:image" content="${image}" />
       <title>WOW! AFRICA</title>
+      <link href="/styles/vendor.css" type="text/css" rel="stylesheet"></link>
       <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
     </head>
     <body>
