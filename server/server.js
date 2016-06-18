@@ -4,7 +4,7 @@ import path    from 'path';
 import webpack       from 'webpack';
 import webpackDev    from 'webpack-dev-middleware';
 import webpackHot    from 'webpack-hot-middleware';
-import webpackConfig from './webpack.config.dev';
+import webpackConfig from './dev/webpack.config';
 
 let compiler = webpack(webpackConfig);
 let app = express();

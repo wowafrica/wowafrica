@@ -1,0 +1,56 @@
+
+.ugandaShowroom {
+  width: inherit;
+  padding-top: 30px;
+}
+
+.showroomPosition {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.showroomImg {
+  height: 509px;
+  color: transparent;
+  width: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.showroomAnima5 {
+  visibility: hidden;
+  animation: backimgAnimation-5 15s linear infinite 0s;
+}
+
+.showroomAnima7 {
+  visibility: hidden;
+  animation: backimgAnimation-7 21s linear infinite 0s;
+}
+
+.showrommTitle {
+  height: 2em;
+  line-height: 1em;
+}
+
+.showrommTitle a {
+  color: black;
+}
+
+@keyframes backimgAnimation-5 {
+  0% { visibility: visible; opacity: 0; background-position: 995px 0px; animation-timing-function: ease; }
+  6% { opacity: 1; background-position: 0 0;}
+  20% { opacity: 1; background-position: 0 0; animation-timing-function: ease; }
+  26% { opacity: 0; background-position: -995px 0px;}
+  100% { opacity: 0; background-position: -995px 0px;}
+}
+
+@keyframes backimgAnimation-7 {
+  0% { visibility: visible; opacity: 0; background-position: 995px 0px; animation-timing-function: ease; }
+  5% { opacity: 1; background-position: 0 0;}
+  14% { opacity: 1; background-position: 0 0; animation-timing-function: ease; }
+  19% { opacity: 0; background-position: -995px 0px;}
+  100% { opacity: 0; background-position: -955px 0px;}
+}

@@ -1,0 +1,138 @@
+
+.storyButton {
+  background-image: url(/images/about_us_2.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 1024px;
+  padding-top: 180px;
+}
+
+.storySection .index {
+  /*margin-top: 200px;*/
+}
+
+.storySection .wowFunc {
+  background-color: #298299;
+  color: white;
+}
+
+.storySection .goal {
+  padding: 50px 0px;
+}
+
+.wowFunc .title {
+  color: white !important;
+}
+
+.wowFunc .content {
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.wowFunc .informationBefore {
+  float: left;
+  margin-top: -33px;
+  margin-left: 10px;
+}
+
+.wowFunc .informationAfter {
+  float: right;
+  margin-top: -33px;
+  margin-right: 10px;
+}
+
+.member {
+  text-align: left;
+  font-size: 16px;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.partnerButton {
+  background-image: url(/images/about_us_3.jpg);
+  background-size: cover;
+  background-position:center;
+  height: 1024px;
+  padding-top: 630px;
+  margin-bottom: 50px;
+}
+
+.videoContainer {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.video {
+  position: relative;
+  height: 0;
+  padding-top: 75%;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.headerSection {
+  background-image: url(/images/about_us_1.jpg);
+  margin-top: -10px;
+  height: 3100px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.headerDivider {
+  border-top-color: white !important;
+  border-bottom-color: white !important;
+}
+
+.headerSection .title {
+  color: white !important;
+}
+
+.headerSection .index {
+  padding-top: 200px;
+}
+
+.headerButton {
+  margin-top: 50px;
+}
+
+.headerSection .goal {
+  margin-top: 240px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #60C5DB;
+  color: white;
+}
+
+.goal p {
+  font-size: 20px;
+}
+
+.aboutButton {
+  background-color: #298299 !important;
+  color: white !important;
+  line-height: 50px !important;
+}
+
+.aboutButton.hover {
+  background-color: #FFBF6B !important;
+}
+
+.aboutButton:hover {
+  background-color: #FFBF6B !important;
+}
+
+@media screen and (max-width: 768px) {
+  .partnerButton {
+    height: 100%;
+  }
+
+  .storyButton {
+    height: 100%;
+  }
+}

@@ -5,8 +5,8 @@ import nodemon from 'gulp-nodemon';
 import del     from 'del';
 
 import webpack           from 'webpack';
-import webpackProdConfig from './server/webpack.config.prod';
-import webpackDevConfig  from './server/webpack.config.dev';
+import webpackProdConfig from './server/prod/webpack.config';
+import webpackDevConfig  from './server/dev/webpack.config';
 
 let BUILD_PATH = './_public';
 let production = false;
@@ -16,7 +16,11 @@ if (gutil.env.env === 'production') {
 }
 
 gulp.task('static-generator', shell.task(
-  'babel-node server/staticGenerator.js'
+  'babel-node server/staticGenerator.js', {
+    env: {
+      NODE_ENV: production ? 'production': 'development'
+    }
+  }
 ));
 
 gulp.task('ico', () => {
