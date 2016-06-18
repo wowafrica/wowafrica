@@ -5,6 +5,8 @@ import App          from '../../src/App';
 import NationModal  from '../../src/components/NationModal';
 import SideBar      from '../../src/components/SideBar';
 
+import '../styles/main.less';
+
 let pathName = location.pathname;
 console.log(pathName);
 

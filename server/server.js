@@ -1,12 +1,23 @@
-import express     from 'express';
-import path        from 'path';
-import connectLive from 'connect-livereload';
+import express from 'express';
+import path    from 'path';
 
+import webpack       from 'webpack';
+import webpackDev    from 'webpack-dev-middleware';
+import webpackHot    from 'webpack-hot-middleware';
+import webpackConfig from './webpack.config.dev';
+
+let compiler = webpack(webpackConfig);
 let app = express();
 
 let BUILD_PATH = '_public';
 
-app.use(connectLive());
+app.use(webpackDev(compiler, {
+  noInfo: true,
+  publicPath: webpackConfig.output.publicPath
+}));
+
+app.use(webpackHot(compiler));
+
 app.use(express.static(path.resolve(BUILD_PATH)));
 
 app.all('*', (req, res) => {

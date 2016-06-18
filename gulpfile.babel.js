@@ -1,43 +1,15 @@
-import gulp         from 'gulp';
-import autoprefixer from 'gulp-autoprefixer';
-import concat       from 'gulp-concat';
-import gutil        from 'gulp-util';
-import less         from 'gulp-less';
-import livereload   from 'gulp-livereload';
-import plumber      from 'gulp-plumber';
-import uglify       from 'gulp-uglify';
-import gulpif       from 'gulp-if';
-import shell        from 'gulp-shell';
-import nodemon      from 'gulp-nodemon';
+import gulp    from 'gulp';
+import gutil   from 'gulp-util';
+import shell   from 'gulp-shell';
+import nodemon from 'gulp-nodemon';
+import del     from 'del';
 
-import del         from 'del';
-import livereact   from 'livereactload';
-import watchify    from 'watchify';
-
-import source     from 'vinyl-source-stream';
-import buffer     from 'vinyl-buffer';
-import browserify from 'browserify';
-import babelify   from 'babelify';
+import webpack           from 'webpack';
+import webpackProdConfig from './server/webpack.config.prod';
+import webpackDevConfig  from './server/webpack.config.dev';
 
 let BUILD_PATH = './_public';
 let production = false;
-
-let vendor = [
-  'bower_components/jquery/dist/jquery.js',
-  'bower_components/fullpage/jquery.fullpage.js',
-  'bower_components/semantic-ui/dist/semantic.js',
-  'client/vendor/elevator.min.js'
-];
-
-let dependencies = [
-  'babel-polyfill',
-  'd3',
-  'flux',
-  'routr',
-  'react',
-  'react-dom',
-  'superagent'
-];
 
 if (gutil.env.env === 'production') {
   production = true;
@@ -59,81 +31,33 @@ gulp.task('images', () => {
 
 gulp.task('data', () => {
   return gulp.src('./client/data/*')
-    .pipe(gulp.dest(`${BUILD_PATH}/data/`))
-    .pipe(livereload());
+    .pipe(gulp.dest(`${BUILD_PATH}/data/`));
 });
 
-gulp.task('styles-config', () => {
-  return gulp.src('./client/styles/theme.config')
-    .pipe(gulp.dest('./bower_components/semantic-ui/src/'));
+gulp.task('webpack', (cb) => {
+
+  let webpackConfig = production ? webpackProdConfig: webpackDevConfig;
+
+  webpack(webpackConfig, (err, stats) => {
+    if (err) {
+      return cb(err);
+    }
+    let jsonStats = stats.toJson();
+
+    if (jsonStats.errors.length > 0) {
+      return cb(jsonStats.errors);
+    }
+
+    if (jsonStats.warnings.length > 0) {
+      gutil.log(gutil.colors.yellow(jsonStats.warnings));
+    }
+    cb();
+  });
 });
 
-gulp.task('styles-assets', () => {
-  return gulp.src('./bower_components/semantic-ui/src/themes/default/assets/**/*')
-    .pipe(gulp.dest(`${BUILD_PATH}/themes/default/assets/`));
-});
+gulp.task('webpack:watch-server', (cb) => {
 
-gulp.task('styles', ['styles-config', 'styles-assets'], () => {
-  return gulp.src('./client/styles/main.less')
-    .pipe(plumber())
-    .pipe(less())
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(`${BUILD_PATH}/styles/`))
-    .pipe(livereload());
-});
-
-gulp.task('vendor', () => {
-  return gulp.src(vendor)
-    .pipe(concat('vendor.js'))
-    .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
-});
-
-gulp.task('browserify-dependencies', () => {
-  return browserify()
-    .require(dependencies)
-    .bundle()
-    .pipe(source('vendor.bundle.js'))
-    .pipe(gulpif(production, buffer()))
-    .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
-});
-
-let bundler = browserify('./client/scripts/index.js', {
-  transform: [[babelify, {presets: ['es2015', 'react', 'stage-0']}]],
-  plugin: production ? [] : [livereact],
-  debug: !production,
-  fullPaths: !production
-});
-
-gulp.task('browserify', () => {
-  return bundler
-    .external(dependencies)
-    .bundle()
-    .pipe(source('bundle.js'))
-    .pipe(gulpif(production, buffer()))
-    .pipe(gulpif(production, uglify()))
-    .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
-});
-
-gulp.task('watch-js', () => {
-  let watcher = watchify(bundler);
-  return watcher
-    .on('error', gutil.log)
-    .on('update', () => {
-      gutil.log('Update JS bundle');
-      watcher
-        .external(dependencies)
-        .bundle()
-        .on('error', gutil.log)
-        .pipe(source('bundle.js'))
-        .pipe(gulpif(production, buffer()))
-        .pipe(gulpif(production, uglify()))
-        .pipe(gulp.dest(`${BUILD_PATH}/scripts/`));
-    });
-});
-
-gulp.task('watch-server', () => {
+  let started = false;
 
   let serverIgnoreJS = [
     'node_modules/*',
@@ -149,12 +73,16 @@ gulp.task('watch-server', () => {
     script: 'server/server.js',
     ext: 'js',
     exec: 'babel-node',
+    env: {
+      NODE_ENV: 'development'
+    },
     ignore: serverIgnoreJS
-  }).on('change')
-    .on('resatrt', () => {
-      gutil.log('Server restarted');
+  }).on('start', function() {
+    if (!started) {
+      cb();
+      started = true;
     }
-  );
+  });
 });
 
 gulp.task('clean-build', () => {
@@ -163,19 +91,12 @@ gulp.task('clean-build', () => {
 
 gulp.task('clean-all', ['clean-build'], () => {
   return del([
-    'bower_components',
     'coverage',
     'node_modules'
   ]);
 });
 
-gulp.task('watch', () => {
-  livereload.listen({start: true});
-  gulp.watch('./client/styles/**/*', ['styles']);
-  gulp.watch('./client/data/**/*', ['data']);
-});
-
-gulp.task('bundle', ['vendor', 'browserify-dependencies', 'browserify']);
-gulp.task('build', ['ico', 'data', 'images', 'styles', 'static-generator', 'bundle']);
-gulp.task('dev', ['build', 'watch-server', 'watch', 'watch-js']);
+gulp.task('build:static', ['ico', 'data', 'images', 'static-generator']);
+gulp.task('build', ['build:static', 'webpack']);
+gulp.task('dev', ['build', 'webpack:watch-server']);
 gulp.task('default', ['build']);
