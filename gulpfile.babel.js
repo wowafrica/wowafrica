@@ -98,5 +98,5 @@ gulp.task('clean-all', ['clean-build'], () => {
 
 gulp.task('build:static', ['ico', 'data', 'images', 'static-generator']);
 gulp.task('build', ['build:static', 'webpack']);
-gulp.task('dev', ['build:static', 'webpack:watch-server']);
+gulp.task('dev', ['build', 'webpack:watch-server']);
 gulp.task('default', ['build']);
