@@ -104,14 +104,14 @@ class PostListStore extends EventEmitter {
   onReceviceUpdatePostList(category, amount) {
     if (category in PostListConfig.categoryMap) {
       this.postList[category].totalPostNum = 0;
-      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.categoryMap[category]}, this.updateListCategory.bind(this));
+      this.client.posts(TumblrConfig.blogName, {limit: amount, tag: PostListConfig.categoryMap[category]}, this.updateListCategory.bind(this));
     }
     else if (category == 'new') {
       this.postList['new'].totalPostNum = 0;
       this.client.posts(TumblrConfig.blogName, {limit: amount, type: 'text'}, this.updateListNew.bind(this));
     }
     else if (category == 'top') {
-      this.client.posts(TumblrConfig.blogName, {tag: PostListConfig.tagMap['top']}, this.updateListTop.bind(this));
+      this.client.posts(TumblrConfig.blogName, {limit: amount, tag: PostListConfig.tagMap['top']}, this.updateListTop.bind(this));
     }
   }
 

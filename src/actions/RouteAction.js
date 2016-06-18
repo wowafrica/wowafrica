@@ -66,7 +66,7 @@ class RouteAction {
         }
         PostListAction.updatePostList('top', 2);
         PostListAction.updatePostList('new', 2);
-        PostListAction.updateAllPostList(3);
+        PostListAction.updateAllPostList(1);
         break;
     }
   }
