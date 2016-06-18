@@ -64,8 +64,13 @@ export default {
       ],
       loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
     }, {
+      // semantic-ui cannot use DataUrl, I don't know why..
+      // so set limit 1kb to prevent use DataUrl on semantic-ui
+      //
+      // url-loader bug? should use ./ path to find the resource...
+      // Maybe because use the inline css file in development
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-      loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
+      loader: 'url-loader?limit=1000&name=./styles/[name]-[hash].[ext]'
     }]
   },
   postcss: function() {
