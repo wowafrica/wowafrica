@@ -1,5 +1,6 @@
-import React      from 'react';
-import MenuStore  from '../../stores/MenuStore';
+import React       from 'react';
+import MenuStore   from '../../stores/MenuStore';
+import RouteAction from '../../actions/RouteAction';
 
 import {
   Sidebar, Menu, Item, Dropdown, Icon, Text
@@ -14,6 +15,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
+    $('.ui.sidebar').sidebar('hide');
     //$('.ui.sidebar').sidebar('setting', 'debug', true);
     $('.ui.sidebar').sidebar('setting', 'onHide', () => {
       $('#side-menu').addClass('sidebar-trans');
@@ -31,14 +33,14 @@ export default React.createClass({
 
   render() {
     return (
-      <Sidebar className="inverted vertical menu" init='hide'>
+      <div>
         <Item id="sidebar-menu-logo" style={{paddingTop: '14px'}}>
           <a href="/">
             <img src="/images/logo_color_trans.png" style={{width: '180px'}}/>
           </a>
         </Item>
         {this.renderMenu()}
-      </Sidebar>
+      </div>
     );
   },
 

@@ -12,8 +12,8 @@ export default ({title, description, image, html}) => (
   <title>${title}</title>
 </head>
 <body>
-  <div id="side_bar"></div>
-  <div id="content">${html}</div>
+  <div id="side_bar" class="ui inverted vertical menu sidebar"></div>
+  <div id="content" class="pusher">${html}</div>
   <div id="nation_modal" class="ui dimmer modals page"></div>
   <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
   <script type="text/javascript" src="/scripts/bundle.js"></script>
