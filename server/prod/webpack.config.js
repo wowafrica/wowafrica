@@ -80,7 +80,7 @@ export default {
       loader: extractText.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]&minimize&-autoprefixer!postcss-loader')
     }, {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-      loader: 'url-loader?limit=30000&name=../styles/[name]-[hash].[ext]'
+      loader: 'url-loader?limit=1000&name=../styles/[name]-[hash].[ext]'
     }]
   },
   postcss: function() {
