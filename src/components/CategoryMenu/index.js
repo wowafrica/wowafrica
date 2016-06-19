@@ -1,57 +1,24 @@
 import React           from 'react';
 import PostListConfig  from '../../configures/PostListConfig';
 import RouteAction     from '../../actions/RouteAction';
-
-import {
-  Dropdown, Icon, Item, Menu, Text
-} from 'react-semantify';
+import Component       from './Component';
 
 export default React.createClass({
 
   getInitialState() {
     return {
-      currentMenu: PostListConfig.categories
+      categories: PostListConfig.categories,
+      nameMap: PostListConfig.categoryMap
     };
   },
 
   render() {
-    return (
-      <div id="category-menu">
-        <Menu className="secondary">
-          {this.renderDropdown()}
-        </Menu>
-      </div>
-    );
-  },
+    let {categories, nameMap} = this.state;
 
-  renderDropdown() {
-    let {currentMenu} = this.state;
     return (
-      currentMenu.map((section) => {
-        let showName = PostListConfig.categoryMap[section];
-        let dropdownSelect = false;
-
-        return (
-          <Item type="link" href={'/view_post_list/category/'+section} onClick={this._onClick} active={dropdownSelect}>
-              <Text style={{color: '#E8F5FF'}}>{showName}</Text>
-          </Item>
-        );
-      })
-    );
-  },
-
-  renderItem(subPage) {
-    return (
-      subPage.map((page) => {
-        return (
-        <Item type="link"
-              active={page.status}
-              href={page.url}
-              onClick={this._onClick}>
-          {page.showName}
-        </Item>
-        );
-      })
+      <Component categories={categories}
+                 nameMap={nameMap}
+                 onCategoryClick={this._onClick}/>
     );
   },
 
