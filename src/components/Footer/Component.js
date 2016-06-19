@@ -64,23 +64,23 @@ let Subscribe = React.createClass({
 
   _onSubBtnClick(e) {
     $('#emailForm').removeClass('error');
-    $('#footer-emailBtn').removeClass('button').addClass('loading button');
+    $(`.${styles.footerEmailBtn}`).removeClass('button').addClass('loading button');
     let request = $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbzuOLvCRul3ZAzNl3kp9nPihUQ_iowpjB-Uf1nwuvhY9Q5lODI/exec',
       type: 'post',
       data: {'email': $('#emailInput')[0].value}
     })
     .done(function(data) {
-      $('#footer-emailBtn').text('完成!');
+      $(`.${styles.footerEmailBtn}`).text('完成!');
     })
     .fail(function(data) {
       $('#emailForm').addClass('error');
     })
     .always(function() {
-      $('#footer-emailBtn').removeClass('loading button').addClass('button');
+      $(`.${styles.footerEmailBtn}`).removeClass('loading button').addClass('button');
     });
   }
-})
+});
 
 let Footer = ({onFooterClick}) => (
   <div className={styles.footer}>
