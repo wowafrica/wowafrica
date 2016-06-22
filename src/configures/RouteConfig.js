@@ -14,16 +14,6 @@ export default {
     method: 'get',
     page: require('../pages/ViewAfricaNationsPage').default
   },
-  viewAfricaPeople: {
-    path: '/view_africa_people',
-    method: 'get',
-    page: require('../pages/ViewAfricaPeoplePage').default
-  },
-  viewAfricaPeoplePost: {
-    path: '/view_africa_people/posts/:post',
-    method: 'get',
-    page: require('../pages/IndexPage').default
-  },
   viewPostList: {
     path: '/view_post_list/category/:category',
     method: 'get',
