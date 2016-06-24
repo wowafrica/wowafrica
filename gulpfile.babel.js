@@ -39,17 +39,15 @@ gulp.task('data', () => {
 });
 
 gulp.task('css:themes', () => {
-  if (!production) {
-    return gulp.src('./node_modules/semantic-ui/dist/themes/default/**/*')
-      .pipe(gulp.dest(`${BUILD_PATH}/styles/themes/default/`));
-  }
+  return gulp.src('./node_modules/semantic-ui/dist/themes/default/**/*')
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/themes/default/`));
 });
 
 gulp.task('css:vendor', ['css:themes'], () => {
-  if (!production) {
-    return gulp.src('./node_modules/semantic-ui/dist/semantic.css')
-      .pipe(gulp.dest(`${BUILD_PATH}/styles/`));
-  }
+  let semanticFile = production ? 'semantic.min.css' : 'semantic.css';
+
+  return gulp.src(`./node_modules/semantic-ui/dist/${semanticFile}`)
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/`));
 });
 
 gulp.task('webpack', (cb) => {
