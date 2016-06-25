@@ -1,7 +1,5 @@
 import {EventEmitter}  from 'events';
-import Tumblr          from 'tumblr.js';
 import request         from 'superagent';
-import TumblrConfig    from '../configures/TumblrConfig';
 import AppDispatcher   from '../dispatcher/AppDispatcher';
 import NationConstants from '../constants/NationConstants';
 
