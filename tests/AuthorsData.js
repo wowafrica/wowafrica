@@ -3,7 +3,7 @@ export default {
     'title': 'Explore Africa',
     'name': 'exploreafrica-tw',
     'posts': 17,
-    'url': 'http://exploreafrica-tw.tumblr.com/',
+    'url': 'https://exploreafrica-tw.tumblr.com/',
     'updated': 1429891762,
     'description': '',
     'is_nsfw': false,
@@ -17,7 +17,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184887508,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184887508/何佩佳-實踐應外系',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184887508/何佩佳-實踐應外系',
       'slug': '何佩佳-實踐應外系',
       'type': 'photo',
       'date': '2015-04-12 07:17:54 GMT',
@@ -28,7 +28,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iDAB3K',
+      'short_url': 'https://tmblr.co/ZfpFCl1iDAB3K',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -49,9 +49,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -72,7 +72,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184887508',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184887508',
       'photos': [
         {
           'caption': '',
@@ -80,38 +80,38 @@ export default {
             {
               'width': 1280,
               'height': 1282,
-              'url': 'http://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_1280.jpg'
+              'url': 'https://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_1280.jpg'
             },
             {
               'width': 500,
               'height': 501,
-              'url': 'http://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_500.jpg'
+              'url': 'https://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_500.jpg'
             },
             {
               'width': 400,
               'height': 401,
-              'url': 'http://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_400.jpg'
+              'url': 'https://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_250.jpg'
+              'url': 'https://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_100.jpg'
+              'url': 'https://36.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_75sq.jpg'
+              'url': 'https://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1282,
-            'url': 'http://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_1280.jpg'
+            'url': 'https://41.media.tumblr.com/8c09bc2c2bf2b687fbf74e5873cc16e9/tumblr_nmomxutaaZ1uomuuio1_1280.jpg'
           },
           'exif': {
             'Camera': 'SONY SLT-A77V',
@@ -126,7 +126,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184833673,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184833673/謝睿哲-北科電通所',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184833673/謝睿哲-北科電通所',
       'slug': '謝睿哲-北科電通所',
       'type': 'photo',
       'date': '2015-04-12 07:16:50 GMT',
@@ -137,7 +137,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iD9zw9',
+      'short_url': 'https://tmblr.co/ZfpFCl1iD9zw9',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -158,9 +158,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -181,7 +181,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184833673',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184833673',
       'photos': [
         {
           'caption': '',
@@ -189,38 +189,38 @@ export default {
             {
               'width': 1280,
               'height': 1277,
-              'url': 'http://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_1280.jpg'
+              'url': 'https://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_1280.jpg'
             },
             {
               'width': 500,
               'height': 499,
-              'url': 'http://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_500.jpg'
+              'url': 'https://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_500.jpg'
             },
             {
               'width': 400,
               'height': 399,
-              'url': 'http://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_400.jpg'
+              'url': 'https://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_400.jpg'
             },
             {
               'width': 250,
               'height': 249,
-              'url': 'http://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_250.jpg'
+              'url': 'https://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_100.jpg'
+              'url': 'https://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_75sq.jpg'
+              'url': 'https://36.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1277,
-            'url': 'http://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_1280.jpg'
+            'url': 'https://40.media.tumblr.com/95d4a8a09030bcc2e7a0e32d72ceda5a/tumblr_nmomw2jgfH1uomuuio1_1280.jpg'
           },
           'exif': {
             'Camera': 'Samsung GT-I9300',
@@ -235,7 +235,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184793903,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184793903/張堯任-北醫醫學系',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184793903/張堯任-北醫醫學系',
       'slug': '張堯任-北醫醫學系',
       'type': 'photo',
       'date': '2015-04-12 07:15:59 GMT',
@@ -246,7 +246,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iD9qCl',
+      'short_url': 'https://tmblr.co/ZfpFCl1iD9qCl',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -267,9 +267,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -290,7 +290,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184793903',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184793903',
       'photos': [
         {
           'caption': '',
@@ -298,33 +298,33 @@ export default {
             {
               'width': 485,
               'height': 485,
-              'url': 'http://36.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_500.jpg'
+              'url': 'https://36.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_500.jpg'
             },
             {
               'width': 400,
               'height': 400,
-              'url': 'http://41.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_400.jpg'
+              'url': 'https://41.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://41.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_250.jpg'
+              'url': 'https://41.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://40.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_100.jpg'
+              'url': 'https://40.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://40.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_75sq.jpg'
+              'url': 'https://40.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 485,
             'height': 485,
-            'url': 'http://36.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_500.jpg'
+            'url': 'https://36.media.tumblr.com/ea6355a1101db709d410ba57eca7e4f8/tumblr_nmomunLnmr1uomuuio1_500.jpg'
           }
         }
       ]
@@ -332,7 +332,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184748588,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184748588/林詩閔',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184748588/林詩閔',
       'slug': '林詩閔',
       'type': 'photo',
       'date': '2015-04-12 07:15:01 GMT',
@@ -343,7 +343,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iD9f8i',
+      'short_url': 'https://tmblr.co/ZfpFCl1iD9f8i',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -364,9 +364,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -387,7 +387,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184748588',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184748588',
       'photos': [
         {
           'caption': '',
@@ -395,38 +395,38 @@ export default {
             {
               'width': 1280,
               'height': 1280,
-              'url': 'http://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_1280.jpg'
+              'url': 'https://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_1280.jpg'
             },
             {
               'width': 500,
               'height': 500,
-              'url': 'http://36.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_500.jpg'
+              'url': 'https://36.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_500.jpg'
             },
             {
               'width': 400,
               'height': 400,
-              'url': 'http://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_400.jpg'
+              'url': 'https://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_250.jpg'
+              'url': 'https://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://41.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_100.jpg'
+              'url': 'https://41.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://41.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_75sq.jpg'
+              'url': 'https://41.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1280,
-            'url': 'http://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_1280.jpg'
+            'url': 'https://40.media.tumblr.com/03508e197c1cf261fa620297c637d618/tumblr_nmomt1to681uomuuio1_1280.jpg'
           },
           'exif': {
             'Camera': 'SONY SLT-A77V',
@@ -441,7 +441,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184591163,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184591163/葉菀菱-實踐應外系',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184591163/葉菀菱-實踐應外系',
       'slug': '葉菀菱-實踐應外系',
       'type': 'photo',
       'date': '2015-04-12 07:11:45 GMT',
@@ -452,7 +452,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iD92ix',
+      'short_url': 'https://tmblr.co/ZfpFCl1iD92ix',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -473,9 +473,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -496,7 +496,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184591163',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184591163',
       'photos': [
         {
           'caption': '',
@@ -504,38 +504,38 @@ export default {
             {
               'width': 1274,
               'height': 1275,
-              'url': 'http://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_1280.jpg'
+              'url': 'https://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_1280.jpg'
             },
             {
               'width': 500,
               'height': 500,
-              'url': 'http://40.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_500.jpg'
+              'url': 'https://40.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_500.jpg'
             },
             {
               'width': 400,
               'height': 400,
-              'url': 'http://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_400.jpg'
+              'url': 'https://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_250.jpg'
+              'url': 'https://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_100.jpg'
+              'url': 'https://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://40.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_75sq.jpg'
+              'url': 'https://40.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1274,
             'height': 1275,
-            'url': 'http://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_1280.jpg'
+            'url': 'https://41.media.tumblr.com/770a5417b6bce2b278d21b5849ac9dc0/tumblr_nmomnl9jdQ1uomuuio1_r2_1280.jpg'
           },
           'exif': {
             'Camera': 'Samsung WB350F',
@@ -550,7 +550,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 116184554473,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/116184554473/程可安-大鞋生了沒-founder',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/116184554473/程可安-大鞋生了沒-founder',
       'slug': '程可安-大鞋生了沒-founder',
       'type': 'photo',
       'date': '2015-04-12 07:10:58 GMT',
@@ -561,7 +561,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1iD8vlf',
+      'short_url': 'https://tmblr.co/ZfpFCl1iD8vlf',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -582,9 +582,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -605,7 +605,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/116184554473',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/116184554473',
       'photos': [
         {
           'caption': '',
@@ -613,38 +613,38 @@ export default {
             {
               'width': 1280,
               'height': 1278,
-              'url': 'http://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_1280.jpg'
+              'url': 'https://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_1280.jpg'
             },
             {
               'width': 500,
               'height': 499,
-              'url': 'http://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_500.jpg'
+              'url': 'https://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_500.jpg'
             },
             {
               'width': 400,
               'height': 399,
-              'url': 'http://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_400.jpg'
+              'url': 'https://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_250.jpg'
+              'url': 'https://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_100.jpg'
+              'url': 'https://40.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_75sq.jpg'
+              'url': 'https://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1278,
-            'url': 'http://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_1280.jpg'
+            'url': 'https://41.media.tumblr.com/c1fb2dc4f9aa5607a8ff68b2d84bb484/tumblr_nmommaXU5p1uomuuio1_1280.jpg'
           },
           'exif': {
             'Camera': 'SONY DSC-RX100M2',
@@ -659,7 +659,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 114893950563,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/114893950563/賴奕諭-台大人類所碩士班',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/114893950563/賴奕諭-台大人類所碩士班',
       'slug': '賴奕諭-台大人類所碩士班',
       'type': 'photo',
       'date': '2015-03-29 01:55:44 GMT',
@@ -670,7 +670,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1h0DevZ',
+      'short_url': 'https://tmblr.co/ZfpFCl1h0DevZ',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -691,9 +691,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -714,7 +714,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/114893950563',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/114893950563',
       'photos': [
         {
           'caption': '',
@@ -722,38 +722,38 @@ export default {
             {
               'width': 1280,
               'height': 1281,
-              'url': 'http://36.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_1280.jpg'
+              'url': 'https://36.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_1280.jpg'
             },
             {
               'width': 500,
               'height': 501,
-              'url': 'http://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_500.jpg'
+              'url': 'https://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_500.jpg'
             },
             {
               'width': 400,
               'height': 400,
-              'url': 'http://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_400.jpg'
+              'url': 'https://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://41.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_250.jpg'
+              'url': 'https://41.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_100.jpg'
+              'url': 'https://40.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://41.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_75sq.jpg'
+              'url': 'https://41.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1281,
-            'url': 'http://36.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_1280.jpg'
+            'url': 'https://36.media.tumblr.com/7d6c9dfdc8ba585343b950fadb768a9d/tumblr_nlyaowtCB71uomuuio1_r1_1280.jpg'
           },
           'exif': {
             'Camera': 'SONY SLT-A77V',
@@ -768,7 +768,7 @@ export default {
     {
       'blog_name': 'exploreafrica-tw',
       'id': 114837156933,
-      'post_url': 'http://exploreafrica-tw.tumblr.com/post/114837156933/盧韋辰-交大機械系',
+      'post_url': 'https://exploreafrica-tw.tumblr.com/post/114837156933/盧韋辰-交大機械系',
       'slug': '盧韋辰-交大機械系',
       'type': 'photo',
       'date': '2015-03-28 12:51:03 GMT',
@@ -779,7 +779,7 @@ export default {
       'tags': [
         'exploreafrica-tw-author'
       ],
-      'short_url': 'http://tmblr.co/ZfpFCl1gyq-H5',
+      'short_url': 'https://tmblr.co/ZfpFCl1gyq-H5',
       'recommended_source': null,
       'recommended_color': null,
       'post_author': 'wutzuhan',
@@ -800,9 +800,9 @@ export default {
               'background_color': '#FAFAFA',
               'body_font': 'Helvetica Neue',
               'header_bounds': '',
-              'header_image': 'http://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_focused': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
-              'header_image_scaled': 'http://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image': 'https://assets.tumblr.com/images/default_header/optica_pattern_14.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_focused': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
+              'header_image_scaled': 'https://assets.tumblr.com/images/default_header/optica_pattern_14_focused_v3.png?_v=8c2d3b00544b7efbc4ac06dc3f80e374',
               'header_stretch': true,
               'link_color': '#529ECC',
               'show_avatar': true,
@@ -823,7 +823,7 @@ export default {
           'is_root_item': true
         }
       ],
-      'image_permalink': 'http://exploreafrica-tw.tumblr.com/image/114837156933',
+      'image_permalink': 'https://exploreafrica-tw.tumblr.com/image/114837156933',
       'photos': [
         {
           'caption': '',
@@ -831,38 +831,38 @@ export default {
             {
               'width': 1280,
               'height': 1281,
-              'url': 'http://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_1280.jpg'
+              'url': 'https://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_1280.jpg'
             },
             {
               'width': 500,
               'height': 500,
-              'url': 'http://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_500.jpg'
+              'url': 'https://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_500.jpg'
             },
             {
               'width': 400,
               'height': 400,
-              'url': 'http://40.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_400.jpg'
+              'url': 'https://40.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_400.jpg'
             },
             {
               'width': 250,
               'height': 250,
-              'url': 'http://36.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_250.jpg'
+              'url': 'https://36.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_250.jpg'
             },
             {
               'width': 100,
               'height': 100,
-              'url': 'http://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_100.jpg'
+              'url': 'https://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_100.jpg'
             },
             {
               'width': 75,
               'height': 75,
-              'url': 'http://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_75sq.jpg'
+              'url': 'https://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_75sq.jpg'
             }
           ],
           'original_size': {
             'width': 1280,
             'height': 1281,
-            'url': 'http://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_1280.jpg'
+            'url': 'https://41.media.tumblr.com/1ddc196babdcccefcc08bc63d8251d96/tumblr_nlxad3G4Xs1uomuuio1_r3_1280.jpg'
           },
           'exif': {
             'Camera': 'SONY SLT-A77V',
