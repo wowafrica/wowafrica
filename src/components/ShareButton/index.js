@@ -8,7 +8,7 @@ export default React.createClass({
     let {pageUrl, ...childProps} = this.props;
 
     return (
-      <a {...childProps} target="_blank" href={`http://www.facebook.com/share.php?u=http://wowafrica.tw${pageUrl}`}>
+      <a {...childProps} target="_blank" href={`https://www.facebook.com/share.php?u=https://wowafrica.tw${pageUrl}`}>
         <Image className="mini" src="/images/facebook_button.png"/>
       </a>
     );
