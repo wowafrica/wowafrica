@@ -67,6 +67,7 @@ export default {
     let updatedList = [];
     data.posts.forEach((post) => {
       let result = parsePostData(post);
+      updatedList.push(result);
     });
     return updatedList;
   }

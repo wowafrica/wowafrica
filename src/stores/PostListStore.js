@@ -71,7 +71,7 @@ class PostListStore extends EventEmitter {
       console.log(err.stack);
     }
     else {
-      let updatedList = this.parsePostsCategory(data);
+      let updatedList = TumblrPostUtil.parsePosts(data);
       if (updatedList.length > 0) {
         this.postList[updatedList[0].category].parsedPostNum += data.posts.length;
         this.postList[updatedList[0].category].totalPostNum = data.total_posts; // eslint-disable-line
@@ -89,7 +89,7 @@ class PostListStore extends EventEmitter {
       console.log(err.stack);
     }
     else {
-      let updatedList = this.parsePostsNew(data);
+      let updatedList = TumblrPostUtil.parsePosts(data);
       if (updatedList.length > 0) {
         this.postList['new'].parsedPostNum += data.posts.length;
         this.postList['new'].totalPostNum = data.total_posts; // eslint-disable-line

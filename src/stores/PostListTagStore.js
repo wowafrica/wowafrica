@@ -47,7 +47,7 @@ class PostListTagStore extends EventEmitter {
       console.log(err.stack);
     }
     else {
-      let updatedList = this.parsePosts(data);
+      let updatedList = TumblrPostUtil.parsePosts(data);
       if (updatedList.length > 0) {
         this.postList.parsedPostNum += data.posts.length;
         this.postList.totalPostNum = data.total_posts; // eslint-disable-line
