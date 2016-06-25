@@ -1,81 +1,15 @@
 import React       from 'react';
 import MenuStore   from '../../stores/MenuStore';
 import RouteAction from '../../actions/RouteAction';
-
-import {
-  Sidebar, Menu, Item, Dropdown, Icon, Text
-}  from 'react-semantify';
+import Component   from './Component';
 
 export default React.createClass({
 
-  getInitialState() {
-    return {
-      currentMenu: MenuStore.getAll()
-    };
-  },
-
-  componentDidMount() {
-    $('.ui.sidebar').sidebar('hide');
-    //$('.ui.sidebar').sidebar('setting', 'debug', true);
-    $('.ui.sidebar').sidebar('setting', 'onHide', () => {
-      $('#side-menu').addClass('sidebar-trans');
-    });
-    $('.ui.sidebar').sidebar('setting', 'onVisible', () => {
-      $('#side-menu').removeClass('sidebar-trans');
-    });
-    //document.querySelectorAll('.ui.sidebar')[0].sidebar();
-    //document.querySelectorAll('.ui.sidebar')[0].style.background = 'blue';
-    //document.querySelectorAll('#side-menu')[0].sidebar('get oninput');
-    //document.querySelectorAll('#side-menu')[0].onHidden = () => {
-    //  console.log('hidden!');
-    //};
-  },
-
   render() {
-    return (
-      <div>
-        <Item id="sidebar-menu-logo" style={{paddingTop: '14px'}}>
-          <a href="/">
-            <img src="/images/logo_color_trans.png" style={{width: '180px'}}/>
-          </a>
-        </Item>
-        {this.renderMenu()}
-      </div>
-    );
-  },
-
-  renderMenu() {
-    let {currentMenu} = this.state;
-    return (
-      currentMenu.map((section) => {
-        return (
-          <Item>
-            <div className="ui inverted large header">
-              {section.showName}
-              {this.renderItem(section)}
-            </div>
-          </Item>
-        );
-      })
-    );
-  },
-
-  renderItem(section) {
-    let items = section.subPage.map((page) => {
-      return (
-      <Item type="link"
-            href={page.url}
-            onClick={this._onClick}
-            style={{fontSize: '1.5em'}}>
-        {page.showName}
-      </Item>
-      );
-    });
+    let currentMenu = MenuStore.getAll();
 
     return (
-      <Menu className="inverted vertical">
-        {items}
-      </Menu>
+      <Component currentMenu={currentMenu} onMenuClick={this._onClick}/>
     );
   },
 
