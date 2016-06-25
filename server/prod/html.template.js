@@ -10,7 +10,8 @@ export default ({title, description, image, html}) => (
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
   <title>${title}</title>
-  <link href="/styles/vendor.css" type="text/css" rel="stylesheet"></link>
+  <link href="/styles/semantic.min.css" type="text/css" rel="stylesheet"></link>
+  <link href="/styles/global.css" type="text/css" rel="stylesheet"></link>
   <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
 </head>
 <body>

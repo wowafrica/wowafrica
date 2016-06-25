@@ -10,6 +10,7 @@ export default ({title, description, image, html}) => (
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
   <title>${title}</title>
+  <link href="/styles/semantic.css" type="text/css" rel="stylesheet"></link>
 </head>
 <body>
   <div id="side_bar" class="ui inverted vertical menu sidebar"></div>

@@ -53,8 +53,7 @@ export default {
     }, {
       test: /\.css$/,
       include: [
-        path.join(__dirname, '../../client/styles'),
-        path.join(__dirname, '../../node_modules')
+        path.join(__dirname, '../../client/styles')
       ],
       loader: 'style!css!postcss'
     }, {

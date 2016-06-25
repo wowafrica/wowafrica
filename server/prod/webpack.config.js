@@ -5,7 +5,7 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer      from 'autoprefixer';
 
 let extractText = new ExtractTextPlugin('../styles/main.css', {allChunks: true});
-let extractVendor = new ExtractTextPlugin('../styles/vendor.css', {allChunks: true});
+let extractGlobal = new ExtractTextPlugin('../styles/global.css', {allChunks: true});
 
 export default {
   devtool: 'source-map',
@@ -30,7 +30,7 @@ export default {
     publicPath: '/scripts/'
   },
   plugins: [
-    extractVendor,
+    extractGlobal,
     extractText,
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -68,10 +68,9 @@ export default {
     }, {
       test: /\.css$/,
       include: [
-        path.join(__dirname, '../../client/styles'),
-        path.join(__dirname, '../../node_modules')
+        path.join(__dirname, '../../client/styles')
       ],
-      loader: extractVendor.extract('style-loader', 'css-loader?minimize&-autoprefixer!postcss-loader')
+      loader: extractGlobal.extract('style-loader', 'css-loader?minimize&-autoprefixer!postcss-loader')
     }, {
       test: /\.css$/,
       include: [

@@ -38,6 +38,18 @@ gulp.task('data', () => {
     .pipe(gulp.dest(`${BUILD_PATH}/data/`));
 });
 
+gulp.task('css:themes', () => {
+  return gulp.src('./node_modules/semantic-ui/dist/themes/default/**/*')
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/themes/default/`));
+});
+
+gulp.task('css:vendor', ['css:themes'], () => {
+  let semanticFile = production ? 'semantic.min.css' : 'semantic.css';
+
+  return gulp.src(`./node_modules/semantic-ui/dist/${semanticFile}`)
+    .pipe(gulp.dest(`${BUILD_PATH}/styles/`));
+});
+
 gulp.task('webpack', (cb) => {
 
   let webpackConfig = production ? webpackProdConfig: webpackDevConfig;
@@ -100,7 +112,7 @@ gulp.task('clean-all', ['clean-build'], () => {
   ]);
 });
 
-gulp.task('build:static', ['ico', 'data', 'images', 'static-generator']);
+gulp.task('build:static', ['ico', 'data', 'images', 'css:vendor', 'static-generator']);
 gulp.task('build', ['build:static', 'webpack']);
 gulp.task('dev', ['build:static', 'webpack:watch-server']);
 gulp.task('default', ['build']);
