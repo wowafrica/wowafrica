@@ -33,7 +33,7 @@ let parsePostImage = (body) => {
   if (imageSrc) {
     let imageSrcList = imageSrc[0].match(/http[^\"\'\s]*/);
     if (imageSrcList) {
-      imageSrc = imageSrcList[0];
+      imageSrc = imageSrcList[0].replace(/http:/, 'https:');
     } else {
       imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
     }
@@ -60,6 +60,13 @@ export default {
       if (result.valid == true) {
         updatedList.push(result);
       }
+    });
+    return updatedList;
+  },
+  parsePostsNoValidation(data) {
+    let updatedList = [];
+    data.posts.forEach((post) => {
+      let result = parsePostData(post);
     });
     return updatedList;
   }

@@ -39,9 +39,9 @@ class PostStore extends EventEmitter {
       console.log(err.stack);
     } else {
       // console.log(JSON.stringify(data, null, 2));
-
-      let image = this.parsePostImage(data.posts[0].body);
-      let {settingResult, body} = this.parsePostSetting(data.posts[0].body);
+      let imgHttpsBody = data.posts[0].body.replace(/<img src=\"http:/g, '<img src=\"https:');
+      let image = this.parsePostImage(imgHttpsBody);
+      let {settingResult, body} = this.parsePostSetting(imgHttpsBody);
       this.removeTopTag(data.posts[0].tags);
       this.post = {...data.posts[0], body, image, ...settingResult};
       this.emitChange();
@@ -76,7 +76,6 @@ class PostStore extends EventEmitter {
 
   parsePostImage(body) {
     let imageSrc = body.match(/<img [^>]*\/>/g);
-
     if (imageSrc) {
       let imageSrcList = imageSrc[0].match(/http[^\"\'\s]*/);
       if (imageSrcList) {

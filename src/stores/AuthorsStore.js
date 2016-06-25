@@ -39,7 +39,7 @@ class AuthorsStore extends EventEmitter {
         name: contents[0],
         from: contents[1],
         description: contents[2],
-        photoUrl: target.length ? target[0].url : ''
+        photoUrl: target.length ? target[0].url.replace(/http:/, 'https:') : ''
       };
     });
     this.emitChange();
