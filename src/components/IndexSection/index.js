@@ -5,12 +5,7 @@ import PostListTagStore    from '../../stores/PostListTagStore';
 import PostListAuthorStore from '../../stores/PostListAuthorStore';
 import RouteAction         from '../../actions/RouteAction';
 import TumblrConfig        from '../../configures/TumblrConfig';
-
-import styles from './index.css';
-
-import {
-  Cards, Card, Image
-} from 'react-semantify';
+import PostGrid            from '../PostGrid';
 
 export default React.createClass({
 
@@ -37,18 +32,17 @@ export default React.createClass({
   getListContainer(props) {
     if (props.category === 'tag') {
       return {
-        listCon: PostListTagStore.getListContainer()
+        listCon: PostListTagStore.getListContainer(),
+        moreButtonLoading: false
       };
     }
     else if (props.category === 'author') {
       return {
-        listCon: PostListAuthorStore.getListContainer(props.author)
-      };
+        listCon: PostListAuthorStore.getListContainer(props.author),        moreButtonLoading: false      };
     }
     else {
       return {
-        listCon: PostListStore.getListContainer(props.category)
-      };
+        listCon: PostListStore.getListContainer(props.category),        moreButtonLoading: false      };
     }
   },
 
@@ -83,32 +77,10 @@ export default React.createClass({
   },
 
   render() {
-    let slideDiv = this.state.listCon.posts.map((post) => {
-      return (
-        <a className="card" href={'/view_post_list/posts/' + post.id} onClick={this._onClick}>
-          <div className={styles.postListCardImg} style={{backgroundImage: 'url('+post.image+')'}}/>
-          <div className="content">
-            <div className="header">
-              {post.title}
-            </div>
-            <div className="meta">
-              {post.brief}
-            </div>
-          </div>
-        </a>
-      );
-    });
-    let lCon = this.state.listCon;
-    if (lCon.parsedPostNum < lCon.totalPostNum) {
-      slideDiv.push(
-        <a className="card" onClick={this._onLoadMoreClick} style={{boxShadow: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-          <div>
-            <div id={styles.postListLoadMoreBtn} className="ui button">
-              載入更多文章
-            </div>
-          </div>
-        </a>
-      );
+    let moreButton = false;
+    let {listCon, moreButtonLoading} = this.state;
+    if (listCon.parsedPostNum < listCon.totalPostNum) {
+      moreButton = true;
     }
 
     let title = '';
@@ -126,14 +98,13 @@ export default React.createClass({
     }
 
     return (
-      <div className="ui container">
-        <div className={styles.postListTitle}>
-          {title}
-        </div>
-        <div className="ui centered cards">
-          {slideDiv}
-        </div>
-      </div>
+      <PostGrid
+        title={title}
+        posts={listCon.posts}
+        moreButton={moreButton}
+        moreButtonLoading={moreButtonLoading}
+        onPostGridClick={this._onClick}
+        onMorePostClick={this._onLoadMoreClick}/>
     );
   },
 
@@ -153,7 +124,7 @@ export default React.createClass({
         listCon: PostListStore.getListContainer(this.props.category)
       });
     }
-    $(`#${styles.postListLoadMoreBtn}`).removeClass('loading button').addClass('button');
+    this.setState({moreButtonLoading: false});
   },
 
   _onClick(e) {
@@ -165,7 +136,7 @@ export default React.createClass({
 
   _onLoadMoreClick(e) {
     e.preventDefault();
-    $(`#${styles.postListLoadMoreBtn}`).removeClass('button').addClass('loading button');
+    this.setState({moreButtonLoading: true});
     if (this.props.category === 'tag') {
       PostListTagStore.loadMorePosts(this.props.tag, TumblrConfig.postList.loadAmount);
     }

@@ -1,7 +1,6 @@
 import React              from 'react';
 import IndexMenu          from '../../components/IndexMenu';
 import CategoryMenu       from '../../components/CategoryMenu';
-import IndexSection       from '../../components/IndexSection';
 import IndexWideBlock     from '../../components/IndexWideBlock';
 import IndexCategoryBlock from '../../components/IndexCategoryBlock';
 import Footer             from '../../components/Footer';
@@ -75,12 +74,6 @@ export default React.createClass({
   },
 
   render() {
-    let sectionsDiv = MenuStore.getArticleSubPages().map((page) => {
-      return (
-          <IndexSection category={page.url.substring(2)} title={page.showName}/>
-      );
-    });
-
     return (
       <div>
         <div className="ui basic segment">
