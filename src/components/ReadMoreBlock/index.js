@@ -16,6 +16,10 @@ export default React.createClass({
     ReadMoreStore.onUpdateRandomPostList(3, this.props.postId);
   },
 
+  componentWillUnmount() {
+    ReadMoreStore.removeChangeListener(this._onChange);
+  },
+
   _onChange() {
     this.setState({
       posts: ReadMoreStore.getRandomPosts()
