@@ -2,9 +2,9 @@ import React           from 'react';
 import IndexMenu       from '../../components/IndexMenu';
 import CategoryMenu    from '../../components/CategoryMenu';
 import CategorySection from '../../components/CategorySection';
+import NewSection      from '../../components/NewSection';
 import Footer          from '../../components/Footer';
 import RouteStore      from '../../stores/RouteStore';
-import PostListStore   from '../../stores/PostListStore';
 
 export default React.createClass({
 
@@ -27,7 +27,9 @@ export default React.createClass({
           <CategoryMenu />
         </div>
         <div className="container-content">
-          <CategorySection category={category} title={category}/>
+          {category === 'new' ?
+            <NewSection/> :
+            <CategorySection category={category} title={category}/>}
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
         <Footer/>

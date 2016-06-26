@@ -1,5 +1,4 @@
 import React               from 'react';
-import PostListConfig      from '../../configures/PostListConfig';
 import PostListStore       from '../../stores/PostListStore';
 import RouteAction         from '../../actions/RouteAction';
 import TumblrConfig        from '../../configures/TumblrConfig';
@@ -9,30 +8,22 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      listCon: PostListStore.getListContainer(this.props.category),
+      listCon: PostListStore.getListContainer('new'),
       moreButtonLoading: false
     };
   },
 
   componentDidMount() {
-    PostListStore.addChangeListener('category', this._onChange);
+    PostListStore.addChangeListener('new', this._onChange);
   },
 
   componentWillUnmount() {
-    PostListStore.removeChangeListener('category', this._onChange);
-  },
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      listCon: PostListStore.getListContainer(nextProps.category),
-      moreButtonLoading: false
-    });
+    PostListStore.removeChangeListener('new', this._onChange);
   },
 
   render() {
     let moreButton = false;
     let {listCon, moreButtonLoading} = this.state;
-    let title = PostListConfig.categoryMap[this.props.title];
 
     if (listCon.parsedPostNum < listCon.totalPostNum) {
       moreButton = true;
@@ -40,7 +31,7 @@ export default React.createClass({
 
     return (
       <PostGrid
-        title={title}
+        title={'最新文章'}
         posts={listCon.posts}
         moreButton={moreButton}
         moreButtonLoading={moreButtonLoading}
@@ -51,7 +42,7 @@ export default React.createClass({
 
   _onChange() {
     this.setState({
-      listCon: PostListStore.getListContainer(this.props.category),
+      listCon: PostListStore.getListContainer('new'),
       moreButtonLoading: false
     });
   },
@@ -66,6 +57,6 @@ export default React.createClass({
   _onLoadMoreClick(e) {
     e.preventDefault();
     this.setState({moreButtonLoading: true});
-    PostListStore.loadMorePosts(this.props.category, TumblrConfig.postList.loadAmount);
+    PostListStore.loadMorePosts('new', TumblrConfig.postList.loadAmount);
   }
 });
