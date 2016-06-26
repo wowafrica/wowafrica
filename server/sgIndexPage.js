@@ -25,8 +25,10 @@ export default function() {
     let html = ReactDOMServer.renderToString(<IndexPage/>);
     let template = genTemplate({
       title: 'WOW! AFRICA',
+      ogTitle: 'WOW! AFRICA',
       description: 'wowAfrica阿非卡為台灣最完整的非洲資訊平台，我們的願景是搭起台灣與非洲的橋樑，藉由資訊、新聞、整合各方資源及實體活動等推廣方式，豐富我們對於非洲的認識及想像，達成進一步的交流與發展。',
       image: 'https://wowafrica.tw/images/landing.png',
+      url: 'https://wowafrica.tw',
       html: html
     });
     fs.writeFile('./_public/index.html', template, 'utf8', (error) => {

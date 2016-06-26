@@ -66,9 +66,11 @@ export default function() {
     let {id, title, brief, image, author} = post;
     let html = ReactDOMServer.renderToString(<ViewPostPage pageUrl={'/view_post_list/posts/'+id}/>);
     let template = genTemplate({
-      title: title,
+      title: `${title} - WOW! AFRICA`,
+      ogTitle: title,
       description: brief,
       image: image,
+      url: `https://wowafrica.tw/view_post_list/posts/${id}`,
       html: html
     });
     fs.writeFile(`./_public/view_post_list/posts/${id}.html`, template, 'utf8', (error) => {
