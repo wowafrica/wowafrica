@@ -38,11 +38,15 @@ export default React.createClass({
     }
     else if (props.category === 'author') {
       return {
-        listCon: PostListAuthorStore.getListContainer(props.author),        moreButtonLoading: false      };
+        listCon: PostListAuthorStore.getListContainer(props.author),
+        moreButtonLoading: false
+      };
     }
     else {
       return {
-        listCon: PostListStore.getListContainer(props.category),        moreButtonLoading: false      };
+        listCon: PostListStore.getListContainer(props.category),
+        moreButtonLoading: false
+      };
     }
   },
 
