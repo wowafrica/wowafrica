@@ -6,8 +6,7 @@ import styles from './index.css';
 let GridCard = ({id, title, brief, image, onPostGridClick}) => (
   <a className="card"
      href={`/view_post_list/posts/${id}`}
-     onClick={onPostGridClick}
-     key={id}>
+     onClick={onPostGridClick}>
     <div className={styles.postListCardImg}
          style={{backgroundImage: `url(${image})`}}/>
     <div className="content">
@@ -49,6 +48,7 @@ let PostGrid = ({
     <div className="ui centered cards">
       {posts.map((post) => (
         <GridCard id={post.id}
+                  key={post.id}
                   title={post.title}
                   brief={post.brief}
                   image={post.image}
