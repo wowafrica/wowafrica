@@ -1,17 +1,12 @@
-import React         from 'react';
-import IndexMenu     from '../../components/IndexMenu';
-import CategoryMenu  from '../../components/CategoryMenu';
-import IndexSection  from '../../components/IndexSection';
-import Footer        from '../../components/Footer';
-import RouteStore    from '../../stores/RouteStore';
-import PostListStore from '../../stores/PostListStore';
+import React           from 'react';
+import IndexMenu       from '../../components/IndexMenu';
+import CategoryMenu    from '../../components/CategoryMenu';
+import CategorySection from '../../components/CategorySection';
+import Footer          from '../../components/Footer';
+import RouteStore      from '../../stores/RouteStore';
+import PostListStore   from '../../stores/PostListStore';
 
 export default React.createClass({
-
-  getInitialState() {
-    return {
-    };
-  },
 
   componentDidMount() {
     window.scroll(0, 0);
@@ -32,17 +27,12 @@ export default React.createClass({
           <CategoryMenu />
         </div>
         <div className="container-content">
-          <IndexSection category={category} title={category}/>
+          <CategorySection category={category} title={category}/>
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
         <Footer/>
         <div id="page-bottom"/>
       </div>
     );
-  },
-
-  _onChange() {
-    this.setState({
-    });
   }
 });
