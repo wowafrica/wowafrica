@@ -3,6 +3,7 @@ import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import AuthorsStore from '../../stores/AuthorsStore';
+import RouteAction  from '../../actions/RouteAction';
 
 import {
   Cards, Card, Image

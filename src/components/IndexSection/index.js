@@ -15,31 +15,51 @@ import {
 export default React.createClass({
 
   getInitialState() {
-    if (this.props.category === 'tag') {
+    return this.getListContainer(this.props);
+  },
+
+  componentDidMount() {
+    this.addChangeListener(this.props.category);
+  },
+
+  componentWillUnmount() {
+    this.removeCurrentChangeListener();
+  },
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.category !== nextProps) {
+      this.removeCurrentChangeListener();
+      this.addChangeListener(nextProps.category);
+    }
+    this.getListContainer(nextProps);
+  },
+
+  getListContainer(props) {
+    if (props.category === 'tag') {
       return {
         listCon: PostListTagStore.getListContainer()
       };
     }
-    else if (this.props.category === 'author') {
+    else if (props.category === 'author') {
       return {
-        listCon: PostListAuthorStore.getListContainer(this.props.author)
+        listCon: PostListAuthorStore.getListContainer(props.author)
       };
     }
     else {
       return {
-        listCon: PostListStore.getListContainer(this.props.category)
+        listCon: PostListStore.getListContainer(props.category)
       };
     }
   },
 
-  componentDidMount() {
-    if (this.props.category === 'tag') {
+  addChangeListener(category) {
+    if (category === 'tag') {
       PostListTagStore.addChangeListener(this._onChange);
     }
-    else if (this.props.category === 'author') {
+    else if (category === 'author') {
       PostListAuthorStore.addChangeListener(this._onChange);
     }
-    else if (this.props.category === 'new') {
+    else if (category === 'new') {
       PostListStore.addChangeListener('new', this._onChange);
     }
     else {
@@ -47,7 +67,7 @@ export default React.createClass({
     }
   },
 
-  componentWillUnmount() {
+  removeCurrentChangeListener() {
     if (this.props.category == 'tag') {
       PostListTagStore.removeChangeListener(this._onChange);
     }
@@ -59,24 +79,6 @@ export default React.createClass({
     }
     else {
       PostListStore.removeChangeListener('category', this._onChange);
-    }
-  },
-
-  componentWillReceiveProps(nextProps) {
-    if (this.props.category == 'tag') {
-      this.setState({
-        listCon: PostListTagStore.getListContainer()
-      });
-    }
-    else if (this.props.category == 'author') {
-      this.setState({
-        listCon: PostListAuthorStore.getListContainer(nextProps.author)
-      });
-    }
-    else {
-      this.setState({
-        listCon: PostListStore.getListContainer(nextProps.category)
-      });
     }
   },
 
