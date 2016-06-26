@@ -63,7 +63,7 @@ export default function() {
 
   let generatePage = function() {
     let post = PostStore.getPost();
-    let {id, title, brief, image, author} = post;
+    let {id, title, brief, image, author, tags} = post;
     let html = ReactDOMServer.renderToString(<ViewPostPage pageUrl={'/view_post_list/posts/'+id}/>);
     let template = genTemplate({
       title: `${title} - WOW! AFRICA`,
@@ -71,6 +71,7 @@ export default function() {
       description: brief,
       image: image,
       url: `https://wowafrica.tw/view_post_list/posts/${id}`,
+      keywords: tags.toString(),
       html: html
     });
     fs.writeFile(`./_public/view_post_list/posts/${id}.html`, template, 'utf8', (error) => {
