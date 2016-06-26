@@ -7,6 +7,7 @@ import ShareButton  from '../../components/ShareButton';
 import ReadMoreBlk  from '../../components/ReadMoreBlock';
 import PostStore    from '../../stores/PostStore';
 import AuthorsStore from '../../stores/AuthorsStore';
+import RouteAction  from '../../actions/RouteAction';
 
 import styles from './index.css';
 
