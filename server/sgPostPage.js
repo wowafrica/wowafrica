@@ -31,7 +31,8 @@ export default function() {
     '葉菀菱': [],
     '程可安': [],
     '賴奕諭': [],
-    '盧韋辰': []
+    '盧韋辰': [],
+    'wowAfrica阿非卡': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
