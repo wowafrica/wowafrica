@@ -1,6 +1,6 @@
 {
   "base": "",
-  "version": "2.1.8",
+  "version": "2.2.0",
   "paths": {
     "source": {
       "config"      : "src/theme.config",
