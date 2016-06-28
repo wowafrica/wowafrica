@@ -1,0 +1,85 @@
+
+.footer {
+  font-size: 20px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+  background-color: #E8F5FF;
+  color: #606263;
+}
+
+.footer a:visited {
+  color: #606263;
+}
+
+.footer a {
+  color: #606263;
+}
+
+.footerBox {
+  min-height: 260px;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.footerBox a {
+  color: white;
+}
+
+.footerBox a:visited {
+  color: white;
+}
+
+.footerBoxInfo {
+  font-size: 18px;
+  padding-top: 3rem;
+}
+
+.footerIconGroups {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footerIcon {
+  width: 50px;
+  height: 50px;
+  border: thin solid white;
+  margin: 3px;
+  background-size: cover;
+}
+
+.footerIconMail {
+  background-image: url(/images/rb_mail.png);
+}
+.footerIconMail:hover {
+  background-image: url(/images/wb_mail.png);
+}
+
+.footerIconTumblr {
+  background-image: url(/images/rb_tumblr.png);
+}
+.footerIconTumblr:hover {
+  background-image: url(/images/wb_tumblr.png);
+}
+
+.footerIconFacebook {
+  background-image: url(/images/rb_facebook.png);
+}
+.footerIconFacebook:hover {
+  background-image: url(/images/wb_facebook.png);
+}
+
+.footerEmailBtn {
+  color: white;
+  background-color: #606263;
+}
+
+.footerEmailBtn:hover {
+  background-color: #BF3333;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .footerBoxInfo {
+    padding-top: 1rem;
+  }
+}

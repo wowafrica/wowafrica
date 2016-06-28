@@ -23,7 +23,7 @@ class PostListReadMoreStore extends EventEmitter {
   }
 
   onUpdateRandomPostList(amount, triggerId) {
-    this.randomPostList = [];
+    this.randomPosts = [];
     if (this.allPostList.length <= 0) {
       request.get(PostListConstants.POST_LIST_ALL_URL).end((err, res) => {
         if (err) {
