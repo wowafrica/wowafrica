@@ -22,9 +22,9 @@ let Block = ({post, idx, onBlockClick}) => (
   </a>
 );
 
-let ReadMoreBlock = ({posts}) => (
+let ReadMoreBlock = ({posts, onBlockClick}) => (
   <div className="ui divided link items">
-    {posts.map((post, idx) => <Block post={post} idx={idx}/>)}
+    {posts.map((post, idx) => <Block post={post} idx={idx} onBlockClick={onBlockClick}/>)}
   </div>
 );
 
