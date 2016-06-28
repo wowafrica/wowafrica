@@ -1,3 +1,37 @@
+<a name="0.10.0"></a>
+# [0.10.0](//compare/v0.9.2...v0.10.0) (2016-06-28)
+
+
+### Bug Fixes
+
+* **IndexSection:** fix showing from new posts to category posts doesn't show full category posts d4b520f
+* **PostGrid:** Add key in GridCard for react render 90f821c
+* **ReadMoreBlock:** Use css modules to override the first item's style. c54d255
+* **ReadMoreBlock:** fix missed to pass onClick function to presentation component f93c4c6
+* **ReadMoreBlock:** forgot to remove store change listener when unmounting component 4e8c791
+* **ViewPostPage:** fix push author and tag links will reload website d6cdaaa
+* **aboutAuthorsPage:** fix forgot to import RouteAction 2d06527
+* **build:** Modify the url-loader config to get eot|woff|woff2.. during development 001bcf0
+* **build:** run webpack task when issuing npm start 6874e6f
+* **css:** Include semantic.css without css-module for close #129 2755bab, closes #129
+* **css:** Include semantic.min.css without css-module on production ee3f34a
+* **footer:** Fix the subscribe method bug 64b6f55
+* **readMore:** fix link in read more block should not reload website a7ecdd2
+* **sgIndexPage:** remove wrong words in site description 2bc5a0a
+* **sidebar:** Modify sidebar render method cab0f3b
+
+### Features
+
+* **build:** Add webpack build and bundle process into gulpfile 2df0d61
+* **build:** Add webpack build environment 3859e61
+* **build:** Upgrade babel version b15f162
+* **build:** Use webpack to bundle css file 9dcab31
+* **css:** Support css-modules. Footer use css modules as the style af7752d
+* **httpsTumblr:** Use tumblr.js master branch for tumblr api 1b7bf09
+* **react:** Upgrade react to 15.x 4cd505a
+
+
+
 <a name="0.9.2"></a>
 ## [0.9.2](//compare/v0.9.1...v0.9.2) (2016-06-05)
 
