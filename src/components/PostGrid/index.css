@@ -1,0 +1,46 @@
+
+.postListTitle {
+  margin-top: 60px;
+  height: 60px;
+  font-size: 36px;
+  letter-spacing: 34px;
+  font-weight: bolder;
+}
+
+.postListCardImg {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+#postListLoadMoreBtn {
+  background-color: white;
+  box-shadow: 0px 1px 3px 0px #d4d4d5, 0px 0px 0px 1px #d4d4d5;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .postListTitle {
+    text-align: center;
+  }
+}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .postListTitle {
+    margin-left: 9%;
+  }
+}
+/* Small Monitor */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .postListTitle {
+    margin-left: 2%;
+  }
+}
+/* Large Monitor */
+@media only screen and (min-width: 1200px) {
+  .postListTitle {
+    margin-left: 10%;
+  }
+}

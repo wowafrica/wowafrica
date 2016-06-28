@@ -59,13 +59,13 @@ let fakeNations = [
 
 describe('NationsStore', () => {
   it('should have initialize', () => {
-    let nationsStore = require('../../src/stores/NationsStore');
+    let nationsStore = require('../../src/stores/NationsStore').default;
 
     expect(nationsStore.currentNation).toEqual(fakeNation);
   });
 
   it('should update current nation by receive nation', () => {
-    let nationsStore = require('../../src/stores/NationsStore');
+    let nationsStore = require('../../src/stores/NationsStore').default;
 
     nationsStore.nations = fakeNations;
     nationsStore.onReceiveUpdateNations('TZA');
@@ -74,7 +74,7 @@ describe('NationsStore', () => {
   });
 
   it('should use nation name to be default if cannot get nation info', () => {
-    let nationsStore = require('../../src/stores/NationsStore');
+    let nationsStore = require('../../src/stores/NationsStore').default;
 
     nationsStore.nations = fakeNations;
     nationsStore.onReceiveUpdateNations('KEN');

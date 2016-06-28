@@ -1,0 +1,23 @@
+
+.contentArea {
+  margin-top: 50px;
+}
+
+.land {
+  fill: #2E8398;
+  stroke: white;
+  stroke-width: .7px;
+  stroke-opacity: .7;
+}
+
+.mapAfrica {
+  width: 100%;
+  height: 680px;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  .mapAfrica {
+    display: none;
+  }
+}

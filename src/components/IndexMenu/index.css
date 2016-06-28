@@ -1,0 +1,18 @@
+
+/* Mobile and Tablet */
+@media only screen and (max-width: 991px) {
+  #indexMenu {
+    display: none;
+  }
+}
+/* Small and Large Monitor */
+@media only screen and (min-width: 992px) {
+  #indexMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #59385E;
+    letter-spacing: 15px;
+  }
+}

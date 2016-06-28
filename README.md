@@ -24,6 +24,18 @@ WOW Africa Website
 
 and then open `http://localhost:3000/`
 
+## Run Production Server
+
+`npm i`
+
+`npm run build`: To build the production into `_public` folder
+
+and then run http server on it. `http-server _public`
+
+open `http://localhost:8080/` to see production result
+
+> Production use the uglifyJS and minimize css to enhance loading js and css file.
+
 ## Run Test and Lint
 
 - `npm i`
