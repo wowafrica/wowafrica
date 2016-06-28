@@ -66,7 +66,7 @@ export default function() {
     let {id, title, brief, image, author, tags} = post;
     let html = ReactDOMServer.renderToString(<ViewPostPage pageUrl={'/view_post_list/posts/'+id}/>);
     let template = genTemplate({
-      title: `${title} - WOW! AFRICA`,
+      title: `${title} - wowAfrica阿非卡 - 華人圈最全方位的非洲資訊平台`,
       ogTitle: title,
       description: brief,
       image: image,
