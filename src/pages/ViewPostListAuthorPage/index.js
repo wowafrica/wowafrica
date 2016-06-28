@@ -1,17 +1,11 @@
 import React         from 'react';
 import IndexMenu     from '../../components/IndexMenu';
 import CategoryMenu  from '../../components/CategoryMenu';
-import IndexSection  from '../../components/IndexSection';
+import AuthorSection from '../../components/AuthorSection';
 import Footer        from '../../components/Footer';
 import RouteStore    from '../../stores/RouteStore';
-import PostListStore from '../../stores/PostListStore';
 
 export default React.createClass({
-
-  getInitialState() {
-    return {
-    };
-  },
 
   componentDidMount() {
     window.scroll(0, 0);
@@ -26,17 +20,12 @@ export default React.createClass({
           <CategoryMenu />
         </div>
         <div className="container-content">
-          <IndexSection category="author" author={author} title={author}/>
+          <AuthorSection author={author} title={author}/>
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
         <Footer/>
         <div id="page-bottom"/>
       </div>
     );
-  },
-
-  _onChange() {
-    this.setState({
-    });
   }
 });
