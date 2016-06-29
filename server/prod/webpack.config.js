@@ -1,6 +1,5 @@
 import path              from 'path';
 import webpack           from 'webpack';
-import babelConfig       from './babel.config';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer      from 'autoprefixer';
 
@@ -60,9 +59,11 @@ export default {
   module: {
     loaders: [{
       test: /\.js?$/,
-      include: [
-        path.join(__dirname, '../../src'),
-        path.join(__dirname, '../../client/scripts')
+      exclude: [
+        path.join(__dirname, '../../node_modules/jquery'),
+        path.join(__dirname, '../../node_modules/semantic-ui'),
+        path.join(__dirname, '../../node_modules/babel-polyfill'),
+        path.join(__dirname, '../../node_modules/d3')
       ],
       loader: 'uglify!babel?presets[]=es2015,presets[]=react,presets[]=stage-0,-babelrc'
     }, {
