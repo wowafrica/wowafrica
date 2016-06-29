@@ -1,3 +1,13 @@
+<a name="0.10.1"></a>
+## [0.10.1](//compare/v0.10.0...v0.10.1) (2016-06-29)
+
+
+### Bug Fixes
+
+* **build:** Enhance the vendor.bundle.js 2.27MB -> 1.8MB close #138 f477c94, closes #138
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](//compare/v0.9.2...v0.10.0) (2016-06-28)
 

@@ -32,7 +32,7 @@ export default function() {
     '程可安': [],
     '賴奕諭': [],
     '盧韋辰': [],
-    'wowAfrica阿非卡': []
+    'wowAfrica阿非卡編輯部': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
@@ -52,7 +52,9 @@ export default function() {
   };
 
   let updateAuthorPostListFile = function(author, id) {
-    authorPostList[author].push(id);
+    if (typeof authorPostList[author] !== 'undefined') {
+      authorPostList[author].push(id);
+    }
     fs.writeFile('./_public/view_post_list/authorPostList.json', JSON.stringify(authorPostList), 'utf8', (error) => {
       if (error) {
         throw error;
