@@ -1,3 +1,13 @@
+<a name="0.10.2"></a>
+## [0.10.2](https://github.com/jessy1092/explore-africa/compare/v0.10.1...v0.10.2) (2016-06-29)
+
+
+### Bug Fixes
+
+* **sgPostPage:** fix if author is not existed, static generator will exit([81a9739](https://github.com/jessy1092/explore-africa/commit/81a9739))
+
+
+
 <a name="0.10.1"></a>
 ## [0.10.1](//compare/v0.10.0...v0.10.1) (2016-06-29)
 
