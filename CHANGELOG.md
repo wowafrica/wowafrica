@@ -1,3 +1,9 @@
+<a name="0.10.3"></a>
+## [0.10.3](//compare/v0.10.2...v0.10.3) (2016-07-12)
+
+
+
+
 <a name="0.10.2"></a>
 ## [0.10.2](https://github.com/jessy1092/explore-africa/compare/v0.10.1...v0.10.2) (2016-06-29)
 
