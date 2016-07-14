@@ -5,6 +5,8 @@ import Footer       from '../../components/Footer';
 import AuthorsStore from '../../stores/AuthorsStore';
 import RouteAction  from '../../actions/RouteAction';
 
+import styles from './index.css';
+
 import {
   Cards, Card, Image
 } from 'react-semantify';
@@ -81,7 +83,7 @@ export default React.createClass({
           <CategoryMenu />
         </div>
         <div className="container-content">
-          <div className="ui page grid">
+          <div className={`ui page grid ${styles.overrideGrid}`}>
             <div className="wide centered column">
               <AuthorsBox/>
             </div>

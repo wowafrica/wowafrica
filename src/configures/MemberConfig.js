@@ -1,33 +1,33 @@
 export default [
   {
     'name': '盧韋辰 ／ Weichen Lu',
-    'title': '共同創辦人 & 執行長 ／ Cofunder & CEO'
+    'title': '共同創辦人 & 執行長 ／ Co-funder & CEO'
   }, {
-    'name': '賴奕諭 ／ Larry Lai',
-    'title': '共同創辦人 & 總編輯 ／ Cofunder & Chief Editor'
+    'name': '張堯任 ／ Yauren Chang',
+    'title': '共同創辦人 ／ Co-funder'
   }, {
-    'name': '何佩佳 ／ Pejia Ho',
-    'title': '共同創辦人 & 市場開發經理 ／ Cofunder & BD Manager'
-  }, {
-    'name': '葉菀菱 ／ Bear Ya',
-    'title': '社群總編 ／ Social Media Editor'
-  }, {
-    'name': '程可安 ／ Anna',
-    'title': '專案經理 ／ Project Director'
-  }, {
-    'name': '謝睿哲 ／ Solid',
-    'title': '專案經理 ／ Project Director'
-  }, {
-    'name': '林詩閔 ／',
-    'title': '活動總監 ／ Offline Event Director'
+    'name': '何佩佳 ／ Peijia He',
+    'title': '總編輯 ／ Editor in Chief'
   }, {
     'name': '李俊緯 ／ Lee',
-    'title': '進擊的攻城屍 ／ Web Enginer No.1'
+    'title': '網站工程師 ／ Web Engineer'
   }, {
-    'name': '吳咨翰 ／ TzuHan',
-    'title': '進擊的攻城屍 ／ Web Enginer No.2'
+    'name': '吳咨翰 ／ TzuHan Wu',
+    'title': '網站工程師 ／ Web Engineer'
   }, {
-    'name': '洪野馬 ／',
-    'title': '插花的網頁介面設計師 ／ Web UI Designer'
+    'name': '王文秀 ／ Lori Wang',
+    'title': '資訊研究員兼設計師 ／ Africa Information Researcher & Designer'
+  }, {
+    'name': '何玉渟 ／ Frederica J Ho',
+    'title': '資訊研究員 ／ Africa Information Researcher'
+  }, {
+    'name': '陳一馨 ／ Ishin Chen',
+    'title': '故事採集小組 ／ Narrator of Taiwan African Story'
+  }, {
+    'name': '林俐辰 ／ Joann Lin',
+    'title': '故事採集小組 ／ Narrator of Taiwan African Story'
+  }, {
+    'name': '蔡祁珊 ／ Sherry Tsai',
+    'title': '故事採集小組 ／ Narrator of Taiwan African Story'
   }
 ];

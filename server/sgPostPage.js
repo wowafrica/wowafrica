@@ -36,6 +36,7 @@ export default function() {
     '何玉淳': [],
     '王文秀': [],
     '林俐辰': [],
+    '陳一馨': [],
     'wowAfrica阿非卡編輯部': []
   };
 

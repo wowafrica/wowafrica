@@ -1,0 +1,7 @@
+
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+  .overrideGrid {
+    padding-left: 10% !important;
+    padding-right: 10% !important;
+  }
+}
