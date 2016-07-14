@@ -1,3 +1,14 @@
+<a name="0.10.4"></a>
+## [0.10.4](//compare/v0.10.3...v0.10.4) (2016-07-14)
+
+
+### Bug Fixes
+
+* **aboutAuthorsPage:** Only two card columns are showed in 1200 - 1300 px page width 2b06238
+* **aboutUsPage:** change team member list de90550
+
+
+
 <a name="0.10.3"></a>
 ## [0.10.3](//compare/v0.10.2...v0.10.3) (2016-07-12)
 
