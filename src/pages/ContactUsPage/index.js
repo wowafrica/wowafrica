@@ -80,7 +80,7 @@ export default React.createClass({
     $(`#${styles.contactForm}`).removeClass('error');
     $(`#${styles.submitBtn}`).removeClass('button').addClass('loading button');
     let request = $.ajax({
-      url: 'https://script.google.com/macros/s/AKfycbw2q99zSLMh2kKqXUT4QD5CRtCACbJL8Xun7s7Y_jvO5lzJHno/exec',
+      url: 'https://script.google.com/macros/s/AKfycbyYVbtEdw0FcLSUUJmADYqN9P523HcmQL1MjmnUqvCdruUNkwvs/exec',
       type: 'post',
       data: {
         '稱謂': $('#nameInput')[0].value,
