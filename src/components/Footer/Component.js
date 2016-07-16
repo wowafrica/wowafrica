@@ -54,6 +54,9 @@ let Subscribe = React.createClass({
           <div className="ui error message" style={{fontSize: '14px'}}>
             oops! 現在有些問題，請稍候再試
           </div>
+          <div className="ui warning message" style={{fontSize: '14px'}}>
+            Email 忘了填喔！
+          </div>
           <div className={classnames('ui submit button', styles.footerEmailBtn)} onClick={this._onSubBtnClick}>
             訂閱
           </div>
@@ -63,21 +66,30 @@ let Subscribe = React.createClass({
   },
 
   _onSubBtnClick(e) {
-    $('#emailForm').removeClass('error');
-    $(`.${styles.footerEmailBtn}`).removeClass('button').addClass('loading button');
+    let emailFormClass = document.querySelector('#emailForm').classList;
+    let emailInputValue = document.querySelector('#emailInput').value;
+    let footerEmailBtnClass = document.querySelector(`.${styles.footerEmailBtn}`).classList;
+
+    emailFormClass.remove('error');
+    emailFormClass.remove('warning');
+    if (emailInputValue === '') {
+      emailForm.classList.add('warning');
+      return;
+    }
+    footerEmailBtnClass.add('loading');
     let request = $.ajax({
       url: 'https://script.google.com/macros/s/AKfycbzuOLvCRul3ZAzNl3kp9nPihUQ_iowpjB-Uf1nwuvhY9Q5lODI/exec',
       type: 'post',
-      data: {'email': $('#emailInput')[0].value}
+      data: {'email': emailInputValue}
     })
     .done(function(data) {
-      $(`.${styles.footerEmailBtn}`).text('完成!');
+      document.querySelector(`.${styles.footerEmailBtn}`).textContent = '完成！';
     })
     .fail(function(data) {
-      $('#emailForm').addClass('error');
+      emailFormClass.add('error');
     })
     .always(function() {
-      $(`.${styles.footerEmailBtn}`).removeClass('loading button').addClass('button');
+      footerEmailBtnClass.remove('loading');
     });
   }
 });
