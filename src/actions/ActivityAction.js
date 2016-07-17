@@ -16,17 +16,24 @@ function receiveActivities(data) {
   };
 };
 
+function fetchTumblr() {
+  return new Promise((resolve, error) => {
+    client.posts(TumblrActivityConfig.blogName, {}, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+  });
+}
+
 export function fetchAvtivities() {
   return (dispatch) => {
     dispatch(requestActivities());
-    client.posts(TumblrActivityConfig.blogName, {
-    }, (err, data) => {
-      if (err) {
-        console.log(err.stack);
-      }
-      else {
-        dispatch(receiveActivities(data));
-      }
+
+    fetchTumblr().then(data => {
+      dispatch(receiveActivities(data));
     });
   };
 }
