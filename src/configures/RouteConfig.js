@@ -53,5 +53,10 @@ export default {
     path: '/activity/uganda_letter',
     method: 'get',
     page: require('../pages/UgandaLetter').default
+  },
+  activities: {
+    path: '/activities',
+    method: 'get',
+    page: require('../pages/ActivityListPage').default
   }
 };
