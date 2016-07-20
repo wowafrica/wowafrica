@@ -1,3 +1,14 @@
+<a name="0.10.5"></a>
+## [0.10.5](//compare/v0.10.4...v0.10.5) (2016-07-20)
+
+
+### Bug Fixes
+
+* **footerEmailBtn:** don't send ajax if email is empty, and replace some jquery selector with documen 9c378cc
+* **sideBar:** adjust item font-size, hide sidebard after item is clicked d251958
+
+
+
 <a name="0.10.4"></a>
 ## [0.10.4](//compare/v0.10.3...v0.10.4) (2016-07-14)
 
