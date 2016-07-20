@@ -36,7 +36,7 @@ export default function() {
     '何玉渟': [],
     '王文秀': [],
     '林俐辰': [],
-    '陳一馨': [],
+    'Tracy Chen': [],
     'wowAfrica阿非卡編輯部': []
   };
 
