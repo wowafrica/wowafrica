@@ -18,5 +18,6 @@ export default React.createClass({
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();
+    $('.ui.sidebar').sidebar('hide');
   }
 });

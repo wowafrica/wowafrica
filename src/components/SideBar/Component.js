@@ -7,8 +7,7 @@ import {
 let SectionItem = ({showName, url, onMenuClick}) => (
   <Item type="link"
         href={url}
-        onClick={onMenuClick}
-        style={{fontSize: '1.5em'}}>
+        onClick={onMenuClick}>
     {showName}
   </Item>
 );
