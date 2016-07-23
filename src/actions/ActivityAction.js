@@ -12,12 +12,12 @@ export const RECEIVE_ACTIVITIES = 'RECEIVE_ACTIVITIES';
 function receiveActivities(data) {
   return {
     type: RECEIVE_ACTIVITIES,
-    rawData: data
+    rawApi: data
   };
 };
 
 function fetchTumblr() {
-  return new Promise((resolve, error) => {
+  return new Promise((resolve, reject) => {
     client.posts(TumblrActivityConfig.blogName, {}, (err, data) => {
       if (err) {
         reject(err);
@@ -28,7 +28,7 @@ function fetchTumblr() {
   });
 }
 
-export function fetchAvtivities() {
+export function fetchActivities() {
   return (dispatch) => {
     dispatch(requestActivities());
 

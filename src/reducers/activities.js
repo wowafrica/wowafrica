@@ -1,3 +1,4 @@
+import parseActivities from '../utility/tumblrActivity';
 import * as ActivityAction from '../actions/ActivityAction';
 
 export default (state = {
@@ -12,7 +13,7 @@ export default (state = {
     case ActivityAction.RECEIVE_ACTIVITIES:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.rawData.posts
+        items: parseActivities(action.rawApi)
       });
     default:
       return state;

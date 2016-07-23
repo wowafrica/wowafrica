@@ -1,6 +1,6 @@
 import React             from 'react';
 import ActivityGrid      from '../../components/ActivityGrid';
-import {fetchAvtivities} from '../../actions/ActivityAction';
+import {fetchActivities} from '../../actions/ActivityAction';
 
 export default React.createClass({
 
@@ -13,7 +13,7 @@ export default React.createClass({
     this.unsubscribe = store.subscribe(() =>
       this.forceUpdate()
     );
-    store.dispatch(fetchAvtivities());
+    store.dispatch(fetchActivities());
   },
 
   componentWillUnmount() {

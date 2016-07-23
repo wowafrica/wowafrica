@@ -14,7 +14,6 @@ export default React.createClass({
   },
 
   componentWillUnmount() {
-    this.unsubscribe();
   },
 
   render() {

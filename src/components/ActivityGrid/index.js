@@ -2,18 +2,26 @@ import React      from 'react';
 import classnames from 'classnames';
 import styles     from './index.css';
 
-let ActivityCard = ({id, image, title, date, time, location, address, host, ticketLink, onCardClick}) => (
-  <a className="card"
+let ActivityCard = ({id, image, title, date, time, area, location, brief, onCardClick}) => (
+  <a className={`card ${styles.card}`}
      href={`/activities/${id}`}
      onClick={onCardClick}>
-    <div className={styles.CardImg}
+    <div className={styles.cardImg}
          style={{backgroundImage: `url(${image})`}}/>
     <div className="content">
       <div className="header">
         {title}
       </div>
-      <div className="meta">
-        {date}
+      <div className={styles.meta}>
+        <i className="yellow marker icon"/>
+        {area} {location}
+      </div>
+      <div className={styles.meta}>
+        <i className="yellow wait icon"/>
+        {date} {time}
+      </div>
+      <div className={styles.description}>
+        {brief}
       </div>
     </div>
   </a>
@@ -21,17 +29,30 @@ let ActivityCard = ({id, image, title, date, time, location, address, host, tick
 
 let ActivityGrid = ({items}) => (
   <div className="ui container">
-    <div className={styles.activityListTitle}>
-      活動列表
+    <div className={styles.gridTitle}>
+      活動訊息
+    </div>
+    <div className={styles.newOldBox}>
+      <div className={styles.newOldTitle}>
+        即將舉辦
+      </div>
     </div>
     <div className="ui centered cards">
       {items.map((item) => (
         <ActivityCard
           id={item.id}
-          title={item.title}/>
+          title={item.title}
+          image={item.image}
+          date={item.date}
+          time={item.time}
+          area={item.area}
+          location={item.location}
+          brief={item.brief}
+          ticketLink={item.ticketLink}
+        />
       ))}
     </div>
-  </div>    
+  </div>
 );
 
 export default ActivityGrid;

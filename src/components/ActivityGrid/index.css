@@ -1,7 +1,65 @@
-.CardImg {
+.gridTitle {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-top: 18px;
+  height: 60px;
+  font-size: 36px;
+  letter-spacing: 1em;
+  font-weight: bolder;
+  width: 9.5em;
+  text-align: center;
+  border-bottom: 3px solid;
+  border-color: rgba(75, 136, 203, 0.3);
+}
+
+.newOldBox {
+  width: 100%;
+  height: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(208, 208, 208, 1);
+  margin-bottom: 30px;
+}
+
+.newOldTitle {
+  width: 200px;
+  letter-spacing: 0.6em;
+  font-size: 1.5em;
+  background-color: #FFFFFF;
+}
+
+:global(.ui.cards) > .card {
+  border-radius: 0;
+  box-shadow: 0px 1px 3px 0px #111111, 0px 0px 0px 1px #111111;
+}
+
+:global(.ui.cards) > a.card:hover {
+  border-radius: 0;
+  box-shadow: 0px 1px 3px 0px #111111, 0px 0px 0px 1px #111111;
+}
+
+:global(.ui.cards) > .card > :first-child {
+  border-radius: 0 !important;
+}
+
+.cardImg {
   width: 100%;
   height: 240px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+}
+
+.meta {
+  font-size: 1.1em;
+  color: rgba(0, 0, 0, 1);
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.description {
+  color: rgba(0, 0, 0, 0.6);
 }
