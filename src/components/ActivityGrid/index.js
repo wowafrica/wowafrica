@@ -1,6 +1,7 @@
-import React      from 'react';
-import classnames from 'classnames';
-import styles     from './index.css';
+import React          from 'react';
+import classnames     from 'classnames';
+import ActivityFilter from '../ActivityFilter';
+import styles         from './index.css';
 
 let ActivityCard = ({id, image, title, date, time, area, location, brief, onCardClick}) => (
   <a className={`card ${styles.card}`}
@@ -27,18 +28,14 @@ let ActivityCard = ({id, image, title, date, time, area, location, brief, onCard
   </a>
 );
 
-let ActivityGrid = ({items}) => (
+let ActivityGrid = ({items, showOther}) => (
   <div className="ui container">
     <div className={styles.gridTitle}>
       活動訊息
     </div>
-    <div className={styles.newOldBox}>
-      <div className={styles.newOldTitle}>
-        即將舉辦
-      </div>
-    </div>
+    <ActivityFilter/>
     <div className="ui centered cards">
-      {items.map((item) => (
+      {filterOther(items, showOther).map((item) => (
         <ActivityCard
           id={item.id}
           title={item.title}
@@ -54,5 +51,16 @@ let ActivityGrid = ({items}) => (
     </div>
   </div>
 );
+
+let filterOther = (items, showOther) => {
+  if (showOther)
+    return items.filter((item) => {
+      return item.host.match(/wowAfrica/i) === null;
+    });
+  else
+    return items.filter((item) => {
+      return item.host.match(/wowAfrica/i) !== null;
+    });
+};
 
 export default ActivityGrid;

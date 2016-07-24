@@ -26,7 +26,10 @@ export default React.createClass({
     console.log(activities);
     return (
       <div>
-        <ActivityGrid items={activities.items}/>
+        <ActivityGrid
+          items={activities.showOldItems ? activities.oldItems : activities.items}
+          showOther={activities.showOtherHost}
+        />
       </div>
     );
   }

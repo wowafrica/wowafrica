@@ -16,6 +16,34 @@ function receiveActivities(data) {
   };
 };
 
+export const SHOW_OLD_ACTIVITIES = 'SHOW_OLD_ACTIVITIES';
+export function showOldActivities(data) {
+  return {
+    type: SHOW_OLD_ACTIVITIES
+  };
+};
+
+export const SHOW_NEW_ACTIVITIES = 'SHOW_NEW_ACTIVITIES';
+export function showNewActivities(data) {
+  return {
+    type: SHOW_NEW_ACTIVITIES
+  };
+};
+
+export const SHOW_OTHER_HOST = 'SHOW_OTHER_HOST';
+export function showOtherHost(data) {
+  return {
+    type: SHOW_OTHER_HOST
+  };
+};
+
+export const SHOW_WA_HOST = 'SHOW_WA_HOST';
+export function showWaHost(data) {
+  return {
+    type: SHOW_WA_HOST
+  };
+};
+
 function fetchTumblr() {
   return new Promise((resolve, reject) => {
     client.posts(TumblrActivityConfig.blogName, {}, (err, data) => {

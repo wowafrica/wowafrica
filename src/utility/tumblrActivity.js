@@ -20,6 +20,22 @@ let defaultSetting = {
   'ticketLink': 'https://www.facebook.com/wowafrica.tw'
 };
 
+let adjustTicketLink = (link) => {
+  let match = link.match(/http[^\"\'\s]*/);
+  let ticketLink = match ? match[0] : link;
+  return ticketLink;
+};
+
+let combineSysTime = (sDate, sTime) => {
+  let sysTime = new Date('2016.07.24 18:00');
+  let date = sDate.match(/[0-9.]*/);
+  let time = sTime.match(/[0-9:：]*/);
+  if ( date && time ) {
+    sysTime = new Date(`${date} ${time}`);
+  }
+  return sysTime;
+};
+
 let parseSetting = (rawSetting) => {
   let setting = defaultSetting;
   // <p>地點:華山</p>
@@ -30,8 +46,8 @@ let parseSetting = (rawSetting) => {
       setting[settingAlias[key]] = value.join(':').trim();
     }
   });
-  let ticketLink = setting.ticketLink.match(/http[^\"\'\s]*/);
-  setting.ticketLink = ticketLink ? ticketLink[0] : setting.ticketLink;
+  setting.ticketLink = adjustTicketLink(setting.ticketLink);
+  setting.sysTime = combineSysTime(setting.date, setting.time);
   return setting;
 };
 
@@ -58,11 +74,20 @@ let parseActivity = (post) => {
 };
 
 let parseActivities = (rawApi) => {
-  let Activities = [];
+  let activities = [];
+  let oldActivities = [];
+  let currentTime = new Date();
   rawApi.posts.forEach((post) => {
-    Activities.push(parseActivity(post));
+    let activity = parseActivity(post);
+    if (activity.sysTime.getTime() >= currentTime.getTime()) {
+      activities.push(activity);
+    }
+    else {
+      oldActivities.push(activity);
+    }
+
   });
-  return Activities;
+  return {activities, oldActivities};
 };
 
 export default parseActivities;
