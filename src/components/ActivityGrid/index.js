@@ -28,7 +28,7 @@ let ActivityCard = ({id, image, title, date, time, area, location, brief, onCard
   </a>
 );
 
-let ActivityGrid = ({items, showOther}) => (
+let ActivityGrid = ({items, showOther, onCardClick}) => (
   <div className="ui container">
     <div className={styles.gridTitle}>
       活動訊息
@@ -46,6 +46,7 @@ let ActivityGrid = ({items, showOther}) => (
           location={item.location}
           brief={item.brief}
           ticketLink={item.ticketLink}
+          onCardClick={onCardClick}
         />
       ))}
     </div>

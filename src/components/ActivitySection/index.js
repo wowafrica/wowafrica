@@ -1,6 +1,7 @@
 import React             from 'react';
 import ActivityGrid      from '../../components/ActivityGrid';
 import {fetchActivities} from '../../actions/ActivityAction';
+import RouteAction       from '../../actions/RouteAction';
 
 export default React.createClass({
 
@@ -29,8 +30,16 @@ export default React.createClass({
         <ActivityGrid
           items={activities.showOldItems ? activities.oldItems : activities.items}
           showOther={activities.showOtherHost}
+          onCardClick={this._onClick}
         />
       </div>
     );
+  },
+
+  _onClick(e) {
+    let {pathname, hash} = e.currentTarget;
+    history.pushState({pathname: pathname, hash: hash}, '', pathname);
+    RouteAction.updatePath(pathname, hash);
+    e.preventDefault();
   }
 });
