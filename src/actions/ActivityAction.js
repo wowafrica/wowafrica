@@ -64,7 +64,7 @@ export function fetchActivities() {
   return (dispatch) => {
     dispatch(requestActivities());
 
-    fetchTumblr().then(data => {
+    return fetchTumblr().then(data => {
       dispatch(receiveActivities(data));
     });
   };

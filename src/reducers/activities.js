@@ -19,7 +19,7 @@ export default (state = {
   showOtherHost: false,
   items: [],
   oldItems: [],
-  activity: ''
+  activity: {}
 }, action) => {
   switch (action.type) {
     case ActivityAction.REQUEST_ACTIVITIES:
