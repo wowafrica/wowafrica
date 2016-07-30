@@ -1,0 +1,72 @@
+
+.postImage {
+  background-size: cover;
+}
+
+.postImage .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 640px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.postImage .innerTitle {
+  font-size: 42px;
+  color: #FFFFFF;
+  line-height: 1;
+  text-align: center;
+}
+
+.containerPost figure {
+  margin: 0px;
+}
+
+.containerPost img {
+  width: 100%;
+}
+
+.containerPost iframe {
+  width: 100%;
+}
+
+.containerPost h2 {
+  font-size: 36px;
+}
+
+.containerPost p {
+  font-size: 20px;
+}
+
+.containerActivity div {
+  color: #e6f4ff;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 16px;
+}
+
+.sectionActivity {
+  margin-top: 1rem;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* for ViewPostPage */
+  .antiVeryPadded {
+    padding: 1em !important;
+  }
+
+  .sectionActivity {
+    min-height: 400px;
+    margin-top: 0px;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sectionActivity {
+    min-height: 350px;
+    margin-top: 0px;
+  }
+}

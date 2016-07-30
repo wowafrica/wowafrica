@@ -58,5 +58,10 @@ export default {
     path: '/activities',
     method: 'get',
     page: require('../pages/ActivityListPage').default
+  },
+  viewActivity: {
+    path: '/activities/:activity',
+    method: 'get',
+    page: require('../pages/ViewActivityPage').default
   }
 };
