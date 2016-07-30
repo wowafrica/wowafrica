@@ -1,7 +1,9 @@
 import React             from 'react';
 import ActivityGrid      from '../../components/ActivityGrid';
-import {fetchActivities} from '../../actions/ActivityAction';
 import RouteAction       from '../../actions/RouteAction';
+import {
+  fetchActivities, showActivity
+} from '../../actions/ActivityAction';
 
 export default React.createClass({
 
@@ -37,7 +39,12 @@ export default React.createClass({
   },
 
   _onClick(e) {
+    const {store} = this.context;
     let {pathname, hash} = e.currentTarget;
+
+    // Show specific activity
+    store.dispatch(showActivity(pathname.split('/')[2]));
+
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();

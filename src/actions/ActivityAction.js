@@ -1,6 +1,10 @@
 import Tumblr                 from 'tumblr.js';
 import {TumblrActivityConfig} from '../configures/TumblrConfig';
 
+let client = Tumblr.createClient({
+  consumer_key: TumblrActivityConfig.consumerKey // eslint-disable-line
+});
+
 export const REQUEST_ACTIVITIES = 'REQUEST_ACTIVITIES';
 function requestActivities() {
   return {
@@ -66,6 +70,10 @@ export function fetchActivities() {
   };
 }
 
-let client = Tumblr.createClient({
-  consumer_key: TumblrActivityConfig.consumerKey // eslint-disable-line
-});
+export const SHOW_ACTIVITY = 'SHOW_ACTIVITY';
+export function showActivity(activity) {
+  return {
+    type: SHOW_ACTIVITY,
+    activity
+  };
+};

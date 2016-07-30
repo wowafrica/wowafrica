@@ -1,12 +1,25 @@
 import parseActivities from '../utility/tumblrActivity';
 import * as ActivityAction from '../actions/ActivityAction';
 
+function getActivity(state, {activity}) {
+
+  let content = [
+    ...state.items.filter(item => item.id === parseInt(activity)),
+    ...state.oldItems.filter(item => item.id === parseInt(activity))
+  ];
+
+  return Object.assign({}, state, {
+    activity: content[0]
+  });
+}
+
 export default (state = {
   isFetching: false,
   showOldItems: false,
   showOtherHost: false,
   items: [],
-  oldItems: []
+  oldItems: [],
+  activity: ''
 }, action) => {
   switch (action.type) {
     case ActivityAction.REQUEST_ACTIVITIES:
@@ -36,6 +49,8 @@ export default (state = {
       return Object.assign({}, state, {
         showOtherHost: false
       });
+    case ActivityAction.SHOW_ACTIVITY:
+      return getActivity(state, action);
     default:
       return state;
   }
