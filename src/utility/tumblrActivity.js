@@ -27,11 +27,12 @@ let adjustTicketLink = (link) => {
 };
 
 let combineSysTime = (sDate, sTime) => {
-  let sysTime = new Date('2016.07.24 18:00');
+  let sysTime = new Date('2016-07-24T18:00');
   let date = sDate.match(/[0-9.]*/);
   let time = sTime.match(/[0-9:：]*/);
   if ( date && time ) {
-    sysTime = new Date(`${date} ${time}`);
+    date = date[0].replace(/\./g, '-'); // 2016.07.24 to 2016-07-24
+    sysTime = new Date(`${date}T${time}`);
   }
   return sysTime;
 };
