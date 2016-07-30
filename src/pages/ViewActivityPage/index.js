@@ -29,8 +29,12 @@ export default React.createClass({
     this.unsubscribe = store.subscribe(() =>
       this.forceUpdate()
     );
-    store.dispatch(fetchActivities())
-      .then(() => store.dispatch(showActivity(pageUrl.split('/')[2])));
+    const {activities: {activity: {id = 0}}} = store.getState();
+
+    if (id !== parseInt(pageUrl.split('/')[2])) {
+      store.dispatch(fetchActivities())
+        .then(() => store.dispatch(showActivity(pageUrl.split('/')[2])));
+    }
   },
 
   componentWillUnmount() {
