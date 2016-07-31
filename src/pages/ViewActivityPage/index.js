@@ -97,7 +97,7 @@ export default React.createClass({
             <Segment className={classnames('basic', styles.containerActivity)} style={{height: '100%', position: 'absolute'}}>
               <div>{`日期：${date}`}</div>
               <div>{`時間：${time}`}</div>
-              <div>{`地點：${time}`}</div>
+              <div>{`地點：${location}`}</div>
               <div>{`${address}`}</div>
               <div>顯示地圖</div>
               <div>{`主辦單位：${host}`}</div>
