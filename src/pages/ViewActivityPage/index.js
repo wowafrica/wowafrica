@@ -99,7 +99,9 @@ export default React.createClass({
               <div>{`時間：${time}`}</div>
               <div>{`地點：${location}`}</div>
               <div>{`${address}`}</div>
-              <div>顯示地圖</div>
+              <a href={`http://www.google.com/maps/search/${address}`} target='_blank'>
+                <div>{'顯示地圖 '}<i className="yellow map icon"/></div>
+              </a>
               <div>{`主辦單位：${host}`}</div>
             </Segment>
           </div>
