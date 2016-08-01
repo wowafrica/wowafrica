@@ -14,3 +14,8 @@ export default {
     loadAmount: 20
   }
 };
+
+export const TumblrActivityConfig = {
+  blogName: 'wowafrica-activity.tumblr.com',
+  consumerKey: 'M5o8MnMmq8jAwmmj82HhkyPNkiI6mq9VccTZzYZZLZPgfl08Hi'
+};

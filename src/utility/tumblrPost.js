@@ -29,18 +29,15 @@ let parsePostBody = (body) => {
 };
 
 let parsePostImage = (body) => {
+  let image = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
   let imageSrc = body.match(/<img [^>]*\/>/g);
   if (imageSrc) {
     let imageSrcList = imageSrc[0].match(/http[^\"\'\s]*/);
     if (imageSrcList) {
-      imageSrc = imageSrcList[0];
-    } else {
-      imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
+      image = imageSrcList[0];
     }
-  } else {
-    imageSrc = 'https://fbcdn-sphotos-f-a.akamaihd.net/hphotos-ak-xpa1/t31.0-8/11154796_779010435550566_7018350735656129504_o.jpg';
   }
-  return imageSrc;
+  return image;
 };
 
 let parsePostCategory = (tagArray) => {

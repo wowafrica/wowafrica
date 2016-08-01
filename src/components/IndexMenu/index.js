@@ -71,7 +71,7 @@ export default React.createClass({
             <Dropdown init={true}>
               <Text style={{color: '#E8F5FF'}}>{showName}</Text>
               <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
-              <Menu>
+              <Menu className={styles.dropdownMenu}>
                 {this.renderItem(section)}
               </Menu>
             </Dropdown>
