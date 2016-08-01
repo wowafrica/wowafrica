@@ -12,7 +12,7 @@ import {
 import styles from './index.css';
 
 import {
-  Segment, Header, Label, Divider, Rail, Image
+  Segment, Divider, Button
 } from 'react-semantify';
 
 export default React.createClass({
@@ -63,6 +63,8 @@ export default React.createClass({
 
     let {pageUrl} = this.props;
 
+    let link = ticketLink.match(/z=(http[^\"\'\s\&]*)/i)[1] || 'https://www.facebook.com/wowafrica.tw';
+
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
@@ -103,6 +105,9 @@ export default React.createClass({
                 <div>{'顯示地圖 '}<i className="yellow map icon"/></div>
               </a>
               <div>{`主辦單位：${host}`}</div>
+              <div className={styles.buy}>
+                <Button color="blue" type="link" href={decodeURIComponent(link)} target="_blank">購買</Button>
+              </div>
             </Segment>
           </div>
         </div>
