@@ -1,3 +1,29 @@
+<a name="0.10.6"></a>
+## [0.10.6](//compare/v0.10.5...v0.10.6) (2016-08-01)
+
+
+### Bug Fixes
+
+* Modify Index Dropdown item margin fb0b809
+* **ActivityFilter:** show current filter option based on current state f3d1543
+* **ActivityListPage:** Add Route action 6fed887
+* **ViewActivityPage:** Check first loading or not 417c228
+* **ViewActivityPage:** correct showing location 03f58c9
+* **tumblrActivity:** Date string parsing error in Firefox and Safari 7e56ab4
+
+### Features
+
+* **ActivityFilter:** Add dropdown to filter activity types e5816b2
+* **ActivityGrid:** First version of ActivityGrid 8f9e0b7
+* **ActivityListPage:** Add activity list page using redux 06e7bd8
+* **ActivitySection:** move subscribing redux store from ActivityPage to ActivitySection 0881e32
+* Add ViewActivityPage 1ad44ef
+* **ViewActivityPage:** Add map icon and link ae0f921
+* **ViewActivityPage:** Add show activity action for display specific activity 28bc504
+* **redux:** include redux and redux-thunk package 4ec4cfa
+
+
+
 <a name="0.10.5"></a>
 ## [0.10.5](//compare/v0.10.4...v0.10.5) (2016-07-20)
 
