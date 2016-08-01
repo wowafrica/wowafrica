@@ -32,7 +32,7 @@ export default React.createClass({
             <CategorySection category={category} title={category}/>}
         </div>
         <div id="footer-divider" style={{height: '50px'}} />
-        <Footer/>
+          <Footer/>
         <div id="page-bottom"/>
       </div>
     );

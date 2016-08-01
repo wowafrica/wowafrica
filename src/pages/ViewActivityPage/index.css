@@ -1,0 +1,57 @@
+
+.containerPost figure {
+  margin: 0px;
+}
+
+.containerPost img {
+  width: 100%;
+}
+
+.containerPost iframe {
+  width: 100%;
+}
+
+.containerPost h2 {
+  font-size: 36px;
+}
+
+.containerPost p {
+  font-size: 20px;
+}
+
+.containerActivity div {
+  color: #e6f4ff;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-size: 16px;
+}
+
+.sectionActivity {
+  margin-top: 1rem;
+}
+
+.buy {
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+  /* for ViewPostPage */
+  .antiVeryPadded {
+    padding: 1em !important;
+  }
+
+  .sectionActivity {
+    min-height: 400px;
+    margin-top: 0px;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .sectionActivity {
+    min-height: 350px;
+    margin-top: 0px;
+  }
+}
