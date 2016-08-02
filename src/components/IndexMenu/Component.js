@@ -12,7 +12,7 @@ let MenuItems = ({name, subPage, onMenuClick}) => {
   }
 
   return (
-    <Menu>
+    <Menu className={styles.dropdownMenu}>
      {subPage.map((page) => (
        <Item type="link"
              active={page.status}
