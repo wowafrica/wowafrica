@@ -1,16 +1,12 @@
-import React        from 'react';
-import IndexMenu    from '../../components/IndexMenu';
-import CategoryMenu from '../../components/CategoryMenu';
-import Footer       from '../../components/Footer';
-import RouteAction  from '../../actions/RouteAction';
-
+import React         from 'react';
+import IndexMenu     from '../../components/IndexMenu';
+import CategoryMenu  from '../../components/CategoryMenu';
+import Footer        from '../../components/Footer';
+import RouteAction   from '../../actions/RouteAction';
 import {fetchAuthor} from '../../actions/AuthorAction';
+import Component     from './Component';
 
 import styles from './index.css';
-
-import {
-  Cards, Card, Image
-} from 'react-semantify';
 
 let AuthorsBox = React.createClass({
 
@@ -38,30 +34,7 @@ let AuthorsBox = React.createClass({
 
   render() {
     const {authors: {authors = []}} = this.state;
-
-    let authorsDiv = authors.map((author) => {
-      return (
-          <a className="card" href={'/view_post_list/author/'+author.name} onClick={this._onClick} key={author.id}>
-            <Image src={author.photoUrl} style={{minHeight: 0, minWidth: 0}}></Image>
-            <div className="content">
-              <div className="header">
-                {author.name}
-              </div>
-              <div className="meta">
-                {author.from}
-              </div>
-              <div className="description">
-                {author.description}
-              </div>
-            </div>
-          </a>
-        );
-    });
-    return (
-      <div className="ui centered cards">
-        {authorsDiv}
-      </div>
-    );
+    return <Component authors={authors} onAuthorClick={this._onClick}/>;
   },
 
   _handleChange() {
