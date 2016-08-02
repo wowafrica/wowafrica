@@ -1,3 +1,13 @@
+<a name="0.10.8"></a>
+## [0.10.8](https://github.com/jessy1092/explore-africa/compare/v0.10.7...v0.10.8) (2016-08-01)
+
+
+### Bug Fixes
+
+* **ViewActivityPage:** Add missing postImage css([ec0ea8c](https://github.com/jessy1092/explore-africa/commit/ec0ea8c))
+
+
+
 <a name="0.10.7"></a>
 ## [0.10.7](https://github.com/jessy1092/explore-africa/compare/v0.10.6...v0.10.7) (2016-08-01)
 
