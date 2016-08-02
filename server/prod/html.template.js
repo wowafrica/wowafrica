@@ -13,6 +13,7 @@ export default ({title, ogTitle, description, image, url, keywords, html}) => (
   <meta property="og:image" content="${image}" />
   <meta property="og:url" content="${url}" />
   <title>${title}</title>
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link href="/styles/semantic.min.css" type="text/css" rel="stylesheet"></link>
   <link href="/styles/global.css" type="text/css" rel="stylesheet"></link>
   <link href="/styles/main.css" type="text/css" rel="stylesheet"></link>
