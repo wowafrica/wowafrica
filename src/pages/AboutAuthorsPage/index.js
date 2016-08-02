@@ -2,8 +2,9 @@ import React        from 'react';
 import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
-import AuthorsStore from '../../stores/AuthorsStore';
 import RouteAction  from '../../actions/RouteAction';
+
+import {fetchAuthor} from '../../actions/AuthorAction';
 
 import styles from './index.css';
 
@@ -13,23 +14,32 @@ import {
 
 let AuthorsBox = React.createClass({
 
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
-    return ({authors: AuthorsStore.getAll()});
+    const {store} = this.context;
+    const {authors} = store.getState();
+    return {authors};
   },
 
   componentDidMount() {
-    AuthorsStore.addChangeListener(this._onChange);
+    const {store} = this.context;
+
+    this.unsubscribe = store.subscribe(() => this._handleChange());
+
+    store.dispatch(fetchAuthor());
   },
 
   componentWillUnmount() {
-    AuthorsStore.removeChangeListener(this._onChange);
-  },
-
-  componentDidUpdate() {
+    this.unsubscribe();
   },
 
   render() {
-    let authorsDiv = this.state.authors.map((author) => {
+    const {authors: {authors = []}} = this.state;
+
+    let authorsDiv = authors.map((author) => {
       return (
           <a className="card" href={'/view_post_list/author/'+author.name} onClick={this._onClick} key={author.id}>
             <Image src={author.photoUrl} style={{minHeight: 0, minWidth: 0}}></Image>
@@ -54,10 +64,17 @@ let AuthorsBox = React.createClass({
     );
   },
 
-  _onChange() {
-    this.setState({
-      authors: AuthorsStore.getAll()
-    });
+  _handleChange() {
+    const {store} = this.context;
+    const {authors} = store.getState();
+
+    const prevAuthors = this.state.authors;
+
+    if (prevAuthors === authors) {
+      return;
+    }
+
+    this.setState({authors});
   },
 
   _onClick(e) {
