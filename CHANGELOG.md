@@ -1,3 +1,15 @@
+<a name="0.10.9"></a>
+## [0.10.9](https://github.com/jessy1092/explore-africa/compare/v0.10.8...v0.10.9) (2016-08-02)
+
+
+### Bug Fixes
+
+* Add missing Flag and emblem([17e25df](https://github.com/jessy1092/explore-africa/commit/17e25df))
+* Display the right font on Chinese font([2bf77d0](https://github.com/jessy1092/explore-africa/commit/2bf77d0))
+* Support Open Sens font([e18d353](https://github.com/jessy1092/explore-africa/commit/e18d353))
+
+
+
 <a name="0.10.8"></a>
 ## [0.10.8](https://github.com/jessy1092/explore-africa/compare/v0.10.7...v0.10.8) (2016-08-01)
 
