@@ -14,9 +14,50 @@ import {
 
 import styles from './index.css';
 
+let PostViewer = ({
+  loader, body, tags, date, pageUrl, onPostClick
+}) => (
+  <Segment className={classnames('very padded basic', styles.containerPost, styles.antiVeryPadded)}>
+    <div className={classnames('ui inverted dimmer', {active: loader})}>
+      <div className="ui text loader">Loading</div>
+    </div>
+    <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
+    <br/>
+    <div dangerouslySetInnerHTML={{__html: body}}></div>
+    <br/>
+    <div className="ui brown tag labels">
+      {tags.map(tag =>
+        <a key={tag}
+           className="ui tag label"
+           href={`/view_post_list/tag/${tag}`}
+           onClick={onPostClick}>
+          {tag}
+        </a>
+      )}
+    </div>
+    <br/>
+    <ShareButton pageUrl={pageUrl}/>
+    <div style={{height: '10px'}}/>
+    <ReadMoreBlk postId={pageUrl.substr(pageUrl.lastIndexOf('/')+1)}/>
+  </Segment>
+);
+
+let AuthorViewer = ({
+  name, description, photoUrl, onPostClick
+}) => (
+  <Segment className={classnames('center aligned basic', styles.containerPostAuthor)}
+           style={{height: '100%', position: 'absolute'}}>
+    <a href={`/view_post_list/author/${name}`} onClick={onPostClick}>
+      <Image className="small centered circular" src={photoUrl}/>
+      <div>{name}</div>
+    </a>
+    <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
+  </Segment>
+);
+
 let ViewPostPage = ({
   post: {body, title, tags, image, date},
-  author: {name, description, photoUrl},
+  author,
   pageUrl,
   loader,
   onPostClick
@@ -30,39 +71,11 @@ let ViewPostPage = ({
     <div className="ui stackable four column grid">
       <div className="one wide column"></div>
       <div className="ten wide column">
-        <Segment className={classnames('very padded basic', styles.containerPost, styles.antiVeryPadded)}>
-          <div className={classnames('ui inverted dimmer', {active: loader})}>
-            <div className="ui text loader">Loading</div>
-          </div>
-          <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
-          <br/>
-          <div dangerouslySetInnerHTML={{__html: body}}></div>
-          <br/>
-          <div className="ui brown tag labels">
-            {tags.map(tag =>
-              <a key={tag}
-                 className="ui tag label"
-                 href={`/view_post_list/tag/${tag}`}
-                 onClick={onPostClick}>
-                {tag}
-              </a>
-            )}
-          </div>
-          <br/>
-          <ShareButton pageUrl={pageUrl}/>
-          <div style={{height: '10px'}}/>
-          <ReadMoreBlk postId={pageUrl.substr(pageUrl.lastIndexOf('/')+1)}/>
-        </Segment>
+        <PostViewer body={body} tags={tags} date={date} loader={loader} pageUrl={pageUrl} onPostClick={onPostClick}/>
       </div>
       <div className="one wide column"></div>
       <div className={classnames('four wide column', styles.sectionPostAuthor)} style={{backgroundColor: '#305775'}}>
-        <Segment className={classnames('center aligned basic', styles.containerPostAuthor)} style={{height: '100%', position: 'absolute'}}>
-          <a href={'/view_post_list/author/'+name} onClick={onPostClick}>
-            <Image className="small centered circular" src={photoUrl}/>
-            <div>{name}</div>
-          </a>
-          <div style={{padding: '0 1rem', textAlign: 'left'}}>{description}</div>
-        </Segment>
+        <AuthorViewer {...author} onPostClick={onPostClick}/>
       </div>
     </div>
     <div id="footer-divider"/>
