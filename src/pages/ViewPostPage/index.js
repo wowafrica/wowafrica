@@ -6,8 +6,8 @@ import Footer       from '../../components/Footer';
 import ShareButton  from '../../components/ShareButton';
 import ReadMoreBlk  from '../../components/ReadMoreBlock';
 import PostStore    from '../../stores/PostStore';
-import AuthorsStore from '../../stores/AuthorsStore';
 import RouteAction  from '../../actions/RouteAction';
+import {fetchAuthor} from '../../actions/AuthorAction';
 
 import styles from './index.css';
 
@@ -17,24 +17,36 @@ import {
 
 export default React.createClass({
 
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
+    const {store} = this.context;
+    const {authors} = store.getState();
+
     return {
-      authors: AuthorsStore.getAll(),
       post: PostStore.getPost(),
-      loader: PostStore.getLoader()
+      loader: PostStore.getLoader(),
+      authors
     };
   },
 
   componentDidMount() {
+    const {store} = this.context;
+
     $('#category-menu').hide();
     window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
-    AuthorsStore.addChangeListener(this._onAuthorChange);
+
+    this.unsubscribe = store.subscribe(() => this._handleChange());
+
+    store.dispatch(fetchAuthor());
   },
 
   componentWillUnmount() {
     PostStore.removeChangeListener(this._onChange);
-    AuthorsStore.removeChangeListener(this._onAuthorChange);
+    this.unsubscribe();
   },
 
   componentDidUpdate() {
@@ -42,7 +54,7 @@ export default React.createClass({
   },
 
   getAuthor() {
-    let {authors, post} = this.state;
+    let {authors: {authors = []}, post} = this.state;
     let result = {
       'name': 'wowAfrica',
       'description': '',
@@ -127,10 +139,17 @@ export default React.createClass({
     });
   },
 
-  _onAuthorChange() {
-    this.setState({
-      authors: AuthorsStore.getAll()
-    });
+  _handleChange() {
+    const {store} = this.context;
+    const {authors} = store.getState();
+
+    const prevAuthors = this.state.authors;
+
+    if (prevAuthors === authors) {
+      return;
+    }
+
+    this.setState({authors});
   },
 
   _onClick(e) {
