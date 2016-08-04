@@ -8,8 +8,7 @@ let AuthorCard = ({
 }) => (
   <a className="card"
      href={`/view_post_list/author/${name}`}
-     onClick={onAuthorClick}
-     key={id}>
+     onClick={onAuthorClick}>
     <Image src={photoUrl} style={{minHeight: 0, minWidth: 0}}/>
     <div className="content">
       <div className="header">
@@ -28,7 +27,7 @@ let AuthorCard = ({
 let AuthorCards = ({authors, onAuthorClick}) => (
   <div className="ui centered cards">
     {authors.map(
-      author => <AuthorCard {...author} onAuthorClick={onAuthorClick}/>
+      author => <AuthorCard {...author} key={author.id} onAuthorClick={onAuthorClick}/>
     )}
   </div>
 );
