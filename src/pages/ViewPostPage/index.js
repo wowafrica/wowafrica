@@ -66,9 +66,8 @@ export default React.createClass({
     let {name, description, photoUrl} = this.getAuthor();
     let {pageUrl} = this.props;
 
-    let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
-      <Component post={{body, title, largeImage, tags, date}}
+      <Component post={{body, title, image, tags, date}}
                  author={{name, description, photoUrl}}
                  pageUrl={pageUrl}
                  loader={loader}

@@ -4,6 +4,8 @@ import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import ShareButton  from '../../components/ShareButton';
+import TitleSection from '../../components/TitleSection';
+
 import {
   showActivity, fetchActivities
 } from '../../actions/ActivityAction';
@@ -79,21 +81,13 @@ export default React.createClass({
 
     let {pageUrl} = this.props;
 
-    // console.log(JSON.stringify(post, null, 2));
-    let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
       <div>
         <div className="fixed-top-menu">
           <IndexMenu />
           <CategoryMenu />
         </div>
-        <div className={styles.postImage} style={{backgroundImage: `url(${largeImage})`, backgroundPosition: 'center'}}>
-          <div className={styles.inner}>
-            <div className={styles.innerTitle}>
-              {title}
-            </div>
-          </div>
-        </div>
+        <TitleSection image={image} title={title}/>
         <div className="ui stackable four column grid">
           <div className="one wide column"></div>
           <div className="ten wide column">

@@ -6,6 +6,7 @@ import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import ShareButton  from '../../components/ShareButton';
 import ReadMoreBlk  from '../../components/ReadMoreBlock';
+import TitleSection from '../../components/TitleSection';
 
 import {
   Segment, Image
@@ -14,7 +15,7 @@ import {
 import styles from './index.css';
 
 let ViewPostPage = ({
-  post: {body, title, tags, largeImage, date},
+  post: {body, title, tags, image, date},
   author: {name, description, photoUrl},
   pageUrl,
   loader,
@@ -25,13 +26,7 @@ let ViewPostPage = ({
       <IndexMenu />
       <CategoryMenu />
     </div>
-    <div className={styles.postImage} style={{backgroundImage: `url(${largeImage})`, backgroundPosition: 'center'}}>
-      <div className={styles.inner}>
-        <div className={styles.innerTitle}>
-          {title}
-        </div>
-      </div>
-    </div>
+    <TitleSection image={image} title={title}/>
     <div className="ui stackable four column grid">
       <div className="one wide column"></div>
       <div className="ten wide column">
@@ -47,7 +42,7 @@ let ViewPostPage = ({
             {tags.map(tag =>
               <a key={tag}
                  className="ui tag label"
-                 href={`/view_post_list/tag/${tag}`} 
+                 href={`/view_post_list/tag/${tag}`}
                  onClick={onPostClick}>
                 {tag}
               </a>
