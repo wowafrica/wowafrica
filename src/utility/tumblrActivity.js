@@ -17,7 +17,7 @@ let defaultSetting = {
   'address': '',
   'host': 'wowAfrica阿非卡',
   'brief': '',
-  'ticketLink': 'https://www.facebook.com/wowafrica.tw'
+  'ticketLink': ''
 };
 
 let adjustTicketLink = (link) => {

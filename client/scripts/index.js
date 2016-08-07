@@ -18,7 +18,7 @@ const store = createStore(
   wowReducer,
   applyMiddleware(
     thunkMiddleware
-  ));
+));
 
 ReactDOM.render(<SideBar />, document.getElementById('side_bar'));
 ReactDOM.render(
