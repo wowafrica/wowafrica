@@ -85,7 +85,7 @@ export default function() {
       if (error) {
         throw error;
       }
-      console.log(`${id} done`);
+      console.log(`post ${id} done`);
     });
     updateAllPostListFile(id);
     updateAuthorPostListFile(author, id);
