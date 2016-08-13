@@ -1,10 +1,16 @@
-import React              from 'react';
-import PostListConstants  from '../../constants/PostListConstants';
-import ReadMoreStore      from '../../stores/PostListReadMoreStore';
-import RouteAction        from '../../actions/RouteAction';
-import Component          from './Component';
+import React             from 'react';
+import PostListConstants from '../../constants/PostListConstants';
+import ReadMoreStore     from '../../stores/PostListReadMoreStore';
+import RouteAction       from '../../actions/RouteAction';
+import {fetchPost}       from '../../actions/PostAction';
+import Component         from './Component';
 
 export default React.createClass({
+
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
     return {
       posts: []
@@ -27,7 +33,11 @@ export default React.createClass({
   },
 
   _onClick(e) {
+    let {store} = this.context;
     let {pathname, hash} = e.currentTarget;
+
+    store.dispatch(fetchPost(pathname.split('/')[3]));
+
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
     e.preventDefault();
