@@ -1,8 +1,8 @@
 
-import React        from 'react';
-import PostStore    from '../../stores/PostStore';
-import RouteAction  from '../../actions/RouteAction';
+import React         from 'react';
+import RouteAction   from '../../actions/RouteAction';
 import {fetchAuthor} from '../../actions/AuthorAction';
+import {fetchPost}   from '../../actions/PostAction';
 
 import Component from './Component';
 
@@ -14,29 +14,31 @@ export default React.createClass({
 
   getInitialState() {
     const {store} = this.context;
-    const {authors} = store.getState();
+    const {authors, post} = store.getState();
 
     return {
-      post: PostStore.getPost(),
-      loader: PostStore.getLoader(),
+      loader: post.isFetching,
+      post: post.post,
       authors
     };
   },
 
   componentDidMount() {
     const {store} = this.context;
+    const {pageUrl} = this.props;
 
     $('#category-menu').hide();
     window.scroll(0, 0);
-    PostStore.addChangeListener(this._onChange);
 
     this.unsubscribe = store.subscribe(() => this._handleChange());
 
+    console.log(pageUrl.split('/')[3]);
+
     store.dispatch(fetchAuthor());
+    store.dispatch(fetchPost(pageUrl.split('/')[3]));
   },
 
   componentWillUnmount() {
-    PostStore.removeChangeListener(this._onChange);
     this.unsubscribe();
   },
 
@@ -75,24 +77,22 @@ export default React.createClass({
     );
   },
 
-  _onChange() {
-    this.setState({
-      post: PostStore.getPost(),
-      loader: false
-    });
-  },
-
   _handleChange() {
     const {store} = this.context;
-    const {authors} = store.getState();
+    const {authors, post} = store.getState();
 
     const prevAuthors = this.state.authors;
+    const prePost     = this.state.post;
 
-    if (prevAuthors === authors) {
+    if (prevAuthors === authors && prePost === post) {
       return;
     }
 
-    this.setState({authors});
+    this.setState({
+      authors,
+      post: post.post,
+      loader: post.isFetching
+    });
   },
 
   _onClick(e) {
