@@ -1,15 +1,15 @@
+import React           from 'react';
 import ReactDOMServer  from 'react-dom/server';
 import fs              from 'fs';
-import Tumblr          from 'tumblr.js';
-import {TumblrActivityConfig} from '../src/configures/TumblrConfig';
-import Provider        from '../src/utility/Provider';
-import wowReducer      from '../src/reducers/index';
 import {createStore, applyMiddleware} from 'redux';
-import {fetchActivities, showActivity} from '../src/actions/ActivityAction';
 import thunkMiddleware from 'redux-thunk';
+
+import {fetchActivities, showActivity} from '../src/actions/ActivityAction';
+import wowReducer       from '../src/reducers/index';
+import Provider         from '../src/utility/Provider';
 import ViewActivityPage from '../src/pages/ViewActivityPage';
-import devTemplate     from './dev/html.template';
-import prodTemplate    from './prod/html.template';
+import devTemplate      from './dev/html.template';
+import prodTemplate     from './prod/html.template';
 
 let genTemplate = devTemplate;
 
@@ -17,12 +17,41 @@ if (process.env.NODE_ENV === 'production') {
   genTemplate = prodTemplate;
 }
 
-export default function() {
-  let activities = [];
-  let oldActivities = [];
+const generatePage = (store, activity) => new Promise((resolve, reject) => {
+  let {id, title, image, brief} = activity;
+  store.dispatch(showActivity(id));
 
-  const client = Tumblr.createClient({
-    consumer_key: TumblrActivityConfig.consumerKey // eslint-disable-line
+  let html = ReactDOMServer.renderToString(
+    <Provider store={store}>
+      <ViewActivityPage pageUrl={'/activities/'+id}/>
+    </Provider>
+  );
+
+  let template = genTemplate({
+    title: `${title} - wowAfrica阿非卡 - 華人圈最全方位的非洲資訊平台`,
+    ogTitle: title,
+    description: brief,
+    image: image,
+    url: `https://wowafrica.tw/activities/${id}`,
+    keywords: '',
+    html: html
+  });
+
+  fs.writeFile(`./_public/activities/${id}.html`, template, 'utf8', (error) => {
+    if (error) {
+      reject(error);
+    }
+    console.log(`activity ${id} done`);
+    resolve(id);
+  });
+});
+
+export default function() {
+
+  fs.stat('./_public/activities', (err, stats) => {
+    if (err || !stats.isDirectory()) {
+      fs.mkdirSync('./_public/activities');
+    }
   });
 
   const store = createStore(
@@ -31,63 +60,18 @@ export default function() {
       thunkMiddleware
   ));
 
-  const generatePage = (activity) => {
-    console.log('activity '+ activity.id);
-    let {id, title, image, brief} = activity;
-    console.log('1111');
-    store.dispatch(showActivity(id));
-    console.log('2222');
-    let html = ReactDOMServer.renderToString(
-      <Provider store={store}>
-        <ViewActivityPage pageUrl={'/activities/'+id}/>
-      </Provider>
-    );
-    console.log('html');
-    console.log(html);
-    let template = genTemplate({
-      title: `${title} - wowAfrica阿非卡 - 華人圈最全方位的非洲資訊平台`,
-      ogTitle: title,
-      description: brief,
-      image: image,
-      url: `https://wowafrica.tw/activities/${id}`,
-      keywords: '',
-      html: html
-    });
-    fs.writeFile(`./_public/activities/${id}.html`, template, 'utf8', (error) => {
-      if (error) {
-        throw error;
-      }
-      console.log(`activity ${id} done`);
-    });
-  };
-
-  const generatePages = (activities, offset) => {
-    activities.slice(offset).forEach((activity) => {
-      generatePage(activity);
-    });
-  };
-
-  const checkGetActivities = () => {
-    let {items, oldItems} = store.getState().activities;
-    let generatedNum = activities.length;
-    let generatedOldNum = oldActivities.length;
-
-    if (items.length > activities.length || oldItems.length > oldActivities.length) {
-      activities = items;
-      oldActivities = oldItems;
-      generatePages(activities, generatedNum);
-      generatePages(oldActivities, generatedOldNum);
-    }
-  };
-/*
-  const unsubscribe = store.subscribe(() => {
-    console.log(store.getState());
-    checkGetActivities();
-  });
-*/
-  store.dispatch(fetchActivities())
+  store.dispatch(
+    fetchActivities()
+  )
   .then(() => {
-    checkGetActivities();
-  });
+    let {items, oldItems} = store.getState().activities;
 
+    Promise.all([
+      ...items.map(activity => generatePage(store, activity)),
+      ...oldItems.map(activity => generatePage(store, activity))
+    ]).then(
+      ids => console.log(`activities all done: ${ids}`),
+      error => console.log(`Some error occur ${error}`)
+    );
+  });
 };
