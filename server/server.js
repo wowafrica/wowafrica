@@ -27,6 +27,10 @@ app.all('*', (req, res) => {
     let postId = req.url.split('/')[3];
     res.sendFile(
       path.resolve(`${BUILD_PATH}/view_post_list/posts/${postId}.html`));
+  } else if (req.url.startsWith('/activities')) {
+    let postId = req.url.split('/')[2];
+    res.sendFile(
+      path.resolve(`${BUILD_PATH}/activities/${postId}.html`));
   } else {
     res.sendFile(path.resolve(`${BUILD_PATH}/index.html`));
   }
