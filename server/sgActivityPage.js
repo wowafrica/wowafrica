@@ -24,7 +24,7 @@ const generatePage = (store, activity) => new Promise((resolve, reject) => {
 
   let html = ReactDOMServer.renderToString(
     <Provider store={store}>
-      <ViewActivityPage pageUrl={'/activities/'+id}/>
+      <ViewActivityPage pageUrl={`/activities/${id}`}/>
     </Provider>
   );
 
@@ -60,8 +60,7 @@ export default function() {
 
   store.dispatch(
     fetchActivities()
-  )
-  .then(() => {
+  ).then(() => {
     let {items, oldItems} = store.getState().activities;
 
     Promise.all([
