@@ -16,7 +16,7 @@ let TitleSection = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default TitleSection;
