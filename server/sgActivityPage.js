@@ -35,7 +35,8 @@ const generatePage = (store, activity) => new Promise((resolve, reject) => {
     image: image,
     url: `https://wowafrica.tw/activities/${id}`,
     keywords: '',
-    html: html
+    html: html,
+    state: JSON.stringify(store.getState())
   });
 
   fs.writeFile(`./_public/activities/${id}.html`, template, 'utf8', (error) => {

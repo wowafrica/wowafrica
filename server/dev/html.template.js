@@ -1,4 +1,4 @@
-export default ({title, ogTitle, description, image, url, keywords, html}) => (
+export default ({title, ogTitle, description, image, url, keywords, html, state}) => (
 `
 <!DOCTYPE html>
 <html>
@@ -20,6 +20,7 @@ export default ({title, ogTitle, description, image, url, keywords, html}) => (
   <div id="side_bar" class="ui inverted vertical menu sidebar"></div>
   <div id="content" class="pusher">${html}</div>
   <div id="nation_modal" class="ui dimmer modals page"></div>
+  <script>window.__state__ = ${state};</script>
   <script type="text/javascript" src="/scripts/vendor.bundle.js"></script>
   <script type="text/javascript" src="/scripts/bundle.js"></script>
 </body>

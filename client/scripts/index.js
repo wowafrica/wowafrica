@@ -12,11 +12,9 @@ import '../styles/index.css';
 let pathName = location.pathname;
 console.log(pathName);
 
-const store = configureStore(undefined);
-
 ReactDOM.render(<SideBar />, document.getElementById('side_bar'));
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={configureStore(window.__state__)}>
     <App />
   </Provider>,
   document.getElementById('content')
