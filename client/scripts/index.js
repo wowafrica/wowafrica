@@ -1,24 +1,18 @@
-import React         from 'react';
-import ReactDOM      from 'react-dom';
-import RouteActions  from '../../src/actions/RouteAction';
-import App           from '../../src/App';
-import NationModal   from '../../src/components/NationModal';
-import SideBar       from '../../src/components/SideBar';
-import Provider      from '../../src/utility/Provider';
-import wowReducer    from '../../src/reducers/index';
-import {createStore, applyMiddleware} from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import React          from 'react';
+import ReactDOM       from 'react-dom';
+import RouteActions   from '../../src/actions/RouteAction';
+import App            from '../../src/App';
+import NationModal    from '../../src/components/NationModal';
+import SideBar        from '../../src/components/SideBar';
+import Provider       from '../../src/utility/Provider';
+import configureStore from '../../src/stores';
 
 import '../styles/index.css';
 
 let pathName = location.pathname;
 console.log(pathName);
 
-const store = createStore(
-  wowReducer,
-  applyMiddleware(
-    thunkMiddleware
-));
+const store = configureStore(undefined);
 
 ReactDOM.render(<SideBar />, document.getElementById('side_bar'));
 ReactDOM.render(

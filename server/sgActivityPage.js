@@ -1,15 +1,16 @@
 import React           from 'react';
 import ReactDOMServer  from 'react-dom/server';
 import fs              from 'fs';
-import {createStore, applyMiddleware} from 'redux';
-import thunkMiddleware from 'redux-thunk';
 
-import {fetchActivities, showActivity} from '../src/actions/ActivityAction';
-import wowReducer       from '../src/reducers/index';
+import configureStore   from '../src/stores';
 import Provider         from '../src/utility/Provider';
 import ViewActivityPage from '../src/pages/ViewActivityPage';
 import devTemplate      from './dev/html.template';
 import prodTemplate     from './prod/html.template';
+
+import {
+  fetchActivities, showActivity
+} from '../src/actions/ActivityAction';
 
 let genTemplate = devTemplate;
 
@@ -54,11 +55,7 @@ export default function() {
     }
   });
 
-  const store = createStore(
-    wowReducer,
-    applyMiddleware(
-      thunkMiddleware
-  ));
+  const store = configureStore();
 
   store.dispatch(
     fetchActivities()
