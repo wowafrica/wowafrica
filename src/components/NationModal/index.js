@@ -1,7 +1,6 @@
 import React        from 'react';
 import ReactDOM     from 'react-dom';
 import NationsStore from '../../stores/NationsStore';
-import MapStore     from '../../stores/MapStore';
 import d3           from 'd3';
 
 import {
@@ -105,8 +104,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      nation: NationsStore.getCurrentNation(),
-      map: null
+      nation: NationsStore.getCurrentNation()
     };
   },
 
@@ -120,16 +118,14 @@ export default React.createClass({
 
   _onShow() {
     let nation = NationsStore.getCurrentNation();
-    let map = MapStore.getNationMapByISO(nation.iso);
     this.setState({
-      nation: nation,
-      map: map
+      nation: nation
     });
     $(ReactDOM.findDOMNode(this.refs.modal)).modal('show');
   },
 
   render() {
-    let {nation, map} = this.state;
+    let {nation} = this.state;
     let {flag='kenya_flag.png', emblem='kenya_svg.png'} = nation;
     // console.log('Modal Show: ' + JSON.stringify(nation));
     flag = flag === '' ? 'kenya_flag.png' : flag;
