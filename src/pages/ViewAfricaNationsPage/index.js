@@ -3,6 +3,7 @@ import ReactDOM     from 'react-dom';
 import IndexMenu    from '../../components/IndexMenu';
 import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
+import AreaSection  from '../../components/AreaSection';
 import MapStore     from '../../stores/MapStore';
 import NationsStore from '../../stores/NationsStore';
 import NationAction from '../../actions/NationAction';
@@ -78,35 +79,6 @@ export default React.createClass({
     }
   },
 
-  renderArea(areaEntry) {
-    return (
-      <div className="content">
-        <List className="animated small link">
-        {
-          Object.keys(areaEntry).map((key) => {
-            let {country, flag} = areaEntry[key];
-            if (country) {
-              flag = flag === '' ? 'Kenya_flag.png': flag;
-              return (
-                <div className="item" data-nation={key}
-                  onMouseEnter={this._onMouseEnter}
-                  onMouseLeave={this._onMouseLeave}>
-                  <Image className="avatar" src={`/images/nations/${flag}`} />
-                  <div className="content">
-                    <a className="header" data-nation={key} onClick={this._onClick}>
-                      {country}
-                    </a>
-                  </div>
-                </div>
-              );
-            }
-          })
-        }
-        </List>
-      </div>
-    );
-  },
-
   render() {
     let {nations, type} = this.state;
     let {features, area} = this.state.map;
@@ -130,28 +102,11 @@ export default React.createClass({
               {this._drawMap(features, type)}
             </div>
             <div className="five wide column">
-              <Accordion className={styles.contentArea} init={true}>
-                <div className="title" onClick={this._onCentralAfricaClick}>
-                  <Icon className="dropdown"/>中非
-                </div>
-                {this.renderArea(area.CentralAfrica)}
-                <div className="title" onClick={this._onEastAfricaClick}>
-                  <Icon className="dropdown"/>東非
-                </div>
-                {this.renderArea(area.EastAfrica)}
-                <div className="title" onClick={this._onNorthAfricaClick}>
-                  <Icon className="dropdown"/>北非
-                </div>
-                {this.renderArea(area.NorthAfrica)}
-                <div className="title" onClick={this._onSouthernAfricaClick}>
-                  <Icon className="dropdown"/>南非
-                </div>
-                {this.renderArea(area.SouthernAfrica)}
-                <div className="title" onClick={this._onWestAfricaClick}>
-                  <Icon className="dropdown"/>西非
-                </div>
-                {this.renderArea(area.WestAfrica)}
-              </Accordion>
+              <AreaSection area={area}
+                           onAreaMouseEnter={this._onMouseEnter}
+                           onAreaMouseLeave={this._onMouseLeave}
+                           onAreaClick={this._onAreaClick}
+                           onNationClick={this._onClick}/>
             </div>
             <div className="two wide column"></div>
           </div>
@@ -176,38 +131,10 @@ export default React.createClass({
     NationAction.updateNation($(currentTarget).attr('data-nation'));
   },
 
-  _onCentralAfricaClick() {
+  _onAreaClick(areaType) {
     let {type} = this.state;
     this.setState({
-      type: type === 'CentralAfrica' ? 'origin' : 'CentralAfrica'
-    });
-  },
-
-  _onEastAfricaClick() {
-    let {type} = this.state;
-    this.setState({
-      type: type === 'EastAfrica' ? 'origin' : 'EastAfrica'
-    });
-  },
-
-  _onNorthAfricaClick() {
-    let {type} = this.state;
-    this.setState({
-      type: type === 'NorthAfrica' ? 'origin' : 'NorthAfrica'
-    });
-  },
-
-  _onSouthernAfricaClick() {
-    let {type} = this.state;
-    this.setState({
-      type: type === 'SouthernAfrica' ? 'origin' : 'SouthernAfrica'
-    });
-  },
-
-  _onWestAfricaClick() {
-    let {type} = this.state;
-    this.setState({
-      type: type === 'WestAfrica' ? 'origin' : 'WestAfrica'
+      type: type === areaType ? 'origin' : areaType
     });
   },
 
