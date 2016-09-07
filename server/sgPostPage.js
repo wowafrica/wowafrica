@@ -37,6 +37,7 @@ export default function() {
     '王文秀': [],
     '林俐辰': [],
     'Tracy Chen': [],
+    'Amon Bazongo': [],
     'wowAfrica阿非卡編輯部': []
   };
 
