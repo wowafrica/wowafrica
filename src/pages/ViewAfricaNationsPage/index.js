@@ -5,30 +5,41 @@ import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import AreaSection  from '../../components/AreaSection';
 import AreaMap      from '../../components/AreaMap';
-import MapStore     from '../../stores/MapStore';
 import NationsStore from '../../stores/NationsStore';
 import NationAction from '../../actions/NationAction';
+import {fetchMap}   from '../../actions/MapAction';
 
 export default React.createClass({
 
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
-    return ({
-      map: MapStore.getAll(),
+    const {store} = this.context;
+    const {map: {map}} = store.getState();
+    return {
       nations: NationsStore.getAll(),
       type: 'origin',
-      focuseNation: ''
-    });
+      focuseNation: '',
+      map
+    };
   },
 
   componentDidMount() {
+    const {store} = this.context;
+
+    this.unsubscribe = store.subscribe(() => this._handleChange());
+
+    store.dispatch(fetchMap());
+
     NationsStore.addAreaListener(this._onChange);
-    MapStore.addChangeListener(this._onChange);
     $('#category-menu').hide();
   },
 
   componentWillUnmount() {
     NationsStore.removeAreaListener(this._onChange);
-    MapStore.removeChangeListener(this._onChange);
+    this.unsubscribe();
   },
 
   _onMouseEnter(e) {
@@ -99,9 +110,21 @@ export default React.createClass({
 
   _onChange() {
     this.setState({
-      map: MapStore.getAll(),
       nations: NationsStore.getAll()
     });
+  },
+
+  _handleChange() {
+    const {store} = this.context;
+    const {map: {map}} = store.getState();
+
+    const preMap = this.state.map;
+
+    if (preMap === map) {
+      return;
+    }
+
+    this.setState({map});
   },
 
   _onClick(e) {
