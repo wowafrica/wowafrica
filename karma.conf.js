@@ -24,9 +24,10 @@ module.exports = function(config) {
         preLoaders: [{
           test: /(\.jsx)|(\.js)$/,
           exclude: /(node_modules|tests)/,
-          loader: 'isparta-instrumenter',
+          loader: 'babel',
           query: {
-            babel: {presets: ['es2015', 'react', 'stage-0']}
+            presets: ['es2015', 'react', 'stage-0'],
+            plugins: ['istanbul']
           }
         }],
         // Transpile by babel
