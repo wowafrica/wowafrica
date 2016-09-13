@@ -12,14 +12,21 @@ import '../styles/index.css';
 let pathName = location.pathname;
 console.log(pathName);
 
+const store = configureStore(window.__state__);
+
 ReactDOM.render(<SideBar />, document.getElementById('side_bar'));
 ReactDOM.render(
-  <Provider store={configureStore(window.__state__)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('content')
 );
-ReactDOM.render(<NationModal />, document.getElementById('nation_modal'));
+ReactDOM.render(
+  <Provider store={store}>
+    <NationModal />
+  </Provider>,
+  document.getElementById('nation_modal')
+);
 
 RouteActions.updatePath(pathName);
 

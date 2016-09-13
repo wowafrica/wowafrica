@@ -1,4 +1,7 @@
 
+import * as NationAction from '../../src/actions/NationAction';
+import reducer           from '../../src/reducers/nations';
+
 let fakeNation = {
   'iso': '',
   'country': '',
@@ -57,29 +60,128 @@ let fakeNations = [
   }
 ];
 
-describe('NationsStore', () => {
-  it('should have initialize', () => {
-    let nationsStore = require('../../src/stores/NationsStore').default;
+describe('NationsReducer', () => {
+  it('should let isFetching to be true when action type is REQUEST_NATION', () => {
 
-    expect(nationsStore.currentNation).toEqual(fakeNation);
+    let action = {
+      type: NationAction.REQUEST_NATION
+    };
+
+    let state = reducer(undefined, action);
+
+    let testState = {
+      nations: [],
+      currentNation: fakeNation,
+      isFetching: true,
+      isShow: false
+    };
+
+    expect(state).toEqual(testState);
   });
 
-  it('should update current nation by receive nation', () => {
-    let nationsStore = require('../../src/stores/NationsStore').default;
+  it('should let isShow to be true when action type is SHOW_NATION', () => {
 
-    nationsStore.nations = fakeNations;
-    nationsStore.onReceiveUpdateNations('TZA');
+    let action = {
+      type: NationAction.SHOW_NATION
+    };
 
-    expect(nationsStore.currentNation).toEqual(fakeNations[1]);
+    let state = reducer(undefined, action);
+
+    let testState = {
+      nations: [],
+      currentNation: fakeNation,
+      isFetching: false,
+      isShow: true
+    };
+
+    expect(state).toEqual(testState);
+  });
+
+  it('should let isShow to be false when action type is HIDE_NATION', () => {
+
+    let showAction = {
+      type: NationAction.SHOW_NATION
+    };
+
+    let showState = reducer(undefined, showAction);
+
+    let action = {
+      type: NationAction.HIDE_NATION
+    };
+
+    let state = reducer(showState, action);
+
+    let testState = {
+      nations: [],
+      currentNation: fakeNation,
+      isFetching: false,
+      isShow: false
+    };
+
+    expect(state).toEqual(testState);
+  });
+
+  it('should receive nations by RECEIVE_NATION', () => {
+
+    let action = {
+      type: NationAction.RECEIVE_NATION,
+      nations: fakeNations
+    };
+
+    let state = reducer(undefined, action);
+
+    let testState = {
+      nations: fakeNations,
+      currentNation: fakeNation,
+      isFetching: false,
+      isShow: false
+    };
+
+    expect(state).toEqual(testState);
+  });
+
+  it('should update current nation by UPDATE_NATION', () => {
+
+    let receiveAction = {
+      type: NationAction.RECEIVE_NATION,
+      nations: fakeNations
+    };
+
+    let receiveState = reducer(undefined, receiveAction);
+
+    let action = {
+      type: NationAction.UPDATE_NATION,
+      nation: 'TZA'
+    };
+
+    let state = reducer(receiveState, action);
+
+    let testState = {
+      nations: fakeNations,
+      currentNation: fakeNations[1],
+      isFetching: false,
+      isShow: false
+    };
+    expect(state).toEqual(testState);
   });
 
   it('should use nation name to be default if cannot get nation info', () => {
-    let nationsStore = require('../../src/stores/NationsStore').default;
 
-    nationsStore.nations = fakeNations;
-    nationsStore.onReceiveUpdateNations('KEN');
+    let receiveAction = {
+      type: NationAction.RECEIVE_NATION,
+      nations: fakeNations
+    };
 
-    expect(nationsStore.currentNation.iso).toEqual('KEN');
-    expect(nationsStore.currentNation.country).toEqual('KEN');
+    let receiveState = reducer(undefined, receiveAction);
+
+    let action = {
+      type: NationAction.UPDATE_NATION,
+      nation: 'KEN'
+    };
+
+    let state = reducer(receiveState, action);
+
+    expect(state.currentNation.iso).toEqual('KEN');
+    expect(state.currentNation.country).toEqual('KEN');
   });
 });

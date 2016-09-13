@@ -1,7 +1,8 @@
 import React        from 'react';
 import ReactDOM     from 'react-dom';
-import NationsStore from '../../stores/NationsStore';
 import d3           from 'd3';
+
+import {hideNation} from '../../actions/NationAction';
 
 import {
   Divider, Modal, Icon, Header, Tab, Segment
@@ -102,26 +103,58 @@ let VisualSection = React.createClass({
 
 export default React.createClass({
 
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
+    const {store} = this.context;
+    const {nations: {currentNation, isShow}} = store.getState();
     return {
-      nation: NationsStore.getCurrentNation()
+      nation: currentNation,
+      isShow
     };
   },
 
   componentDidMount() {
-    NationsStore.addShowListener(this._onShow);
+    const {store} = this.context;
+    const {isShow} = this.state;
+
+    this.unsubscribe = store.subscribe(() => this._handleChange());
+
+    let nationModal = $(ReactDOM.findDOMNode(this.refs.modal)).modal({
+      onHide() {
+        store.dispatch(hideNation());
+      }
+    });
+    if (isShow) {
+      nationModal.modal('show');
+    }
   },
 
   componentWillUnmount() {
-    NationsStore.removeShowListener(this._onShow);
+    this.unsubscribe();
   },
 
-  _onShow() {
-    let nation = NationsStore.getCurrentNation();
+  _handleChange() {
+    const {store} = this.context;
+    let {nations: {isShow, currentNation, nations}} = store.getState();
+
+    let preNation = this.state.nation;
+    let preShow = this.state.isShow;
+
+    if (preNation === currentNation && preShow === isShow) {
+      return;
+    }
+
     this.setState({
-      nation: nation
+      nation: currentNation,
+      isShow
     });
-    $(ReactDOM.findDOMNode(this.refs.modal)).modal('show');
+
+    if (isShow) {
+      $(ReactDOM.findDOMNode(this.refs.modal)).modal('show');
+    }
   },
 
   render() {

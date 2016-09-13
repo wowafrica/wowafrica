@@ -5,8 +5,10 @@ import CategoryMenu from '../../components/CategoryMenu';
 import Footer       from '../../components/Footer';
 import AreaSection  from '../../components/AreaSection';
 import AreaMap      from '../../components/AreaMap';
-import NationsStore from '../../stores/NationsStore';
-import NationAction from '../../actions/NationAction';
+
+import {
+  updateNation, fetchNation, showNation
+} from '../../actions/NationAction';
 import {fetchMap}   from '../../actions/MapAction';
 
 export default React.createClass({
@@ -17,11 +19,11 @@ export default React.createClass({
 
   getInitialState() {
     const {store} = this.context;
-    const {map: {map}} = store.getState();
+    const {map: {map}, nations: {nations}} = store.getState();
     return {
-      nations: NationsStore.getAll(),
       type: 'origin',
       focuseNation: '',
+      nations,
       map
     };
   },
@@ -32,13 +34,12 @@ export default React.createClass({
     this.unsubscribe = store.subscribe(() => this._handleChange());
 
     store.dispatch(fetchMap());
+    store.dispatch(fetchNation());
 
-    NationsStore.addAreaListener(this._onChange);
     $('#category-menu').hide();
   },
 
   componentWillUnmount() {
-    NationsStore.removeAreaListener(this._onChange);
     this.unsubscribe();
   },
 
@@ -65,8 +66,16 @@ export default React.createClass({
   },
 
   render() {
-    let {nations, type, focuseNation} = this.state;
-    let {features, area} = this.state.map;
+    let {
+      nations,
+      type,
+      focuseNation,
+      map: {
+        features,
+        area
+      }
+    } = this.state;
+
     nations.forEach((nation) => {
       for (let key in area) {
         if (nation.iso in area[key]) {
@@ -108,29 +117,26 @@ export default React.createClass({
     );
   },
 
-  _onChange() {
-    this.setState({
-      nations: NationsStore.getAll()
-    });
-  },
-
   _handleChange() {
     const {store} = this.context;
-    const {map: {map}} = store.getState();
+    const {map: {map}, nations: {nations}} = store.getState();
 
     const preMap = this.state.map;
+    const preNations = this.state.nations;
 
-    if (preMap === map) {
+    if (preMap === map && preNations === nations) {
       return;
     }
 
-    this.setState({map});
+    this.setState({map, nations});
   },
 
   _onClick(e) {
     let {currentTarget} = e;
-    console.log($(currentTarget).attr('data-nation'));
-    NationAction.updateNation($(currentTarget).attr('data-nation'));
+    let {store} = this.context;
+    // console.log($(currentTarget).attr('data-nation'));
+    store.dispatch(updateNation($(currentTarget).attr('data-nation')));
+    store.dispatch(showNation());
   },
 
   _onAreaClick(areaType) {
