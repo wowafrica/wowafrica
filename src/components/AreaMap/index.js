@@ -40,6 +40,7 @@ const AreaMap = ({
         return (
           <path className={classnames(styles.land, {[styles.focuse]: focuseNation === d.properties.ISO_A3})}
                 d={path(d)}
+                key={d.properties.ISO_A3}
                 data-nation={d.properties.ISO_A3}
                 onMouseEnter={onAreaMouseEnter}
                 onMouseLeave={onAreaMouseLeave}

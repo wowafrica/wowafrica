@@ -17,6 +17,7 @@ const Area = ({area, onAreaMouseEnter, onAreaMouseLeave, onNationClick}) => (
           flag = flag === '' ? 'Kenya_flag.png': flag;
           return (
             <div className="item" data-nation={key}
+              key={key}
               onMouseEnter={onAreaMouseEnter}
               onMouseLeave={onAreaMouseLeave}>
               <Image className="avatar" src={`/images/nations/${flag}`} />
