@@ -1,5 +1,0 @@
-export default {
-  AUTHOR_LOAD_DATA: 20,
-
-  AUTHORS_EVENT: 'AUTHORS_EVENT'
-};

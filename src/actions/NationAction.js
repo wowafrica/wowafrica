@@ -1,23 +1,6 @@
-import AppDispatcher   from '../dispatcher/AppDispatcher';
-import NationConstants from '../constants/NationConstants';
 
 import request   from 'superagent';
-
-class NationAction {
-
-  updateNation(nationName) {
-    AppDispatcher.dispatch({
-      actionType: NationConstants.NATION_UPDATE,
-      nationName
-    });
-  }
-
-  loadNationData() {
-    AppDispatcher.dispatch({
-      actionType: NationConstants.NATION_LOAD_DATA
-    });
-  }
-}
+import NationConfig from '../configures/NationConfig';
 
 export const REQUEST_NATION = 'REQUEST_NATION';
 function requestNation() {
@@ -58,7 +41,7 @@ export function hideNation() {
 
 function _fetchNation() {
   return new Promise((resolve, reject) => {
-    request.get(NationConstants.NATION_URL).end((err, res) => {
+    request.get(NationConfig.nationUrl).end((err, res) => {
       if (err) {
         console.log('Cannot get Nation json');
         reject(err);
@@ -79,5 +62,3 @@ export function fetchNation() {
     });
   };
 }
-
-export default new NationAction();

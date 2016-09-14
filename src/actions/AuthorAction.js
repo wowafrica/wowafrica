@@ -1,5 +1,3 @@
-import AppDispatcher   from '../dispatcher/AppDispatcher';
-import AuthorConstants from '../constants/AuthorConstants';
 
 import Tumblr       from 'tumblr.js';
 import TumblrConfig from '../configures/TumblrConfig';
@@ -7,15 +5,6 @@ import TumblrConfig from '../configures/TumblrConfig';
 let client = Tumblr.createClient({
   consumer_key: TumblrConfig.consumerKey // eslint-disable-line
 });
-
-class AuthorAction {
-
-  loadAuthorData() {
-    AppDispatcher.dispatch({
-      actionType: AuthorConstants.AUTHOR_LOAD_DATA
-    });
-  }
-}
 
 export const REQUEST_AUTHOR = 'REQUEST_AUTHOR';
 function requestAuthor() {
@@ -54,5 +43,3 @@ export function fetchAuthor() {
     });
   };
 }
-
-export default new AuthorAction();

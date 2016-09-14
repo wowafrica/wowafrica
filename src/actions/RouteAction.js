@@ -1,8 +1,7 @@
+
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
-import NationAction   from './NationAction';
 import PostListAction from './PostListAction';
-import AuthorAction   from './AuthorAction';
 import TumblrConfig   from '../configures/TumblrConfig';
 
 class RouteAction {
@@ -25,7 +24,6 @@ class RouteAction {
         AppDispatcher.dispatch({
           actionType: RouteConstants.ROUTE_MAP_PAGE
         });
-        NationAction.loadNationData();
         break;
       case 'view_post_list':
         if (pathName.length > 3) {
@@ -34,7 +32,6 @@ class RouteAction {
               actionType: RouteConstants.ROUTE_POST_PAGE,
               postID: pathName[3]
             });
-            AuthorAction.loadAuthorData();
           } else if (pathName[2] === 'category') {
             AppDispatcher.dispatch({
               actionType: RouteConstants.ROUTE_POST_LIST_PAGE,
