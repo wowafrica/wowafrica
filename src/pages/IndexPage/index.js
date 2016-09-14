@@ -4,7 +4,6 @@ import CategoryMenu       from '../../components/CategoryMenu';
 import IndexWideBlock     from '../../components/IndexWideBlock';
 import IndexCategoryBlock from '../../components/IndexCategoryBlock';
 import Footer             from '../../components/Footer';
-import MenuStore          from '../../stores/MenuStore';
 import RouteConstants     from '../../constants/RouteConstants';
 import AppDispatcher      from '../../dispatcher/AppDispatcher';
 import Elevator           from '../../vendors/elevator';

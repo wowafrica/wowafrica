@@ -2,10 +2,14 @@ import React          from 'react';
 import Tumblr         from 'tumblr.js';
 import ReactDOMServer from 'react-dom/server';
 import fs             from 'fs';
+
+import configureStore from '../src/stores';
+import Provider       from '../src/utility/Provider';
 import TumblrConfig   from '../src/configures/TumblrConfig';
 import PostListConfig from '../src/configures/PostListConfig';
 import PostListStore  from '../src/stores/PostListStore';
 import IndexPage      from '../src/pages/IndexPage';
+
 import devTemplate    from './dev/html.template';
 import prodTemplate   from './prod/html.template';
 
@@ -22,7 +26,12 @@ export default function() {
   });
 
   let setIndexPage = function() {
-    let html = ReactDOMServer.renderToString(<IndexPage/>);
+    const store = configureStore();
+    let html = ReactDOMServer.renderToString(
+      <Provider store={store}>
+        <IndexPage/>
+      </Provider>
+    );
     let template = genTemplate({
       title: 'wowAfrica阿非卡 - 華人圈最全方位的非洲資訊平台',
       ogTitle: 'wowAfrica阿非卡 - 華人圈最全方位的非洲資訊平台',

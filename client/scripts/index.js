@@ -14,7 +14,12 @@ console.log(pathName);
 
 const store = configureStore(window.__state__);
 
-ReactDOM.render(<SideBar />, document.getElementById('side_bar'));
+ReactDOM.render(
+  <Provider store={store}>
+    <SideBar />
+  </Provider>,
+  document.getElementById('side_bar')
+);
 ReactDOM.render(
   <Provider store={store}>
     <App />

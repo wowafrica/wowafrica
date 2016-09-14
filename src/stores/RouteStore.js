@@ -3,7 +3,6 @@ import RouteHandler   from 'routr';
 import AppDispatcher  from '../dispatcher/AppDispatcher';
 import RouteConstants from '../constants/RouteConstants';
 import RouteConfig    from '../configures/RouteConfig';
-import MenuStore      from './MenuStore';
 
 class RouteStore extends EventEmitter {
 
@@ -68,7 +67,6 @@ AppDispatcher.register((action) => {
   switch (action.actionType) {
     case RouteConstants.ROUTE_UPDATE_PATH:
       routeStore.onReceiveUpdatePath(action.pathName, action.hash);
-      MenuStore.onReceiveUpdatePath(action.pathName);
       break;
     default:
       break;

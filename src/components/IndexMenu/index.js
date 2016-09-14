@@ -1,18 +1,26 @@
-import React       from 'react';
-import MenuStore   from '../../stores/MenuStore';
-import RouteStore  from '../../stores/RouteStore';
-import RouteAction from '../../actions/RouteAction';
-import Component   from './Component';
+import React        from 'react';
+import RouteStore   from '../../stores/RouteStore';
+import RouteAction  from '../../actions/RouteAction';
+import {updateMenu} from '../../actions/MenuAction';
+import Component    from './Component';
 
 export default React.createClass({
 
+  contextTypes: {
+    store: React.PropTypes.object
+  },
+
   getInitialState() {
+    const {store} = this.context;
+    const {menu} = store.getState();
     return {
-      currentMenu: MenuStore.getAll()
+      currentMenu: menu
     };
   },
 
   componentDidMount() {
+    const {store} = this.context;
+
     function toggleCatMenu() {
       $('#category-menu').slideToggle();
     }
@@ -23,6 +31,25 @@ export default React.createClass({
     else {
       $('#btn-article').on('click', toggleCatMenu);
     }
+
+    this.unsubscribe = store.subscribe(() => this._handleChange());
+  },
+
+  componentWillUnmount() {
+    this.unsubscribe();
+  },
+
+  _handleChange() {
+    const {store} = this.context;
+    const {menu} = store.getState();
+
+    const prevMenu = this.state.currentMenu;
+
+    if (prevMenu === menu) {
+      return;
+    }
+
+    this.setState({currentMenu: menu});
   },
 
   render() {
@@ -33,9 +60,11 @@ export default React.createClass({
   },
 
   _onClick(e) {
+    const {store} = this.context;
     let {pathname, hash} = e.currentTarget;
     history.pushState({pathname: pathname, hash: hash}, '', pathname);
     RouteAction.updatePath(pathname, hash);
+    store.dispatch(updateMenu(pathname));
     e.preventDefault();
   }
 });
