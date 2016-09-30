@@ -37,6 +37,7 @@ export default function() {
     '王文秀': [],
     '林俐辰': [],
     'Tracy Chen': [],
+    'Amon Bazongo': [],
     'wowAfrica阿非卡編輯部': []
   };
 
@@ -85,7 +86,7 @@ export default function() {
       if (error) {
         throw error;
       }
-      console.log(`${id} done`);
+      console.log(`post ${id} done`);
     });
     updateAllPostListFile(id);
     updateAuthorPostListFile(author, id);

@@ -1,23 +1,27 @@
 let settingAlias = {
-  '日期': 'date',
-  '時間': 'time',
-  '區域': 'area',
-  '地點': 'location',
-  '地址': 'address',
-  '主辦單位': 'host',
-  '簡介': 'brief',
-  '購票連結': 'ticketLink'
+  '公司': 'company',
+  '公司商標': 'logo',
+  '公司簡介': 'brief',
+  '公司網站': 'website',
+  '聯絡方式': 'contact',
+  '職稱': 'title',
+  '類別': 'type',
+  '月薪': 'salary',
+  '經驗需求': 'experience',
+  '工作地點': 'location'
 };
 
 let defaultSetting = {
-  'date': '',
-  'time': '',
-  'area': '',
-  'location': '',
-  'address': '',
-  'host': 'wowAfrica阿非卡',
+  'company': '',
+  'logo': '',
   'brief': '',
-  'ticketLink': ''
+  'website': '',
+  'contact': '',
+  'title': '',
+  'type': '',
+  'salary': '',
+  'experience': '',
+  'location': ''
 };
 
 let adjustTicketLink = (link) => {

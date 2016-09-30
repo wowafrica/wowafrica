@@ -1,13 +1,8 @@
-import React        from 'react';
-import MenuStore    from '../../stores/MenuStore';
-import RouteStore   from '../../stores/RouteStore';
-import RouteAction  from '../../actions/RouteAction';
-
-import styles from './index.css';
-
-import {
-  Dropdown, Icon, Item, Menu, Text
-} from 'react-semantify';
+import React       from 'react';
+import MenuStore   from '../../stores/MenuStore';
+import RouteStore  from '../../stores/RouteStore';
+import RouteAction from '../../actions/RouteAction';
+import Component   from './Component';
 
 export default React.createClass({
 
@@ -31,72 +26,10 @@ export default React.createClass({
   },
 
   render() {
-
-    return (
-      <div id={styles.indexMenu}>
-        <div className="ui centered grid">
-          <Menu className="secondary">
-            <Item id="menu-logo" style={{paddingTop: '14px'}}>
-              <a href="/">
-                <img src="/images/wow_logo2.png" style={{width: '180px'}}/>
-              </a>
-            </Item>
-            {this.renderDropdown()}
-          </Menu>
-        </div>
-      </div>
-    );
-  },
-
-  renderDropdown() {
     let {currentMenu} = this.state;
-    return (
-      currentMenu.map((section) => {
-        let showName = section.showName;
-        let name = section.name;
-        let dropdownSelect = false;
-
-        if (section.currentPage !== '') {
-          showName = section.currentPage;
-        }
-
-        for (let page of section.subPage) {
-          if (page.status) {
-            dropdownSelect = true;
-          }
-        }
-
-        return (
-          <Item id={'btn-'+name} active={dropdownSelect}>
-            <Dropdown init={true}>
-              <Text style={{color: '#E8F5FF'}}>{showName}</Text>
-              <Icon className="dropdown" style={{color: '#E8F5FF'}}/>
-              <Menu className={styles.dropdownMenu}>
-                {this.renderItem(section)}
-              </Menu>
-            </Dropdown>
-          </Item>
-        );
-      })
-    );
-  },
-
-  renderItem(section) {
-    if (section.name === 'article')
-      return ;
 
     return (
-      section.subPage.map((page) => {
-        return (
-        <Item type="link"
-              active={page.status}
-              href={page.url}
-              onClick={this._onClick}>
-          {page.showName}
-        </Item>
-        );
-      })
-    );
+      <Component currentMenu={currentMenu} onMenuClick={this._onClick} />    );
   },
 
   _onClick(e) {
