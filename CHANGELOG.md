@@ -1,3 +1,23 @@
+<a name="0.10.10"></a>
+## [0.10.10](https://github.com/jessy1092/explore-africa/compare/v0.10.9...v0.10.10) (2016-09-30)
+
+
+### Bug Fixes
+
+* Modify Index Dropdown item margin([5886d0b](https://github.com/jessy1092/explore-africa/commit/5886d0b))
+* **server:** Request activities page files([304f8ed](https://github.com/jessy1092/explore-africa/commit/304f8ed))
+* **static:** Use promise to handle generate activities page([ebfd53c](https://github.com/jessy1092/explore-africa/commit/ebfd53c))
+* **ViewActivityPage:** don't render buy ticket button if ticketLink is not set([9d8ee0c](https://github.com/jessy1092/explore-africa/commit/9d8ee0c))
+* Modify Nation's name Luanda -> Rwanda([f427864](https://github.com/jessy1092/explore-africa/commit/f427864))
+
+
+### Features
+
+* **sgActivityPage:** Add static generator for activity page([b917c70](https://github.com/jessy1092/explore-africa/commit/b917c70))
+* Sync store state between server and client([462cbf1](https://github.com/jessy1092/explore-africa/commit/462cbf1))
+
+
+
 <a name="0.10.9"></a>
 ## [0.10.9](https://github.com/jessy1092/explore-africa/compare/v0.10.8...v0.10.9) (2016-08-02)
 
