@@ -11,6 +11,8 @@ export default ({title, ogTitle, description, image, url, keywords, html, state}
   <meta property="og:title" content="${ogTitle}" />
   <meta property="og:description" content="${description}" />
   <meta property="og:image" content="${image}" />
+  <meta property="og:image:width" content="540">
+  <meta property="og:image:height" content="282">
   <meta property="og:url" content="${url}" />
   <title>${title}</title>
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">

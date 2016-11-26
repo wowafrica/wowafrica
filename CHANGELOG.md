@@ -1,3 +1,13 @@
+<a name="0.10.11"></a>
+## [0.10.11](//compare/v0.10.10...v0.10.11) (2016-11-26)
+
+
+### Bug Fixes
+
+* add open-graph image width and height properties 3714134
+
+
+
 <a name="0.10.10"></a>
 ## [0.10.10](https://github.com/jessy1092/explore-africa/compare/v0.10.9...v0.10.10) (2016-09-30)
 
