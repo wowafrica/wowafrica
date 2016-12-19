@@ -7,7 +7,7 @@ export default [
     'title': '共同創辦人 ／ Co-funder'
   }, {
     'name': '何佩佳 ／ Peijia He',
-    'title': '總編輯 ／ Editor in Chief'
+    'title': '主編 ／ Editor in Chief'
   }, {
     'name': '李俊緯 ／ Lee',
     'title': '網站工程師 ／ Web Engineer'
