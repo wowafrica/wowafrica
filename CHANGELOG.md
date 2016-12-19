@@ -1,3 +1,13 @@
+<a name="0.10.12"></a>
+## [0.10.12](//compare/v0.10.10...v0.10.12) (2016-12-19)
+
+
+### Bug Fixes
+
+* add open-graph image width and height properties 3714134
+
+
+
 <a name="0.10.11"></a>
 ## [0.10.11](//compare/v0.10.10...v0.10.11) (2016-11-26)
 
