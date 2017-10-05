@@ -11,8 +11,6 @@ export default {
   entry: {
     app: path.join(__dirname, '../../client/scripts/index'),
     vendor: [
-      'jquery',
-      'semantic-ui/dist/semantic.js',
       'babel-polyfill',
       'd3',
       'flux',
@@ -31,10 +29,6 @@ export default {
   plugins: [
     extractGlobal,
     extractText,
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.bundle.js'
@@ -60,8 +54,6 @@ export default {
     loaders: [{
       test: /\.js?$/,
       exclude: [
-        path.join(__dirname, '../../node_modules/jquery'),
-        path.join(__dirname, '../../node_modules/semantic-ui'),
         path.join(__dirname, '../../node_modules/babel-polyfill'),
         path.join(__dirname, '../../node_modules/d3')
       ],

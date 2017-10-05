@@ -8,8 +8,6 @@ export default {
   entry: {
     app: path.join(__dirname, '../../client/scripts/index'),
     vendor: [
-      'jquery',
-      'semantic-ui/dist/semantic.js',
       'webpack-hot-middleware/client',
       'babel-polyfill',
       'd3',
@@ -27,10 +25,6 @@ export default {
     publicPath: '/scripts/'
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
