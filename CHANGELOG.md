@@ -1,3 +1,13 @@
+<a name="0.10.14"></a>
+## [0.10.14](https://github.com/jessy1092/explore-africa/compare/v0.10.13...v0.10.14) (2017-10-05)
+
+
+### Bug Fixes
+
+* Use CDN to request jquery and semantic-ui ([c9beae0](https://github.com/jessy1092/explore-africa/commit/c9beae0))
+
+
+
 <a name="0.10.13"></a>
 ## [0.10.13](https://github.com/jessy1092/explore-africa/compare/v0.10.12...v0.10.13) (2017-10-05)
 
