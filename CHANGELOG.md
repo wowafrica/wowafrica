@@ -1,3 +1,13 @@
+<a name="0.10.15"></a>
+## [0.10.15](https://github.com/jessy1092/explore-africa/compare/v0.10.14...v0.10.15) (2017-10-05)
+
+
+### Bug Fixes
+
+* Do not need to install again on deploy process ([7e43f39](https://github.com/jessy1092/explore-africa/commit/7e43f39))
+
+
+
 <a name="0.10.14"></a>
 ## [0.10.14](https://github.com/jessy1092/explore-africa/compare/v0.10.13...v0.10.14) (2017-10-05)
 
