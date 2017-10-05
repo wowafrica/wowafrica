@@ -17,6 +17,9 @@ export default ({title, ogTitle, description, image, url, keywords, html, state}
   <title>${title}</title>
   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <link href="/styles/semantic.css" type="text/css" rel="stylesheet"></link>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" type="text/css" rel="stylesheet"></link>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.js"></script>
 </head>
 <body>
   <div id="side_bar" class="ui inverted vertical menu sidebar"></div>

@@ -1,3 +1,13 @@
+<a name="0.10.13"></a>
+## [0.10.13](https://github.com/jessy1092/explore-africa/compare/v0.10.12...v0.10.13) (2017-10-05)
+
+
+### Bug Fixes
+
+* Use node 8 to build website with npm 5 ([0540f71](https://github.com/jessy1092/explore-africa/commit/0540f71))
+
+
+
 <a name="0.10.12"></a>
 ## [0.10.12](//compare/v0.10.10...v0.10.12) (2016-12-19)
 
