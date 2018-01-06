@@ -21,6 +21,9 @@ export default function() {
     consumer_key: TumblrConfig.consumerKey // eslint-disable-line
   });
 
+  let allPostNum = 0;
+  let processdPostNum = 0;
+
   let allPostList = [];
 
   let authorPostList = {
@@ -38,7 +41,8 @@ export default function() {
     '林俐辰': [],
     'Tracy Chen': [],
     'Amon Bazongo': [],
-    'wowAfrica阿非卡編輯部': []
+    'wowafrica阿非卡編輯部': [],
+    'Maggie Yun': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
@@ -86,7 +90,8 @@ export default function() {
       if (error) {
         throw error;
       }
-      console.log(`post ${id} done`);
+      processdPostNum++;
+      console.log(`post ${id} done, (${processdPostNum}/${allPostNum})`);
     });
     updateAllPostListFile(id);
     updateAuthorPostListFile(author, id);
@@ -96,21 +101,25 @@ export default function() {
 
   let getPostList = function() {
     client.posts(TumblrConfig.blogName, {limit: 1, type: 'text'}, (err, data) => {
+      allPostNum = data.total_posts;
       if (err) {
         console.log(err.stack);
       } else {
         for (let offset = 0; offset < data.total_posts; offset += 20) {
-          client.posts(TumblrConfig.blogName, {limit: data.blog.posts, offset: offset, type: 'text'}, (err, data) => {
-            if (err) {
-              console.log(err.stack);
-            } else {
-              data.posts.forEach((post) => {
-                // For Old WebView, because it would not running js.
-                PostStore.setLoader(false);
-                PostStore.onReceviceUpdatePosts(post.id);
-              });
-            }
-          });
+          setTimeout(() => {
+            console.log(`send request to tumblr, offset: ${offset}`);
+            client.posts(TumblrConfig.blogName, {limit: data.blog.posts, offset: offset, type: 'text'}, (err, data) => {
+              if (err) {
+                console.log(err.stack);
+              } else {
+                data.posts.forEach((post) => {
+                  // For Old WebView, because it would not running js.
+                  PostStore.setLoader(false);
+                  PostStore.onReceviceUpdatePosts(post.id);
+                });
+              }
+            });
+          }, 2000*offset/20);
         }
       }
     });
