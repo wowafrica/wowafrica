@@ -1,3 +1,13 @@
+<a name="0.10.16"></a>
+## [0.10.16](//compare/v0.10.15...v0.10.16) (2018-01-06)
+
+
+### Bug Fixes
+
+* **server:** correct and add new author cdf5f27
+
+
+
 <a name="0.10.15"></a>
 ## [0.10.15](https://github.com/jessy1092/explore-africa/compare/v0.10.14...v0.10.15) (2017-10-05)
 
