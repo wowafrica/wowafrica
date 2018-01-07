@@ -119,7 +119,7 @@ export default function() {
                 });
               }
             });
-          }, 2000*offset/20);
+          }, 1000*offset/20);
         }
       }
     });
