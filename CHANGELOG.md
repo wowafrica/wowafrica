@@ -1,3 +1,13 @@
+<a name="0.10.17"></a>
+## [0.10.17](//compare/v0.10.16...v0.10.17) (2018-01-13)
+
+
+### Bug Fixes
+
+* shorten timeout of static generator sending tumblr request b1dbc90
+
+
+
 <a name="0.10.16"></a>
 ## [0.10.16](//compare/v0.10.15...v0.10.16) (2018-01-06)
 
