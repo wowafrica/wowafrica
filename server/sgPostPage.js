@@ -42,7 +42,8 @@ export default function() {
     'Tracy Chen': [],
     'Amon Bazongo': [],
     'wowafrica阿非卡編輯部': [],
-    'Maggie Yun': []
+    'Maggie Yun': [],
+    '中東研究通訊': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
