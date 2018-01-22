@@ -1,3 +1,13 @@
+<a name="0.10.18"></a>
+## [0.10.18](//compare/v0.10.17...v0.10.18) (2018-01-22)
+
+
+### Bug Fixes
+
+* **PostList:** fix post list page with long title string is broken in mobile view 248df48
+
+
+
 <a name="0.10.17"></a>
 ## [0.10.17](//compare/v0.10.16...v0.10.17) (2018-01-13)
 

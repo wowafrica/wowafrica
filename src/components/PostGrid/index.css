@@ -1,9 +1,7 @@
 
 .postListTitle {
-  margin-top: 60px;
-  height: 60px;
   font-size: 36px;
-  letter-spacing: 34px;
+  line-height: 1.5em;
   font-weight: bolder;
 }
 
@@ -23,24 +21,36 @@
 /* Mobile */
 @media only screen and (max-width: 767px) {
   .postListTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    letter-spacing: 24px;
     text-align: center;
   }
 }
 /* Tablet */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .postListTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-left: 9%;
+    letter-spacing: 34px;
   }
 }
 /* Small Monitor */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .postListTitle {
+    margin-top: 60px;
+    margin-bottom: 30px;
     margin-left: 2%;
+    letter-spacing: 34px;
   }
 }
 /* Large Monitor */
 @media only screen and (min-width: 1200px) {
   .postListTitle {
+    margin-top: 60px;
+    margin-bottom: 30px;
     margin-left: 10%;
+    letter-spacing: 34px;
   }
 }
