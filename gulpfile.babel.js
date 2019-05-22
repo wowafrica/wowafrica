@@ -24,7 +24,7 @@ gulp.task('static-generator', shell.task(
 ));
 
 gulp.task('ico', () => {
-  return gulp.src('./client/views/*.ico')
+  return gulp.src('./client/views/**/*')
     .pipe(gulp.dest(BUILD_PATH));
 });
 
