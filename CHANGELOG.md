@@ -1,3 +1,13 @@
+<a name="0.10.19"></a>
+## [0.10.19](//compare/v0.10.18...v0.10.19) (2019-05-22)
+
+
+### Bug Fixes
+
+* Add google domain verification file 6d6109e
+
+
+
 <a name="0.10.18"></a>
 ## [0.10.18](//compare/v0.10.17...v0.10.18) (2018-01-22)
 
