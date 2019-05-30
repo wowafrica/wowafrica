@@ -43,7 +43,8 @@ export default function() {
     'Amon Bazongo': [],
     'wowafrica阿非卡編輯部': [],
     'Maggie Yun': [],
-    '中東研究通訊': []
+    '中東研究通訊': [],
+    'Funmi Chang': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
