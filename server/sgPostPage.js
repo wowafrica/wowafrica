@@ -44,7 +44,8 @@ export default function() {
     'wowafrica阿非卡編輯部': [],
     'Maggie Yun': [],
     '中東研究通訊': [],
-    'Funmi Chang': []
+    'Funmi Chang': [],
+    '小非象': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
