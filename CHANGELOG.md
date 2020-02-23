@@ -1,5 +1,19 @@
 ## [0.10.21](https://github.com/wowafrica/wowafrica/compare/v0.10.20...v0.10.21) (2020-02-22)
 
+<a name="0.10.22"></a>
+## [0.10.20](//compare/v0.10.21...v0.10.22) (2020-02-23)
+
+
+### Features
+
+* **post:** Add mediafarmers button on post page([ce9a713](https://github.com/jessy1092/explore-africa/commit/ce9a713))
+
+
+
+<a name="0.10.21"></a>
+## [0.10.20](//compare/v0.10.20...v0.10.21) (2020-02-22)
+
+
 
 
 <a name="0.10.20"></a>
