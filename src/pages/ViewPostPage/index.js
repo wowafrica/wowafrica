@@ -30,6 +30,25 @@ export default React.createClass({
     window.scroll(0, 0);
     PostStore.addChangeListener(this._onChange);
     AuthorsStore.addChangeListener(this._onAuthorChange);
+
+    let {name} = this.getAuthor();
+
+    this.smallFarmer.setAttribute('hb-width', '50');
+    this.smallFarmer.setAttribute('hb-height', '50');
+    this.smallFarmer.setAttribute('hb-author', name);
+
+    this.normalFarmer.setAttribute('hb-width', '100');
+    this.normalFarmer.setAttribute('hb-height', '50');
+    this.normalFarmer.setAttribute('hb-icon', 'https://mediafarmers.org/api/images/icon_2.png');
+    this.normalFarmer.setAttribute('hb-author', name);
+
+    // inject mediafarmers script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.onload = function() {};
+    script.src = 'https://mediafarmers.org/api/api.js';
+    this.pageRoot.appendChild(script);
   },
 
   componentWillUnmount() {
@@ -39,6 +58,11 @@ export default React.createClass({
 
   componentDidUpdate() {
     window.scroll(0, 0);
+
+    let {name} = this.getAuthor();
+
+    this.smallFarmer.setAttribute('hb-author', name);
+    this.normalFarmer.setAttribute('hb-author', name);
   },
 
   getAuthor() {
@@ -66,7 +90,7 @@ export default React.createClass({
     // console.log(JSON.stringify(post, null, 2));
     let largeImage = image ? image.replace(/_540.jpg/g, '_1280.jpg') : image;
     return (
-      <div>
+      <div ref={ref => this.pageRoot = ref}>
         <div className="fixed-top-menu">
           <IndexMenu />
           <CategoryMenu />
@@ -85,7 +109,13 @@ export default React.createClass({
               <div className={classnames('ui inverted dimmer', {active: loader})}>
                 <div className="ui text loader">Loading</div>
               </div>
-              <div><em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em></div>
+              <div className={styles.pageHead}>
+                <em style={{color: 'rgba(0, 0, 0, 0.3)'}}>{date.substring(0, 10).replace(/-/g, '.')}</em>
+                <div
+                  ref={ref => this.smallFarmer = ref}
+                  name="manyherbsapi"
+                ></div>
+              </div>
               <br/>
               <div dangerouslySetInnerHTML={{__html: body}}></div>
               <br/>
@@ -97,7 +127,17 @@ export default React.createClass({
                 )}
               </div>
               <br/>
-              <ShareButton pageUrl={pageUrl}/>
+              <div className={styles.pageShare}>
+                <ShareButton pageUrl={pageUrl}/>
+                <div
+                  ref={ref => this.normalFarmer = ref}
+                  name="manyherbsapi"
+                ></div>
+                <div className={styles.shareHint}>
+                  <div>喜歡我們的文章嗎?</div>
+                  <div>歡迎以行動支持我們持續推出好文章喔!</div>
+                </div>
+              </div>
               <div style={{height: '10px'}}/>
               <ReadMoreBlk postId={pageUrl.substr(pageUrl.lastIndexOf('/')+1)}/>
             </Segment>
