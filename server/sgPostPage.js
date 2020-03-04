@@ -45,7 +45,8 @@ export default function() {
     'Maggie Yun': [],
     '中東研究通訊': [],
     'Funmi Chang': [],
-    '小非象': []
+    '小非象': [],
+    '環遊世界80歲': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {

@@ -1,3 +1,7 @@
+## [0.10.23](https://github.com/wowafrica/wowafrica/compare/v0.10.22...v0.10.23) (2020-03-04)
+
+
+
 ## [0.10.21](https://github.com/wowafrica/wowafrica/compare/v0.10.20...v0.10.21) (2020-02-22)
 
 <a name="0.10.22"></a>
