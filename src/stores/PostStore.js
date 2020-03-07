@@ -31,7 +31,22 @@ class PostStore extends EventEmitter {
   }
 
   onReceviceUpdatePosts(postID) {
-    this.client.posts(TumblrConfig.blogName, {id: postID}, this.parsePostData.bind(this));
+    if (postID > 600000000000000000) {
+      // tumblr api cannot get post by id with new post id length(longer value),
+      // workaround to get it in api response without requesting id
+      this.client.posts(TumblrConfig.blogName, this.searchPostById.bind(this, postID));
+    }	else {
+      this.client.posts(TumblrConfig.blogName, {id: postID}, this.parsePostData.bind(this));
+    }
+  }
+
+  searchPostById(postId, err, data) {
+    if (err) {
+      console.log(err.stack);
+    } else {
+      let post = data.posts.filter(post => post.id == postId);
+      this.parsePostData(null, {posts: post});
+    }
   }
 
   parsePostData(err, data) {

@@ -1,3 +1,12 @@
+## [0.10.24](https://github.com/wowafrica/wowafrica/compare/v0.10.22...v0.10.24) (2020-03-07)
+
+
+### Bug Fixes
+
+* workaround tumblr api get post by new id format fail ([0cef4bf](https://github.com/wowafrica/wowafrica/commit/0cef4bfd9ac1a66343fed776b9c4ac3e162130e4))
+
+
+
 ## [0.10.23](https://github.com/wowafrica/wowafrica/compare/v0.10.22...v0.10.23) (2020-03-04)
 
 

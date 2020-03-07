@@ -46,10 +46,25 @@ class PostListAuthorStore extends EventEmitter {
         this.postList[author].totalPostNum = 0;
         this.postList[author].parsedPostNum = 0;
         res.body[author].forEach((id) => {
-          this.client.posts(TumblrConfig.blogName, {id: id}, this.updateList.bind(this));
+          if (postID > 600000000000000000) {
+            // tumblr api cannot get post by id with new post id length(longer value),
+            // workaround to get it in api response without requesting id
+            this.client.posts(TumblrConfig.blogName, this.searchPostById.bind(this, id));
+          } else {
+            this.client.posts(TumblrConfig.blogName, {id: id}, this.updateList.bind(this));
+          }
         });
       }
     });
+  }
+
+  searchPostById(id, err, data) {
+    if (err) {
+      console.log(err.stack);
+    } else {
+      let post = data.posts.filter(post => post.id == id);
+      this.updateList(null, {posts: post});
+    }
   }
 
   updateList(err, data) {
