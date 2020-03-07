@@ -1,3 +1,12 @@
+## [0.10.25](https://github.com/wowafrica/wowafrica/compare/v0.10.24...v0.10.25) (2020-03-07)
+
+
+### Bug Fixes
+
+* typo ([14c6217](https://github.com/wowafrica/wowafrica/commit/14c6217aed36418c05a7675b84dfef2ffd3c8478))
+
+
+
 ## [0.10.24](https://github.com/wowafrica/wowafrica/compare/v0.10.22...v0.10.24) (2020-03-07)
 
 

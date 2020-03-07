@@ -69,7 +69,7 @@ class PostListReadMoreStore extends EventEmitter {
   }
 
   updateRandomPostFromServer(id) {
-    if (postID > 600000000000000000) {
+    if (id > 600000000000000000) {
       // tumblr api cannot get post by id with new post id length(longer value),
       // workaround to get it in api response without requesting id
       this.client.posts(TumblrConfig.blogName, this.searchPostById.bind(this, id));
