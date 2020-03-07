@@ -46,7 +46,7 @@ class PostListAuthorStore extends EventEmitter {
         this.postList[author].totalPostNum = 0;
         this.postList[author].parsedPostNum = 0;
         res.body[author].forEach((id) => {
-          if (postID > 600000000000000000) {
+          if (id > 600000000000000000) {
             // tumblr api cannot get post by id with new post id length(longer value),
             // workaround to get it in api response without requesting id
             this.client.posts(TumblrConfig.blogName, this.searchPostById.bind(this, id));
