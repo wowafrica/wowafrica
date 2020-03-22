@@ -46,7 +46,8 @@ export default function() {
     '中東研究通訊': [],
     'Funmi Chang': [],
     '小非象': [],
-    '環遊世界80歲': []
+    '環遊世界80歲': [],
+    '非程創新': []
   };
 
   fs.stat('./_public/view_post_list', (err, stats) => {
